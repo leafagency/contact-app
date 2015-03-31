@@ -11,6 +11,7 @@ var del = require('del');
 var notify = require('gulp-notify');
 var ghPages = require('gulp-gh-pages');
 
+var MISC_FILES = ['./code/CNAME']
 var JADE_FILES = './code/**/*.jade';
 var SASS_FILES = './code/**/*.scss';
 var IMAGE_FILES = ['./code/**/*.png','./code/**/*.jpg','./code/**/*.gif','./code/**/*.jpeg'];
@@ -35,6 +36,13 @@ function logError (error) {
 // ---------------------------------
 gulp.task('clean', function(callback) {
   del(BUILT_FILES, callback);
+});
+
+gulp.task('misc', function() {
+  gulp.src(MISC_FILES)
+    .pipe(gulp.dest(BUILD_DEST))
+    .on('error', logError)
+    .pipe(connect.reload())
 });
 
 gulp.task('templates', function() {
@@ -87,6 +95,10 @@ gulp.task('lib_scripts', function() {
 // --------- WATCH TASKS -----------
 // ---------------------------------
 gulp.task('watch', function () {
+  watch(MISC_FILES, function() {
+    gulp.start('misc');
+  })
+
   watch(JADE_FILES, function() {
     gulp.start('templates');
   });
@@ -130,15 +142,15 @@ gulp.task('open', function(){
 // ----------------------------------
 gulp.task('deploy', function() {
   gulp.src(BUILT_FILES)
-    .pipe(ghPages());
-    .on('error', logError)
+    .pipe(ghPages())
+    .on('error', logError);
 });
 
 // ----------------------------------
 // --------- COMPOSITE TASKS --------
 // ----------------------------------
 gulp.task('build', ['clean'], function() {
-  gulp.start('templates', 'styles', 'images', 'app_scripts', 'lib_scripts');
+  gulp.start('misc', 'templates', 'styles', 'images', 'app_scripts', 'lib_scripts');
 });
 gulp.task('start', ['build'], function() {
   gulp.start('connect', 'watch', 'open');
