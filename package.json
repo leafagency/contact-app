@@ -1,7 +1,7 @@
 {
-  "name": "leaf-project-template",
-  "description": "A minimal template for use in building out new leaf projects.",
-  "repository": "https://github.com/leafagency/leaf-project-template",
+  "name": "leaf-website",
+  "description": "First version of the Leaf website",
+  "repository": "https://github.com/leafagency/leaf-site",
   "lisence": "MIT",
   "readmeFilename": "README.md",
   "dependencies": {
@@ -11,9 +11,11 @@
   "scripts": {
     "start": "gulp start",
     "build": "gulp build",
-    "deploy": "gulp deploy"
+    "deploy": "gulp deploy",
+    "postinstall": "bower install"
   },
   "devDependencies": {
+    "bower": "^1.4.1",
     "del": "^1.1.1",
     "gulp": "^3.8.11",
     "gulp-browserify": "^0.5.1",

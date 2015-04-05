@@ -12,11 +12,11 @@ var notify = require('gulp-notify');
 var ghPages = require('gulp-gh-pages');
 
 var MISC_FILES = ['./code/CNAME']
-var JADE_FILES = './code/**/*.jade';
-var SASS_FILES = './code/**/*.scss';
-var IMAGE_FILES = ['./code/**/*.png','./code/**/*.jpg','./code/**/*.gif','./code/**/*.jpeg'];
-var APP_JS_FILES = './code/scripts/app/**/*.js';
-var LIB_JS_FILES = './code/scripts/lib/**/*.js';
+var JADE_FILES = ['./code/**/*.jade', '!./code/lib/**'];
+var SASS_FILES = ['./code/**/*.scss', , '!./code/lib/**'];
+var IMAGE_FILES = ['./code/**/*.png','./code/**/*.jpg','./code/**/*.gif','./code/**/*.jpeg', '!./code/lib/**'];
+var APP_JS_FILES = ['./code/scripts/app/**/*.js', '!./code/lib/**'];
+var LIB_JS_FILES = ['./code/scripts/lib/**/*.js', '!./code/lib/**'];
 var BROWSERIFY_ROOT = './code/scripts/app/main.js';
 var BUILD_DEST = './dist/';
 var BUILT_FILES = BUILD_DEST + '**/*';
