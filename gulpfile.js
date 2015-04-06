@@ -10,6 +10,7 @@ var imageOptimization = require('gulp-image-optimization');
 var del = require('del');
 var notify = require('gulp-notify');
 var ghPages = require('gulp-gh-pages');
+var changed = require('gulp-changed');
 
 var MISC_FILES = ['./code/CNAME']
 var JADE_FILES = ['./code/**/*.jade', '!./code/lib/**'];
@@ -40,6 +41,7 @@ gulp.task('clean', function(callback) {
 
 gulp.task('misc', function() {
   gulp.src(MISC_FILES)
+    .pipe(changed(BUILD_DEST))
     .pipe(gulp.dest(BUILD_DEST))
     .on('error', logError)
     .pipe(connect.reload())
@@ -65,6 +67,7 @@ gulp.task('styles', function() {
 
 gulp.task('images', function() {
   gulp.src(IMAGE_FILES)
+    .pipe(changed(BUILD_DEST))
     .pipe(imageOptimization({
       optimizationLevel: 5,
       progressive: true,
