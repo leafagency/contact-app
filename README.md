@@ -1,8 +1,8 @@
-# Leaf Project Template • 0.0.1
+# Contact App • 0.0.1
 
 ## Introduction
 
-The aim of this project is to provide a good starting point for the front end of all Leaf sites, whether they be basic HTML/CSS or a single page JavaScript app.
+The aim of this project is to create the simplest, most flexible contact forms possible for developers and designers to be able to drop into their site.
 
 ## Installation
 
