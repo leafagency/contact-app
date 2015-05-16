@@ -22,8 +22,6 @@ html(lang='en')
       li Copy/paste our snippet into your web page
       li Start receiving messages at your designated email address
 
-    include ./templates/mailchimp_signup
-
     h2 A designer's best friend
 
     ul
@@ -35,3 +33,20 @@ html(lang='en')
     h2 No sign-up
 
     p We'll contact you on your nominated email address if we need anything.
+
+
+    p Demo script for mike to dev with, no validation, sends to mike@mcarter.me
+
+    form(id='leaf-hello')
+      label Name:
+      input(type='text', name='name')
+      br
+      label Email:
+      input(type='text', name='email')
+      br
+      label Message:
+      br
+      textarea(name='message', rows='10', cols='100')
+      br
+      input(type='submit', value='Send it')
+    script(src='/scripts/app/contactFormHandler.app.js')
