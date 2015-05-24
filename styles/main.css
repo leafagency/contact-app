@@ -1,1 +1,1 @@
-body{font-family:Helvetica}.instructions{background:#f5f5f5;border:1px solid #ddd;border-radius:4px;text-align:center}
+.instructions,.snippet-container{border:1px solid #ddd;background:#f5f5f5}body{font-family:Helvetica}.instructions{border-radius:4px;text-align:center}.snippet-container{font-size:1.5em;color:#666;padding:10px 25px}

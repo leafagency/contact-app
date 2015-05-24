@@ -12,47 +12,58 @@
       <li>Copy/paste our snippet into your web page</li>
       <li>Start receiving messages at your designated email address</li>
     </ol>
-    <div id="mc_embed_signup">
-      <form id="mc-embedded-subscribe-form" action="//weareleaf.us10.list-manage.com/subscribe/post?u=d6d1f74dac236ac16da3aef6c&amp;id=6252bd1f8b" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate="" class="validate">
-        <div id="mc_embed_signup_scroll">
-          <h2>Interested?</h2>
-          <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-          <div class="mc-field-group">
-            <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span></label>  
-            <input id="mce-EMAIL" type="email" value="" name="EMAIL" class="required email">
-          </div>
-          <div class="mc-field-group">
-            <label for="mce-FNAME">First Name </label>  
-            <input id="mce-FNAME" type="text" value="" name="FNAME">
-          </div>
-          <div class="mc-field-group">
-            <label for="mce-LNAME">Last Name </label>  
-            <input id="mce-LNAME" type="text" value="" name="LNAME">
-          </div>  
-          <div id="mce-responses" class="clear">
-            <div id="mce-error-response" style="display:none" class="response"></div>    
-            <div id="mce-success-response" style="display:none" class="response"></div>
-          </div>
-          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-          <div style="position: absolute; left: -5000px;">
-            <input type="text" name="b_d6d1f74dac236ac16da3aef6c_6252bd1f8b" tabindex="-1" value="">
-          </div>    
-          <div class="clear">
-            <input id="mc-embedded-subscribe" type="submit" value="Let me know when it's ready!" name="subscribe" class="button">
-          </div>
-        </div>
-      </form>
+    <h2>How do I use it?</h2>
+    <p>First your email to generate your code snippet</p>
+    <input placeholder="your-email-here@example.com">
+    <p>Then, just copy this code snippet onto your page:</p>
+    <div class="snippet-container">
+      <pre>&lt;script type="text/javascript" src="http://howdy-api-staging.herokuapp.com/static/howdyClient.js?email=<span id="email">your-email-here@example.com</span>"&gt;&lt;/script&gt;</pre>
     </div>
-    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-    <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+    <p>That's it, Howdy will take care of the rest for you.</p>
     <h2>A designer's best friend</h2>
     <ul>
-      <li>Add additional fields and validations <b>without code</b>.</li>
-      <li>Integrate 100% seamlessly with your pages, no awkward styling.</li>
-      <li>Client and server-side validation right out of the box.</li>
-      <li>Performs flawlessly on all devices.</li>
+      <li>Loads of default sensible validations.</li>
+      <li>Specify your own validations <b>without programming</b>.</li>
+      <li>Integrate 100% seamlessly with your designs, no awkward styling issues.</li>
+      <li>No sign-up necessary</li>
+      <li>Performs flawlessly on all devices</li>
     </ul>
-    <h2>No sign-up</h2>
-    <p>We'll contact you on your nominated email address if we need anything.</p>
+    <h2>Default validations</h2>
+    <p>Howdy validates fields with these names by default:</p>
+    <ul>
+      <li><span class="code">email</span></li>
+      <li><span class="code">name</span></li>
+      <li><span class="code">first_name</span></li>
+      <li><span class="code">last_name</span></li>
+      <li><span class="code">firstName</span></li>
+      <li><span class="code">lastName</span></li>
+      <li><span class="code">subject</span></li>
+      <li><span class="code">topic</span></li>
+      <li><span class="code">about</span></li>
+      <li><span class="code">body</span></li>
+      <li><span class="code">message</span></li>
+      <li><span class="code">address</span></li>
+      <li><span class="code">postcode</span></li>
+      <li><span class="code">post_code</span></li>
+      <li><span class="code">postCode</span></li>
+      <li><span class="code">zipcode</span></li>
+      <li><span class="code">zip_code</span></li>
+      <li><span class="code">zipCode</span></li>
+      <li><span class="code">tel</span></li>
+      <li><span class="code">telephone</span></li>
+      <li><span class="code">mobile</span></li>
+      <li><span class="code">mob</span></li>
+      <li><span class="code">age</span></li>
+    </ul>
+    <h2>Specifying your own validations</h2>
+    <p>You can override any default validations or add your own custom fields by adding a <span class="code">data-howdy-validate=""</span> attribute to your input.</p></p>
+    <p>Supported validations are as follows:</p>
+    <ul> 
+      <li><span class="code">none</span> - No validation on this input</li>
+      <li><span class="code">required</span> - Some value is required</li>
+      <li><span class="code">email</span> - An email address is required</li>
+      <li><span class="code">number</span> - A number is required</li>
+      <li><span class="code">noLetters</span> - No letters allowed in the input</li>
+    </ul>
   </body>
 </html>
