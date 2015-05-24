@@ -1,4 +1,4 @@
-# Contact App • 0.0.1
+# Howdy • 0.0.1
 
 ## Introduction
 

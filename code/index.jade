@@ -1,5 +1,6 @@
 block prepend vars
   -var appName = 'Contact App'
+  -var exampleEmail = 'your-email-here@example.com'
 
 doctype html
 html(lang='en')
@@ -22,31 +23,67 @@ html(lang='en')
       li Copy/paste our snippet into your web page
       li Start receiving messages at your designated email address
 
+    h2 How do I use it?
+
+    p First your email to generate your code snippet
+
+    input(placeholder='#{exampleEmail}')
+
+    p Then, just copy this code snippet onto your page:
+
+    div.snippet-container
+      pre
+        &lt;script type="text/javascript" src="http://howdy-api-staging.herokuapp.com/static/howdyClient.js?email=<span id="email">#{exampleEmail}</span>"&gt;&lt;/script&gt;
+
+    p That's it, Howdy will take care of the rest for you.
+
     h2 A designer's best friend
 
     ul
-      li Add additional fields and validations <b>without code</b>.
-      li Integrate 100% seamlessly with your pages, no awkward styling.
-      li Client and server-side validation right out of the box.
-      li Performs flawlessly on all devices.
+      li Loads of default sensible validations.
+      li Specify your own validations <b>without programming</b>.
+      li Integrate 100% seamlessly with your designs, no awkward styling issues.
+      li No sign-up necessary
+      li Performs flawlessly on all devices
 
-    h2 No sign-up
+    h2 Default validations
 
-    p We'll contact you on your nominated email address if we need anything.
+    p Howdy validates fields with these names by default:
 
+    ul
+      li <span class="code">email</span>
+      li <span class="code">name</span>
+      li <span class="code">first_name</span>
+      li <span class="code">last_name</span>
+      li <span class="code">firstName</span>
+      li <span class="code">lastName</span>
+      li <span class="code">subject</span>
+      li <span class="code">topic</span>
+      li <span class="code">about</span>
+      li <span class="code">body</span>
+      li <span class="code">message</span>
+      li <span class="code">address</span>
+      li <span class="code">postcode</span>
+      li <span class="code">post_code</span>
+      li <span class="code">postCode</span>
+      li <span class="code">zipcode</span>
+      li <span class="code">zip_code</span>
+      li <span class="code">zipCode</span>
+      li <span class="code">tel</span>
+      li <span class="code">telephone</span>
+      li <span class="code">mobile</span>
+      li <span class="code">mob</span>
+      li <span class="code">age</span>
 
-    p Demo script for mike to dev with, no validation, sends to mike@mcarter.me
+    h2 Specifying your own validations
 
-    form(id='leaf-hello')
-      label Name:
-      input(type='text', name='name')
-      br
-      label Email:
-      input(type='text', name='email')
-      br
-      label Message:
-      br
-      textarea(name='message', rows='10', cols='100')
-      br
-      input(type='submit', value='Send it')
-    script(src='/scripts/app/contactFormHandler.app.js')
+    p You can override any default validations or add your own custom fields by adding a <span class="code">data-howdy-validate=""</span> attribute to your input.</p>
+
+    p Supported validations are as follows:
+
+    ul 
+      li <span class="code">none</span> - No validation on this input
+      li <span class="code">required</span> - Some value is required
+      li <span class="code">email</span> - An email address is required
+      li <span class="code">number</span> - A number is required
+      li <span class="code">noLetters</span> - No letters allowed in the input
