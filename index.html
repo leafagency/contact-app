@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Howdy</title>
     <link rel="stylesheet" href="styles/main.css">
+    <script src="/scripts/app/main.app.js"></script>
   </head>
   <body>
     <h1>Howdy</h1>
@@ -14,10 +15,14 @@
     </ol>
     <h2>How do I use it?</h2>
     <p>First your email to generate your code snippet</p>
-    <input placeholder="your-email-here@example.com">
-    <p>Then, just copy this code snippet onto your page:</p>
-    <div class="snippet-container">
-      <pre>&lt;script type="text/javascript" src="https://app.howdyform.com/static/howdyClient.js?email=<span id="email">your-email-here@example.com</span>"&gt;&lt;/script&gt;</pre>
+    <div id="snippet-envelope" class="animated">
+      <div id="snippet-generator">
+        <input placeholder="your-email-here@example.com" id="snippet-generator-email">
+        <button id="snippet-generator-button">Generate My Snippet</button>
+      </div>
+      <div id="snippet-display">
+        <pre>&lt;script type="text/javascript" src="https://app.howdyform.com/static/howdyClient.js?email=<span id="snippet-display-email">your-email-here@example.com</span>"&gt;&lt;/script&gt;</pre>
+      </div>
     </div>
     <p>That's it, Howdy will take care of the rest for you.</p>
     <h2>A designer's best friend</h2>
