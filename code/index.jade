@@ -1,5 +1,5 @@
 block prepend vars
-  -var appName = 'Contact App'
+  -var appName = 'Howdy'
   -var exampleEmail = 'your-email-here@example.com'
 
 doctype html
@@ -10,7 +10,7 @@ html(lang='en')
     link(rel='stylesheet', href='styles/main.css')
 
     //- Uncomment one of the lines below to pull in either your app JS, or some library JS.
-    //- script(src='/scripts/app/main.js') //- A single page application script.
+    script(src='/scripts/app/main.app.js')
     //- script(src='/scripts/lib/demoLib.js') //- A project built lib script.
     //- script(src='/lib/foo/bar.min.js') //- A bower installed script.
 
@@ -27,13 +27,15 @@ html(lang='en')
 
     p First your email to generate your code snippet
 
-    input(placeholder='#{exampleEmail}')
+    div.animated(id="snippet-envelope")
 
-    p Then, just copy this code snippet onto your page:
+      div(id="snippet-generator")
+        input(placeholder='#{exampleEmail}', id="snippet-generator-email")
+        button(id="snippet-generator-button") Generate My Snippet
 
-    div.snippet-container
-      pre
-        &lt;script type="text/javascript" src="http://howdy-api-staging.herokuapp.com/static/howdyClient.js?email=<span id="email">#{exampleEmail}</span>"&gt;&lt;/script&gt;
+      div(id="snippet-display")
+        pre
+          &lt;script type="text/javascript" src="https://app.howdyform.com/static/howdyClient.js?email=<span id="snippet-display-email">#{exampleEmail}</span>"&gt;&lt;/script&gt;
 
     p That's it, Howdy will take care of the rest for you.
 
