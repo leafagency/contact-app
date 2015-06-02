@@ -9,7 +9,14 @@ window.onload = function() {
   var snippetDisplayEmail = document.getElementById('snippet-display-email');
 
   snippetGeneratorButton.addEventListener('click', function() {
-    snippetDisplayEmail.innerHTML = snippetGeneratorEmail.value;
+
+    if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(snippetGeneratorEmail.value)) {
+      return alert("Please enter a valid email address");
+    }
+
+    var base64Email = window.btoa(unescape(encodeURIComponent(snippetGeneratorEmail.value)));
+
+    snippetDisplayEmail.innerHTML = base64Email;
 
     snippetEnvelope.className += " " + "bounceOutDown";
 
