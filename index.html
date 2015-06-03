@@ -25,10 +25,10 @@
       <div class="container">
         <h1 class="header__title">Howdy</h1>
         <div id="snippet-envelope" class="envelope animated">
-          <p>Simply copy &amp; paste your unique code on to your page to start receiving messages through your contact form</p>
-          <div id="snippet-generator">
-            <input placeholder="your-email-here@example.com" id="snippet-generator-email">
-            <button id="snippet-generator-button">Generate My Snippet</button>
+          <p class="envelope__lead">Simply copy &amp; paste your unique code on to your page to start receiving messages through your contact form</p>
+          <div id="snippet-generator" class="envelope__input-group">
+            <input placeholder="your-email-here@example.com" id="snippet-generator-email" class="envelope__input">
+            <button id="snippet-generator-button" class="envelope__button">Generate My Snippet</button>
           </div>
           <div id="snippet-display">
             <pre>&lt;script type="text/javascript" src="https://app.howdyform.com/static/howdyClient.js?email=<span id="snippet-display-email">your-email-here@example.com</span>"&gt;&lt;/script&gt;</pre>
@@ -113,11 +113,11 @@
     </section>
     <footer class="footer">
       <div class="container">
-        <div class="footer__section"><a href="#">Report an issue</a></div>
+        <div class="footer__section"><a href="#" class="footer__link">Report an issue</a></div>
         <div class="footer__section">
-          <p>Made with <span class='heart'>❤</span> by <a href='http://weareleaf.com'>Leaf</a></p>
+          <p class="footer__text">Made with <span class='heart'>❤</span> by <a class='footer__link' href='http://weareleaf.com'>Leaf</a></p>
         </div>
-        <div class="footer__section"><a href="#">Tweet</a></div>
+        <div class="footer__section"><a href="#" class="footer__link">Tweet</a></div>
       </div>
     </footer>
   </body>
