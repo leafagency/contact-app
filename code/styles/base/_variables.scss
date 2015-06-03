@@ -36,8 +36,8 @@ $font-family-sans-serif: 'Asap', Helvetica, Arial, sans-serif;
 $font-family-serif: Georgia, Times, 'Times New Roman', serif;
 
 // Forms
-$input-background-colour: #fafcfc;
-$input-border-colour: #dee5e5;
+$input-background-colour: $light-gray;
+$input-border-colour: #c4c9df;
 $input-border-width: 2px;
 $form-box-shadow: 0;
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($light-gray, $lightness: -5%, $alpha: -0.3);

@@ -23,6 +23,6 @@ section {
   padding: rem(20) 0;
 
   @include susy-breakpoint($small-screen) {
-    padding: rem(40) 0;
+    padding: rem(80) 0;
   }
 }

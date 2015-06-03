@@ -37,7 +37,7 @@ h2 {
     size: $base-h2-size;
     weight: 400;
   }
-  margin-bottom: 0.625em;
+  margin-bottom: 0.25em;
 }
 
 h3 {
@@ -53,6 +53,7 @@ h4 {
     size: $base-h4-size;
     weight: 700;
   }
+  margin-bottom: 0.25em;
   text-transform: uppercase;
 }
 
@@ -85,4 +86,9 @@ img,
 picture {
   margin: 0;
   max-width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }

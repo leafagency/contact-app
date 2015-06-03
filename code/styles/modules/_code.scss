@@ -1,7 +1,13 @@
 .code {
   background-color: #35355e;
+  border-radius: 5px;
   color: #d08770;
   font-family: $font-family-mono;
+  padding: rem(20);
+
+  &__list {
+    list-style: none;
+  }
 
   &__text {
     color: white;

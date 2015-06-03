@@ -1,4 +1,27 @@
 .footer {
   background-color: $brand-purple;
-  color: #e1d5ff;
+  padding: rem(30) 0;
+
+  &__section {
+    @include span(4);
+
+    &:nth-of-type(2n) {
+      text-align: center;
+    }
+
+    &:nth-of-type(3n) {
+      @include last;
+      text-align: right;
+    }
+  }
+
+  &__link,
+  &__text {
+    color: #e1d5ff;
+    margin: 0;
+  }
+}
+
+.heart {
+  color: $medium-purple;
 }

@@ -39,11 +39,11 @@ html(class='no-js', lang='en')
 
         .envelope.animated(id='snippet-envelope')
 
-          p Simply copy &amp; paste your unique code on to your page to start receiving messages through your contact form
+          p.envelope__lead Simply copy &amp; paste your unique code on to your page to start receiving messages through your contact form
 
-          div(id="snippet-generator")
-            input(placeholder='#{exampleEmail}', id="snippet-generator-email")
-            button(id="snippet-generator-button") Generate My Snippet
+          .envelope__input-group(id="snippet-generator")
+            input.envelope__input(placeholder='#{exampleEmail}', id="snippet-generator-email")
+            button.envelope__button(id="snippet-generator-button") Generate My Snippet
 
           div(id="snippet-display")
             pre
@@ -127,10 +127,10 @@ html(class='no-js', lang='en')
       .container
 
         .footer__section
-          a(href='#') Report an issue
+          a.footer__link(href='#') Report an issue
 
         .footer__section
-          p Made with <span class='heart'>❤</span> by <a href='http://weareleaf.com'>Leaf</a>
+          p.footer__text Made with <span class='heart'>❤</span> by <a class='footer__link' href='http://weareleaf.com'>Leaf</a>
 
         .footer__section
-          a(href='#') Tweet
+          a.footer__link(href='#') Tweet
