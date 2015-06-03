@@ -1,0 +1,13 @@
+.defaults {
+
+  &__list {
+    column-count: 5;
+    column-gap: rem(30);
+
+    &__item {
+      background: url('/images/bullet.svg') no-repeat 0 rem(7);
+      list-style: none;
+      padding-left: rem(24);
+    }
+  }
+}

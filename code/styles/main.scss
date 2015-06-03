@@ -1,26 +1,30 @@
-@import 'animate';
+// Base Variables
+@import './code/lib/normalize-scss/normalize';
+@import './code/lib/susy/sass/susy';
+@import './code/lib/bourbon/app/assets/stylesheets/bourbon';
+@import 'base/variables';
 
-body {
-  font-family:Helvetica;
-}
+// Base
+@import 'base/mixins';
+@import 'base/buttons';
+@import 'base/fonts';
+@import 'base/forms';
+@import 'base/grid-settings';
+@import 'base/typography';
 
-.instructions {
-  background:#f5f5f5;
-  border:1px solid #ddd;
-  border-radius:4px;
-  text-align:center;
-}
+// Layout
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/structure';
+
+// Modules
+@import 'modules/animate';
+@import 'modules/benefits';
+@import 'modules/code';
+@import 'modules/customise';
+@import 'modules/defaults';
+@import 'modules/envelope';
 
 #snippet-display {
-  font-size:1.5em;
-  color:#333;
-  padding:10px 0;
   display:none;
-}
-
-
-#snippet-envelope {
-  background:#f5f5f5;
-  border:1px solid #ddd;
-  padding:25px;
 }

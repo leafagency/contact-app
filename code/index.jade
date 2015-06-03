@@ -3,91 +3,134 @@ block prepend vars
   -var exampleEmail = 'your-email-here@example.com'
 
 doctype html
-html(lang='en')
+//if lt IE 7
+    <html class='no-js lt-ie9 lt-ie8 lt-ie7'>
+//if IE 7
+    <html class='no-js lt-ie9 lt-ie8'>
+//if IE 8
+    <html class='no-js lt-ie9'>
+// [if gt IE 8] <!
+html(class='no-js', lang='en')
+  // <![endif]
   head
     meta(charset='utf-8')
     title #{appName}
-    link(rel='stylesheet', href='styles/main.css')
+
+    meta(name='HandheldFriendly', content='True')
+    meta(name='MobileOptimized', content='320')
+    meta(name='viewport', content='width=device-width, target-densitydpi=160dpi, initial-scale=1.0')
+
+    meta(http-equiv='cleartype', content='on')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='description', content='#{appName}')
+
+    link(rel='stylesheet', href='/styles/main.css')
 
     //- Uncomment one of the lines below to pull in either your app JS, or some library JS.
     script(src='/scripts/app/main.app.js')
     //- script(src='/scripts/lib/demoLib.js') //- A project built lib script.
     //- script(src='/lib/foo/bar.min.js') //- A bower installed script.
 
-  body
-    h1 #{appName}
+  body(dir='ltr', class='#{bodyClass}')
 
-    h2 Because contact forms needn't be hard work
+    header.header
+      .container
+        h1.header__title #{appName}
 
-    ol
-      li Copy/paste our snippet into your web page
-      li Start receiving messages at your designated email address
+        .envelope.animated(id='snippet-envelope')
 
-    h2 Easy as 1, 2, 3
+          p Simply copy &amp; paste your unique code on to your page to start receiving messages through your contact form
 
-    p 1. Generate a code snippet and add it to the page containing your form:
+          div(id="snippet-generator")
+            input(placeholder='#{exampleEmail}', id="snippet-generator-email")
+            button(id="snippet-generator-button") Generate My Snippet
 
-    div.animated(id="snippet-envelope")
+          div(id="snippet-display")
+            pre
+              &lt;script type="text/javascript" src="https://app.howdyform.com/static/howdyClient.js?email=<span id="snippet-display-email">#{exampleEmail}</span>"&gt;&lt;/script&gt;
 
-      div(id="snippet-generator")
-        input(placeholder='#{exampleEmail}', id="snippet-generator-email")
-        button(id="snippet-generator-button") Generate My Snippet
 
-      div(id="snippet-display")
-        pre
-          &lt;script type="text/javascript" src="https://app.howdyform.com/static/howdyClient.js?email=<span id="snippet-display-email">#{exampleEmail}</span>"&gt;&lt;/script&gt;
+    section.benefits
+      .container
+        h2 A Designers Best Friend
 
-    p 2. Add a class of "howdy-form" to the form you want to run howdy on.
+        .benefit
+          h4.benefit__heading Auto validation
+          p.benefit__content Howdy comes with out-the-box validation on all common fields
 
-    p 3. That's it! Howdy will monitor and handle submissions to your form and send the results to your email inbox.
+        .benefit
+          h4.benefit__heading Easy customisation
+          p.benefit__content Specify your own validations without any programming
 
-    h2 A designer's best friend
+        .benefit
+          h4.benefit__heading Your own styles
+          p.benefit__content Integrate seamlessly with your site. Our code, your design
 
-    ul
-      li Loads of default sensible validations.
-      li Specify your own validations <b>without programming</b>.
-      li Integrate 100% seamlessly with your designs, no awkward styling issues.
-      li No sign-up necessary
-      li Performs flawlessly on all devices
+        .benefit
+          h4.benefit__heading No account
+          p.benefit__content Use Howdy without an account. No sign-up necessary
 
-    h2 Default validations
+        .benefit
+          h4.benefit__heading Tried &amp; tested
+          p.benefit__content Howdy performs flawlessly on all devices; desktop &amp; mobile
 
-    p Howdy validates fields with these names by default:
+        .benefit
+          h4.benefit__heading Something else
+          p.benefit__content Need a sixth here, ‘cause it’s just a lot nicer to have six
 
-    ul
-      li <span class="code">email</span>
-      li <span class="code">name</span>
-      li <span class="code">first_name</span>
-      li <span class="code">last_name</span>
-      li <span class="code">firstName</span>
-      li <span class="code">lastName</span>
-      li <span class="code">subject</span>
-      li <span class="code">topic</span>
-      li <span class="code">about</span>
-      li <span class="code">body</span>
-      li <span class="code">message</span>
-      li <span class="code">address</span>
-      li <span class="code">postcode</span>
-      li <span class="code">post_code</span>
-      li <span class="code">postCode</span>
-      li <span class="code">zipcode</span>
-      li <span class="code">zip_code</span>
-      li <span class="code">zipCode</span>
-      li <span class="code">tel</span>
-      li <span class="code">telephone</span>
-      li <span class="code">mobile</span>
-      li <span class="code">mob</span>
-      li <span class="code">age</span>
+    section.defaults
+      .container
+        h2 Automatic Validation
+        h3 Howdy validates against common fields by default
 
-    h2 Specifying your own validations
+        ul.defaults__list
+          li.defaults__list__item email
+          li.defaults__list__item name
+          li.defaults__list__item first_name
+          li.defaults__list__item last_name
+          li.defaults__list__item firstName
+          li.defaults__list__item lastName
+          li.defaults__list__item subject
+          li.defaults__list__item topic
+          li.defaults__list__item about
+          li.defaults__list__item body
+          li.defaults__list__item message
+          li.defaults__list__item address
+          li.defaults__list__item postcode
+          li.defaults__list__item post_code
+          li.defaults__list__item postCode
+          li.defaults__list__item zipcode
+          li.defaults__list__item zip_code
+          li.defaults__list__item zipCode
+          li.defaults__list__item tel
+          li.defaults__list__item telephone
+          li.defaults__list__item mobile
+          li.defaults__list__item mob
+          li.defaults__list__item age
 
-    p You can override any default validations or add your own custom fields by adding a <span class="code">data-howdy-validate=""</span> attribute to your input.</p>
 
-    p Supported validations are as follows:
+    section.customise
+      .container
+        h2 Custom Validation
+        h3 Override default validation by adding a <span>data-howdy-validate</span> attribute to your input
 
-    ul 
-      li <span class="code">none</span> - No validation on this input
-      li <span class="code">required</span> - Some value is required
-      li <span class="code">email</span> - An email address is required
-      li <span class="code">number</span> - A number is required
-      li <span class="code">noLetters</span> - No letters allowed in the input
+        .code
+          ul.code__list
+            li.code__list__item data-howdy-validate<span class='code__text'>=“</span>none<span class='code__text'>”</span> <span class='code__comment'>// No validation on this input</span>
+            li.code__list__item data-howdy-validate<span class='code__text'>=“</span>required<span class='code__text'>”</span> <span class='code__comment'>// Some value is required</span>
+            li.code__list__item data-howdy-validate<span class='code__text'>=“</span>email<span class='code__text'>”</span> <span class='code__comment'>// An email address in required</span>
+            li.code__list__item data-howdy-validate<span class='code__text'>=“</span>number<span class='code__text'>”</span> <span class='code__comment'>// A number is required</span>
+            li.code__list__item data-howdy-validate<span class='code__text'>=“</span>noLetters<span class='code__text'>”</span> <span class='code__comment'>// No letters allowed in the input</span>
+
+
+    footer.footer
+      .container
+
+        .footer__section
+          a(href='#') Report an issue
+
+        .footer__section
+          p Made with <span class='heart'>❤</span> by <a href='http://weareleaf.com'>Leaf</a>
+
+        .footer__section
+          a(href='#') Tweet

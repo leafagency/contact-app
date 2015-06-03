@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'leaf';
+  src:url('/fonts/leaf.eot?-tuqjd');
+  src:url('/fonts/leaf.eot?#iefix-tuqjd') format('embedded-opentype'),
+    url('/fonts/leaf.woff?-tuqjd') format('woff'),
+    url('/fonts/leaf.ttf?-tuqjd') format('truetype'),
+    url('/fonts/leaf.svg?-tuqjd#leaf') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+%icon,
+[class^="icon--"],
+[class*=" icon--"] {
+  color: #c0cccc;
+  font: {
+    family: 'leaf';
+    size: rem(36);
+    style: normal;
+    weight: normal;
+    variant: normal;
+  }
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
+
+.icon--logo:before {
+  content: "\e606";
+}
+
+.icon--leaf:before {
+  content: "\e607";
+}
+
+.icon--brand:before {
+  content: "\e600";
+}
+
+.icon--web:before {
+  content: "\e601";
+}
+
+.icon--mobile:before {
+  content: "\e602";
+}
+
+.icon--managers:before {
+  content: "\e603";
+}
+
+.icon--experience:before {
+  content: "\e604";
+}
+
+.icon--learning:before {
+  content: "\e605";
+}

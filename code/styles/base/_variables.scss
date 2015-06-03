@@ -1,0 +1,58 @@
+// Colours
+$dark-gray: #a6b7b7;
+$dark-purple: #544f73;
+$light-purple: #9d98a8;
+$medium-purple: #6848b8;
+$medium-gray: #999;
+$brand-purple: #9b74fc;
+$light-gray: #f8f8ff;
+
+// Border
+$base-border-colour: #e4ebeb;
+$base-border: 1px solid $base-border-colour;
+
+// Background Colours
+$base-background-colour: #fff;
+$secondary-background-colour: lighten($base-border-colour, 10%);
+
+// Buttons
+$base-button-background-colour: $brand-purple;
+
+// Font Colours
+$base-font-colour: #5a5469;
+$base-heading-colour: $brand-purple;
+
+// Font Sizes
+$base-font-size: 1em;
+$base-h1-size: 2em;
+$base-h2-size: 2em;
+$base-h3-size: 1.250em;
+$base-h4-size: 1em;
+
+// Font Stacks
+$font-family-display: 'Pacifico', Georgia, Times, 'Times New Roman', serif;
+$font-family-mono: 'Roboto Mono', 'Asap', Helvetica, Arial, sans-serif;
+$font-family-sans-serif: 'Asap', Helvetica, Arial, sans-serif;
+$font-family-serif: Georgia, Times, 'Times New Roman', serif;
+
+// Forms
+$input-background-colour: #fafcfc;
+$input-border-colour: #dee5e5;
+$input-border-width: 2px;
+$form-box-shadow: 0;
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($light-gray, $lightness: -5%, $alpha: -0.3);
+
+// Line Height
+$base-line-height: 1.7;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 5px;
+$base-scew-angle: 6deg;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 0.8;
+$base-z-index: 0;
+
+// Typography
+$base-font-family: $font-family-sans-serif;
+$heading-font-family: $font-family-sans-serif;

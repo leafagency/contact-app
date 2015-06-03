@@ -1,0 +1,28 @@
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.container {
+  @include container;
+
+}
+
+section {
+  @include clearfix;
+  padding: rem(20) 0;
+
+  @include susy-breakpoint($small-screen) {
+    padding: rem(40) 0;
+  }
+}

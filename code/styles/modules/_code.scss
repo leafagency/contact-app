@@ -1,0 +1,13 @@
+.code {
+  background-color: #35355e;
+  color: #d08770;
+  font-family: $font-family-mono;
+
+  &__text {
+    color: white;
+  }
+
+  &__comment {
+    color: #a3be88;
+  }
+}

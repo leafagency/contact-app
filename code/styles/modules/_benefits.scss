@@ -1,0 +1,53 @@
+.benefits {
+  background-color: $light-gray;
+  text-align: center;
+}
+
+.benefit {
+
+  @include susy-breakpoint($small-screen) {
+    @include span(6);
+    display: table;
+    margin-top: rem(80);
+
+    &:nth-of-type(-n+2) {
+      margin-top: 0;
+    }
+
+    &:nth-of-type(2n) {
+      @include last;
+    }
+  }
+
+  @include susy-breakpoint($medium-screen) {
+    @include span(4);
+
+    &:nth-of-type(-n+3) {
+      margin-top: 0;
+    }
+
+    &:nth-of-type(2n) {
+      @include span(4);
+    }
+
+    &:nth-of-type(3n) {
+      @include last;
+    }
+
+    &__description {
+      min-height: rem(210);
+    }
+  }
+
+  @include susy-breakpoint($large-screen) {
+    &__description {
+      min-height: rem(160);
+    }
+  }
+
+  @include susy-breakpoint($huge-screen) {
+    &__description {
+      min-height: rem(1);
+    }
+  }
+}

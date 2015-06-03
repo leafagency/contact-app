@@ -1,0 +1,14 @@
+.header {
+  background-color: $brand-purple;
+  text-align: center;
+
+  &__title {
+    color: $medium-purple;
+    font: {
+      family: $font-family-display;
+      size: rem(54);
+    }
+    margin: 0;
+    padding: rem(54) 0;
+  }
+}

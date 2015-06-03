@@ -1,0 +1,14 @@
+$susy: (
+  container: 760px,
+  columns: 12,
+  global-box-sizing: border-box,
+  gutters: 0.5
+);
+
+@include global-box-sizing(border-box);
+
+$small-screen: 768px;
+$medium-screen: 992px;
+$large-screen: 1200px;
+$huge-screen: 1280px;
+$breakpoint-no-query-fallbacks: true;
