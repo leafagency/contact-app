@@ -4,6 +4,8 @@
   color: #d08770;
   font-family: $font-family-mono;
   padding: rem(20);
+  text-align: left;
+  white-space: initial;
 
   &__list {
     list-style: none;
@@ -16,4 +18,8 @@
   &__comment {
     color: #a3be88;
   }
+}
+
+pre {
+  margin: 0;
 }

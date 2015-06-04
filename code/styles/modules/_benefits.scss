@@ -1,6 +1,9 @@
 .benefits {
   background-color: $light-gray;
+  margin-top: rem(-20);
+  position: relative;
   text-align: center;
+  z-index: 2;
 }
 
 .benefit {

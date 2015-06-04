@@ -1,8 +1,19 @@
+#snippet-display {
+  @include clearfix;
+  display: none;
+}
+
+.snippet {
+  @include push(1);
+  @include span(10);
+}
+
 .envelope {
   @include clearfix;
   background: white url('/images/dashes.svg') no-repeat center top;
   border-radius: 10px 10px 0 0;
-  padding: rem(54) 0;
+  padding: rem(54) 0 rem(74);
+  position: relative;
 
   &__lead {
     @include push(2);
@@ -14,5 +25,6 @@
   &__input-group {
     @include push(1);
     @include span(10);
+    display: table;
   }
 }

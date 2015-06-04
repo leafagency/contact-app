@@ -41,13 +41,14 @@ html(class='no-js', lang='en')
 
           p.envelope__lead Simply copy &amp; paste your unique code on to your page to start receiving messages through your contact form
 
-          .envelope__input-group(id="snippet-generator")
-            input.envelope__input(placeholder='#{exampleEmail}', id="snippet-generator-email")
-            button.envelope__button(id="snippet-generator-button") Generate My Snippet
+          .envelope__input-group(id='snippet-generator')
+            input.envelope__input(placeholder='#{exampleEmail}', id='snippet-generator-email')
+            button.envelope__button(id='snippet-generator-button') Generate My Snippet
 
-          div(id="snippet-display")
+          .snippet(id='snippet-display')
             pre
-              &lt;script type="text/javascript" src="https://app.howdyform.com/static/howdyClient.js?email=<span id="snippet-display-email">#{exampleEmail}</span>"&gt;&lt;/script&gt;
+              .code
+                &lt;script type="text/javascript" src="https://app.howdyform.com/static/howdyClient.js?email=<span id="snippet-display-email">#{exampleEmail}</span>"&gt;&lt;/script&gt;
 
 
     section.benefits
