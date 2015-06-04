@@ -3,5 +3,8 @@
   "version": "0.0.1",
   "main": "/style/main.css",
   "dependencies": {
+    "normalize-scss": "~3.0.3",
+    "susy": "~2.2.5",
+    "bourbon": "~4.2.3"
   }
 }
