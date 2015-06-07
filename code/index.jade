@@ -1,6 +1,7 @@
 block prepend vars
   -var appName = 'Howdy'
   -var exampleEmail = 'your-email-here@example.com'
+  -var slogan = "Designer friendly contact forms"
 
 doctype html
 //if lt IE 7
@@ -14,7 +15,7 @@ html(class='no-js', lang='en')
   // <![endif]
   head
     meta(charset='utf-8')
-    title #{appName}
+    title #{appName} &bull; #{slogan}
 
     meta(name='HandheldFriendly', content='True')
     meta(name='MobileOptimized', content='320')
@@ -26,10 +27,7 @@ html(class='no-js', lang='en')
 
     link(rel='stylesheet', href='/styles/main.css')
 
-    //- Uncomment one of the lines below to pull in either your app JS, or some library JS.
     script(src='/scripts/app/main.app.js')
-    //- script(src='/scripts/lib/demoLib.js') //- A project built lib script.
-    //- script(src='/lib/foo/bar.min.js') //- A bower installed script.
 
   body(dir='ltr', class='#{bodyClass}')
 
@@ -37,15 +35,23 @@ html(class='no-js', lang='en')
       .container
         h1.header__title #{appName}
 
+        h2 #{slogan}
+
+        p Contact forms a constant pain in the neck for you and your clients? Howdy handles form validation and submission, delivering the results straight to your email inbox. <b>No programming required.</b>
+
         .envelope.animated(id='snippet-envelope')
 
-          p.envelope__lead Simply copy &amp; paste your unique code on to your page to start receiving messages through your contact form
-
           .envelope__input-group(id='snippet-generator')
+
+            p.envelope__lead Enter your email address to generate your Howdy code snippet below:
+
             input.envelope__input(placeholder='#{exampleEmail}', id='snippet-generator-email')
             button.envelope__button(id='snippet-generator-button') Generate My Snippet
 
           .snippet(id='snippet-display')
+
+            p.envelope__lead Copy &amp; paste this snippet onto the page with your form on to start receiving submissions right to your inbox:
+
             pre
               .code
                 &lt;script type="text/javascript" src="https://app.howdyform.com/static/howdyClient.js?email=<span id="snippet-display-email">#{exampleEmail}</span>"&gt;&lt;/script&gt;
@@ -56,28 +62,28 @@ html(class='no-js', lang='en')
         h2 A Designers Best Friend
 
         .benefit
-          h4.benefit__heading Auto validation
-          p.benefit__content Howdy comes with out-the-box validation on all common fields
+          h4.benefit__heading Automatic validations
+          p.benefit__content Howdy comes with out-the-box validation on all common fields.
 
         .benefit
-          h4.benefit__heading Easy customisation
-          p.benefit__content Specify your own validations without any programming
+          h4.benefit__heading Custom validations
+          p.benefit__content Specify your own validations with data attributes, no programming.
 
         .benefit
-          h4.benefit__heading Your own styles
-          p.benefit__content Integrate seamlessly with your site. Our code, your design
+          h4.benefit__heading Use your own designs
+          p.benefit__content Integrates seamlessly with your designs. Just drop in our code snippet on the page.
 
         .benefit
-          h4.benefit__heading No account
-          p.benefit__content Use Howdy without an account. No sign-up necessary
+          h4.benefit__heading No account required
+          p.benefit__content We only need to know where to send your emails, so we only ask for an email address.
 
         .benefit
           h4.benefit__heading Tried &amp; tested
-          p.benefit__content Howdy performs flawlessly on all devices; desktop &amp; mobile
+          p.benefit__content Howdy performs flawlessly on all browsers and devices; desktop &amp; mobile.
 
         .benefit
-          h4.benefit__heading Something else
-          p.benefit__content Need a sixth here, ‘cause it’s just a lot nicer to have six
+          h4.benefit__heading Absolute privacy
+          p.benefit__content There's no need for us to store your data, so we don't. Simple.
 
     section.defaults
       .container

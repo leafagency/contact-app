@@ -16,8 +16,7 @@
   position: relative;
 
   &__lead {
-    @include push(2);
-    @include span(8);
+    @include span(12);
     color: #5a5469;
     font-size: rem(20);
   }
