@@ -10,6 +10,18 @@
 
   &__list {
     list-style: none;
+
+    &__item {
+      margin-top: rem(20);
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      @include susy-breakpoint($small-screen) {
+        margin-top: 0;
+      }
+    }
   }
 
   &__text {

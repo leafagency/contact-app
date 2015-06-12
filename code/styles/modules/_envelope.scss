@@ -29,17 +29,23 @@
   }
 
   &__input {
-    border-radius: $base-border-radius 0 0 $base-border-radius;
-    border-right: none;
-    float: left;
     padding-bottom: rem(15);
     padding-top: rem(14);
-    width: calc(100% - 186px)
+
+    @include susy-breakpoint($small-screen) {
+      border-right: none;
+      border-radius: $base-border-radius 0 0 $base-border-radius;
+      float: left;
+      width: calc(100% - 186px)
+    }
   }
 
   &__button {
-    border-radius: 0 $base-border-radius $base-border-radius 0;
-    float: right;
-    width: rem(186);
+
+    @include susy-breakpoint($small-screen) {
+      border-radius: 0 $base-border-radius $base-border-radius 0;
+      float: right;
+      width: rem(186);
+    }
   }
 }
