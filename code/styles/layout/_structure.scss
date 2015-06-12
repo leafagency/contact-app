@@ -15,7 +15,11 @@ body {
 
 .container {
   @include container;
+  padding: 0 rem(20);
 
+  @include susy-breakpoint($small-screen) {
+    padding: 0;
+  }
 }
 
 section {

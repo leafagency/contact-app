@@ -9,9 +9,22 @@
     color: $medium-purple;
     font: {
       family: $font-family-display;
-      size: rem(54);
+      size: rem(48);
     }
     margin: 0;
     padding: rem(54) 0;
+  }
+
+  &__slogan {
+    color: white;
+  }
+
+  &__intro {
+    color: #efe8ff;
+    margin-top: rem(24);
+
+    span {
+      color: #f3eddd;
+    }
   }
 }

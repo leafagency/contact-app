@@ -1,8 +1,12 @@
 .defaults {
 
   &__list {
-    column-count: 5;
+    column-count: 2;
     column-gap: rem(30);
+
+    @include susy-breakpoint($small-screen) {
+      column-count: 5;
+    }
 
     &__item {
       background: url('/images/bullet.svg') no-repeat 0 rem(7);

@@ -1,4 +1,5 @@
 .code {
+  @include clearfix;
   background-color: #35355e;
   border-radius: 5px;
   color: #d08770;

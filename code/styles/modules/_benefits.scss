@@ -12,10 +12,6 @@
     @include span(6);
     margin-top: rem(50);
 
-    &:nth-of-type(-n+2) {
-      //margin-top: 0;
-    }
-
     &:nth-of-type(2n) {
       @include last;
     }
@@ -23,10 +19,6 @@
 
   @include susy-breakpoint($medium-screen) {
     @include span(4);
-
-    &:nth-of-type(-n+3) {
-      //margin-top: 0;
-    }
 
     &:nth-of-type(2n) {
       @include span(4);

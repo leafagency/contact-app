@@ -19,11 +19,27 @@
     @include span(12);
     color: #5a5469;
     font-size: rem(20);
+    margin-bottom: rem(20);
   }
 
   &__input-group {
     @include push(1);
     @include span(10);
     display: table;
+  }
+
+  &__input {
+    border-radius: $base-border-radius 0 0 $base-border-radius;
+    border-right: none;
+    float: left;
+    padding-bottom: rem(15);
+    padding-top: rem(14);
+    width: calc(100% - 186px)
+  }
+
+  &__button {
+    border-radius: 0 $base-border-radius $base-border-radius 0;
+    float: right;
+    width: rem(186);
   }
 }

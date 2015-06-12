@@ -20,6 +20,15 @@
     color: #e1d5ff;
     margin: 0;
   }
+
+  &__link:hover {
+    color: lighten(#e1d5ff, 5%);
+  }
+
+  &__share-button {
+    position: relative !important;
+    top: rem(4);
+  }
 }
 
 .heart {
