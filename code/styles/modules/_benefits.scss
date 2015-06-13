@@ -8,6 +8,14 @@
 
 .benefit {
 
+  &:first-of-type {
+    margin-top: rem(40);
+
+    @include susy-breakpoint($small-screen) {
+      margin-top: rem(50);
+    }
+  }
+
   @include susy-breakpoint($small-screen) {
     @include span(6);
     margin-top: rem(50);

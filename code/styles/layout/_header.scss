@@ -21,10 +21,15 @@
 
   &__intro {
     color: #efe8ff;
-    margin-top: rem(24);
+    margin-top: rem(18);
+
+    @include susy-breakpoint($small-screen) {
+      @include push(2);
+      @include span(8);
+    }
 
     span {
-      color: #f3eddd;
+      color: white;
     }
   }
 }

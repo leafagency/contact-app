@@ -12,7 +12,14 @@
     list-style: none;
 
     &__item {
+      display: table;
+      width: 100%;
       margin-top: rem(20);
+
+      @include susy-breakpoint($small-screen) {
+        display: block;
+        width: auto;
+      }
 
       &:first-child {
         margin-top: 0;
@@ -30,6 +37,11 @@
 
   &__comment {
     color: #a3be88;
+    display: table-caption;
+
+    @include susy-breakpoint($small-screen) {
+      display: initial;
+    }
   }
 }
 

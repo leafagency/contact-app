@@ -12,6 +12,7 @@
   @include clearfix;
   background: white url('/images/dashes.svg') no-repeat center top;
   border-radius: 10px 10px 0 0;
+  clear: both;
   padding: rem(54) 0 rem(74);
   position: relative;
 
@@ -22,7 +23,7 @@
     margin-bottom: rem(20);
   }
 
-  &__input-group {
+  &__email-capture {
     @include push(1);
     @include span(10);
     display: table;

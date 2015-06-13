@@ -35,24 +35,18 @@ html(class='no-js', lang='en')
     header.header
       .container
         h1.header__title #{appName}
-
         h2.header__slogan #{slogan}
-
         p.header__intro Contact forms a constant pain in the neck for you and your clients? Howdy handles form validation and submission, delivering the results straight to your email inbox. <span>No programming required.</span>
 
         .envelope.animated(id='snippet-envelope')
 
-          .envelope__input-group(id='snippet-generator')
-
+          .envelope__email-capture(id='snippet-generator')
             p.envelope__lead Enter your email address to generate your Howdy code snippet:
-
             input.envelope__input(placeholder='#{exampleEmail}', id='snippet-generator-email')
             button.envelope__button(id='snippet-generator-button') Generate My Snippet
 
           .snippet(id='snippet-display')
-
             p.envelope__lead Copy &amp; paste this snippet onto the page with your form on to start receiving submissions right to your inbox:
-
             pre
               .code
                 &lt;script type="text/javascript" src="https://app.howdyform.com/static/howdyClient.js?email=<span id="snippet-display-email">#{exampleEmail}</span>"&gt;&lt;/script&gt;
@@ -124,7 +118,7 @@ html(class='no-js', lang='en')
 
         .code
           ul.code__list
-            li.code__list__item data-howdy-validate<span class='code__text'>=“</span>none<span class='code__text'>”</span> <span class='code__comment'>// No validation on this input</span>
+            li.code__list__item <span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>none<span class='code__text'>”</span></span> <span class='code__comment'>// No validation on this input</span>
             li.code__list__item data-howdy-validate<span class='code__text'>=“</span>required<span class='code__text'>”</span> <span class='code__comment'>// Some value is required</span>
             li.code__list__item data-howdy-validate<span class='code__text'>=“</span>email<span class='code__text'>”</span> <span class='code__comment'>// An email address in required</span>
             li.code__list__item data-howdy-validate<span class='code__text'>=“</span>number<span class='code__text'>”</span> <span class='code__comment'>// A number is required</span>

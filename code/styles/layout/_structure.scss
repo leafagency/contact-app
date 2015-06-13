@@ -17,14 +17,14 @@ body {
   @include container;
   padding: 0 rem(20);
 
-  @include susy-breakpoint($small-screen) {
+  @include susy-breakpoint($medium-screen) {
     padding: 0;
   }
 }
 
 section {
   @include clearfix;
-  padding: rem(20) 0;
+  padding: rem(40) 0;
 
   @include susy-breakpoint($small-screen) {
     padding: rem(80) 0;
