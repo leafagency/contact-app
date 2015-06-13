@@ -9,8 +9,9 @@
       .envelope__email-capture(id='snippet-generator')
         p.envelope__lead Enter your email address to generate your Howdy code snippet:
 
-        input.envelope__input(placeholder='#{exampleEmail}', id='snippet-generator-email')
-        button.envelope__button(id='snippet-generator-button') Generate My Snippet
+        .animated(id='snippet-generator-inputs')
+          input.envelope__input(placeholder='#{exampleEmail}', id='snippet-generator-email')
+          button.envelope__button(id='snippet-generator-button') Generate My Snippet
 
       .snippet(id='snippet-display')
         p.envelope__lead Copy &amp; paste this snippet onto the page with your form on to start receiving submissions right to your inbox:
