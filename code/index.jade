@@ -1,56 +1,9 @@
+extends pages/base/_base
+
 block prepend vars
-  -var appName = 'Howdy'
-  -var exampleEmail = 'your-email-here@example.com'
-  -var slogan = 'Designer friendly contact forms'
-  -var shareMessage = 'Check out Howdy. It handles form validation. No programming required.'
+  -var bodyClass = 'home-page'
 
-doctype html
-//if lt IE 7
-    <html class='no-js lt-ie9 lt-ie8 lt-ie7'>
-//if IE 7
-    <html class='no-js lt-ie9 lt-ie8'>
-//if IE 8
-    <html class='no-js lt-ie9'>
-// [if gt IE 8] <!
-html(class='no-js', lang='en')
-  // <![endif]
-  head
-    meta(charset='utf-8')
-    title #{appName} &bull; #{slogan}
-
-    meta(name='HandheldFriendly', content='True')
-    meta(name='MobileOptimized', content='320')
-    meta(name='viewport', content='width=device-width, target-densitydpi=160dpi, initial-scale=1.0')
-
-    meta(http-equiv='cleartype', content='on')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-    meta(name='description', content='#{appName}')
-
-    link(rel='stylesheet', href='/styles/main.css')
-
-    script(src='/scripts/app/main.app.js')
-
-  body(dir='ltr', class='#{bodyClass}')
-
-    header.header
-      .container
-        h1.header__title #{appName}
-        h2.header__slogan #{slogan}
-        p.header__intro Contact forms a constant pain in the neck for you and your clients? Howdy handles form validation and submission, delivering the results straight to your email inbox. <span>No programming required.</span>
-
-        .envelope.animated(id='snippet-envelope')
-
-          .envelope__email-capture(id='snippet-generator')
-            p.envelope__lead Enter your email address to generate your Howdy code snippet:
-            input.envelope__input(placeholder='#{exampleEmail}', id='snippet-generator-email')
-            button.envelope__button(id='snippet-generator-button') Generate My Snippet
-
-          .snippet(id='snippet-display')
-            p.envelope__lead Copy &amp; paste this snippet onto the page with your form on to start receiving submissions right to your inbox:
-            pre
-              .code
-                &lt;script type="text/javascript" src="https://app.howdyform.com/static/howdyClient.js?email=<span id="snippet-display-email">#{exampleEmail}</span>"&gt;&lt;/script&gt;
-
+block content
 
     section.benefits
       .container
@@ -117,28 +70,14 @@ html(class='no-js', lang='en')
     section.customise
       .container
         h2 Custom Validation
-        h3 Override default validation or validate your custom fields by adding a <span>data-howdy-validate</span> attribute to your input
+        h3 Validate your custom fields by adding a <span>data-howdy-validate</span> attribute to your input
 
         .code
-          ul.code__list
-            li.code__list__item <span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>none<span class='code__text'>”</span></span> <span class='code__comment'>// No validation on this input</span>
-            li.code__list__item data-howdy-validate<span class='code__text'>=“</span>required<span class='code__text'>”</span> <span class='code__comment'>// Some value is required</span>
-            li.code__list__item data-howdy-validate<span class='code__text'>=“</span>email<span class='code__text'>”</span> <span class='code__comment'>// An email address in required</span>
-            li.code__list__item data-howdy-validate<span class='code__text'>=“</span>number<span class='code__text'>”</span> <span class='code__comment'>// A number is required</span>
-            li.code__list__item data-howdy-validate<span class='code__text'>=“</span>date<span class='code__text'>”</span> <span class='code__comment'>// A date is required</span>
-            li.code__list__item data-howdy-validate<span class='code__text'>=“</span>tel<span class='code__text'>”</span> <span class='code__comment'>// No letters allowed in the input</span>
-
-    footer.footer
-      .container
-
-        .footer__section
-          a.footer__link(href='mailto:hello@weareleaf.com') Report an issue
-
-        .footer__section
-          p.footer__text Made with <span class='heart'>❤</span> by <a class='footer__link' href='http://weareleaf.com' target='_blank'>Leaf</a>
-
-        .footer__section
-          a.footer__share-button.twitter-share-button(href='https://twitter.com/share', data-url='http://www.howdyform.com/', data-text='#{shareMessage}', data-via='leafagency') Tweet
-
-          script(type='text/javascript').
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+          .code__wrapper
+            ul.code__list
+              li.code__list__item <span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>none<span class='code__text'>”</span></span> <span class='code__comment'>// No validation on this input</span>
+              li.code__list__item data-howdy-validate<span class='code__text'>=“</span>required<span class='code__text'>”</span> <span class='code__comment'>// Some value is required</span>
+              li.code__list__item data-howdy-validate<span class='code__text'>=“</span>email<span class='code__text'>”</span> <span class='code__comment'>// An email address in required</span>
+              li.code__list__item data-howdy-validate<span class='code__text'>=“</span>number<span class='code__text'>”</span> <span class='code__comment'>// A number is required</span>
+              li.code__list__item data-howdy-validate<span class='code__text'>=“</span>date<span class='code__text'>”</span> <span class='code__comment'>// A date is required</span>
+              li.code__list__item data-howdy-validate<span class='code__text'>=“</span>tel<span class='code__text'>”</span> <span class='code__comment'>// No letters allowed in the input</span>

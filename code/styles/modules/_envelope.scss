@@ -30,6 +30,7 @@
   }
 
   &__input {
+    height: rem(51);
     padding-bottom: rem(15);
     padding-top: rem(14);
 
@@ -42,6 +43,7 @@
   }
 
   &__button {
+    height: rem(51);
 
     @include susy-breakpoint($small-screen) {
       border-radius: 0 $base-border-radius $base-border-radius 0;
