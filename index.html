@@ -10,7 +10,7 @@
   <!-- <![endif]-->
   <head>
     <meta charset="utf-8">
-    <title>Howdy</title>
+    <title>Howdy &bull; Designer friendly contact forms</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
@@ -24,13 +24,16 @@
     <header class="header">
       <div class="container">
         <h1 class="header__title">Howdy</h1>
+        <h2 class="header__slogan">Designer friendly contact forms</h2>
+        <p class="header__intro">Contact forms a constant pain in the neck for you and your clients? Howdy handles form validation and submission, delivering the results straight to your email inbox. <span>No programming required.</span></p>
         <div id="snippet-envelope" class="envelope animated">
-          <p class="envelope__lead">Simply copy &amp; paste your unique code on to your page to start receiving messages through your contact form</p>
-          <div id="snippet-generator" class="envelope__input-group">
+          <div id="snippet-generator" class="envelope__email-capture">
+            <p class="envelope__lead">Enter your email address to generate your Howdy code snippet:</p>
             <input placeholder="your-email-here@example.com" id="snippet-generator-email" class="envelope__input">
             <button id="snippet-generator-button" class="envelope__button">Generate My Snippet</button>
           </div>
           <div id="snippet-display" class="snippet">
+            <p class="envelope__lead">Copy &amp; paste this snippet onto the page with your form on to start receiving submissions right to your inbox:</p>
             <pre>
               <div class="code">&lt;script type="text/javascript" src="https://app.howdyform.com/static/howdyClient.js?email=<span id="snippet-display-email">your-email-here@example.com</span>"&gt;&lt;/script&gt;</div></pre>
           </div>
@@ -41,28 +44,28 @@
       <div class="container">
         <h2>A Designers Best Friend</h2>
         <div class="benefit">
-          <h4 class="benefit__heading">Auto validation</h4>
-          <p class="benefit__content">Howdy comes with out-the-box validation on all common fields</p>
+          <h4 class="benefit__heading">Automatic validations</h4>
+          <p class="benefit__content">Howdy comes with out-the-box validation on all common fields.</p>
         </div>
         <div class="benefit">
-          <h4 class="benefit__heading">Easy customisation</h4>
-          <p class="benefit__content">Specify your own validations without any programming</p>
+          <h4 class="benefit__heading">Custom validations</h4>
+          <p class="benefit__content">Specify your own validations with data attributes, no programming.</p>
         </div>
         <div class="benefit">
-          <h4 class="benefit__heading">Your own styles</h4>
-          <p class="benefit__content">Integrate seamlessly with your site. Our code, your design</p>
+          <h4 class="benefit__heading">Use your own designs</h4>
+          <p class="benefit__content">Integrates seamlessly with your designs. Just drop in our codeq.</p>
         </div>
         <div class="benefit">
-          <h4 class="benefit__heading">No account</h4>
-          <p class="benefit__content">Use Howdy without an account. No sign-up necessary</p>
+          <h4 class="benefit__heading">No account required</h4>
+          <p class="benefit__content">We only need to know where to send your emails, so we only ask for an email address.</p>
         </div>
         <div class="benefit">
           <h4 class="benefit__heading">Tried &amp; tested</h4>
-          <p class="benefit__content">Howdy performs flawlessly on all devices; desktop &amp; mobile</p>
+          <p class="benefit__content">Howdy performs flawlessly on all browsers and devices; desktop &amp; mobile.</p>
         </div>
         <div class="benefit">
-          <h4 class="benefit__heading">Something else</h4>
-          <p class="benefit__content">Need a sixth here, ‘cause it’s just a lot nicer to have six</p>
+          <h4 class="benefit__heading">Absolute privacy</h4>
+          <p class="benefit__content">There's no need for us to store your data, so we don't. Simple.</p>
         </div>
       </div>
     </section>
@@ -94,6 +97,9 @@
           <li class="defaults__list__item">mobile</li>
           <li class="defaults__list__item">mob</li>
           <li class="defaults__list__item">age</li>
+          <li class="defaults__list__item">dob</li>
+          <li class="defaults__list__item">date_of_birth</li>
+          <li class="defaults__list__item">dateOfBirth</li>
         </ul>
       </div>
     </section>
@@ -103,22 +109,25 @@
         <h3>Override default validation by adding a <span>data-howdy-validate</span> attribute to your input</h3>
         <div class="code">
           <ul class="code__list">
-            <li class="code__list__item">data-howdy-validate<span class='code__text'>=“</span>none<span class='code__text'>”</span> <span class='code__comment'>// No validation on this input</span></li>
+            <li class="code__list__item"><span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>none<span class='code__text'>”</span></span> <span class='code__comment'>// No validation on this input</span></li>
             <li class="code__list__item">data-howdy-validate<span class='code__text'>=“</span>required<span class='code__text'>”</span> <span class='code__comment'>// Some value is required</span></li>
             <li class="code__list__item">data-howdy-validate<span class='code__text'>=“</span>email<span class='code__text'>”</span> <span class='code__comment'>// An email address in required</span></li>
             <li class="code__list__item">data-howdy-validate<span class='code__text'>=“</span>number<span class='code__text'>”</span> <span class='code__comment'>// A number is required</span></li>
-            <li class="code__list__item">data-howdy-validate<span class='code__text'>=“</span>noLetters<span class='code__text'>”</span> <span class='code__comment'>// No letters allowed in the input</span></li>
+            <li class="code__list__item">data-howdy-validate<span class='code__text'>=“</span>date<span class='code__text'>”</span> <span class='code__comment'>// A date is required</span></li>
+            <li class="code__list__item">data-howdy-validate<span class='code__text'>=“</span>tel<span class='code__text'>”</span> <span class='code__comment'>// No letters allowed in the input</span></li>
           </ul>
         </div>
       </div>
     </section>
     <footer class="footer">
       <div class="container">
-        <div class="footer__section"><a href="#" class="footer__link">Report an issue</a></div>
+        <div class="footer__section"><a href="mailto:hello@weareleaf.com" class="footer__link">Report an issue</a></div>
         <div class="footer__section">
-          <p class="footer__text">Made with <span class='heart'>❤</span> by <a class='footer__link' href='http://weareleaf.com'>Leaf</a></p>
+          <p class="footer__text">Made with <span class='heart'>❤</span> by <a class='footer__link' href='http://weareleaf.com' target='_blank'>Leaf</a></p>
         </div>
-        <div class="footer__section"><a href="#" class="footer__link">Tweet</a></div>
+        <div class="footer__section"><a href="https://twitter.com/share" data-url="http://www.howdyform.com/" data-text="Check out Howdy. It handles form validation. No programming required." data-via="leafagency" class="footer__share-button twitter-share-button">Tweet</a>
+          <script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
       </div>
     </footer>
   </body>
