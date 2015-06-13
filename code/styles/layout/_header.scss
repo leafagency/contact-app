@@ -1,6 +1,8 @@
 .header {
+  @include transition(max-height 200ms ease);
   background-color: $brand-purple;
   overflow: hidden;
+  max-height: 1000px;
   position: relative;
   text-align: center;
   z-index: 1;
@@ -13,6 +15,15 @@
     }
     margin: 0;
     padding: rem(54) 0;
+
+    &::after {
+      content: 'BETA';
+      font: {
+        family: $font-family-sans-serif;
+        size: rem(15);
+      }
+      position: absolute;
+    }
   }
 
   &__slogan {
