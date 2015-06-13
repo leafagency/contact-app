@@ -21,7 +21,7 @@
 
   &__intro {
     color: #efe8ff;
-    margin-top: rem(18);
+    margin: rem(24) 0 rem(48);
 
     @include susy-breakpoint($small-screen) {
       @include push(2);

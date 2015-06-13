@@ -16,7 +16,7 @@ html(class='no-js', lang='en')
   // <![endif]
   head
     meta(charset='utf-8')
-    title #{appName} &bull; #{slogan}
+    title #{appName} - #{slogan}
 
     meta(name='HandheldFriendly', content='True')
     meta(name='MobileOptimized', content='320')
@@ -42,6 +42,7 @@ html(class='no-js', lang='en')
 
           .envelope__email-capture(id='snippet-generator')
             p.envelope__lead Enter your email address to generate your Howdy code snippet:
+
             input.envelope__input(placeholder='#{exampleEmail}', id='snippet-generator-email')
             button.envelope__button(id='snippet-generator-button') Generate My Snippet
 
@@ -49,7 +50,8 @@ html(class='no-js', lang='en')
             p.envelope__lead Copy &amp; paste this snippet onto the page with your form on to start receiving submissions right to your inbox:
             pre
               .code
-                &lt;script type="text/javascript" src="https://app.howdyform.com/static/howdyClient.js?email=<span id="snippet-display-email">#{exampleEmail}</span>"&gt;&lt;/script&gt;
+                .code__wrapper
+                  <span class='code__text'>&lt;</span><span class='code__element'>script </span><span class='code__attribute'>type</span><span class='code__text'>="</span><span class='code__value'>text/javascript</span><span class='code__text'>" </span><span class='code__attribute'>src</span><span class='code__text'>="</span><span class='code__value'>https://app.howdyform.com/static/howdyClient.js?email=<span id="snippet-display-email">#{exampleEmail}</span></span><span class='code__text'>"&gt;&lt;/</span><span class='code__element'>script</span><span class='code__text'>&gt;</span>
 
 
     section.benefits
@@ -117,12 +119,13 @@ html(class='no-js', lang='en')
         h3 Override default validation by adding a <span>data-howdy-validate</span> attribute to your input
 
         .code
-          ul.code__list
-            li.code__list__item <span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>none<span class='code__text'>”</span></span> <span class='code__comment'>// No validation on this input</span>
-            li.code__list__item data-howdy-validate<span class='code__text'>=“</span>required<span class='code__text'>”</span> <span class='code__comment'>// Some value is required</span>
-            li.code__list__item data-howdy-validate<span class='code__text'>=“</span>email<span class='code__text'>”</span> <span class='code__comment'>// An email address in required</span>
-            li.code__list__item data-howdy-validate<span class='code__text'>=“</span>number<span class='code__text'>”</span> <span class='code__comment'>// A number is required</span>
-            li.code__list__item data-howdy-validate<span class='code__text'>=“</span>noLetters<span class='code__text'>”</span> <span class='code__comment'>// No letters allowed in the input</span>
+          .code__wrapper
+            ul.code__list
+              li.code__list__item <span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>none<span class='code__text'>”</span></span> <span class='code__comment'>// No validation on this input</span>
+              li.code__list__item data-howdy-validate<span class='code__text'>=“</span>required<span class='code__text'>”</span> <span class='code__comment'>// Some value is required</span>
+              li.code__list__item data-howdy-validate<span class='code__text'>=“</span>email<span class='code__text'>”</span> <span class='code__comment'>// Email address is required</span>
+              li.code__list__item data-howdy-validate<span class='code__text'>=“</span>number<span class='code__text'>”</span> <span class='code__comment'>// A number is required</span>
+              li.code__list__item data-howdy-validate<span class='code__text'>=“</span>noLetters<span class='code__text'>”</span> <span class='code__comment'>// No letters allowed</span>
 
 
     footer.footer

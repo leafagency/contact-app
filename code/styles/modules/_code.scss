@@ -1,12 +1,35 @@
+pre {
+  clear: both;
+  margin: 0;
+  white-space: initial;
+}
+
 .code {
   @include clearfix;
   background-color: #35355e;
   border-radius: 5px;
   color: #d08770;
-  font-family: $font-family-mono;
-  padding: rem(20);
+  font: {
+    family: $font-family-mono;
+    size: rem(14);
+  }
+  overflow-y: auto;
+
   text-align: left;
   white-space: initial;
+
+  @include susy-breakpoint($small-screen) {
+    font-size: rem(16);
+  }
+
+  &__wrapper {
+    display: table;
+    padding: rem(13);
+
+    @include susy-breakpoint($small-screen) {
+      padding: rem(20);
+    }
+  }
 
   &__list {
     list-style: none;
@@ -31,6 +54,18 @@
     }
   }
 
+  &__element {
+    color: #bf6167;
+  }
+
+  &__attribute {
+    color: #d08770;
+  }
+
+  &__value {
+    color: #a3be88;
+  }
+
   &__text {
     color: white;
   }
@@ -43,9 +78,4 @@
       display: initial;
     }
   }
-}
-
-pre {
-  display:block;
-  margin: 0;
 }
