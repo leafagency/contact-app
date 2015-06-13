@@ -1,0 +1,44 @@
+.jumbotron {
+  background-color: $brand-purple;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+
+  &__title {
+    color: $medium-purple;
+    font: {
+      family: $font-family-display;
+      size: rem(48);
+    }
+    margin: 0;
+    padding: rem(54) 0;
+
+    &::after {
+      content: 'BETA';
+      font: {
+        family: $font-family-sans-serif;
+        size: rem(15);
+      }
+      position: absolute;
+    }
+  }
+
+  &__slogan {
+    color: white;
+  }
+
+  &__intro {
+    color: #efe8ff;
+    margin: rem(24) 0 rem(48);
+
+    @include susy-breakpoint($small-screen) {
+      @include push(2);
+      @include span(8);
+    }
+
+    span {
+      color: white;
+    }
+  }
+}
