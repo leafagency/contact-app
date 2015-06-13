@@ -25,6 +25,18 @@
     color: lighten(#e1d5ff, 5%);
   }
 
+  &__link--leaf {
+    @extend .footer__link;
+
+    &::before {
+      content: 'By ';
+
+      @include susy-breakpoint($small-screen) {
+        content: '';
+      }
+    }
+  }
+
   &__share-button {
     position: relative !important;
     top: rem(4);
@@ -33,4 +45,12 @@
 
 .heart {
   color: $medium-purple;
+}
+
+.additional-content {
+  display: none;
+
+  @include susy-breakpoint($small-screen) {
+    display: initial;
+  }
 }
