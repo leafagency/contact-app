@@ -1,0 +1,43 @@
+.header {
+  background-color: $brand-purple;
+  line-height: 88px;
+  height: 88px;
+
+  &__logo {
+    color: $medium-purple;
+    font: {
+      family: $font-family-display;
+      size: rem(32);
+    }
+    position: relative;
+    top: rem(-2);
+  }
+
+  &__section {
+    @include span(6);
+
+    &:nth-of-type(2) {
+      @include last;
+      text-align: right;
+    }
+
+    @include susy-breakpoint($small-screen) {
+      @include span(4);
+
+      &:nth-of-type(2) {
+        @include span(4);
+        text-align: center;
+      }
+    }
+  }
+
+  &__link,
+  &__text {
+    color: #e1d5ff;
+    margin: 0;
+  }
+
+  &__link:hover {
+    color: lighten(#e1d5ff, 5%);
+  }
+}
