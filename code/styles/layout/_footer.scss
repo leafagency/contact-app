@@ -51,6 +51,6 @@
   display: none;
 
   @include susy-breakpoint($small-screen) {
-    display: initial;
+    display: inline;
   }
 }

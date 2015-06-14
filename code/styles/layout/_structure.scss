@@ -27,10 +27,6 @@ body {
   }
 }
 
-.content-wrapper {
-  flex: 1;
-}
-
 section {
   @include clearfix;
   padding: rem(40) 0;
