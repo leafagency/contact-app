@@ -38,6 +38,7 @@ textarea {
   border-radius: $base-border-radius;
   box-shadow: $form-box-shadow;
   box-sizing: border-box;
+  display: inherit;
   font-family: $base-font-family;
   margin-bottom: $base-spacing / 2;
   padding: $base-spacing / 2.5;
@@ -84,20 +85,4 @@ select {
   max-width: 100%;
   padding: $base-spacing / 4.05 $base-spacing / 2.5;
   width: 100%;
-}
-
-span.error {
-  color:#c00;
-  display:block;
-  margin: {
-    bottom: $base-spacing / 2;
-    top: $base-spacing / 2;
-  }
-  padding: 0 $base-spacing / 3;
-}
-
-input, textarea, select {
-  &.erroneous {
-    background: #fcc;
-  }
 }

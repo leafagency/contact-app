@@ -1,0 +1,16 @@
+input, textarea, select {
+  &.erroneous {
+    background-color: #ffeffe;
+    border-color: #dfbedd;
+  }
+}
+
+span.error {
+  background-color: #FF6F6F;
+  border-radius: 4px;
+  color: white;
+  display: inline-block;
+  margin-bottom: rem(15);
+  padding: rem(4) rem(8);
+  font-size: rem(14);
+}
