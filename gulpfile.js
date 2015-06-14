@@ -16,7 +16,7 @@ var runSequence = require('run-sequence');
 var autoprefixer = require('gulp-autoprefixer');
 var cssmin = require('gulp-cssmin')
 
-var MISC_FILES = ['./code/CNAME', './code/**/*.mp4', './code/**/*.ogv', './code/**/*.webm', './code/**/*.eot', './code/**/*.svg', './code/**/*.ttf', './code/**/*.woff'];
+var MISC_FILES = ['./code/CNAME', './code/**/*.mp4', './code/**/*.ogv', './code/**/*.webm', './code/**/*.eot', './code/**/*.svg', './code/**/*.ttf', './code/**/*.woff', './code/**/*.woff2'];
 var JADE_FILES = ['./code/**/*.jade', '!./code/lib/**'];
 var SASS_FILES = ['./code/**/*.scss', , '!./code/lib/**'];
 var FAVICON_BASE = ['./code/favicons'];
