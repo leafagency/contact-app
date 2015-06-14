@@ -12,15 +12,19 @@ block content
 
       form
         .form-group
-          label(for='fullName') Full name
-          input(type='text', name='fullName', placeholder='So we know who to greet')
+            label(for='name') Full name
+            input(type='text', name='name', placeholder='So we know who to greet')
 
         .form-group
           label(for='email') Email
           input(type='email', name='email', placeholder='So we know where to reply')
 
         .form-group
-          label(for='') Issue description
-          textarea(name='issueDescription', placeholder='What appears to be the problem?')
+          label(for='issueDescription') Issue description
+          textarea(name='issueDescription', data-howdy-validate='required', placeholder='What appears to be the problem?')
 
         button(type='submit') Submit my issue
+
+        script(type="text/javascript" src="https://app.howdyform.com/static/howdyClient.js?email=aGVsbG9Ad2VhcmVsZWFmLmNvbQ==")
+
+        p.centered Alternatively, you can email us on <a href="mailto:hello@weareleaf.com">hello@weareleaf.com</a>, or tweet us at <a href="https://twitter.com/leafagency">@leafagency</a>.
