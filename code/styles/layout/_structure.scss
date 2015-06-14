@@ -3,9 +3,13 @@ html {
 }
 
 body {
+    min-height: 100%;
+}
+
+body {
   display: flex;
-  flex-direction: column;
   min-height: 100vh;
+  flex-direction: column;
 }
 
 *,
@@ -36,6 +40,10 @@ section {
   }
 }
 
-.inner-page {
-  //background-color: $light-gray;
+.confirmed-page .content-wrapper {
+  text-align: center;
+
+  img {
+    margin-bottom: rem(40);
+  }
 }
