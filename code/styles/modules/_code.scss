@@ -35,8 +35,8 @@ pre {
 
     &__item {
       display: table;
-      width: 100%;
       margin-top: rem(20);
+      width: 100%;
 
       @include susy-breakpoint($small-screen) {
         display: block;
@@ -67,6 +67,14 @@ pre {
 
   &__text {
     color: white;
+  }
+
+  &__data-attribute {
+    display: table-footer-group;
+
+    @include susy-breakpoint($small-screen) {
+      display: initial;
+    }
   }
 
   &__comment {
