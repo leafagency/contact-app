@@ -18,7 +18,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="Howdy">
     <link rel="stylesheet" href="/styles/main.css">
-    <script src="/scripts/app/main.app.js"></script>
   </head>
   <body dir="ltr" class="report-issue-page inner-page">
     <!-- Header-->
@@ -34,8 +33,8 @@
           <h2>Report an Issue</h2>
           <form>
             <div class="form-group">
-              <label for="fullName">Full name</label>
-              <input type="text" name="fullName" placeholder="So we know who to greet">
+              <label for="name">Full name</label>
+              <input type="text" name="name" placeholder="So we know who to greet">
             </div>
             <div class="form-group">
               <label for="email">Email</label>
@@ -43,17 +42,19 @@
             </div>
             <div class="form-group">
               <label for="">Issue description</label>
-              <textarea name="issueDescription" placeholder="What appears to be the problem?"></textarea>
+              <textarea name="issueDescription" data-howdy-validate="required" placeholder="What appears to be the problem?"></textarea>
             </div>
             <button type="submit">Submit my issue</button>
           </form>
+          <script type="text/javascript" src="https://app.howdyform.com/static/howdyClient.js?email=aGVsbG9Ad2VhcmVsZWFmLmNvbQ=="></script>
+          <p class="centered">Alternatively, you can email us on <a href="mailto:hello@weareleaf.com">hello@weareleaf.com</a>, or tweet us at <a href="https://twitter.com/leafagency">@leafagency</a>.</p>
         </div>
       </section>
     </div>
     <!-- Footer-->
     <footer class="footer">
       <div class="container">
-        <div class="footer__section"><a href="/pages/report-issue.html" class="footer__link">Report <span class='additional-content'>an</span> issue</a></div>
+        <div class="footer__section"><a href="/pages/report-issue" class="footer__link">Report <span class='additional-content'>an</span> issue</a></div>
         <div class="footer__section">
           <p class="footer__text"><span class='additional-content'>Made with <span class='heart'>❤</span> by </span><a class='footer__link--leaf' href='http://weareleaf.com' target='_blank'>Leaf</a></p>
         </div>
