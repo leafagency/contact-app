@@ -14,11 +14,10 @@ pre {
     size: rem(14);
   }
   overflow-y: auto;
-
   text-align: left;
   white-space: initial;
 
-  @include susy-breakpoint($small-screen) {
+  @include susy-breakpoint($extra-small-screen) {
     font-size: rem(16);
   }
 
@@ -26,7 +25,7 @@ pre {
     display: table;
     padding: rem(13);
 
-    @include susy-breakpoint($small-screen) {
+    @include susy-breakpoint($extra-small-screen) {
       padding: rem(20);
     }
   }
