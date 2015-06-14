@@ -18,6 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="Howdy">
     <link rel="stylesheet" href="/styles/main.css">
+    <script src="/scripts/app/main.app.js"></script>
   </head>
   <body dir="ltr" class="home-page">
     <div class="jumbotron">
@@ -29,7 +30,7 @@
           <div id="snippet-generator" class="envelope__email-capture">
             <p class="envelope__lead">Enter your email address to generate your Howdy code snippet:</p>
             <div id="snippet-generator-inputs" class="animated">
-              <input placeholder="your-email-here@example.com" id="snippet-generator-email" class="envelope__input">
+              <input placeholder="your-email@example.com" id="snippet-generator-email" class="envelope__input">
               <button id="snippet-generator-button" class="envelope__button">Generate My Snippet</button>
             </div>
           </div>
@@ -37,14 +38,13 @@
             <p class="envelope__lead">Copy &amp; paste this snippet onto the page with your form on to start receiving submissions right to your inbox:</p>
             <pre>
               <div class="code">
-                <div class="code__wrapper"><span class='code__text'>&lt;</span><span class='code__element'>script </span><span class='code__attribute'>type</span><span class='code__text'>="</span><span class='code__value'>text/javascript</span><span class='code__text'>" </span><span class='code__attribute'>src</span><span class='code__text'>="</span><span class='code__value'>https://app.howdyform.com/static/howdyClient.js?email=<span id="snippet-display-email">your-email-here@example.com</span></span><span class='code__text'>"&gt;&lt;/</span><span class='code__element'>script</span><span class='code__text'>&gt;</span></div>
+                <div class="code__wrapper"><span class='code__text'>&lt;</span><span class='code__element'>script </span><span class='code__attribute'>type</span><span class='code__text'>="</span><span class='code__value'>text/javascript</span><span class='code__text'>" </span><span class='code__attribute'>src</span><span class='code__text'>="</span><span class='code__value'>https://app.howdyform.com/static/howdyClient.js?email=<span id="snippet-display-email">your-email@example.com</span></span><span class='code__text'>"&gt;&lt;/</span><span class='code__element'>script</span><span class='code__text'>&gt;</span></div>
               </div></pre>
           </div>
         </div>
       </div>
     </div>
     <div class="content-wrapper">
-      <script src="/scripts/app/main.app.js"></script>
       <section class="benefits">
         <div class="container">
           <h2>A Designers Best Friend</h2>
@@ -117,10 +117,10 @@
               <ul class="code__list">
                 <li class="code__list__item"><span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>none<span class='code__text'>”</span></span> <span class='code__comment'>// No validation on this input</span></li>
                 <li class="code__list__item">data-howdy-validate<span class='code__text'>=“</span>required<span class='code__text'>”</span> <span class='code__comment'>// Some value is required</span></li>
-                <li class="code__list__item">data-howdy-validate<span class='code__text'>=“</span>email<span class='code__text'>”</span> <span class='code__comment'>// An email address in required</span></li>
+                <li class="code__list__item">data-howdy-validate<span class='code__text'>=“</span>email<span class='code__text'>”</span> <span class='code__comment'>// Email address is required</span></li>
                 <li class="code__list__item">data-howdy-validate<span class='code__text'>=“</span>number<span class='code__text'>”</span> <span class='code__comment'>// A number is required</span></li>
                 <li class="code__list__item">data-howdy-validate<span class='code__text'>=“</span>date<span class='code__text'>”</span> <span class='code__comment'>// A date is required</span></li>
-                <li class="code__list__item">data-howdy-validate<span class='code__text'>=“</span>tel<span class='code__text'>”</span> <span class='code__comment'>// No letters allowed in the input</span></li>
+                <li class="code__list__item">data-howdy-validate<span class='code__text'>=“</span>tel<span class='code__text'>”</span> <span class='code__comment'>// No letters are allowed</span></li>
               </ul>
             </div>
           </div>
@@ -130,7 +130,7 @@
     <!-- Footer-->
     <footer class="footer">
       <div class="container">
-        <div class="footer__section"><a href="mailto:hello@weareleaf.com" class="footer__link">Report <span class='additional-content'>an</span> issue</a></div>
+        <div class="footer__section"><a href="/pages/report-issue.html" class="footer__link">Report <span class='additional-content'>an</span> issue</a></div>
         <div class="footer__section">
           <p class="footer__text"><span class='additional-content'>Made with <span class='heart'>❤</span> by </span><a class='footer__link--leaf' href='http://weareleaf.com' target='_blank'>Leaf</a></p>
         </div>
