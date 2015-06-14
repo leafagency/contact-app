@@ -2,6 +2,8 @@ extends pages/base/_base
 
 block prepend vars
   -var bodyClass = 'home-page'
+  -var exampleEmail = 'your-email@example.com'
+  -var shareMessage = 'Check out Howdy. It handles form validation. No programming required.'
 
 block content
     script(src='/scripts/app/main.app.js')
@@ -78,7 +80,7 @@ block content
             ul.code__list
               li.code__list__item <span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>none<span class='code__text'>”</span></span> <span class='code__comment'>// No validation on this input</span>
               li.code__list__item data-howdy-validate<span class='code__text'>=“</span>required<span class='code__text'>”</span> <span class='code__comment'>// Some value is required</span>
-              li.code__list__item data-howdy-validate<span class='code__text'>=“</span>email<span class='code__text'>”</span> <span class='code__comment'>// An email address in required</span>
+              li.code__list__item data-howdy-validate<span class='code__text'>=“</span>email<span class='code__text'>”</span> <span class='code__comment'>// Email address is required</span>
               li.code__list__item data-howdy-validate<span class='code__text'>=“</span>number<span class='code__text'>”</span> <span class='code__comment'>// A number is required</span>
               li.code__list__item data-howdy-validate<span class='code__text'>=“</span>date<span class='code__text'>”</span> <span class='code__comment'>// A date is required</span>
-              li.code__list__item data-howdy-validate<span class='code__text'>=“</span>tel<span class='code__text'>”</span> <span class='code__comment'>// No letters allowed in the input</span>
+              li.code__list__item data-howdy-validate<span class='code__text'>=“</span>tel<span class='code__text'>”</span> <span class='code__comment'>// No letters are allowed</span>

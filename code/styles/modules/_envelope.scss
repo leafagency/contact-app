@@ -52,3 +52,12 @@
     }
   }
 }
+
+input {
+  @include transition(background-color 400ms ease, border-color 400ms ease);
+}
+
+.error input {
+  background-color: #ffeffe;
+  border-color: #dfbedd;
+}
