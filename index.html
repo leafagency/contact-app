@@ -136,8 +136,8 @@
       </section>
       <section class="customise">
         <div class="container">
-          <h2>Custom Validation</h2>
-          <h3>Validate your custom fields by adding a <span>data-howdy-validate</span> attribute to your input</h3>
+          <h2>Customise</h2>
+          <h3>Add &amp; override validations by adding HTML attributes:</h3>
           <div class="code">
             <div class="code__wrapper">
               <ul class="code__list">
@@ -147,6 +147,20 @@
                 <li class="code__list__item"><span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>number<span class='code__text'>”</span></span> <span class='code__comment'>// A number is required</span></li>
                 <li class="code__list__item"><span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>date<span class='code__text'>”</span></span> <span class='code__comment'>// A date is required</span></li>
                 <li class="code__list__item"><span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>tel<span class='code__text'>”</span></span> <span class='code__comment'>// No letters are allowed</span></li>
+              </ul>
+            </div>
+          </div>
+          <h3>Customise your after send message (advanced): </h3>
+          <div class="code">
+            <div class="code__wrapper">
+              <ul class="code__list">
+                <li class="code__list__item">&lt;script type<span class='code__text'>="</span>text/javascript<span class='code__text'>"</span>&gt;</li>
+                <li class="code__list__item">&nbsp;&nbsp;<span class='code__text'>window.howdyEvents = {</span></li>
+                <li class="code__list__item">&nbsp;&nbsp;&nbsp;&nbsp;<span class='code__text'>afterSend: function(messageData) {</span></li>
+                <li class="code__list__item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class='code__text'>alert("My custom message!");</span></li>
+                <li class="code__list__item">&nbsp;&nbsp;&nbsp;&nbsp;<span class='code__text'>}</span></li>
+                <li class="code__list__item">&nbsp;&nbsp;<span class='code__text'>};</span></li>
+                <li class="code__list__item">&lt;/script&gt;</li>
               </ul>
             </div>
           </div>
