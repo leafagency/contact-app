@@ -73,9 +73,9 @@ block content
 
     section.customise
       .container
-        h2 Custom Validation
-        h3 Validate your custom fields by adding a <span>data-howdy-validate</span> attribute to your input
-
+        h2 Customise
+        
+        h3 Add &amp; override validations by adding HTML attributes:
         .code
           .code__wrapper
             ul.code__list
@@ -85,3 +85,15 @@ block content
               li.code__list__item <span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>number<span class='code__text'>”</span></span> <span class='code__comment'>// A number is required</span>
               li.code__list__item <span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>date<span class='code__text'>”</span></span> <span class='code__comment'>// A date is required</span>
               li.code__list__item <span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>tel<span class='code__text'>”</span></span> <span class='code__comment'>// No letters are allowed</span>
+
+        h3 Customise your after send message (advanced): 
+        .code
+          .code__wrapper
+            ul.code__list
+              li.code__list__item &lt;script type<span class='code__text'>="</span>text/javascript<span class='code__text'>"</span>&gt;
+              li.code__list__item &nbsp;&nbsp;<span class='code__text'>window.howdyEvents = {</span>
+              li.code__list__item &nbsp;&nbsp;&nbsp;&nbsp;<span class='code__text'>afterSend: function(messageData) {</span>
+              li.code__list__item &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class='code__text'>alert("My custom message!");</span>
+              li.code__list__item &nbsp;&nbsp;&nbsp;&nbsp;<span class='code__text'>}</span>
+              li.code__list__item &nbsp;&nbsp;<span class='code__text'>};</span>
+              li.code__list__item &lt;/script&gt;
