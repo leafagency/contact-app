@@ -12,7 +12,7 @@
       size: rem(48);
     }
     margin: 0;
-    padding: rem(54) 0;
+    padding: rem(48) 0;
 
     &::after {
       content: 'BETA';
@@ -29,11 +29,9 @@
   }
 
   &__intro {
-    color: #efe8ff;
-    font: {
-      size: rem(22);
-    }
-    margin: rem(12) 0 rem(48);
+    color: white;
+    font-size: rem(21);
+    margin-bottom: rem(48);
 
     @include susy-breakpoint($small-screen) {
       @include push(1);
