@@ -165,6 +165,7 @@ gulp.task('connect', function() {
   return connect.server({
     root: 'dist',
     livereload: true,
+    port: 8081,
     middleware: function(connect, options) {
       return [middleware];
     }
@@ -174,7 +175,7 @@ gulp.task('connect', function() {
 gulp.task('open', function(){
   return gulp.src('./dist/index.html')
   .pipe(open('', {
-    url: 'http://localhost:8080',
+    url: 'http://localhost:8081',
     app: 'google chrome'
   }));
 });

@@ -3,7 +3,7 @@ window.onload = function() {
   var snippetEnvelope = document.getElementById('snippet-envelope');
   var snippetGenerator = document.getElementById('snippet-generator');
   var snippetGeneratorInputContainer = document.getElementById('snippet-generator-inputs');
-  var snippetDisplay = document.getElementById('snippet-display'); 
+  var snippetDisplay = document.getElementById('snippet-display');
 
   var snippetGeneratorEmail = document.getElementById('snippet-generator-email');
   var snippetGeneratorButton = document.getElementById('snippet-generator-button');
@@ -16,7 +16,6 @@ window.onload = function() {
       snippetGeneratorInputContainer.className += " shake error";
       setTimeout(function() {
         snippetGeneratorInputContainer.className = snippetGeneratorInputContainer.className.replace(" shake error", "");
-
       }, 1000);
       return;
     }
