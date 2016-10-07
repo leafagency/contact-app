@@ -4,14 +4,13 @@ block prepend vars
   -var bodyClass = 'home-page'
   -var exampleEmail = 'your-email@example.com'
   -var shareMessage = 'Check out Howdy. Form submissions right to your inbox. No programming required.'
-  -var description = 'Howdy detects forms on your web page, automatically handles their validation and sends their content to your email inbox'
+  -var description = 'Howdy detects forms on your web page, automatically validates them and sends submissions straight to your chosen email address'
 
 block content
-    script(src='/scripts/app/main.app.js')
-
     section.benefits
       .container
-        h2 A Designers Best Friend
+        h2 No programming required
+        h3 A designers best friend
 
         .benefit
           h4.benefit__heading Automatic validations
@@ -73,27 +72,100 @@ block content
 
     section.customise
       .container
-        h2 Customise
-        
-        h3 Add &amp; override validations by adding HTML attributes:
-        .code
-          .code__wrapper
-            ul.code__list
-              li.code__list__item <span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>none<span class='code__text'>”</span></span> <span class='code__comment'>// No validation on this input</span>
-              li.code__list__item <span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>required<span class='code__text'>”</span></span> <span class='code__comment'>// Some value is required</span>
-              li.code__list__item <span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>email<span class='code__text'>”</span></span> <span class='code__comment'>// Email address is required</span>
-              li.code__list__item <span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>number<span class='code__text'>”</span></span> <span class='code__comment'>// A number is required</span>
-              li.code__list__item <span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>date<span class='code__text'>”</span></span> <span class='code__comment'>// A date is required</span>
-              li.code__list__item <span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>tel<span class='code__text'>”</span></span> <span class='code__comment'>// No letters are allowed</span>
+        h2 Highly Customiseable
 
-        h3 Customise your after send message (advanced): 
+        h3 Add &amp; override validations by adding HTML attributes
+        p Add these to your <code>inputs</code> and <code>textareas</code> to add or override default validations:
         .code
           .code__wrapper
             ul.code__list
-              li.code__list__item &lt;script type<span class='code__text'>="</span>text/javascript<span class='code__text'>"</span>&gt;
-              li.code__list__item &nbsp;&nbsp;<span class='code__text'>window.howdyEvents = {</span>
-              li.code__list__item &nbsp;&nbsp;&nbsp;&nbsp;<span class='code__text'>afterSend: function(messageData) {</span>
-              li.code__list__item &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class='code__text'>alert("My custom message!");</span>
-              li.code__list__item &nbsp;&nbsp;&nbsp;&nbsp;<span class='code__text'>}</span>
-              li.code__list__item &nbsp;&nbsp;<span class='code__text'>};</span>
-              li.code__list__item &lt;/script&gt;
+              li.code__list__item
+                span.code__data-attribute data-howdy-validate
+                span.code__text =“
+                span none
+                span.code__text ”
+                span.code__comment // No validation on this input
+              li.code__list__item
+                span.code__data-attribute data-howdy-validate
+                span.code__text =“
+                span required
+                span.code__text ”
+                span.code__comment // Some value is required
+              li.code__list__item
+                span.code__data-attribute data-howdy-validate
+                span.code__text =“
+                span email
+                span.code__text ”
+                span.code__comment // Email address is required
+              li.code__list__item
+                span.code__data-attribute data-howdy-validate
+                span.code__text =“
+                span number
+                span.code__text ”
+                span.code__comment // A number is required
+              li.code__list__item
+                span.code__data-attribute data-howdy-validate
+                span.code__text =“
+                span date
+                span.code__text ”
+                span.code__comment // A date is required  
+              li.code__list__item
+                span.code__data-attribute data-howdy-validate
+                span.code__text =“
+                span tel
+                span.code__text ”
+                span.code__comment // No letters are allowed
+                             
+        h3 Send emails to a new recipient under the same token:
+        p You can use a single Howdy token across multiple email addresses by simply adjusting the recipient on your <code>script</code> tag. There's no need to generate a new token:
+
+        .code
+          .code__wrapper
+            ul.code__list
+              li.code__list__item
+                span &lt;
+                span.code__element script src
+                span.code__text =“
+                span.code__overflow &hellip;
+                span.code__text “ 
+                span data-howdy-recipient
+                span.code__text =“
+                span another@email.com
+                span.code__text “
+                span &gt;&lt;/
+                span.code__element script
+                span &gt;
+                
+
+        h3 Customise your after send message (advanced):
+        p With a little bit of JavaScript knowledge, you can override the default alert message for Howdy: 
+        .code
+          .code__wrapper
+            ul.code__list
+              li.code__list__item
+                span &lt;
+                span.code__element script 
+                span type
+                span.code__text ="
+                span text/javascript
+                span.code__text "
+                span &gt;
+              li.code__list__item
+                &nbsp;&nbsp;
+                span.code__text window.howdyEvents = {
+              li.code__list__item
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                span.code__text afterSend: function(messageData) {
+              li.code__list__item
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                span.code__text alert("My custom message!");
+              li.code__list__item
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                span.code__text }
+              li.code__list__item
+                &nbsp;&nbsp;
+                span.code__text };
+              li.code__list__item
+                &lt;/
+                span.code__element script
+                &gt;

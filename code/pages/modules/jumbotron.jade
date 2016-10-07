@@ -13,8 +13,29 @@
           button.envelope__button(id='snippet-generator-button') Generate My Snippet
 
       .snippet(id='snippet-display')
-        p.envelope__lead Copy &amp; paste this snippet onto your form page and try it out! Howdy will only pick up inputs with a <b>name</b> attribute:
+        p.envelope__lead Copy &amp; paste this snippet onto your form page and try it out.
         pre
           .code
             .code__wrapper
-              <span class='code__text'>&lt;</span><span class='code__element'>script </span><span class='code__attribute'>type</span><span class='code__text'>="</span><span class='code__value'>text/javascript</span><span class='code__text'>" </span><span class='code__attribute'>src</span><span class='code__text'>="</span><span class='code__value'>https://app.howdyform.com/static/howdyClient.js?email=<span id="snippet-display-email">#{exampleEmail}</span></span><span class='code__text'>"&gt;&lt;/</span><span class='code__element'>script</span><span class='code__text'>&gt;</span>
+              span.code__text &lt;
+              span.code__element script 
+              span.code__attribute src
+              span.code__text ="
+              span.code__value
+                span(id="snippet-display-url")
+                span ?token=
+                span(id="snippet-display-token") #{exampleEmail}
+              span.code__text " 
+              span.code__attribute data-howdy-recipient
+              span.code__text ="
+              span.code__value
+                span(id="snippet-display-email")
+              span.code__text "&gt;&lt;/
+              span.code__element script
+              span.code__text &gt;
+
+        .additional-info
+          h4 Boring Notes
+          ul
+            li Howdy will only include the contents of form fields with a <code>name</code> attribute.
+            li You can reuse your snippet for as many email inboxes as you like, just <strong>swap the <code>data-howdy-recipient</code></strong> attribute for each new inbox.
