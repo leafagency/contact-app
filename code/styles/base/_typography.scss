@@ -92,6 +92,11 @@ picture {
 ul {
   margin: 0;
   padding: 0;
+
+  &.centered {
+    list-style: none;
+    text-align: center;
+  }
 }
 
 .centered {

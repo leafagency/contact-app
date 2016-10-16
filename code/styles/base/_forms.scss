@@ -27,6 +27,11 @@ label {
   abbr {
     display: none;
   }
+
+  small {
+    font-weight: normal;
+    color: $medium-gray;
+  }
 }
 
 input,

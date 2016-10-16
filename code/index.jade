@@ -4,37 +4,37 @@ block prepend vars
   -var bodyClass = 'home-page'
   -var exampleEmail = 'your-email@example.com'
   -var shareMessage = 'Check out Howdy. Form submissions right to your inbox. No programming required.'
-  -var description = 'Howdy detects forms on your web page, automatically validates them and sends submissions straight to your chosen email address'
+  -var description = 'Automatically detect, validate and send all of your contact form submissions to email inboxes for just $10 per month'
 
 block content
     section.benefits
       .container
         h2 No programming required
-        h3 A designers best friend
+        h3 Total ease of use is a top priority, it's a designers best friend
+        
+        .benefit
+          h4.benefit__heading Automatic form detection
+          p.benefit__content Howdy automatically detects and handles form submissions
 
         .benefit
-          h4.benefit__heading Automatic validations
-          p.benefit__content Howdy comes with out-the-box validation on common fields.
+          h4.benefit__heading Automatic validation
+          p.benefit__content Common field types are automatically validated
 
         .benefit
           h4.benefit__heading Custom validations
-          p.benefit__content Specify your own validations with data attributes, no programming.
+          p.benefit__content Specify your own validations with simple data attributes.
 
         .benefit
           h4.benefit__heading Use your own designs
-          p.benefit__content Integrates seamlessly with your designs. Just drop in our snippet.
+          p.benefit__content Just drop our snippet into your page, no awkward form builders.
 
         .benefit
-          h4.benefit__heading No account required
-          p.benefit__content We just need an email address, so that's the only thing we ask for.
+          h4.benefit__heading Platform Agnostic
+          p.benefit__content Howdy isn't coupled to any technology, use it across all of your sites.
 
         .benefit
           h4.benefit__heading Tried &amp; tested
-          p.benefit__content Howdy performs flawlessly on all devices; desktop &amp; mobile.
-
-        .benefit
-          h4.benefit__heading Absolute privacy
-          p.benefit__content There's no need for us to store your data, so we don't. Simple.
+          p.benefit__content Howdy performs beautifully on all devices; desktop &amp; mobile.
 
     section.defaults
       .container
@@ -169,3 +169,13 @@ block content
                 &lt;/
                 span.code__element script
                 &gt;
+                
+    section.sellpoints
+      .container
+        h2 Just $10 a month
+        h3 Our pricing model is pretty simple. With your subscription you can
+        
+        include ./pages/modules/pricing-sellpoints
+        
+        p.centered  
+          a.button(href="") Start my Trial

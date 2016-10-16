@@ -1,0 +1,57 @@
+.start-subscription-page {
+  form {
+    margin: 2*$base-spacing 0;
+    @include container;
+
+    .payment-logos {
+      margin-top: 1.8em;
+      &__logo {
+        display:inline-block;
+        padding:0 2px;
+        width:20%;
+      }
+    }
+
+
+    .form-row {
+      @include clearfix;
+    }
+
+    .form-column {
+      @include span(6);
+
+      &:nth-of-type(even) {
+        @include last;
+      }
+    }
+
+    .input-group {
+      display: flex;
+
+      input:first-child {
+        margin-right:0.5em
+      }
+    }
+
+    input.payment-field {
+      &__card-number {
+      }
+
+      &__card-expiry {
+      }
+
+      &__card-zip {
+      }
+    }
+
+    .form-group {
+      @include span(12);
+    }
+
+    button.submit {
+      display:block;
+      font-size:1.1em;
+      margin: $base-spacing auto 0 auto;
+    }
+  }
+}

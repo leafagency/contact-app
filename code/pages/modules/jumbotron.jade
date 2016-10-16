@@ -6,14 +6,14 @@
     .envelope.animated(id='snippet-envelope')
 
       .envelope__email-capture(id='snippet-generator')
-        p.envelope__lead Enter your email address to generate your Howdy code snippet:
+        p.envelope__lead Enter your email address to start your Howdy trial
 
         .animated(id='snippet-generator-inputs')
           input.envelope__input(placeholder='#{exampleEmail}', id='snippet-generator-email')
-          button.envelope__button(id='snippet-generator-button') Generate My Snippet
+          button.envelope__button(id='snippet-generator-button') Get Started
 
       .snippet(id='snippet-display')
-        p.envelope__lead Copy &amp; paste this snippet onto your form page and try it out.
+        p.envelope__lead Paste this into your form page and trial Howdy free for 2 weeks:
         pre
           .code
             .code__wrapper
@@ -37,5 +37,6 @@
         .additional-info
           h4 Boring Notes
           ul
+            li <strong>Your trial ends 2 weeks after your first use</strong>, we'll send you a payment link then.
             li Howdy will only include the contents of form fields with a <code>name</code> attribute.
             li You can reuse your snippet for as many email inboxes as you like, just <strong>swap the <code>data-howdy-recipient</code></strong> attribute for each new inbox.
