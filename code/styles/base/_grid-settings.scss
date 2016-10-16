@@ -5,7 +5,9 @@ $susy: (
   gutters: 0.5
 );
 
-@include global-box-sizing(border-box);
+* {
+  box-sizing: border-box;
+}
 
 $extra-small-screen: 480px;
 $small-screen: 768px;

@@ -1,5 +1,5 @@
 // Base Variables
-@import './code/lib/normalize-scss/normalize';
+@import './code/lib/normalize-scss/_normalize.scss';
 @import './code/lib/susy/sass/susy';
 @import './code/lib/bourbon/app/assets/stylesheets/bourbon';
 @import 'base/variables';
@@ -22,8 +22,8 @@
 @import 'modules/benefits';
 @import 'modules/code';
 @import 'modules/customise';
-@import 'modules/envelope';
 @import 'modules/forms';
+@import 'modules/envelope';
 @import 'modules/jumbotron';
 @import 'modules/lists';
 @import 'modules/panels';

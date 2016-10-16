@@ -29,7 +29,7 @@
     display: table;
   }
 
-  &__input {
+  input.envelope__input {
     height: rem(51);
     padding-bottom: rem(15);
     padding-top: rem(14);
@@ -38,7 +38,7 @@
       border-right: none;
       border-radius: $base-border-radius 0 0 $base-border-radius;
       float: left;
-      width: calc(100% - 186px)
+      width: calc(100% - 186px);
     }
   }
 
@@ -49,6 +49,19 @@
       border-radius: 0 $base-border-radius $base-border-radius 0;
       float: right;
       width: rem(186);
+    }
+  }
+
+  .additional-info {
+    text-align: left;
+
+    h4 {
+      text-align:left;
+      margin: $small-spacing 0 $smaller-spacing;
+    }
+
+    ul {
+      margin-left: $smaller-spacing;
     }
   }
 }
