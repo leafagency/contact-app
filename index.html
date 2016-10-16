@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
     <meta http-equiv="cleartype" content="on">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="Howdy detects forms on your web page, automatically handles their validation and sends their content to your email inbox">
+    <meta name="description" content="Howdy detects forms on your web page, automatically validates them and sends submissions straight to your chosen email address">
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
@@ -44,12 +44,13 @@
       ga('send', 'pageview');
       
     </script>
+    <script src="/scripts/app/main.app.js"></script>
   </head>
   <body dir="ltr" class="home-page">
     <div class="jumbotron">
       <div class="container">
         <h1 class="jumbotron__title">Howdy</h1>
-        <p class="jumbotron__intro">Howdy detects forms on your web page, automatically handles their validation and sends their content to your email inbox</p>
+        <p class="jumbotron__intro">Howdy detects forms on your web page, automatically validates them and sends submissions straight to your chosen email address</p>
         <div id="snippet-envelope" class="envelope animated">
           <div id="snippet-generator" class="envelope__email-capture">
             <p class="envelope__lead">Enter your email address to generate your Howdy code snippet:</p>
@@ -59,21 +60,28 @@
             </div>
           </div>
           <div id="snippet-display" class="snippet">
-            <p class="envelope__lead">Copy &amp; paste this snippet onto your form page and try it out! Howdy will only pick up inputs with a <b>name</b> attribute:</p>
+            <p class="envelope__lead">Copy &amp; paste this snippet onto your form page and try it out.</p>
             <pre>
               <div class="code">
-                <div class="code__wrapper"><span class='code__text'>&lt;</span><span class='code__element'>script </span><span class='code__attribute'>type</span><span class='code__text'>="</span><span class='code__value'>text/javascript</span><span class='code__text'>" </span><span class='code__attribute'>src</span><span class='code__text'>="</span><span class='code__value'>https://app.howdyform.com/static/howdyClient.js?email=<span id="snippet-display-email">your-email@example.com</span></span><span class='code__text'>"&gt;&lt;/</span><span class='code__element'>script</span><span class='code__text'>&gt;</span></div>
+                <div class="code__wrapper"><span class="code__text">&lt;</span><span class="code__element">script </span><span class="code__attribute">src</span><span class="code__text">="</span><span class="code__value"><span id="snippet-display-url"></span><span>?token=</span><span id="snippet-display-token">your-email@example.com</span></span><span class="code__text">" </span><span class="code__attribute">data-howdy-recipient</span><span class="code__text">="</span><span class="code__value"><span id="snippet-display-email"></span></span><span class="code__text">"&gt;&lt;/</span><span class="code__element">script</span><span class="code__text">&gt;</span></div>
               </div></pre>
+            <div class="additional-info">
+              <h4>Boring Notes</h4>
+              <ul>
+                <li>Howdy will only include the contents of form fields with a <code>name</code> attribute.</li>
+                <li>You can reuse your snippet for as many email inboxes as you like, just <strong>swap the <code>data-howdy-recipient</code></strong> attribute for each new inbox.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <!-- Page content-->
     <div class="content-wrapper">
-      <script src="/scripts/app/main.app.js"></script>
       <section class="benefits">
         <div class="container">
-          <h2>A Designers Best Friend</h2>
+          <h2>No programming required</h2>
+          <h3>A designers best friend</h3>
           <div class="benefit">
             <h4 class="benefit__heading">Automatic validations</h4>
             <p class="benefit__content">Howdy comes with out-the-box validation on common fields.</p>
@@ -136,31 +144,42 @@
       </section>
       <section class="customise">
         <div class="container">
-          <h2>Customise</h2>
-          <h3>Add &amp; override validations by adding HTML attributes:</h3>
+          <h2>Highly Customiseable</h2>
+          <h3>Add &amp; override validations by adding HTML attributes</h3>
+          <p>Add these to your <code>inputs</code> and <code>textareas</code> to add or override default validations:</p>
           <div class="code">
             <div class="code__wrapper">
               <ul class="code__list">
-                <li class="code__list__item"><span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>none<span class='code__text'>”</span></span> <span class='code__comment'>// No validation on this input</span></li>
-                <li class="code__list__item"><span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>required<span class='code__text'>”</span></span> <span class='code__comment'>// Some value is required</span></li>
-                <li class="code__list__item"><span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>email<span class='code__text'>”</span></span> <span class='code__comment'>// Email address is required</span></li>
-                <li class="code__list__item"><span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>number<span class='code__text'>”</span></span> <span class='code__comment'>// A number is required</span></li>
-                <li class="code__list__item"><span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>date<span class='code__text'>”</span></span> <span class='code__comment'>// A date is required</span></li>
-                <li class="code__list__item"><span class='code__data-attribute'>data-howdy-validate<span class='code__text'>=“</span>tel<span class='code__text'>”</span></span> <span class='code__comment'>// No letters are allowed</span></li>
+                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>none</span><span class="code__text">”</span><span class="code__comment">// No validation on this input</span></li>
+                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>required</span><span class="code__text">”</span><span class="code__comment">// Some value is required</span></li>
+                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>email</span><span class="code__text">”</span><span class="code__comment">// Email address is required</span></li>
+                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>number</span><span class="code__text">”</span><span class="code__comment">// A number is required</span></li>
+                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>date</span><span class="code__text">”</span><span class="code__comment">// A date is required  </span></li>
+                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>tel</span><span class="code__text">”</span><span class="code__comment">// No letters are allowed</span></li>
               </ul>
             </div>
           </div>
-          <h3>Customise your after send message (advanced): </h3>
+          <h3>Send emails to a new recipient under the same token:</h3>
+          <p>You can use a single Howdy token across multiple email addresses by simply adjusting the recipient on your <code>script</code> tag. There's no need to generate a new token:</p>
           <div class="code">
             <div class="code__wrapper">
               <ul class="code__list">
-                <li class="code__list__item">&lt;script type<span class='code__text'>="</span>text/javascript<span class='code__text'>"</span>&gt;</li>
-                <li class="code__list__item">&nbsp;&nbsp;<span class='code__text'>window.howdyEvents = {</span></li>
-                <li class="code__list__item">&nbsp;&nbsp;&nbsp;&nbsp;<span class='code__text'>afterSend: function(messageData) {</span></li>
-                <li class="code__list__item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class='code__text'>alert("My custom message!");</span></li>
-                <li class="code__list__item">&nbsp;&nbsp;&nbsp;&nbsp;<span class='code__text'>}</span></li>
-                <li class="code__list__item">&nbsp;&nbsp;<span class='code__text'>};</span></li>
-                <li class="code__list__item">&lt;/script&gt;</li>
+                <li class="code__list__item"><span>&lt;</span><span class="code__element">script src</span><span class="code__text">=“</span><span class="code__overflow">&hellip;</span><span class="code__text">“ </span><span>data-howdy-recipient</span><span class="code__text">=“</span><span>another@email.com</span><span class="code__text">“</span><span>&gt;&lt;/</span><span class="code__element">script</span><span>&gt;</span></li>
+              </ul>
+            </div>
+          </div>
+          <h3>Customise your after send message (advanced):</h3>
+          <p>With a little bit of JavaScript knowledge, you can override the default alert message for Howdy: </p>
+          <div class="code">
+            <div class="code__wrapper">
+              <ul class="code__list">
+                <li class="code__list__item"><span>&lt;</span><span class="code__element">script </span><span>type</span><span class="code__text">="</span><span>text/javascript</span><span class="code__text">"</span><span>&gt;</span></li>
+                <li class="code__list__item">&nbsp;&nbsp;<span class="code__text">window.howdyEvents = {</span></li>
+                <li class="code__list__item">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code__text">afterSend: function(messageData) {</span></li>
+                <li class="code__list__item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code__text">alert("My custom message!");</span></li>
+                <li class="code__list__item">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code__text">}</span></li>
+                <li class="code__list__item">&nbsp;&nbsp;<span class="code__text">};</span></li>
+                <li class="code__list__item">&lt;/<span class="code__element">script</span>&gt;</li>
               </ul>
             </div>
           </div>

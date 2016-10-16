@@ -12,11 +12,18 @@
         </div>
       </div>
       <div id="snippet-display" class="snippet">
-        <p class="envelope__lead">Copy &amp; paste this snippet onto your form page and try it out! Howdy will only pick up inputs with a <b>name</b> attribute:</p>
+        <p class="envelope__lead">Copy &amp; paste this snippet onto your form page and try it out.</p>
         <pre>
           <div class="code">
-            <div class="code__wrapper"><span class='code__text'>&lt;</span><span class='code__element'>script </span><span class='code__attribute'>type</span><span class='code__text'>="</span><span class='code__value'>text/javascript</span><span class='code__text'>" </span><span class='code__attribute'>src</span><span class='code__text'>="</span><span class='code__value'>https://app.howdyform.com/static/howdyClient.js?email=<span id="snippet-display-email"></span></span><span class='code__text'>"&gt;&lt;/</span><span class='code__element'>script</span><span class='code__text'>&gt;</span></div>
+            <div class="code__wrapper"><span class="code__text">&lt;</span><span class="code__element">script </span><span class="code__attribute">src</span><span class="code__text">="</span><span class="code__value"><span id="snippet-display-url"></span><span>?token=</span><span id="snippet-display-token"></span></span><span class="code__text">" </span><span class="code__attribute">data-howdy-recipient</span><span class="code__text">="</span><span class="code__value"><span id="snippet-display-email"></span></span><span class="code__text">"&gt;&lt;/</span><span class="code__element">script</span><span class="code__text">&gt;</span></div>
           </div></pre>
+        <div class="additional-info">
+          <h4>Boring Notes</h4>
+          <ul>
+            <li>Howdy will only include the contents of form fields with a <code>name</code> attribute.</li>
+            <li>You can reuse your snippet for as many email inboxes as you like, just <strong>swap the <code>data-howdy-recipient</code></strong> attribute for each new inbox.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
