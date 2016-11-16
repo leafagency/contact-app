@@ -40,13 +40,24 @@ var handleNewAccountCreation = function() {
     snippetDisplayEmail.innerHTML = snippetGeneratorEmail.value;
     snippetDisplayToken.innerHTML = window.btoa(snippetGeneratorEmail.value);
 
-    snippetEnvelope.className += " bounceOutDown";
+    request.post(config.createAccountUrl)
+      .send({
+        email: snippetGeneratorEmail.value,
+      })
+      .end(function(err, response) {
+        if (err) {
+          console.error('Error', err);
+          return;
+        }
 
-    setTimeout(function() {
-      snippetGenerator.style.display = "none";
-      snippetDisplay.style.display = "block";
-      snippetEnvelope.className = snippetEnvelope.className.replace("bounceOutDown", "bounceInUp");
-    }, 1000)
+        snippetEnvelope.className += " bounceOutDown";
+
+        setTimeout(function() {
+          snippetGenerator.style.display = "none";
+          snippetDisplay.style.display = "block";
+          snippetEnvelope.className = snippetEnvelope.className.replace("bounceOutDown", "bounceInUp");
+        }, 1000)
+      })
   }, false);
 }
 
@@ -68,7 +79,51 @@ var handleEmailVerification = function() {
   }
 }
 
+var handleAccountCreation = function() {
+  var queryString = getQueryString()
+
+  if (window.$ && Stripe && queryString.id) {
+    var $ = window.$
+    Stripe.setPublishableKey('pk_test_6MCiAEXja5maiISN7W3cXjhP')
+    var $form = $('#payment-form')
+    $form.submit(function(event) {
+      // Disable the submit button to prevent repeated clicks:
+      $form.find('.submit').prop('disabled', true)
+
+      // Request a token from Stripe:
+      Stripe.card.createToken($form, function(status, response) {
+        var $form = $('#payment-form')
+
+        if (response.error) { // Problem!
+          $form.find('.payment-errors').text(response.error.message)
+          return $form.find('.submit').prop('disabled', false)
+        }
+
+        var stripePaymentToken = response.id
+        var id = queryString.id
+
+        request.post(config.verifyRecipientUrl)
+          .send({
+            id: queryString.id,
+            verificationToken: queryString.verificationToken
+          })
+          .end(function(err, response) {
+            if (err) {
+              console.err('Error', err);
+            }
+            alert('Success!', response)
+          })
+      })
+
+      // Prevent the form from being submitted:
+      return false
+    })
+  }
+}
+
+
 window.onload = function() {
   handleNewAccountCreation()
   handleEmailVerification()
+  handleAccountCreation()
 }

@@ -12,3 +12,4 @@ config.apiHost = inDevelopment ? 'localhost:8080' : 'app.howdyform.com'
 config.verifyRecipientUrl = buildApiUrl('/api/recipients/verify')
 config.createAccountUrl = buildApiUrl('/api/accounts')
 config.libraryUrl = buildApiUrl('/static/howdyClient.js')
+config.createSubscriptionUrl = buildApiUrl('/api/subscriptions')
