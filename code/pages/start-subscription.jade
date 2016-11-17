@@ -12,7 +12,7 @@ block content
 
       h2 Start your Howdy subscription
       
-      h3 We hope you've found Howdy to be an simple time saver for you and your clients.<br/>Luckily, our subscription is pretty simple too, for just <strong>$10 a month</strong>...
+      h3 We hope you've found Howdy to be an simple time saver for you and your clients.<br/>Luckily, our subscription is pretty simple too, for just <strong>$2 a month</strong>...
       
       include ./modules/pricing-sellpoints
         
@@ -27,7 +27,7 @@ block content
             .form-group
               label(for='cardNumber') Card Number
               input.payment-field__card-number(id='cardNumber', type="text", size="20", data-stripe="number" placeholder="The long number on the front")
-          
+
           .form-column
             .form-group
               .payment-logos
@@ -44,7 +44,7 @@ block content
               .input-group
                 input.payment-field__card-expiry(id='cardExpirationMonth', type="text", size="2", data-stripe="exp_month" placeholder="MM")
                 input.payment-field__card-expiry(type="text", size="2", data-stripe="exp_year" placeholder="YY")
-    
+                
           .form-column
             .form-group
               label(for='cardCVC') CVC
@@ -66,30 +66,4 @@ block content
         p.panel__content As you move beyond your 25 recipients limit, we'll be in touch to move your subscription up a notch based on your usage patterns and email volumes. We <strong>won't</strong> just stop your service. For any questions about this, just drop us a line at <a href='mailto:hello@weareleaf.com'>hello@weareleaf.com</a>, or tweet us at <a href='https://twitter.com/we_are_leaf'>@we_are_leaf</a>.
         
   script(type="text/javascript").
-    Stripe.setPublishableKey('pk_test_6MCiAEXja5maiISN7W3cXjhP')
-    var $form = $('#payment-form')
-    $form.submit(function(event) {
-      // Disable the submit button to prevent repeated clicks:
-      $form.find('.submit').prop('disabled', true)
-
-      // Request a token from Stripe:
-      Stripe.card.createToken($form, function(status, response) {
-        var $form = $('#payment-form')
-        if (response.error) { // Problem!
-          // Show the errors on the form:
-          console.log(response.error)
-          $form.find('.payment-errors').text(response.error.message)
-          $form.find('.submit').prop('disabled', false) // Re-enable submission
-        } else { // Token was created!
-          // Get the token ID:
-          var token = response.id
-          // Insert the token ID into the form so it gets submitted to the server:
-          $form.append($('<input type="hidden" name="stripeToken">').val(token));
-          // Submit the form:
-          $form.get(0).submit();
-        }
-      })
-
-      // Prevent the form from being submitted:
-      return false
-    })
+    window.howdy.handleStartSubscription()

@@ -1,3 +1,4 @@
+var howdy = window.howdy = {}
 var request = require('superagent')
 var config = require('./config')
 
@@ -10,7 +11,7 @@ var getQueryString = function() {
   return qs;
 }
 
-var handleNewAccountCreation = function() {
+howdy.handleNewAccountCreation = function() {
   var snippetEnvelope = document.getElementById('snippet-envelope');
   var snippetGenerator = document.getElementById('snippet-generator');
   var snippetGeneratorInputContainer = document.getElementById('snippet-generator-inputs');
@@ -40,17 +41,28 @@ var handleNewAccountCreation = function() {
     snippetDisplayEmail.innerHTML = snippetGeneratorEmail.value;
     snippetDisplayToken.innerHTML = window.btoa(snippetGeneratorEmail.value);
 
-    snippetEnvelope.className += " bounceOutDown";
+    request.post(config.createAccountUrl)
+      .send({
+        email: snippetGeneratorEmail.value,
+      })
+      .end(function(err, response) {
+        if (err) {
+          console.error('Error', err);
+          return;
+        }
 
-    setTimeout(function() {
-      snippetGenerator.style.display = "none";
-      snippetDisplay.style.display = "block";
-      snippetEnvelope.className = snippetEnvelope.className.replace("bounceOutDown", "bounceInUp");
-    }, 1000)
+        snippetEnvelope.className += " bounceOutDown";
+
+        setTimeout(function() {
+          snippetGenerator.style.display = "none";
+          snippetDisplay.style.display = "block";
+          snippetEnvelope.className = snippetEnvelope.className.replace("bounceOutDown", "bounceInUp");
+        }, 1000)
+      })
   }, false);
 }
 
-var handleEmailVerification = function() {
+howdy.handleEmailVerification = function() {
   // Check whether any verification requests need to be made:
   var queryString = getQueryString()
   if (queryString.id && queryString.verificationToken) {
@@ -68,7 +80,48 @@ var handleEmailVerification = function() {
   }
 }
 
+howdy.handleStartSubscription = function() {
+  var queryString = getQueryString()
+
+  if (window.$ && Stripe && queryString.verificationToken) {
+    var $ = window.$
+    var $form = $('#payment-form')
+    var qsData = atob(queryString.verificationToken).split('|')
+    var id = qsData[0]
+    var email = qsData[1]
+
+    $form.find('input[name="email"]').prop({ value: email })
+
+    $form.submit(function(event) {
+      $form.find('.submit').prop('disabled', true)
+
+      Stripe.setPublishableKey(config.stripeKey)
+      Stripe.card.createToken($form, function(status, response) {
+        if (response.error) {
+          $form.find('.payment-errors').text(response.error.message)
+          return $form.find('.submit').prop('disabled', false)
+        }
+
+        return request.post(config.createSubscriptionUrl)
+          .send({
+            id: id,
+            stripePaymentToken: response.id
+          })
+          .end(function(err, response) {
+            if (err) {
+              return alert(err)
+            }
+            return window.location.replace("https://howdyform.com/pages/subscription-started.html")
+          })
+      })
+
+      // Prevent the form from being submitted:
+      return false
+    })
+  }
+}
+
 window.onload = function() {
-  handleNewAccountCreation()
-  handleEmailVerification()
+  howdy.handleNewAccountCreation()
+  howdy.handleEmailVerification()
 }
