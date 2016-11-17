@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--if lt IE 7<html class='no-js lt-ie9 lt-ie8 lt-ie7'>
+-->
+<!--if IE 7<html class='no-js lt-ie9 lt-ie8'>
+-->
+<!--if IE 8<html class='no-js lt-ie9'>
+-->
+<!-- [if gt IE 8] <!-->
+<html lang="en" class="no-js">
+  <!-- <![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>Howdy - Designer friendly contact forms</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="undefined">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#6848b8">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-62036216-2', 'auto');
+      ga('send', 'pageview');
+      
+    </script>
+    <script src="/scripts/app/main.app.js"></script>
+  </head>
+  <body dir="ltr" class="start-subscription-page inner-page">
+    <!-- Header-->
+    <header class="header">
+      <div class="container">
+        <div class="header__section"><a href="/" class="header__link">&larr; Back to home</a></div>
+        <div class="header__section"><a href="/" class="header__logo">Howdy</a></div>
+      </div>
+    </header>
+    <!-- Page content-->
+    <div class="content-wrapper">
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+      <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+      <section>
+        <div class="container">
+          <h2>Start your Howdy subscription</h2>
+          <h3>We hope you've found Howdy to be an simple time saver for you and your clients.<br/>Luckily, our subscription is pretty simple too, for just <strong>$2 a month</strong>...</h3>
+          <div class="pricing-sellpoints">
+            <ul>
+              <li>Use Howdy across an <strong>unlimited</strong> number of sites</li>
+              <li>Use Howdy for an <strong>unlimited</strong> number of forms</li>
+              <li>Use Howdy for up to <strong>25</strong> recipients</li>
+              <li><strong>24/7 support</strong> from friendly &amp; patient human beings</li>
+              <li> <strong>Never waste time</strong> setting up form handling, validation, delivery <em>or</em> message formatting <em>ever</em> again</u></li>
+            </ul>
+          </div>
+          <form id="payment-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Primary Email <small>(This <strong>must</strong> be the same as the email address you used to generate your Howdy token)</small></label>
+                <input type="email" name="email" placeholder="We'll send your invoices here">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-column">
+                <div class="form-group">
+                  <label for="cardNumber">Card Number</label>
+                  <input id="cardNumber" type="text" size="20" data-stripe="number" placeholder="The long number on the front" class="payment-field__card-number">
+                </div>
+              </div>
+              <div class="form-column">
+                <div class="form-group">
+                  <div class="payment-logos"><img src="/images/cardLogos/visa.svg" alt="Visa" class="payment-logos__logo"><img src="/images/cardLogos/mastercard.svg" alt="Master Card" class="payment-logos__logo"><img src="/images/cardLogos/amex.svg" alt="American Express" class="payment-logos__logo"><img src="/images/cardLogos/diners.svg" alt="Diners Club" class="payment-logos__logo"><img src="/images/cardLogos/jcb.svg" alt="JCB" class="payment-logos__logo"></div>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-column">
+                <div class="form-group">
+                  <label for="cardExpirationMonth">Expiration (MM/YY)</label>
+                  <div class="input-group">
+                    <input id="cardExpirationMonth" type="text" size="2" data-stripe="exp_month" placeholder="MM" class="payment-field__card-expiry">
+                    <input type="text" size="2" data-stripe="exp_year" placeholder="YY" class="payment-field__card-expiry">
+                  </div>
+                </div>
+              </div>
+              <div class="form-column">
+                <div class="form-group">
+                  <label for="cardCVC">CVC</label>
+                  <input id="cardCVC" type="text" size="4" data-stripe="cvc" placeholder="3 digits on the back" class="payment-field__card-cvc">
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-column"> 
+                <div class="form-group">
+                  <label for="billingZip">Billing Zip/Post Code</label>
+                  <input id="billingZip" type="text" size="6" data-stripe="address_zip" placeholder="1234" class="payment-field__card-zip">
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"> 
+                <button type="submit" class="submit">Make payment & start my Howdy subscription</button>
+              </div>
+            </div>
+            <div class="payment-errors"></div>
+          </form>
+          <div class="panel">
+            <p class="panel__content">As you move beyond your 25 recipients limit, we'll be in touch to move your subscription up a notch based on your usage patterns and email volumes. We <strong>won't</strong> just stop your service. For any questions about this, just drop us a line at <a href='mailto:hello@weareleaf.com'>hello@weareleaf.com</a>, or tweet us at <a href='https://twitter.com/we_are_leaf'>@we_are_leaf</a>.</p>
+          </div>
+        </div>
+      </section>
+      <script type="text/javascript">window.howdy.handleStartSubscription()</script>
+    </div>
+    <!-- Footer-->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__section"><a href="/pages/report-issue" class="footer__link">Report <span class='additional-content'>an</span> issue</a></div>
+        <div class="footer__section">
+          <p class="footer__text"><span class='additional-content'>Made with <span class='heart'>❤</span> by </span><a class='footer__link--leaf' href='http://weareleaf.com' target='_blank'>Leaf</a></p>
+        </div>
+        <div class="footer__section"><a href="https://twitter.com/share" data-url="https://www.howdyform.com/" data-text="undefined" data-via="leafagency" class="footer__share-button twitter-share-button">Tweet</a>
+          <script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
