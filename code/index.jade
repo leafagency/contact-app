@@ -3,44 +3,137 @@ extends pages/base/_base
 block prepend vars
   -var bodyClass = 'home-page'
   -var exampleEmail = 'your-email@example.com'
-  -var shareMessage = 'Check out Howdy. Form submissions right to your inbox. No programming required.'
-  -var description = 'Automatically detect, validate and send all of your contact form submissions to email inboxes for just $2 per month'
+  -var shareMessage = 'Check out Howdy. Instant contact forms to your email inbox without a line of code.'
+  -var description = 'Instant contact forms to your email inbox without a line of code'
 
 block content
-    section.benefits
+    section.alt.benefits
       .container
-        h2 No programming required
-        h3 Total ease of use is a top priority, it's a designers best friend
+        h2 What does it do?
+        h3 Howdy takes the pain out of sending contact form submissions to email addresses
         
         .benefit
-          h4.benefit__heading Automatic form detection
-          p.benefit__content Howdy automatically detects and handles form submissions
-
+          h4.benefit__heading Automagical setup
+          p.benefit__content If you can copy and paste HTML, you can use Howdy. It makes no assumptions about your page design, and requires <strong>no programming</strong>. <a href="#automagical-setup">Learn more...</a>
+          
         .benefit
-          h4.benefit__heading Automatic validation
-          p.benefit__content Common field types are automatically validated
-
+          h4.benefit__heading Professional form handling
+          p.benefit__content Howdy will automatically validate your contact forms, and intelligently guess things like <code>reply-to</code> emails and <code>from</code> names from message content, so messages are always professionally presented. <a href="#professional-form-handling">Learn more...</a>
+          
         .benefit
-          h4.benefit__heading Custom validations
-          p.benefit__content Specify your own validations with simple data attributes.
+          h4.benefit__heading Unbelieveable value
+          p.benefit__content Howdy lets you send unlimited messages to up to <strong>25 emails</strong> for just <strong>$2/month</strong>. Never has doing this yourself been so <em>not</em> worth your time. <a href="#unbelieveable-value">Learn more...</a>
+                
+    section.defaults#automagical-setup
+      .container 
+        h2 Automagical setup
+        h3 As soon as our snippet is loaded, Howdy will automatically handle your form
+        
+        p If you can copy and paste HTML you can add Howdy to your websites. Simply generate your snippet on this page and then copy &amp; paste it to your page's HTML:
+        
+        .code
+          .code__wrapper
+            ul.code__list
+              li.code__liste__item
+                span.code__comment // Write your contact form just the way you like it:
+              li.code__list__item
+                span &lt;
+                span.code__element form
+                span &gt;
+              li.code__list__item
+                span &nbsp;&nbsp;&lt;
+                span.code__element input 
+                span.code__data-attribute type
+                span.code__text =“
+                span text
+                span.code__text ”
+                span.code__data-attribute  name
+                span.code__text =“
+                span first_name
+                span.code__text ”
+                span /&gt;
+              li.code__list__item
+                span &nbsp;&nbsp;&lt;
+                span.code__element input 
+                span.code__data-attribute type
+                span.code__text =“
+                span text
+                span.code__text ”
+                span.code__data-attribute  name
+                span.code__text =“
+                span last_name
+                span.code__text ”
+                span /&gt;
+              li.code__list__item
+                span &nbsp;&nbsp;&lt;
+                span.code__element textarea 
+                span.code__data-attribute name
+                span.code__text =“
+                span message
+                span.code__text ”
+                span &gt;
+                span &lt;/
+                span.code__element textarea
+                span &gt;
+              li.code__list__item
+                span &nbsp;&nbsp;&lt;
+                span.code__element input 
+                span.code__data-attribute type
+                span.code__text =“
+                span submit
+                span.code__text ”
+                span.code__data-attribute value
+                span.code__text =“
+                span Send message
+                span.code__text ”
+                span /&gt;
+              li.code__list__item
+                span &lt;/
+                span.code__element form
+                span &gt;
+              li.code__liste__item(style="padding-top:25px")
+                span.code__comment // Then paste in the snippet:
+              li.code__list__item
+                span &lt;
+                span.code__element script 
+                span src
+                span.code__text =“
+                span.code__overflow &hellip;
+                span.code__text “ 
+                span data-howdy-recipient
+                span.code__text =“
+                span your@email.com
+                span.code__text “
+                span &gt;&lt;/
+                span.code__element script
+                span &gt;
+        
+        p You can even re-use the same snippet for different contact forms, just update the <code>data-howdy-recipient</code> attribute on the snippet to have it send to a different inbox:
 
-        .benefit
-          h4.benefit__heading Use your own designs
-          p.benefit__content Just drop our snippet into your page, no awkward form builders.
-
-        .benefit
-          h4.benefit__heading Platform Agnostic
-          p.benefit__content Howdy isn't coupled to any technology, use it across all of your sites.
-
-        .benefit
-          h4.benefit__heading Tried &amp; tested
-          p.benefit__content Howdy performs beautifully on all devices; desktop &amp; mobile.
-
-    section.defaults
+        .code
+          .code__wrapper
+            ul.code__list
+              li.code__list__item
+                span &lt;
+                span.code__element script 
+                span src
+                span.code__text =“
+                span.code__overflow &hellip;
+                span.code__text “ 
+                span data-howdy-recipient
+                span.code__text =“
+                span another@email.com
+                span.code__text “
+                span &gt;&lt;/
+                span.code__element script
+                span &gt;
+    
+    section.alt.benefits#professional-form-handling
       .container
-        h2 Automatic Validation
-        h3 Howdy validates against common fields by default
-
+        h2 Professional form handling
+        h3 Howdy automatically validates on all common fields &amp; does custom validations too
+        
+        p Howdy will use the <code>name</code> attribute of inputs to determine how best to validate them:
         ul.list
           li.list__item email
           li.list__item name
@@ -68,14 +161,8 @@ block content
           li.list__item dob
           li.list__item date_of_birth
           li.list__item dateOfBirth
-
-
-    section.customise
-      .container
-        h2 Highly Customiseable
-
-        h3 Add &amp; override validations by adding HTML attributes
-        p Add these to your <code>inputs</code> and <code>textareas</code> to add or override default validations:
+          
+        p You can add data attributes to your <code>inputs</code> and <code>textareas</code> to add or override default validations:
         .code
           .code__wrapper
             ul.code__list
@@ -115,65 +202,15 @@ block content
                 span tel
                 span.code__text ”
                 span.code__comment // No letters are allowed
-                             
-        h3 Send emails to a new recipient under the same token:
-        p You can use a single Howdy token across multiple email addresses by simply adjusting the recipient on your <code>script</code> tag. There's no need to generate a new token:
-
-        .code
-          .code__wrapper
-            ul.code__list
-              li.code__list__item
-                span &lt;
-                span.code__element script src
-                span.code__text =“
-                span.code__overflow &hellip;
-                span.code__text “ 
-                span data-howdy-recipient
-                span.code__text =“
-                span another@email.com
-                span.code__text “
-                span &gt;&lt;/
-                span.code__element script
-                span &gt;
                 
-
-        h3 Customise your after send message (advanced):
-        p With a little bit of JavaScript knowledge, you can override the default alert message for Howdy: 
-        .code
-          .code__wrapper
-            ul.code__list
-              li.code__list__item
-                span &lt;
-                span.code__element script 
-                span type
-                span.code__text ="
-                span text/javascript
-                span.code__text "
-                span &gt;
-              li.code__list__item
-                &nbsp;&nbsp;
-                span.code__text window.howdyEvents = {
-              li.code__list__item
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                span.code__text afterSend: function(messageData) {
-              li.code__list__item
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                span.code__text alert("My custom message!");
-              li.code__list__item
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                span.code__text }
-              li.code__list__item
-                &nbsp;&nbsp;
-                span.code__text };
-              li.code__list__item
-                &lt;/
-                span.code__element script
-                &gt;
+        h3 Howdy intelligently interprets your messages for professionally presented emails
+        
+        p Howdy picks out common message fields like <strong>names</strong>, <strong>subjects</strong> and <strong>email</strong> addresses in order to intelligently set <code>reply-to</code>, <code>from</code> and <code>subject</code> properties on the emails it sends. This gives you professionally presented emails with zero effort.
                 
-    section.sellpoints
+    section.sellpoints#unbelieveable-value
       .container
-        h2 Just $2 a month
-        h3 Our pricing model is pretty simple. With your subscription you can
+        h2 Unbelieveable value
+        h3 Our pricing is simple, flat, and affordable at $2 per month
         
         include ./pages/modules/pricing-sellpoints
         

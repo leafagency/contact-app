@@ -28,6 +28,9 @@ body {
 }
 
 section {
+  &.alt {
+    background-color: $light-gray;
+  }
   @include clearfix;
   padding: rem(40) 0;
 

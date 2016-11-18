@@ -13,15 +13,6 @@
     }
     margin: 0;
     padding: rem(48) 0;
-
-    &::after {
-      content: 'BETA';
-      font: {
-        family: $font-family-sans-serif;
-        size: rem(15);
-      }
-      position: absolute;
-    }
   }
 
   &__slogan {
