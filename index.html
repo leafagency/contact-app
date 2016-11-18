@@ -10,13 +10,13 @@
   <!-- <![endif]-->
   <head>
     <meta charset="utf-8">
-    <title>Howdy - Designer friendly contact forms</title>
+    <title>Howdy - Instant contact forms to your email inbox without a line of code</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
     <meta http-equiv="cleartype" content="on">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="Automatically detect, validate and send all of your contact form submissions to email inboxes for just $2 per month">
+    <meta name="description" content="Instant contact forms to your email inbox without a line of code">
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
@@ -50,13 +50,12 @@
     <div class="jumbotron">
       <div class="container">
         <h1 class="jumbotron__title">Howdy</h1>
-        <p class="jumbotron__intro">Automatically detect, validate and send all of your contact form submissions to email inboxes for just $2 per month</p>
         <div id="snippet-envelope" class="envelope animated">
           <div id="snippet-generator" class="envelope__email-capture">
-            <p class="envelope__lead">Enter your email address to start your Howdy trial</p>
+            <p class="envelope__lead">Instant contact forms to your email inbox without a line of code:</p>
             <div id="snippet-generator-inputs" class="animated">
               <input placeholder="your-email@example.com" id="snippet-generator-email" class="envelope__input">
-              <button id="snippet-generator-button" class="envelope__button">Get Started</button>
+              <button id="snippet-generator-button" class="envelope__button">Start trial</button>
             </div>
           </div>
           <div id="snippet-display" class="snippet">
@@ -79,40 +78,59 @@
     </div>
     <!-- Page content-->
     <div class="content-wrapper">
-      <section class="benefits">
+      <section class="alt benefits">
         <div class="container">
-          <h2>No programming required</h2>
-          <h3>Total ease of use is a top priority, it's a designers best friend</h3>
+          <h2>What does it do?</h2>
+          <h3>Howdy takes the pain out of sending contact form submissions to email addresses</h3>
           <div class="benefit">
-            <h4 class="benefit__heading">Automatic form detection</h4>
-            <p class="benefit__content">Howdy automatically detects and handles form submissions</p>
+            <h4 class="benefit__heading">Automagical setup</h4>
+            <p class="benefit__content">If you can copy and paste HTML, you can use Howdy. It makes no assumptions about your page design, and requires <strong>no programming</strong>. <a href="#automagical-setup">Learn more...</a></p>
           </div>
           <div class="benefit">
-            <h4 class="benefit__heading">Automatic validation</h4>
-            <p class="benefit__content">Common field types are automatically validated</p>
+            <h4 class="benefit__heading">Professional form handling</h4>
+            <p class="benefit__content">Howdy will automatically validate your contact forms, and intelligently guess things like <code>reply-to</code> emails and <code>from</code> names from message content, so messages are always professionally presented. <a href="#professional-form-handling">Learn more...</a></p>
           </div>
           <div class="benefit">
-            <h4 class="benefit__heading">Custom validations</h4>
-            <p class="benefit__content">Specify your own validations with simple data attributes.</p>
-          </div>
-          <div class="benefit">
-            <h4 class="benefit__heading">Use your own designs</h4>
-            <p class="benefit__content">Just drop our snippet into your page, no awkward form builders.</p>
-          </div>
-          <div class="benefit">
-            <h4 class="benefit__heading">Platform Agnostic</h4>
-            <p class="benefit__content">Howdy isn't coupled to any technology, use it across all of your sites.</p>
-          </div>
-          <div class="benefit">
-            <h4 class="benefit__heading">Tried &amp; tested</h4>
-            <p class="benefit__content">Howdy performs beautifully on all devices; desktop &amp; mobile.</p>
+            <h4 class="benefit__heading">Unbelieveable value</h4>
+            <p class="benefit__content">Howdy lets you send unlimited messages to up to <strong>25 emails</strong> for just <strong>$2/month</strong>. Never has doing this yourself been so <em>not</em> worth your time. <a href="#unbelieveable-value">Learn more...</a></p>
           </div>
         </div>
       </section>
-      <section class="defaults">
+      <section id="automagical-setup" class="defaults">
+        <div class="container"> 
+          <h2>Automagical setup</h2>
+          <h3>As soon as our snippet is loaded, Howdy will automatically handle your form</h3>
+          <p>If you can copy and paste HTML you can add Howdy to your websites. Simply generate your snippet on this page and then copy &amp; paste it to your page's HTML:</p>
+          <div class="code">
+            <div class="code__wrapper">
+              <ul class="code__list">
+                <li class="code__liste__item"><span class="code__comment">// Write your contact form just the way you like it:</span></li>
+                <li class="code__list__item"><span>&lt;</span><span class="code__element">form</span><span>&gt;</span></li>
+                <li class="code__list__item"><span>&nbsp;&nbsp;&lt;</span><span class="code__element">input </span><span class="code__data-attribute">type</span><span class="code__text">=“</span><span>text</span><span class="code__text">”</span><span class="code__data-attribute"> name</span><span class="code__text">=“</span><span>first_name</span><span class="code__text">”</span><span>/&gt;</span></li>
+                <li class="code__list__item"><span>&nbsp;&nbsp;&lt;</span><span class="code__element">input </span><span class="code__data-attribute">type</span><span class="code__text">=“</span><span>text</span><span class="code__text">”</span><span class="code__data-attribute"> name</span><span class="code__text">=“</span><span>last_name</span><span class="code__text">”</span><span>/&gt;</span></li>
+                <li class="code__list__item"><span>&nbsp;&nbsp;&lt;</span><span class="code__element">textarea </span><span class="code__data-attribute">name</span><span class="code__text">=“</span><span>message</span><span class="code__text">”</span><span>&gt;</span><span>&lt;/</span><span class="code__element">textarea</span><span>&gt;</span></li>
+                <li class="code__list__item"><span>&nbsp;&nbsp;&lt;</span><span class="code__element">input </span><span class="code__data-attribute">type</span><span class="code__text">=“</span><span>submit</span><span class="code__text">”</span><span class="code__data-attribute">value</span><span class="code__text">=“</span><span>Send message</span><span class="code__text">”</span><span>/&gt;</span></li>
+                <li class="code__list__item"><span>&lt;/</span><span class="code__element">form</span><span>&gt;</span></li>
+                <li style="padding-top:25px" class="code__liste__item"><span class="code__comment">// Then paste in the snippet:</span></li>
+                <li class="code__list__item"><span>&lt;</span><span class="code__element">script </span><span>src</span><span class="code__text">=“</span><span class="code__overflow">&hellip;</span><span class="code__text">“ </span><span>data-howdy-recipient</span><span class="code__text">=“</span><span>your@email.com</span><span class="code__text">“</span><span>&gt;&lt;/</span><span class="code__element">script</span><span>&gt;</span></li>
+              </ul>
+            </div>
+          </div>
+          <p>You can even re-use the same snippet for different contact forms, just update the <code>data-howdy-recipient</code> attribute on the snippet to have it send to a different inbox:</p>
+          <div class="code">
+            <div class="code__wrapper">
+              <ul class="code__list">
+                <li class="code__list__item"><span>&lt;</span><span class="code__element">script </span><span>src</span><span class="code__text">=“</span><span class="code__overflow">&hellip;</span><span class="code__text">“ </span><span>data-howdy-recipient</span><span class="code__text">=“</span><span>another@email.com</span><span class="code__text">“</span><span>&gt;&lt;/</span><span class="code__element">script</span><span>&gt;</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="professional-form-handling" class="alt benefits">
         <div class="container">
-          <h2>Automatic Validation</h2>
-          <h3>Howdy validates against common fields by default</h3>
+          <h2>Professional form handling</h2>
+          <h3>Howdy automatically validates on all common fields &amp; does custom validations too</h3>
+          <p>Howdy will use the <code>name</code> attribute of inputs to determine how best to validate them:</p>
           <ul class="list">
             <li class="list__item">email</li>
             <li class="list__item">name</li>
@@ -141,13 +159,7 @@
             <li class="list__item">date_of_birth</li>
             <li class="list__item">dateOfBirth</li>
           </ul>
-        </div>
-      </section>
-      <section class="customise">
-        <div class="container">
-          <h2>Highly Customiseable</h2>
-          <h3>Add &amp; override validations by adding HTML attributes</h3>
-          <p>Add these to your <code>inputs</code> and <code>textareas</code> to add or override default validations:</p>
+          <p>You can add data attributes to your <code>inputs</code> and <code>textareas</code> to add or override default validations:</p>
           <div class="code">
             <div class="code__wrapper">
               <ul class="code__list">
@@ -160,36 +172,14 @@
               </ul>
             </div>
           </div>
-          <h3>Send emails to a new recipient under the same token:</h3>
-          <p>You can use a single Howdy token across multiple email addresses by simply adjusting the recipient on your <code>script</code> tag. There's no need to generate a new token:</p>
-          <div class="code">
-            <div class="code__wrapper">
-              <ul class="code__list">
-                <li class="code__list__item"><span>&lt;</span><span class="code__element">script src</span><span class="code__text">=“</span><span class="code__overflow">&hellip;</span><span class="code__text">“ </span><span>data-howdy-recipient</span><span class="code__text">=“</span><span>another@email.com</span><span class="code__text">“</span><span>&gt;&lt;/</span><span class="code__element">script</span><span>&gt;</span></li>
-              </ul>
-            </div>
-          </div>
-          <h3>Customise your after send message (advanced):</h3>
-          <p>With a little bit of JavaScript knowledge, you can override the default alert message for Howdy: </p>
-          <div class="code">
-            <div class="code__wrapper">
-              <ul class="code__list">
-                <li class="code__list__item"><span>&lt;</span><span class="code__element">script </span><span>type</span><span class="code__text">="</span><span>text/javascript</span><span class="code__text">"</span><span>&gt;</span></li>
-                <li class="code__list__item">&nbsp;&nbsp;<span class="code__text">window.howdyEvents = {</span></li>
-                <li class="code__list__item">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code__text">afterSend: function(messageData) {</span></li>
-                <li class="code__list__item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code__text">alert("My custom message!");</span></li>
-                <li class="code__list__item">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code__text">}</span></li>
-                <li class="code__list__item">&nbsp;&nbsp;<span class="code__text">};</span></li>
-                <li class="code__list__item">&lt;/<span class="code__element">script</span>&gt;</li>
-              </ul>
-            </div>
-          </div>
+          <h3>Howdy intelligently interprets your messages for professionally presented emails</h3>
+          <p>Howdy picks out common message fields like <strong>names</strong>, <strong>subjects</strong> and <strong>email</strong> addresses in order to intelligently set <code>reply-to</code>, <code>from</code> and <code>subject</code> properties on the emails it sends. This gives you professionally presented emails with zero effort.</p>
         </div>
       </section>
-      <section class="sellpoints">
+      <section id="unbelieveable-value" class="sellpoints">
         <div class="container">
-          <h2>Just $2 a month</h2>
-          <h3>Our pricing model is pretty simple. With your subscription you can</h3>
+          <h2>Unbelieveable value</h2>
+          <h3>Our pricing is simple, flat, and affordable at $2 per month</h3>
           <div class="pricing-sellpoints">
             <ul>
               <li>Use Howdy across an <strong>unlimited</strong> number of sites</li>
@@ -210,7 +200,7 @@
         <div class="footer__section">
           <p class="footer__text"><span class='additional-content'>Made with <span class='heart'>❤</span> by </span><a class='footer__link--leaf' href='http://weareleaf.com' target='_blank'>Leaf</a></p>
         </div>
-        <div class="footer__section"><a href="https://twitter.com/share" data-url="https://www.howdyform.com/" data-text="Check out Howdy. Form submissions right to your inbox. No programming required." data-via="leafagency" class="footer__share-button twitter-share-button">Tweet</a>
+        <div class="footer__section"><a href="https://twitter.com/share" data-url="https://www.howdyform.com/" data-text="Check out Howdy. Instant contact forms to your email inbox without a line of code." data-via="leafagency" class="footer__share-button twitter-share-button">Tweet</a>
           <script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         </div>
       </div>
