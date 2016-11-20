@@ -4,12 +4,8 @@ block prepend vars
   -var bodyClass = 'start-subscription-page inner-page'
 
 block content
-  script(type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js")
-  script(type="text/javascript" src="https://js.stripe.com/v2/")
-
   section
     .container
-
       h2 Start your Howdy subscription
       
       h3 We hope you've found Howdy to be an simple time saver for you and your clients.<br/>Luckily, our subscription is pretty simple too, for just <strong>$2 a month</strong>...
@@ -64,6 +60,10 @@ block content
       
       .panel
         p.panel__content As you move beyond your 25 recipients limit, we'll be in touch to move your subscription up a notch based on your usage patterns and email volumes. We <strong>won't</strong> just stop your service. For any questions about this, just drop us a line at <a href='mailto:hello@weareleaf.com'>hello@weareleaf.com</a>, or tweet us at <a href='https://twitter.com/we_are_leaf'>@we_are_leaf</a>.
-        
+  
+  script(type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js")
+  script(type="text/javascript" src="https://js.stripe.com/v2/")      
   script(type="text/javascript").
-    window.howdy.handleStartSubscription()
+    $(function() {
+      window.howdy.handleStartSubscription()
+    });
