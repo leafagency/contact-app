@@ -39,9 +39,12 @@ pre {
     list-style: none;
 
     &__item {
-      display: table;
-      margin-top: rem(20);
+      margin-top: rem(5);
       width: 100%;
+
+      span {
+        display: inline-block;
+      }
 
       @include susy-breakpoint($small-screen) {
         display: block;
@@ -52,9 +55,6 @@ pre {
         margin-top: 0;
       }
 
-      @include susy-breakpoint($small-screen) {
-        margin-top: 0;
-      }
     }
   }
 
@@ -88,7 +88,6 @@ pre {
 
   &__comment {
     color: #a3be88;
-    display: table-caption;
 
     @include susy-breakpoint($small-screen) {
       display: initial;
