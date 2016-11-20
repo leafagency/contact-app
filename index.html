@@ -47,7 +47,7 @@
     <script src="/scripts/app/main.app.js"></script>
   </head>
   <body dir="ltr" class="home-page">
-    <div class="jumbotron">
+    <div id="jumbotron" class="jumbotron">
       <div class="container">
         <h1 class="jumbotron__title">Howdy</h1>
         <p class="jumbotron__intro">Instant contact forms to your email inbox without a line of code</p>
@@ -106,13 +106,13 @@
               <ul class="code__list">
                 <li class="code__liste__item"><span class="code__comment">// Write your contact form just the way you like it:</span></li>
                 <li class="code__list__item"><span>&lt;</span><span class="code__element">form</span><span>&gt;</span></li>
-                <li class="code__list__item"><span>&nbsp;&nbsp;&lt;</span><span class="code__element">input </span><span class="code__data-attribute">type</span><span class="code__text">=“</span><span>text</span><span class="code__text">”</span><span class="code__data-attribute"> name</span><span class="code__text">=“</span><span>first_name</span><span class="code__text">”</span><span>/&gt;</span></li>
-                <li class="code__list__item"><span>&nbsp;&nbsp;&lt;</span><span class="code__element">input </span><span class="code__data-attribute">type</span><span class="code__text">=“</span><span>text</span><span class="code__text">”</span><span class="code__data-attribute"> name</span><span class="code__text">=“</span><span>last_name</span><span class="code__text">”</span><span>/&gt;</span></li>
-                <li class="code__list__item"><span>&nbsp;&nbsp;&lt;</span><span class="code__element">textarea </span><span class="code__data-attribute">name</span><span class="code__text">=“</span><span>message</span><span class="code__text">”</span><span>&gt;</span><span>&lt;/</span><span class="code__element">textarea</span><span>&gt;</span></li>
-                <li class="code__list__item"><span>&nbsp;&nbsp;&lt;</span><span class="code__element">input </span><span class="code__data-attribute">type</span><span class="code__text">=“</span><span>submit</span><span class="code__text">”</span><span class="code__data-attribute">value</span><span class="code__text">=“</span><span>Send message</span><span class="code__text">”</span><span>/&gt;</span></li>
+                <li class="code__list__item"><span>&nbsp;&nbsp;&lt;</span><span class="code__element">input&nbsp;</span><span class="code__data-attribute">type</span><span class="code__text">=“</span><span>text</span><span class="code__text">”&nbsp;</span><span class="code__data-attribute"> name</span><span class="code__text">=“</span><span>first_name</span><span class="code__text">”&nbsp;</span><span>/&gt;</span></li>
+                <li class="code__list__item"><span>&nbsp;&nbsp;&lt;</span><span class="code__element">input&nbsp; </span><span class="code__data-attribute">type</span><span class="code__text">=“</span><span>text</span><span class="code__text">”&nbsp;</span><span class="code__data-attribute"> name</span><span class="code__text">=“</span><span>last_name</span><span class="code__text">”&nbsp;</span><span>/&gt;</span></li>
+                <li class="code__list__item"><span>&nbsp;&nbsp;&lt;</span><span class="code__element">textarea&nbsp;</span><span class="code__data-attribute">name</span><span class="code__text">=“</span><span>message</span><span class="code__text">”&nbsp;</span><span>&gt;</span><span>&lt;/</span><span class="code__element">textarea</span><span>&gt;</span></li>
+                <li class="code__list__item"><span>&nbsp;&nbsp;&lt;</span><span class="code__element">input&nbsp; </span><span class="code__data-attribute">type</span><span class="code__text">=“</span><span>submit</span><span class="code__text">”&nbsp;</span><span class="code__data-attribute">value</span><span class="code__text">=“</span><span>Send message</span><span class="code__text">”&nbsp;</span><span>/&gt;</span></li>
                 <li class="code__list__item"><span>&lt;/</span><span class="code__element">form</span><span>&gt;</span></li>
                 <li style="padding-top:25px" class="code__liste__item"><span class="code__comment">// Then paste in the snippet:</span></li>
-                <li class="code__list__item"><span>&lt;</span><span class="code__element">script </span><span>src</span><span class="code__text">=“</span><span class="code__overflow">&hellip;</span><span class="code__text">“ </span><span>data-howdy-recipient</span><span class="code__text">=“</span><span>your@email.com</span><span class="code__text">“</span><span>&gt;&lt;/</span><span class="code__element">script</span><span>&gt;</span></li>
+                <li class="code__list__item"><span>&lt;</span><span class="code__element">script&nbsp;</span><span>src</span><span class="code__text">=“</span><span class="code__overflow">&hellip;</span><span class="code__text">“&nbsp;</span><span>data-howdy-recipient</span><span class="code__text">=“</span><span>your@email.com</span><span class="code__text">“&nbsp;</span><span>&gt;&lt;/</span><span class="code__element">script</span><span>&gt;</span></li>
               </ul>
             </div>
           </div>
@@ -120,7 +120,7 @@
           <div class="code">
             <div class="code__wrapper">
               <ul class="code__list">
-                <li class="code__list__item"><span>&lt;</span><span class="code__element">script </span><span>src</span><span class="code__text">=“</span><span class="code__overflow">&hellip;</span><span class="code__text">“ </span><span>data-howdy-recipient</span><span class="code__text">=“</span><span>another@email.com</span><span class="code__text">“</span><span>&gt;&lt;/</span><span class="code__element">script</span><span>&gt;</span></li>
+                <li class="code__list__item"><span>&lt;</span><span class="code__element">script&nbsp;</span><span>src</span><span class="code__text">=“</span><span class="code__overflow">&hellip;</span><span class="code__text">“&nbsp;</span><span>data-howdy-recipient</span><span class="code__text">=“</span><span>another@email.com</span><span class="code__text">“&nbsp;</span><span>&gt;&lt;/</span><span class="code__element">script</span><span>&gt;</span></li>
               </ul>
             </div>
           </div>
@@ -163,12 +163,12 @@
           <div class="code">
             <div class="code__wrapper">
               <ul class="code__list">
-                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>none</span><span class="code__text">”</span><span class="code__comment">// No validation on this input</span></li>
-                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>required</span><span class="code__text">”</span><span class="code__comment">// Some value is required</span></li>
-                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>email</span><span class="code__text">”</span><span class="code__comment">// Email address is required</span></li>
-                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>number</span><span class="code__text">”</span><span class="code__comment">// A number is required</span></li>
-                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>date</span><span class="code__text">”</span><span class="code__comment">// A date is required  </span></li>
-                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>tel</span><span class="code__text">”</span><span class="code__comment">// No letters are allowed</span></li>
+                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>none</span><span class="code__text">”&nbsp;</span><span class="code__comment">// No validation on this input</span></li>
+                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>required</span><span class="code__text">”&nbsp;</span><span class="code__comment">// Some value is required</span></li>
+                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>email</span><span class="code__text">”&nbsp;</span><span class="code__comment">// Email address is required</span></li>
+                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>number</span><span class="code__text">”&nbsp;</span><span class="code__comment">// A number is required</span></li>
+                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>date</span><span class="code__text">”&nbsp;</span><span class="code__comment">// A date is required  </span></li>
+                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>tel</span><span class="code__text">”&nbsp;</span><span class="code__comment">// No letters are allowed</span></li>
               </ul>
             </div>
           </div>
@@ -189,7 +189,7 @@
               <li> <strong>Never waste time</strong> setting up form handling, validation, delivery <em>or</em> message formatting <em>ever</em> again</u></li>
             </ul>
           </div>
-          <p class="centered"> <a href="" class="button">Start my Trial</a></p>
+          <p class="centered"> <a href="#jumbotron" class="button">Start my Trial</a></p>
         </div>
       </section>
     </div>
@@ -200,7 +200,7 @@
         <div class="footer__section">
           <p class="footer__text"><span class='additional-content'>Made with <span class='heart'>❤</span> by </span><a class='footer__link--leaf' href='http://weareleaf.com' target='_blank'>Leaf</a></p>
         </div>
-        <div class="footer__section"><a href="https://twitter.com/share" data-url="https://www.howdyform.com/" data-text="Check out Howdy. Instant contact forms to your email inbox without a line of code." data-via="leafagency" class="footer__share-button twitter-share-button">Tweet</a>
+        <div class="footer__section"><a href="https://twitter.com/share" data-url="https://www.howdyform.com/" data-text="Check out Howdy. Instant contact forms to your email inbox without a line of code." data-via="we_are_leaf" class="footer__share-button twitter-share-button">Tweet</a>
           <script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         </div>
       </div>
