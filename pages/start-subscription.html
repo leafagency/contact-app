@@ -56,8 +56,6 @@
     </header>
     <!-- Page content-->
     <div class="content-wrapper">
-      <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-      <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
       <section>
         <div class="container">
           <h2>Start your Howdy subscription</h2>
@@ -128,7 +126,13 @@
           </div>
         </div>
       </section>
-      <script type="text/javascript">window.howdy.handleStartSubscription()</script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+      <script type="text/javascript" src="https://js.stripe.com/v2/">     </script>
+      <script type="text/javascript">
+        $(function() {
+          window.howdy.handleStartSubscription()
+        });
+      </script>
     </div>
     <!-- Footer-->
     <footer class="footer">
