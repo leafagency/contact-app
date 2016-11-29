@@ -94,10 +94,11 @@
             <h4 class="benefit__heading">Unbelieveable value</h4>
             <p class="benefit__content">Howdy lets you send unlimited messages to up to <strong>25 different inboxes</strong> for just <strong>$2/month</strong>. Never has doing this yourself been so <em>not</em> worth your time. <a href="#unbelieveable-value">Learn more...</a></p>
           </div>
+          <div style="clear: both;" class="clear"></div>
         </div>
       </section>
       <section id="automagical-setup" class="defaults">
-        <div class="container"> 
+        <div class="container">
           <h2>Automagical setup</h2>
           <h3>As soon as our snippet is loaded, Howdy will automatically handle your form</h3>
           <p>If you can copy and paste HTML you can add Howdy to your websites. Simply generate your snippet on this page and then copy &amp; paste it to your page's HTML:</p>
@@ -107,9 +108,9 @@
                 <li class="code__liste__item"><span class="code__comment">// Write your contact form just the way you like it:</span></li>
                 <li class="code__list__item"><span>&lt;</span><span class="code__element">form</span><span>&gt;</span></li>
                 <li class="code__list__item"><span>&nbsp;&nbsp;&lt;</span><span class="code__element">input&nbsp;</span><span class="code__data-attribute">type</span><span class="code__text">=“</span><span>text</span><span class="code__text">”&nbsp;</span><span class="code__data-attribute"> name</span><span class="code__text">=“</span><span>first_name</span><span class="code__text">”&nbsp;</span><span>/&gt;</span></li>
-                <li class="code__list__item"><span>&nbsp;&nbsp;&lt;</span><span class="code__element">input&nbsp; </span><span class="code__data-attribute">type</span><span class="code__text">=“</span><span>text</span><span class="code__text">”&nbsp;</span><span class="code__data-attribute"> name</span><span class="code__text">=“</span><span>last_name</span><span class="code__text">”&nbsp;</span><span>/&gt;</span></li>
+                <li class="code__list__item"><span>&nbsp;&nbsp;&lt;</span><span class="code__element">input&nbsp;</span><span class="code__data-attribute">type</span><span class="code__text">=“</span><span>text</span><span class="code__text">”&nbsp;</span><span class="code__data-attribute"> name</span><span class="code__text">=“</span><span>last_name</span><span class="code__text">”&nbsp;</span><span>/&gt;</span></li>
                 <li class="code__list__item"><span>&nbsp;&nbsp;&lt;</span><span class="code__element">textarea&nbsp;</span><span class="code__data-attribute">name</span><span class="code__text">=“</span><span>message</span><span class="code__text">”&nbsp;</span><span>&gt;</span><span>&lt;/</span><span class="code__element">textarea</span><span>&gt;</span></li>
-                <li class="code__list__item"><span>&nbsp;&nbsp;&lt;</span><span class="code__element">input&nbsp; </span><span class="code__data-attribute">type</span><span class="code__text">=“</span><span>submit</span><span class="code__text">”&nbsp;</span><span class="code__data-attribute">value</span><span class="code__text">=“</span><span>Send message</span><span class="code__text">”&nbsp;</span><span>/&gt;</span></li>
+                <li class="code__list__item"><span>&nbsp;&nbsp;&lt;</span><span class="code__element">input&nbsp;</span><span class="code__data-attribute">type</span><span class="code__text">=“</span><span>submit</span><span class="code__text">”&nbsp;</span><span class="code__data-attribute">value</span><span class="code__text">=“</span><span>Send message</span><span class="code__text">”&nbsp;</span><span>/&gt;</span></li>
                 <li class="code__list__item"><span>&lt;/</span><span class="code__element">form</span><span>&gt;</span></li>
                 <li style="padding-top:25px" class="code__liste__item"><span class="code__comment">// Then paste in the snippet:</span></li>
                 <li class="code__list__item"><span>&lt;</span><span class="code__element">script&nbsp;</span><span>src</span><span class="code__text">=“</span><span class="code__overflow">&hellip;</span><span class="code__text">“&nbsp;</span><span>data-howdy-recipient</span><span class="code__text">=“</span><span>your@email.com</span><span class="code__text">“&nbsp;</span><span>&gt;&lt;/</span><span class="code__element">script</span><span>&gt;</span></li>
@@ -129,6 +130,8 @@
       <section id="professional-form-handling" class="alt benefits">
         <div class="container">
           <h2>Professional form handling</h2>
+          <h3>Howdy intelligently interprets your messages for professional emails, try it out below!</h3>
+          <div id="try-it-out"></div>
           <h3>Howdy automatically validates on all common fields &amp; does custom validations too</h3>
           <p>Howdy will use the <code>name</code> attribute of inputs to determine how best to validate them:</p>
           <ul class="list">
@@ -167,13 +170,11 @@
                 <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>required</span><span class="code__text">”&nbsp;</span><span class="code__comment">// Some value is required</span></li>
                 <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>email</span><span class="code__text">”&nbsp;</span><span class="code__comment">// Email address is required</span></li>
                 <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>number</span><span class="code__text">”&nbsp;</span><span class="code__comment">// A number is required</span></li>
-                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>date</span><span class="code__text">”&nbsp;</span><span class="code__comment">// A date is required  </span></li>
+                <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>date</span><span class="code__text">”&nbsp;</span><span class="code__comment">// A date is required</span></li>
                 <li class="code__list__item"><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>tel</span><span class="code__text">”&nbsp;</span><span class="code__comment">// No letters are allowed</span></li>
               </ul>
             </div>
           </div>
-          <h3>Howdy intelligently interprets your messages for professionally presented emails</h3>
-          <p>Howdy picks out common message fields like <strong>names</strong>, <strong>subjects</strong> and <strong>email</strong> addresses in order to intelligently set <code>reply-to</code>, <code>from</code> and <code>subject</code> properties on the emails it sends. This gives you professionally presented emails with zero effort.</p>
         </div>
       </section>
       <section id="unbelieveable-value" class="sellpoints">
@@ -189,7 +190,7 @@
               <li> <strong>Never waste time</strong> setting up form handling, validation, delivery <em>or</em> message formatting <em>ever</em> again</u></li>
             </ul>
           </div>
-          <p class="centered"> <a href="#jumbotron" class="button">Start my Trial</a></p>
+          <p class="centered"><a href="#jumbotron" class="button">Start my Trial</a></p>
         </div>
       </section>
     </div>
