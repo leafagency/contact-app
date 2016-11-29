@@ -4,10 +4,12 @@ var watch = require('gulp-watch');
 var sass = require('gulp-sass');
 var connect = require('gulp-connect');
 var connectRewrite = require('http-rewrite-middleware');
-var browserify = require('gulp-browserify');
+var webpackStream = require('webpack-stream');
+var webpack = require('webpack');
 var uglify = require('gulp-uglify');
 var open = require('gulp-open');
-var imageOptimization = require('gulp-image-optimization');
+var imagemin = require('gulp-imagemin');
+var imageminJpegRecompress = require('imagemin-jpeg-recompress');
 var del = require('del');
 var notify = require('gulp-notify');
 var ghPages = require('gulp-gh-pages');
@@ -23,10 +25,61 @@ var FAVICON_BASE = ['./code/favicons'];
 var FAVICON_FILES = [(FAVICON_BASE + '/**/*')];
 var IMAGE_FILES = ['./code/**/*.png','./code/**/*.jpg','./code/**/*.gif','./code/**/*.jpeg', '!./code/lib/**', '!./code/images/favicons/**/*'];
 var APP_JS_FILES = ['./code/scripts/app/**/*.js', '!./code/lib/**'];
-var LIB_JS_FILES = ['./code/scripts/lib/**/*.js', '!./code/lib/**'];
-var BROWSERIFYABLE_FILES = './code/scripts/app/**/*.app.js';
+var WEBPACKABLE_FILES = './code/scripts/app/**/*.app.js';
 var BUILD_DEST = './dist/';
 var BUILT_FILES = BUILD_DEST + '**/*';
+
+function logError (error) {
+  var errorString = error.toString()
+  notify.onError({
+    title: 'Build Error',
+    message: errorString
+  })(error);
+  console.log(errorString);
+  this.emit('end');
+}
+
+var webpackConfig = {
+  output: {
+    filename: 'main.app.js'
+  },
+  stats: {
+    hash: false,
+    version: false,
+    timings: false,
+    assets: false,
+    chunks: true,
+    chunkModules: false,
+    modules: false,
+    children: false,
+    cached: false,
+    reasons: false,
+    source: false,
+    chunkOrigins: false
+  },
+  devtool: 'source-map',
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015', 'react']
+        }
+      }
+    ]
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      "process.env": { "NODE_ENV": JSON.stringify("production") }
+    }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      warnings: false
+    })
+  ]
+};
 
 function logError (error) {
   var errorString = error.toString()
@@ -87,37 +140,29 @@ gulp.task('styles', function() {
 gulp.task('images', function() {
   return gulp.src(IMAGE_FILES)
     .pipe(changed(BUILD_DEST))
-    .pipe(imageOptimization({
-      optimizationLevel: 8,
-      progressive: true,
-      interlaced: true
-    }))
+    .pipe(imagemin([
+      imageminJpegRecompress()
+    ]))
     .on('error', logError)
     .pipe(gulp.dest(BUILD_DEST))
     .pipe(connect.reload());
 });
 
-gulp.task('app_scripts', function() {
-  return gulp.src(BROWSERIFYABLE_FILES)
-    .pipe(browserify({
-      glboal: true,
-      debug : true
-    }))
+gulp.task("app_scripts", function() {
+  return gulp.src(WEBPACKABLE_FILES)
+    .pipe(webpackStream(webpackConfig))
     .on('error', logError)
-    .pipe(uglify())
+    .pipe(gulp.dest(BUILD_DEST+'scripts/app/'));
+});
+
+gulp.task("app_scripts:watched", function() {
+  webpackConfig.watch = true;
+  return gulp.src(WEBPACKABLE_FILES)
+    .pipe(webpackStream(webpackConfig))
     .on('error', logError)
     .pipe(gulp.dest(BUILD_DEST+'scripts/app/'))
     .pipe(connect.reload());
-});
-
-gulp.task('lib_scripts', function() {
-  return gulp.src(LIB_JS_FILES)
-    .pipe(changed(BUILD_DEST))
-    .pipe(uglify())
-    .on('error', logError)
-    .pipe(gulp.dest(BUILD_DEST+'scripts/lib/'))
-    .pipe(connect.reload());
-});
+})
 
 // ---------------------------------
 // --------- WATCH TASKS -----------
@@ -144,13 +189,6 @@ gulp.task('watch', function () {
     gulp.start('images');
   });
 
-  watch(APP_JS_FILES, function() {
-    gulp.start('app_scripts');
-  });
-
-  watch(LIB_JS_FILES, function() {
-    gulp.start('lib_scripts');
-  });
 });
 
 // ----------------------------------
@@ -193,8 +231,8 @@ gulp.task('deploy', function() {
 // --------- COMPOSITE TASKS --------
 // ----------------------------------
 gulp.task('build', function(cb) {
-  return runSequence('clean', ['misc', 'favicons', 'templates', 'styles', 'images', 'app_scripts', 'lib_scripts'], cb)
+  return runSequence('clean', ['misc', 'favicons', 'templates', 'styles', 'images', 'app_scripts'], cb)
 });
 gulp.task('start', function(cb) {
-  return runSequence('build', 'connect', ['watch', 'open'], cb);
+  return runSequence('clean', ['misc', 'favicons', 'templates', 'styles', 'images', 'app_scripts'], 'connect', ['app_scripts:watched', 'watch', 'open'], cb);
 });

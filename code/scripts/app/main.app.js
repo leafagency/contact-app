@@ -1,6 +1,7 @@
 var howdy = window.howdy = {}
-var request = require('superagent')
-var config = require('./config')
+import request from 'superagent'
+import config from './config'
+import tryItOut from './tryItOut'
 
 var getQueryString = function() {
   var qs = {};
@@ -124,4 +125,5 @@ howdy.handleStartSubscription = function() {
 window.onload = function() {
   howdy.handleNewAccountCreation()
   howdy.handleEmailVerification()
+  tryItOut.render()
 }

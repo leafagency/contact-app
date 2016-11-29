@@ -11,26 +11,28 @@ block content
       .container
         h2 What does it do?
         h3 Howdy takes the pain out of sending contact form submissions to email addresses
-        
+
         .benefit
           h4.benefit__heading Automagical setup
           p.benefit__content If you can copy and paste HTML, you can use Howdy. It makes no assumptions about your page design, and requires <strong>no programming</strong>. <a href="#automagical-setup">Learn more...</a>
-          
+
         .benefit
           h4.benefit__heading Professional form handling
           p.benefit__content Howdy will automatically validate your contact forms, and intelligently guess things like <code>reply-to</code> emails and <code>from</code> names from message content, so messages are always professionally presented. <a href="#professional-form-handling">Learn more...</a>
-          
+
         .benefit
           h4.benefit__heading Unbelieveable value
           p.benefit__content Howdy lets you send unlimited messages to up to <strong>25 different inboxes</strong> for just <strong>$2/month</strong>. Never has doing this yourself been so <em>not</em> worth your time. <a href="#unbelieveable-value">Learn more...</a>
-                
+
+        .clear(style="clear: both;")
+
     section.defaults#automagical-setup
-      .container 
+      .container
         h2 Automagical setup
         h3 As soon as our snippet is loaded, Howdy will automatically handle your form
-        
+
         p If you can copy and paste HTML you can add Howdy to your websites. Simply generate your snippet on this page and then copy &amp; paste it to your page's HTML:
-        
+
         .code
           .code__wrapper
             ul.code__list
@@ -54,7 +56,7 @@ block content
                 span /&gt;
               li.code__list__item
                 span &nbsp;&nbsp;&lt;
-                span.code__element input&nbsp; 
+                span.code__element input&nbsp;
                 span.code__data-attribute type
                 span.code__text =“
                 span text
@@ -77,7 +79,7 @@ block content
                 span &gt;
               li.code__list__item
                 span &nbsp;&nbsp;&lt;
-                span.code__element input&nbsp; 
+                span.code__element input&nbsp;
                 span.code__data-attribute type
                 span.code__text =“
                 span submit
@@ -107,7 +109,7 @@ block content
                 span &gt;&lt;/
                 span.code__element script
                 span &gt;
-        
+
         p You can even re-use the same snippet for different contact forms, just update the <code>data-howdy-recipient</code> attribute on the snippet to have it send to a different inbox:
 
         .code
@@ -127,12 +129,16 @@ block content
                 span &gt;&lt;/
                 span.code__element script
                 span &gt;
-    
+
     section.alt.benefits#professional-form-handling
       .container
         h2 Professional form handling
+        h3 Howdy intelligently interprets your messages for professional emails, try it out below!
+
+        #try-it-out
+
         h3 Howdy automatically validates on all common fields &amp; does custom validations too
-        
+
         p Howdy will use the <code>name</code> attribute of inputs to determine how best to validate them:
         ul.list
           li.list__item email
@@ -161,7 +167,7 @@ block content
           li.list__item dob
           li.list__item date_of_birth
           li.list__item dateOfBirth
-          
+
         p You can add data attributes to your <code>inputs</code> and <code>textareas</code> to add or override default validations:
         .code
           .code__wrapper
@@ -195,24 +201,20 @@ block content
                 span.code__text =“
                 span date
                 span.code__text ”&nbsp;
-                span.code__comment // A date is required  
+                span.code__comment // A date is required
               li.code__list__item
                 span.code__data-attribute data-howdy-validate
                 span.code__text =“
                 span tel
                 span.code__text ”&nbsp;
                 span.code__comment // No letters are allowed
-                
-        h3 Howdy intelligently interprets your messages for professionally presented emails
-        
-        p Howdy picks out common message fields like <strong>names</strong>, <strong>subjects</strong> and <strong>email</strong> addresses in order to intelligently set <code>reply-to</code>, <code>from</code> and <code>subject</code> properties on the emails it sends. This gives you professionally presented emails with zero effort.
-                
+
     section.sellpoints#unbelieveable-value
       .container
         h2 Unbelieveable value
         h3 Our pricing is simple, flat, and affordable at $2 per month
-        
+
         include ./pages/modules/pricing-sellpoints
-        
-        p.centered  
+
+        p.centered
           a.button(href="#jumbotron") Start my Trial
