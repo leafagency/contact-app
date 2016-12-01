@@ -1,38 +1,116 @@
 .try-it-out-container {
-  width: 1060px;
-  margin-left: -150px;
+  @include susy-breakpoint($medium-screen) {
+    width: $medium-screen;
+    margin-left: -130px;
+  }
+
+  margin-bottom: $base-spacing;
 }
 
 .fake-form-container, .fake-email-container {
-  display: inline-block;
-  vertical-align: top;
   text-align: left;
+
+  @include susy-breakpoint($medium-screen) {
+    display: inline-block;
+    vertical-align: top;
+  }
 }
 
+.fake-form, .fake-email {
+  background: white;
+  box-shadow: 0 0 10px 1px #eee;
+  border: 1px solid #ddd;
+  padding: 15px;
+  min-height: 381px;
+}
+
+
 .fake-form-container {
-  width: 49%;
-  margin-right: 1%;
+  @include susy-breakpoint($medium-screen) {
+    width: 49%;
+    margin-right: 1%;
+  }
 
   .fake-form {
     font-size: 0.9em;
+    margin-bottom: $small-spacing / 2;
+    position: relative;
+
+    // Show an arrow facing down on small screens, right on medium and larger screens:
+    &:after, &:before {
+      top: 100%;
+    	left: 50%;
+    	border: solid transparent;
+    	content: " ";
+    	height: 0;
+    	width: 0;
+    	position: absolute;
+    	pointer-events: none;
+      z-index: 1;
+      @include susy-breakpoint($medium-screen) {
+        left: 100%;
+      	top: 50%;
+      }
+    }
+    &:after {
+    	border-color: rgba(255, 255, 255, 0);
+    	border-top-color: #fff;
+    	border-width: 30px;
+    	margin-left: -30px;
+      @include susy-breakpoint($medium-screen) {
+        border-top-color: rgba(255, 255, 255, 0);
+        border-left-color: #fff;
+        margin-left: 0;
+        margin-top: -30px;
+      }
+    }
+    &:before {
+    	border-color: rgba(221, 221, 225, 0);
+    	border-top-color: #ddd;
+    	border-width: 31px;
+    	margin-left: -31px;
+
+      @include susy-breakpoint($medium-screen) {
+      	border-top-color: rgba(255, 225, 255, 0);
+      	border-left-color: #ddd;
+        margin-left: 0;
+      	margin-top: -31px;
+      }
+    }
+
     input, textarea {
-      background-color: white;
       border-width: 1px;
     }
 
     &__fieldset {
-      height: 50px;
       label {
+        box-sizing: border-box;
         display: inline-block;
-        width: 19%;
-        padding: $base-spacing / 4;
+        padding: 4px 10px 4px 0;
         text-align: right;
         vertical-align: top;
+
+        width: 15%;
+        @include susy-breakpoint($small-screen) {
+          width: 10%;
+        }
+        @include susy-breakpoint($medium-screen) {
+          width: 15%;
+        }
       }
 
-      input, textarea {
+      input, textarea, select {
+        border-radius:0;
         display: inline-block;
-        width: 80%;
+        padding: 5px 10px;
+
+        width: 85%;
+        @include susy-breakpoint($small-screen) {
+          width: 90%;
+        }
+        @include susy-breakpoint($medium-screen) {
+          width: 85%;
+        }
       }
 
       textarea {
@@ -47,15 +125,18 @@
 }
 
 .fake-email-container {
-  width: 49%;
+  @include susy-breakpoint($medium-screen) {
+    width: 49%;
+    margin-left: 1%;
+  }
+
   .fake-email {
-    background: white;
-    box-shadow: 0 0 10px 1px #eee;
-    border: 1px solid #ddd  ;
+    background: white url('/images/dashes.svg') no-repeat center top;
+    border-radius: $base-border-radius * 2;
+    border-color: #ddd;
+    padding-top: 20px;
     text-align: left;
     font: menu;
-    min-height: 350px;
-    padding: 15px 15px;
     position: relative;
 
     &__from {

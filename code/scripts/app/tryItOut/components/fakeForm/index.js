@@ -15,17 +15,17 @@ class FakeForm extends React.Component {
   }
 
   render() {
-    const { firstName, lastName, email, subject, message } = this.props
+    const { firstName, lastName, email, subject, coolnessRating, message } = this.props
     return (
       <div className="fake-form-container">
         <form className="fake-form">
           <div className="fake-form__fieldset">
-            <label>First name</label>
+            <label>First</label>
             <input type="text" name="firstName" value={firstName} onChange={this.onInputChange} />
           </div>
 
           <div className="fake-form__fieldset">
-            <label>Last name</label>
+            <label>Last</label>
             <input type="text" name="lastName" value={lastName} onChange={this.onInputChange} />
           </div>
 
@@ -37,6 +37,19 @@ class FakeForm extends React.Component {
           <div className="fake-form__fieldset">
             <label>Subject</label>
             <input type="text" name="subject" value={subject} onChange={this.onInputChange} />
+          </div>
+
+          <div className="fake-form__fieldset">
+            <label>Coolness</label>
+            <select name="coolnessRating" value={coolnessRating} onChange={this.onInputChange}>
+              <option>Absolute zero</option>
+              <option>Arctic</option>
+              <option>Frosty</option>
+              <option>Tepid</option>
+              <option>Lukewarm</option>
+              <option>Quite warm</option>
+              <option>Hot</option>
+            </select>
           </div>
 
           <div className="fake-form__fieldset">
@@ -55,6 +68,7 @@ FakeForm.propTypes = {
   email: React.PropTypes.string.isRequired,
   subject: React.PropTypes.string.isRequired,
   message: React.PropTypes.string.isRequired,
+  coolnessRating: React.PropTypes.string.isRequired,
   onValueChange: React.PropTypes.func.isRequired
 }
 

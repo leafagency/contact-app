@@ -12,15 +12,6 @@
     }
   }
 
-  @include susy-breakpoint($small-screen) {
-    @include span(6);
-    margin-top: rem(50);
-
-    &:nth-of-type(2n) {
-      @include last;
-    }
-  }
-
   @include susy-breakpoint($medium-screen) {
     @include span(4);
 

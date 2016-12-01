@@ -6,7 +6,6 @@ var connect = require('gulp-connect');
 var connectRewrite = require('http-rewrite-middleware');
 var webpackStream = require('webpack-stream');
 var webpack = require('webpack');
-var uglify = require('gulp-uglify');
 var open = require('gulp-open');
 var imagemin = require('gulp-imagemin');
 var imageminJpegRecompress = require('imagemin-jpeg-recompress');
@@ -76,7 +75,9 @@ var webpackConfig = {
     }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      warnings: false
+      compress: {
+        warnings: false
+      }
     })
   ]
 };

@@ -4,11 +4,12 @@ import FakeForm from './components/fakeForm'
 import FakeEmail from './components/fakeEmail'
 
 const formData = {
-  firstName: 'Joe',
-  lastName: 'Bloggs',
-  email: 'joe@schmoe.com',
-  subject: 'Howdy interactive demo',
-  message: "This is a interactive demo of Howdy's ability to sensibly format your contact form messages for email. Try clearing out fields and see how the email on the right reacts!",
+  firstName: 'Change',
+  lastName: 'Me',
+  email: 'changeme@test.com',
+  subject: '',
+  coolnessRating: 'Absolute zero',
+  message: "This is a interactive demo of Howdy's ability to sensibly format your contact form messages for email. Try clearing out fields and see how the email reacts!"
 }
 
 const tryItOut = module.exports = {
@@ -28,6 +29,7 @@ const tryItOut = module.exports = {
           email={formData.email}
           subject={formData.subject}
           message={formData.message}
+          coolnessRating={formData.coolnessRating}
           onValueChange={tryItOut.handleValueChange}
         />
         <FakeEmail
@@ -35,6 +37,7 @@ const tryItOut = module.exports = {
           lastName={formData.lastName}
           email={formData.email}
           subject={formData.subject}
+          coolnessRating={formData.coolnessRating}
           message={formData.message}
         />
       </div>,

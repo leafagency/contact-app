@@ -59,7 +59,12 @@ h4 {
 }
 
 p {
-  margin: 0 0 $small-spacing;
+  margin: 0 0 $small-spacing/2;
+
+  &.small {
+    color: $dark-gray;
+    font-size: 0.8em;
+  }
 }
 
 a {

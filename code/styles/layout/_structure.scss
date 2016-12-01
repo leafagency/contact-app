@@ -33,10 +33,6 @@ section {
   }
   @include clearfix;
   padding: rem(40) 0;
-
-  @include susy-breakpoint($small-screen) {
-    padding: rem(80) 0;
-  }
 }
 
 .confirmed-page .content-wrapper {
