@@ -125,7 +125,7 @@ class FakeForm extends React.Component {
 
           {this.renderTextArea('Message', 'message')}
 
-          <input type="submit" value="Submit" onClick={this.onSubmit} />
+          <input className='fake-form__submit' type="submit" value="Submit" onClick={this.onSubmit} />
         </form>
       </div>
     )

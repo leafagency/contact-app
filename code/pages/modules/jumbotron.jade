@@ -2,40 +2,5 @@
   .container
     h1.jumbotron__title #{appName}
     p.jumbotron__intro #{description}
-
-    .envelope.animated(id='snippet-envelope')
-
-      .envelope__email-capture(id='snippet-generator')
-        p.envelope__lead Enter an account email address to get started with your 2 week unlimited trial
-
-        .animated(id='snippet-generator-inputs')
-          input.envelope__input(placeholder='#{exampleEmail}', id='snippet-generator-email')
-          button.envelope__button(id='snippet-generator-button') Generate my snippet
-
-      .snippet(id='snippet-display')
-        p.envelope__lead Thanks! Now paste this into your contact page HTML, that's it!
-        pre
-          .code
-            .code__wrapper
-              span.code__text &lt;
-              span.code__element script 
-              span.code__attribute src
-              span.code__text ="
-              span.code__value
-                span(id="snippet-display-url")
-                span ?token=
-                span(id="snippet-display-token") #{exampleEmail}
-              span.code__text " 
-              span.code__attribute data-howdy-recipient
-              span.code__text ="
-              span.code__value
-                span(id="snippet-display-email")
-              span.code__text "&gt;&lt;/
-              span.code__element script
-              span.code__text &gt;
-
-        .additional-info
-          h4 Boring Notes
-          ul
-            li <strong>Your trial ends 2 weeks from today</strong>, we'll send you payment instructions then.
-            li <strong>We've sent you an email with a link to click</strong> to verify you own the email address you provided.
+    
+    include ./snippet-generator

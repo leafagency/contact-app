@@ -11,9 +11,10 @@
 .envelope {
   @include clearfix;
   background: white url('/images/dashes.svg') no-repeat center top;
+  box-shadow: inset 0 -1px 10px #ccc;
   border-radius: 10px 10px 0 0;
   clear: both;
-  padding: rem(54) 0 rem(74);
+  padding: rem(54) 0 rem(54);
   position: relative;
 
   &__lead {
@@ -57,7 +58,7 @@
 
     h4 {
       text-align:left;
-      margin: $small-spacing 0 $smaller-spacing;
+      margin: 0 0 $smaller-spacing;
     }
 
     ul {
