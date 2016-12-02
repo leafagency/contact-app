@@ -3,9 +3,9 @@ import messageHelper from '../../helpers/messageHelper';
 
 class FakeEmail extends React.Component {
   render() {
-    const subject = messageHelper.buildSubject(this.props)
-    const fromText = messageHelper.buildFromText(this.props)
-    const message = messageHelper.buildMessage(this.props)
+    const subject = messageHelper.buildSubject(this.props.emailData)
+    const fromText = messageHelper.buildFromText(this.props.emailData)
+    const message = messageHelper.buildMessage(this.props.emailData)
     const replyTo = this.props.email || 'no-reply@howdyform.com'
 
     return (
@@ -31,11 +31,7 @@ class FakeEmail extends React.Component {
 }
 
 FakeEmail.propTypes = {
-  firstName: React.PropTypes.string.isRequired,
-  lastName: React.PropTypes.string.isRequired,
-  email: React.PropTypes.string.isRequired,
-  subject: React.PropTypes.string.isRequired,
-  message: React.PropTypes.string.isRequired
+  emailData: React.PropTypes.object.isRequired
 }
 
 module.exports = FakeEmail

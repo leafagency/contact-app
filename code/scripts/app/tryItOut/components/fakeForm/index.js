@@ -19,6 +19,7 @@ class FakeForm extends React.Component {
     return (
       <div className="fake-form-container">
         <form className="fake-form">
+          <h3>My first contact form</h3>
           <div className="fake-form__fieldset">
             <label>First</label>
             <input type="text" name="firstName" value={firstName} onChange={this.onInputChange} />
@@ -56,6 +57,8 @@ class FakeForm extends React.Component {
             <label>Message</label>
             <textarea type="text" name="message" value={message} onChange={this.onInputChange} />
           </div>
+
+          <input type="submit" value="Submit" onClick={this.props.onSubmit} />
         </form>
       </div>
     )
@@ -69,7 +72,8 @@ FakeForm.propTypes = {
   subject: React.PropTypes.string.isRequired,
   message: React.PropTypes.string.isRequired,
   coolnessRating: React.PropTypes.string.isRequired,
-  onValueChange: React.PropTypes.func.isRequired
+  onValueChange: React.PropTypes.func.isRequired,
+  onSubmit: React.PropTypes.func.isRequired
 }
 
 module.exports = FakeForm

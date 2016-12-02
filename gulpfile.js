@@ -235,5 +235,5 @@ gulp.task('build', function(cb) {
   return runSequence('clean', ['misc', 'favicons', 'templates', 'styles', 'images', 'app_scripts'], cb)
 });
 gulp.task('start', function(cb) {
-  return runSequence('clean', ['misc', 'favicons', 'templates', 'styles', 'images', 'app_scripts'], 'connect', ['app_scripts:watched', 'watch', 'open'], cb);
+  return runSequence('clean', ['misc', 'favicons', 'templates', 'styles', 'images'], 'connect', ['app_scripts:watched', 'watch'], 'open', cb);
 });
