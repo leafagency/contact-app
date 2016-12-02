@@ -1,6 +1,10 @@
 .animated {
   animation-duration: 1s;
   animation-fill-mode: both;
+
+  &--short {
+    animation-duration: 0.5s;
+  }
 }
 
 @keyframes shake {
@@ -19,6 +23,24 @@
 
 .shake {
   animation-name: shake;
+}
+
+@keyframes shake-vertical {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  20%, 60% {
+    transform: translate3d(0, -5px, 0);
+  }
+
+  40%, 80% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+.shake-vertical {
+  animation-name: shake-vertical;
 }
 
 @keyframes bounceInUp {
