@@ -2,6 +2,15 @@ import React from 'react';
 import messageHelper from '../../helpers/messageHelper';
 
 class FakeEmail extends React.Component {
+  shouldComponentUpdate(nextProps) {
+    const keys = Object.keys(this.props.data)
+    for (let i = 0; i < keys.length; i++) {
+      const key = keys[i]
+      if (this.props.data[key] !== nextProps.data[key]) return true
+    }
+    return false
+  }
+
   componentDidUpdate() {
     const classList = document.getElementById('fake-email').classList
     classList.add('shake-vertical')
@@ -18,17 +27,19 @@ class FakeEmail extends React.Component {
     return (
       <div className='fake-email-container'>
         <div className='fake-email animated--short' id="fake-email">
-          <div className="fake-email__from">
-            {fromText}
-          </div>
-          <div className="fake-email__header-field">
-            <span className="fake-email__header-field__label">To:</span> your@email.com
-          </div>
-          <div className="fake-email__header-field">
-            <span className="fake-email__header-field__label">Reply-To:</span> {replyTo}
-          </div>
-          <div className="fake-email__header-subject">
-            {subject}
+          <div className="fake-email__header">
+            <div className="fake-email__from">
+              {fromText}
+            </div>
+            <div className="fake-email__header-field">
+              <span className="fake-email__header-field__label">To:</span> your@email.com
+            </div>
+            <div className="fake-email__header-field">
+              <span className="fake-email__header-field__label">Reply-To:</span> {replyTo}
+            </div>
+            <div className="fake-email__header-subject">
+              {subject}
+            </div>
           </div>
           <div className="fake-email__body" dangerouslySetInnerHTML={{ __html: message }}></div>
         </div>

@@ -34,7 +34,7 @@ messageHelper.buildMessage = (messageObject) => {
     }
     var value = messageObject[key]
 
-    messageAttributeString += key + ': ' + value + '<br/>'
+    messageAttributeString += `<b>${key}</b>: ${(value || 'n/a')}<br/>`
   }
 
   message += messageAttributeString + '<br/>'
