@@ -6,16 +6,16 @@ block prepend vars
 block content
   section
     .container
-      h2 Start your Howdy subscription
+      h2 Start your Howdy subscription for just $2 per month
       
-      h3 We hope you've found Howdy to be an simple time saver for you and your clients.<br/>Luckily, our subscription is pretty simple too, for just <strong>$2 a month</strong>...
+      h3 All of your contact forms across all of your sites for less than a cup of coffee
       
       include ./modules/pricing-sellpoints
-        
+
       form(id="payment-form")
         .form-row
           .form-group
-              label(for='name') Primary Email <small>(This <strong>must</strong> be the same as the email address you used to generate your Howdy token)</small>
+              label(for='name') Primary Email
               input(type='email', name='email', placeholder="We'll send your invoices here")
 
         .form-row
@@ -51,15 +51,16 @@ block content
             .form-group
               label(for='billingZip') Billing Zip/Post Code
               input.payment-field__card-zip(id='billingZip' type="text" size="6" data-stripe="address_zip", placeholder="1234")
+              
+        .payment-errors
 
         .form-row
           .form-group 
-            button.submit(type='submit') Make payment & start my Howdy subscription
-          
-        .payment-errors
+            button.submit(type='submit') Start my Howdy subscription
       
-      .panel
-        p.panel__content As you move beyond your 25 recipients limit, we'll be in touch to move your subscription up a notch based on your usage patterns and email volumes. We <strong>won't</strong> just stop your service. For any questions about this, just drop us a line at <a href='mailto:hello@weareleaf.com'>hello@weareleaf.com</a>, or tweet us at <a href='https://twitter.com/we_are_leaf'>@we_are_leaf</a>.
+  section.alt
+    .container
+        p As you move beyond your 25 recipients limit, we'll be in touch to move your subscription up a notch based on your usage patterns and email volumes. We <strong>won't</strong> just stop your service. For any questions about this, just drop us a line at <a href='mailto:hello@weareleaf.com'>hello@weareleaf.com</a>, or tweet us at <a href='https://twitter.com/we_are_leaf'>@we_are_leaf</a>.
   
   script(type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js")
   script(type="text/javascript" src="https://js.stripe.com/v2/")      
