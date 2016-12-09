@@ -1,7 +1,4 @@
 module.exports = {
-  none: function() {
-    // no-op
-  },
   required: function(input) {
     if (!input.value) {
       return "Must be provided.";

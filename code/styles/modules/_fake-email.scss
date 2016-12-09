@@ -21,7 +21,7 @@
   box-shadow: 0 0 10px 1px #eee;
   border: 1px solid #ddd;
   padding: 15px;
-  min-height: 430px;
+  min-height: 392px;
 }
 
 
@@ -123,29 +123,10 @@
         height: 100px;
       }
 
-      &:last-child {
-        height: 150px;
-      }
-
       span.error {
         font-size: 0.8em;
         margin: 0 0 ($small-spacing / 2) 15%;
         padding: 1px 3px;
-      }
-    }
-
-    &__submit {
-      display: block;
-      font-family: cursive;
-      font-size: 1.1em;
-      margin:0 auto;
-      padding: 10px;
-      background-color: lighten(#9c3, 10%);
-      margin-bottom: 0;
-      width: 30%;
-
-      &:hover, &:focus, &:visited {
-        background: #9c3;
       }
     }
   }

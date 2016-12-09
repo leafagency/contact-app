@@ -3,6 +3,10 @@ import validations from './validations'
 import validationMapping from './validationMapping'
 
 const _validateInput = (domEl) => {
+  if (!domEl || !domEl.name) {
+    return null
+  }
+
   let message = null
   let customValidation = null
 
@@ -10,6 +14,10 @@ const _validateInput = (domEl) => {
     customValidation = domEl.getAttribute('data-howdy-validate') // Old IE
   } else {
     customValidation = domEl.dataset.howdyValidate // New hotness.
+  }
+
+  if (customValidation === 'none') {
+    return null
   }
 
   if (Object.keys(validations).indexOf(customValidation) !== -1) {

@@ -6,53 +6,43 @@ class FakeForm extends React.Component {
     super(props)
 
     this.state = {
-      errors: {}
+      errors: {},
+      erroneousValues: {}
     }
 
     this.onInputChange = this.onInputChange.bind(this)
-    this.onSubmit = this.onSubmit.bind(this);
-    this.onInputFocus = this.onInputFocus.bind(this);
-  }
-
-  onInputFocus(e) {
-    const valueKey = e.target.name
-
-    const nextErrors = JSON.parse(JSON.stringify(this.state.errors))
-    delete nextErrors[valueKey]
-
-    this.setState({errors: nextErrors})
   }
 
   onInputChange(e) {
+    e.preventDefault()
     const valueKey = e.target.name
     const newValue = e.target.value
-
-    this.props.onValueChange(valueKey, newValue)
-  }
-
-  onSubmit(e) {
-    e.preventDefault()
-    const form = document.getElementById('fake-form')
-    const errors = validateForm(form)
-
-    if (!Object.keys(errors).length) {
-      this.props.onSubmit()
-    } else {
-      this.setState({ errors })
+    const allErrors = validateForm(document.getElementById('fake-form'))
+    const nextState = {
+      errors: {},
+      erroneousValues: {}
     }
+
+    if (allErrors && allErrors[valueKey]) {
+      nextState.errors[valueKey] = allErrors[valueKey]
+      nextState.erroneousValues[valueKey] = newValue
+    } else {
+      this.props.onValueChange(valueKey, newValue)
+    }
+
+    this.setState(nextState)
   }
 
   renderTextInput(label, key, skipValidation) {
-    const value = this.props[key]
-    const { errors } = this.state
+    const { errors, erroneousValues } = this.state
+    const value = errors[key] ? erroneousValues[key] : this.props[key]
 
     const inputProps = {
       type: 'text',
       name: key,
       className: errors[key] ? 'erroneous' : null,
       value,
-      onChange: this.onInputChange,
-      onFocus: this.onInputFocus
+      onChange: this.onInputChange
     }
 
     if (skipValidation) {
@@ -71,16 +61,15 @@ class FakeForm extends React.Component {
   }
 
   renderTextArea(label, key) {
-    const value = this.props[key]
-    const { errors } = this.state
+    const { errors, erroneousValues } = this.state
+    const value = errors[key] ? erroneousValues[key] : this.props[key]
 
     const textareaProps = {
       type: 'text',
       name: key,
       className: errors[key] ? 'erroneous' : null,
       value,
-      onChange: this.onInputChange,
-      onFocus: this.onInputFocus
+      onChange: this.onInputChange
     }
 
     return (
@@ -124,8 +113,6 @@ class FakeForm extends React.Component {
           </div>
 
           {this.renderTextArea('Message', 'message')}
-
-          <input className='fake-form__submit' type="submit" value="Submit" onClick={this.onSubmit} />
         </form>
       </div>
     )
@@ -133,12 +120,6 @@ class FakeForm extends React.Component {
 }
 
 FakeForm.propTypes = {
-  firstName: React.PropTypes.string.isRequired,
-  lastName: React.PropTypes.string.isRequired,
-  email: React.PropTypes.string.isRequired,
-  subject: React.PropTypes.string.isRequired,
-  message: React.PropTypes.string.isRequired,
-  coolnessRating: React.PropTypes.string.isRequired,
   onValueChange: React.PropTypes.func.isRequired,
   onSubmit: React.PropTypes.func.isRequired
 }

@@ -11,16 +11,14 @@ class TryItOut extends React.Component {
       formData: {
         firstName: '',
         lastName: '',
-        email: 'changeme@test.com',
+        email: '',
         subject: '',
         coolnessRating: 'Absolute zero',
         message: "This is a interactive demo of Howdy's ability to sensibly format your contact form messages for email. Try adjusting fields and see how the email reacts!",
       }
     }
-    this.state.emailData = JSON.parse(JSON.stringify(this.state.formData))
 
     this.handleValueChange = this.handleValueChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleValueChange(valueKey, newValue) {
@@ -29,13 +27,8 @@ class TryItOut extends React.Component {
     this.setState({ formData: nextFormData })
   }
 
-  handleSubmit() {
-    this.setState({ emailData: JSON.parse(JSON.stringify(this.state.formData))})
-  }
-
   render() {
     const { firstName, lastName, email, subject, message, coolnessRating } = this.state.formData
-    const { emailData } = this.state
 
     return (
       <div className="try-it-out-container">
@@ -47,9 +40,8 @@ class TryItOut extends React.Component {
           message={message}
           coolnessRating={coolnessRating}
           onValueChange={this.handleValueChange}
-          onSubmit={this.handleSubmit}
         />
-        <FakeEmail data={emailData} />
+      <FakeEmail data={this.state.formData} />
       </div>
     )
   }
@@ -60,5 +52,3 @@ module.exports = {
     return ReactDOM.render(<TryItOut />, document.getElementById('try-it-out'))
   }
 }
-
-
