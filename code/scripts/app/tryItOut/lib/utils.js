@@ -55,7 +55,6 @@ const utils = module.exports = {
     var script = null;
     for (var i = 0; i < scripts.length; i++) {
       if (/howdy/.test(scripts[i].src)) {
-        console.log(scripts[i].src);
         script = scripts[i];
         break;
       }
