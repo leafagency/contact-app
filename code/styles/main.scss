@@ -1,34 +1,3 @@
-// Base Variables
-@import './code/lib/normalize-scss/_normalize.scss';
-@import './code/lib/susy/sass/susy';
-@import './code/lib/bourbon/app/assets/stylesheets/bourbon';
-@import 'base/variables';
-
-// Base
-@import 'base/mixins';
-@import 'base/buttons';
-@import 'base/fonts';
-@import 'base/forms';
-@import 'base/grid-settings';
-@import 'base/typography';
-@import 'base/payment';
-
-// Layout
-@import 'layout/footer';
-@import 'layout/header';
-@import 'layout/structure';
-
-// Modules
-@import 'modules/animate';
-@import 'modules/benefits';
-@import 'modules/code';
-@import 'modules/customise';
-@import 'modules/forms';
-@import 'modules/envelope';
-@import 'modules/jumbotron';
-@import 'modules/lists';
-@import 'modules/panels';
-@import 'modules/typography';
-@import 'modules/pricing-sellpoints';
-@import 'modules/stripe';
-@import 'modules/fake-email';
+// Vendor
+@import 'normalize';
+@import 'susy';
