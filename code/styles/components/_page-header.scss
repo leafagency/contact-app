@@ -1,0 +1,18 @@
+.page-header {
+  @include clearfix;
+  background-color: $blue;
+  padding-top: $padding-vertical-xxl;
+  text-align: center;
+
+  &__title {
+    color: $white;
+    line-height: 1.5;
+    margin: 0 auto $spacing-vertical-lg;
+    max-width: 32.5rem;
+
+    span {
+      background: url('/images/highlight.svg') no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+}

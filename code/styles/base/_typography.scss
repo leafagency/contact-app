@@ -1,0 +1,92 @@
+html {
+  font-size: $base-font-size;
+}
+
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $p-font-size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: $base-line-height;
+
+}
+
+h1, %h1,
+h2, %h2,
+h3, %h3,
+h4, %h4,
+h5, %h5,
+h6, %h6, {
+  color: $heading-font-color;
+  font-family: $heading-font-family;
+  line-height: $heading-line-height;
+  margin: 0 0 $spacing-vertical-xxs;
+}
+
+h1, %h1 {
+  font-size: $h1-font-size;
+  font-weight: 400;
+}
+
+h2, %h2 {
+  font-size: $h2-font-size;
+  font-weight: $heading-font-weight;
+  margin-bottom: $spacing-vertical-xs;
+}
+
+h3, %h3 {
+  font-size: $h3-font-size;
+  font-weight: $heading-font-weight;
+}
+
+h4, %h4 {
+  font-size: $h4-font-size;
+  font-weight: $heading-font-weight;
+}
+
+h5, %h5 {
+  font-size: $h4-font-size;
+  font-weight: $heading-font-weight;
+}
+
+h6, %h6 {
+  font-size: $h4-font-size;
+  font-weight: $heading-font-weight;
+}
+
+p {
+  display: inline-block;
+  margin: 0 0 $spacing-vertical;
+}
+
+a {
+ background-color: transparent;
+ text-decoration: none;
+ -webkit-text-decoration-skip: objects;
+
+ &:active,
+ &:hover {
+  outline-width:0
+ }
+}
+
+strong {
+  font-weight: 600;
+}
+
+abbr[title]{
+ border-bottom: none;
+ text-decoration: underline;
+ text-decoration: underline dotted;
+}
+
+img {
+ border-style: none;
+}
+
+hr {
+ box-sizing: content-box;
+ height: 0;
+ overflow: visible
+}

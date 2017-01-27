@@ -1,0 +1,62 @@
+include _mixins
+
+block vars
+
+doctype html
+//if lt IE 7
+    <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+//if IE 7
+    <html class="no-js lt-ie9 lt-ie8">
+//if IE 8
+    <html class="no-js lt-ie9">
+// [if gt IE 8] <!
+html(class="no-js", lang="en")
+  // <![endif]
+  head
+    meta(charset="utf-8")
+    title #{title}
+
+    meta(name="HandheldFriendly", content="True")
+    meta(name="MobileOptimized", content="320")
+    meta(name="viewport", content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0")
+
+    meta(http-equiv="cleartype", content="on")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(name="description", content="#{title}")
+
+    link(rel="stylesheet", href="/styles/main.css")
+    script(src="https://use.typekit.net/iaa5wts.js")
+    script.
+      try{Typekit.load({ async: true });}catch(e){}
+    script.
+      //- Ensure the content fades in properly even if a content blocker is blocking typekit:
+      document.addEventListener("DOMContentLoaded", function(event) {
+        setTimeout(function() {
+          var htmlClasses = document.documentElement.classList;
+          if (!htmlClasses.contains("wf-active") && !htmlClasses.contains("wf-loading")) {
+            document.documentElement.classList.add("wf-active-override");
+          }
+        }, 250);
+      })
+
+    //- !!! INCLUDE: Favicon
+
+    //- !!! INCLUDE: Open Graph
+
+    //- !!! INCLUDE: Twitter card
+
+    //- !!! INCLUDE: JSON Linked Data
+
+    //- !!! INCLUDE: Google analytics
+
+  body(dir="ltr", class="#{bodyClass}")
+
+    .site-wrapper
+
+      include ../layout/masthead
+
+      block content
+
+      include ../layout/footer
+
+    block footerScripts

@@ -1,0 +1,13 @@
+//- Buckets
+//-
+//- A wrapper buckets component, simply looping through each included bucket item
+
+
+//- Options
+//- -- item
+
+
+mixin buckets(args)
+  .buckets
+    each item in args
+      +buckets-item(item)

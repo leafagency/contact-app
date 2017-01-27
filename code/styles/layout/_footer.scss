@@ -1,0 +1,7 @@
+.footer {
+
+  &__inner {
+    @include container;
+    @include padding-horizontal($padding-horizontal-fluid);
+  }
+}

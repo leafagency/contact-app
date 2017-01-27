@@ -1,0 +1,19 @@
+.masthead {
+  align-items: center;
+  display: flex;
+  padding: $padding-vertical-xs $padding-horizontal-xs;
+
+  &__logo,
+  &__cta {
+    flex: 0 0 8em;
+  }
+
+  &__navigation {
+    flex: 1 0 auto;
+  }
+
+  &__cta__button {
+    float: right;
+    padding: $padding-vertical-xs $padding-horizontal-sm;
+  }
+}

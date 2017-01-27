@@ -1,0 +1,50 @@
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+   border-style: none;
+   padding: 0;
+ }
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+.button {
+  appearance: none;
+  background-color: $blue;
+  border: none;
+  border-radius: $base-border-radius;
+  color: $white;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 600;
+  padding: $padding-vertical-sm $padding-horizontal-sm;
+  transition: background-color $base-duration $base-timing;
+
+  &:hover {
+    background-color: lighten($blue, 5%);
+    cursor: pointer;
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
+}

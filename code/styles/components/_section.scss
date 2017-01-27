@@ -1,0 +1,39 @@
+.section {
+  @include padding-vertical($padding-vertical-lg);
+
+  @include susy-breakpoint($bp-sm) {
+    @include padding-vertical($padding-vertical-xxl);
+  }
+
+  &--blue {
+    background-color: $blue;
+  }
+
+  &--blue-lightest {
+    background-color: $blue-lightest;
+  }
+
+  &--denim {
+    background-color: $denim;
+  }
+
+  &__inner {
+    @include container;
+    padding: 0 $padding-horizontal-fluid;
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__intro {
+    margin-bottom: $spacing-vertical-lg;
+    text-align: center;
+  }
+
+  &__description {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    max-width: 25.5em;
+  }
+}

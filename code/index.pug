@@ -1,0 +1,136 @@
+extends ./templates/base/_base
+
+block prepend vars
+  -var bodyClass = "home-page"
+  -var title = "Instant contact forms without writing a line of code - Howdy"
+
+block content
+
+  //- Page header
+  +page-header({
+    title: "Turn your static HTML contact forms in to the real thing <span>without writing a line of code</span>"
+  })
+    .envelope
+      .callout
+        .callout__inner
+          p.callout__intro Enter an account email address to start your #[strong free 2 week trial]
+          .callout__form
+            .input-group
+              label.sr-only(for="email") Email addresss
+              input.input-group__input(type="email", name="email", placeholder="you@email.com")
+              button.input-group__button.button Generate my snippet
+
+  main
+
+    //- How it works
+    section.section.section--blue-lightest
+      .section__inner
+        .section__intro
+          h2.section__title How it works
+          p.section__description What once seemed like an impossible job is now so straightforward, your Granny could do it
+        .section__content
+
+          //- Buckets
+          +buckets([{
+            heading: "Generate a snippet",
+            image: "icon-generate.svg",
+            text: "Tell us which email address to send to, and we'll create your unique code."
+          },{
+            heading: "Paste your snippet",
+            image: "icon-paste.svg",
+            text: "Copy and paste your snippet into the HTML of the page with the web form."
+          },{
+            heading: "Start receiving emails",
+            image: "icon-done.svg",
+            text: "That's it buddy. Your web form is ready to start validating &amp; delivering emails."
+          }])
+
+    //- Who's it for
+    section.section
+      .section__inner
+        .section__intro
+          h2.section__title Who's it for
+          p.section__description While Howdy's for anyone who wants a web-form, we created it with a few people in mind
+        .section__content
+
+          //- Buckets
+          +buckets([{
+            heading: "Designers",
+            image: "designers.svg",
+            text: "You know a little HTML, but PHP? <em>Ain't nobody got time for that</em>"
+          },{
+            heading: "Marketers",
+            image: "marketers.svg",
+            text: "Get those landing pages live, <em>girlfriend</em>. You'll never have to wait for IT again."
+          },{
+            heading: "Developers",
+            image: "developers.svg",
+            text: "We know you <em>can</em>, but why should you? Put your feet up. We've got this."
+          }])
+
+      //- Try it out
+      section.section.section--blue
+        .section__inner
+          .section__intro
+            h2.section__title Try it out
+            p.section__description Fill out the form to see what Howdy sends to your Inbox
+          .section__content
+
+            .demo
+              form.demo__form
+                .form__group
+                  label(for="name") Name
+                  input(type="text", name="name", value="Sarah Jessica Parker")
+
+                .form__group
+                  label(for="email") Email addresss
+                  input(type="email", name="email", value="sazzie.parker@gmail.com")
+
+                .form__group
+                  label(for="subject") Subject
+                  input(type="text", name="subject")
+
+                .form__group
+                  label(for="message")
+                  textarea(name="message", value="This is a interactive demo of Howdy's ability to sensibly format your contact form messages for email. Try adjusting fields and see how the email reacts!")
+
+              .demo__email
+                .demo__email__header
+                  span You have a new message
+                .demo__email__body
+                  img(src="/images/thumb.svg")
+                  span Sarah Jessica Parker
+                  span <no-reply@howdyform.com>
+                  span to hello
+                  ul
+                    li #[strong name:] Sarah Jessica Parker
+                    li #[strong email:]
+                      a(href="#") sazzie.parker@gmail.com
+                    li #[strong subject:] n/a
+                  p This is a interactive demo of Howdy's ability to sensibly format your contact form messages for email. Try adjusting fields and see how the email reacts!
+                .demo__email__footer
+                  img(src="/images/thumb.svg")
+                  span Click here to Reply, Reply to all, or Forward
+
+    //- Pricing
+    section.section.section--denim
+      .section__inner
+        .section__content
+          p Howdy costs just #[span $2 per month]
+
+          ul
+            li Use Howdy across an #[strong unlimited] number of sites
+            li Use Howdy for an #[strong unlimited] number of forms
+            li Use Howdy with an #[strong unlimited] number of email addresses
+
+
+
+    //- Callout
+    section.section.section--denim
+      .section__inner
+
+        p Enter an account email address to start your free 2 week trial
+        .input-group
+          label.sr-only(for="email") Email addresss
+          input(type="email", name="email", placeholder="you@email.com")
+          button.button Generate my snippet

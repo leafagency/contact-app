@@ -1,0 +1,15 @@
+.navigation__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+
+  &__item {
+    display: inline-block;
+  }
+
+  &__link {
+    @include padding-horizontal($padding-horizontal);
+    color: $base-font-color;
+  }
+}

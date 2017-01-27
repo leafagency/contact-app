@@ -1,0 +1,18 @@
+.callout {
+
+  &__inner {
+
+  }
+
+  &__intro {
+    color: $black;
+    font-size: 1rem;
+  }
+
+  &__form {
+
+    @include susy-breakpoint($bp-lg) {
+      width: 37.5rem;
+    }
+  }
+}

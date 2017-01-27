@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="729px" height="10px" viewBox="0 0 729 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Home</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dashes">
+            <g id="Page-4">
+                <g id="Home">
+                    <rect id="Background" fill="#FFFFFF" opacity="0.5" x="0" y="0" width="729" height="10"></rect>
+                    <g id="Dashes" transform="translate(9.000000, 0.000000)" fill-rule="nonzero">
+                        <polygon id="Dash" fill="#629DEA" points="662 0 712 0 698 10 648 10"></polygon>
+                        <polygon id="Dash" fill="#FF6565" points="590 0 640 0 626 10 576 10"></polygon>
+                        <polygon id="Dash" fill="#629DEA" points="518 0 568 0 554 10 504 10"></polygon>
+                        <polygon id="Dash" fill="#FF6565" points="446 0 496 0 482 10 432 10"></polygon>
+                        <polygon id="Dash" fill="#629DEA" points="374 0 424 0 410 10 360 10"></polygon>
+                        <polygon id="Dash" fill="#FF6565" points="302 0 352 0 338 10 288 10"></polygon>
+                        <polygon id="Dash" fill="#629DEA" points="230 0 280 0 266 10 216 10"></polygon>
+                        <polygon id="Dash" fill="#FF6565" points="158 0 208 0 194 10 144 10"></polygon>
+                        <polygon id="Dash" fill="#629DEA" points="86 0 136 0 122 10 72 10"></polygon>
+                        <polygon id="Dash" fill="#FF6565" points="14 0 64 0 50 10 0 10"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

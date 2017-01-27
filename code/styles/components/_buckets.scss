@@ -1,0 +1,29 @@
+.buckets {
+  @include clearfix;
+  margin-bottom: $spacing-vertical;
+  text-align: center;
+
+  &__item {
+    margin-bottom: $spacing-vertical-lg;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include susy-breakpoint($bp-lg) {
+      @include gallery(6 of 12);
+    }
+
+    @include susy-breakpoint($bp-xl) {
+      @include gallery(4 of 12);
+    }
+
+    &__image {
+      margin-bottom: $spacing-vertical-sm;
+    }
+
+    &__text {
+      margin-bottom: 0;
+    }
+  }
+}
