@@ -79,7 +79,10 @@ textarea {
 
 textarea {
   line-height: $base-line-height;
+  max-height: 18em;
+  min-height: 10em;
   overflow: auto;
+  resize: vertical;
 }
 
 progress {
