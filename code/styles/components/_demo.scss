@@ -1,0 +1,30 @@
+.demo {
+  display: flex;
+
+  &__form,
+  &__email {
+    flex: 1;
+    padding: $padding-vertical-lg $padding-horizontal-lg;
+  }
+
+  &__form {
+    background-color: $blue-dark;
+    border-radius: $border-radius-lg;
+     margin-bottom: 0;
+
+    &__label {
+      color: $white;
+    }
+
+    &__input {
+      background-color: $blue-darker;
+      color: $white;
+    }
+  }
+
+  &__email {
+    @include margin-vertical($spacing-vertical-lg);
+    background-color: $white;
+    border-radius: 0 $border-radius-lg $border-radius-lg 0;
+  }
+}

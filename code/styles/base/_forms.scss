@@ -21,7 +21,11 @@ legend {
 
 label {
   display: block;
-  margin-bottom: $spacing-vertical-sm;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  margin-bottom: $spacing-vertical-xxs;
+  text-transform: uppercase;
 }
 
 input,
@@ -31,7 +35,7 @@ textarea {
   padding: $padding-vertical $padding-horizontal;
 }
 
-input:not([type='submit']),
+input,
 textarea {
   background-color: $input-background-color;
   border: none;

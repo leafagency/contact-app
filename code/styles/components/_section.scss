@@ -7,10 +7,15 @@
 
   &--blue {
     background-color: $blue;
+
+    .section__title,
+    .section__description {
+      color: $white;
+    }
   }
 
   &--blue-lightest {
-    background-color: $blue-lightest;
+    background-color: $blue-lighter;
   }
 
   &--denim {
