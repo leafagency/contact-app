@@ -1,21 +1,36 @@
 .benefits {
 
   &__cost {
-    color: $white;
-    font-size: 2.4rem;
-    max-width: 8em;
 
-    &__highlight {
-      background: url('/images/highlight-lg.svg') no-repeat;
-      background-size: 100% 100%;
-      left: -.4em;
-      padding: .2em .4em;
-      position: relative;
-      top: -.2em;
+    @include susy-breakpoint($bp-md) {
+      @include span(4);
+      @include squish(1);
+    }
+
+    &__text {
+      color: $white;
+      font-size: 2.4rem;
+      margin-bottom: 0;
+      max-width: 8em;
+
+      &__highlight {
+        background: url('/images/highlight-lg.svg') no-repeat;
+        background-size: 100% 100%;
+        left: -.4em;
+        padding: .2em .4em;
+        position: relative;
+        top: -.2em;
+      }
     }
   }
 
   &__list {
+    margin-bottom: 0;
+
+    @include susy-breakpoint($bp-md) {
+      @include span(6);
+      @include last;
+    }
 
     &__item {
       color: $lavender;

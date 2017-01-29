@@ -116,7 +116,8 @@ block content
       .section__inner
         .section__content
           .benefits
-            p.benefits__cost Howdy costs just #[span.benefits__cost__highlight $2 per month]
+            .benefits__cost
+              p.benefits__cost__text Howdy costs just #[span.benefits__cost__text__highlight $2 per month]
 
             ul.benefits__list
               li.benefits__list__item Use Howdy across an #[strong.benefits__list__item__highlight unlimited] number of sites
@@ -133,7 +134,7 @@ block content
           .callout__inner
             p.callout__intro Enter an account email address to start your #[strong free 2 week trial]
             .callout__form
-              .input-group
+              .callout__form__input-group.input-group
                 label.sr-only(for="email") Email addresss
-                input.input-group__input(type="email", name="email", placeholder="you@email.com")
-                button.input-group__button.button Generate my snippet
+                input.callout__form__input-group__input.input-group__input(type="email", name="email", placeholder="you@email.com")
+                button.callout__form__input-group__button.input-group__button.button Generate my snippet

@@ -49,7 +49,7 @@ textarea {
   width: 100%;
 
   &:hover {
-    background-color: lighten($input-background-color, 2%);
+    background-color: darken($input-background-color, 2%);
     border-color: shade($base-border-color, 20%);
   }
 

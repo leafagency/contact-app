@@ -1,14 +1,31 @@
 .footer {
   background-color: $denim;
-  text-align: center;
 
   &__inner {
     @include container;
+    display: flex;
+    justify-content: center;
     padding: $padding-vertical $padding-horizontal-fluid;
+  }
+
+  &__text,
+  &__logo {
+    display: table-cell;
   }
 
   &__text {
     color: $lavender;
-    margin-bottom: 0;
+  }
+
+  &__logo {
+    width: 2.5em;
+    background: url('/images/leaf.svg') no-repeat left center;
+    background-size: contain;
+    margin-left: $spacing-horizontal-xxs;
+    transition: opacity $base-duration $base-timing;
+
+    &:hover {
+      opacity: .9;
+    }
   }
 }

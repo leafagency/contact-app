@@ -19,5 +19,17 @@
     @include susy-breakpoint($bp-lg) {
       width: 37.5rem;
     }
+
+    &__input-group__input {
+
+      .callout--dark & {
+        background-color: $denim-dark;
+        color: $white;
+
+        &::placeholder {
+          color: $lavender-dark;
+        }
+      }
+    }
   }
 }
