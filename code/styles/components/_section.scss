@@ -20,6 +20,18 @@
 
   &--denim {
     background-color: $denim;
+    border-bottom: $base-border-style $border-width-lg darken($denim, 5%);
+    position: relative;
+
+    &::after {
+      background-color: lighten($denim, 5%);;
+      border-bottom: 0;
+      content: '';
+      height: $base-border-width;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
   }
 
   &__inner {

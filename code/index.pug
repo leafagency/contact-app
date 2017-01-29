@@ -68,60 +68,60 @@ block content
             text: "We know you <em>can</em>, but why should you? Put your feet up. We've got this."
           }])
 
-      //- Try it out
-      section.section.section--blue
-        .section__inner
-          .section__intro
-            h2.section__title Try it out
-            p.section__description Fill out the form to see what Howdy sends to your Inbox
-          .section__content
+    //- Try it out
+    section.section.section--blue
+      .section__inner
+        .section__intro
+          h2.section__title Try it out
+          p.section__description Fill out the form to see what Howdy sends to your Inbox
+        .section__content
 
-            .demo
-              form.demo__form
-                .form-group
-                  label.demo__form__label(for="name") Name
-                  input.demo__form__input(type="text", name="name", value="Sarah Jessica Parker")
+          .demo
+            form.demo__form
+              .form-group
+                label.demo__form__label(for="name") Name
+                input.demo__form__input(type="text", name="name", value="Sarah Jessica Parker")
 
-                .form-group
-                  label.demo__form__label(for="email") Email addresss
-                  input.demo__form__input(type="email", name="email", value="sazzie.parker@gmail.com")
+              .form-group
+                label.demo__form__label(for="email") Email addresss
+                input.demo__form__input(type="email", name="email", value="sazzie.parker@gmail.com")
 
-                .form-group
-                  label.demo__form__label(for="subject") Subject
-                  input.demo__form__input(type="text", name="subject")
+              .form-group
+                label.demo__form__label(for="subject") Subject
+                input.demo__form__input(type="text", name="subject")
 
-                .form-group
-                  label.demo__form__label(for="message") Message
-                  textarea.demo__form__input(name="message", value="This is a interactive demo of Howdy's ability to sensibly format your contact form messages for email. Try adjusting fields and see how the email reacts!")
+              .form-group
+                label.demo__form__label(for="message") Message
+                textarea.demo__form__input(name="message") This is a interactive demo of Howdy's ability to sensibly format your contact form messages for email. Try adjusting fields and see how the email reacts!
 
-              .demo__email
-                .demo__email__header
-                  span You have a new message
-                .demo__email__body
-                  img(src="/images/thumb.svg")
-                  span Sarah Jessica Parker
-                  span <no-reply@howdyform.com>
-                  span to hello
-                  ul
-                    li #[strong name:] Sarah Jessica Parker
-                    li #[strong email:]
-                      a(href="#") sazzie.parker@gmail.com
-                    li #[strong subject:] n/a
-                  p This is a interactive demo of Howdy's ability to sensibly format your contact form messages for email. Try adjusting fields and see how the email reacts!
-                .demo__email__footer
-                  img(src="/images/thumb.svg")
-                  span Click here to Reply, Reply to all, or Forward
+            .demo__email
+              span.demo__email__header You have a new message
+              .demo__email__body
+                img.demo__email__body__thumb(src="/images/thumb.svg")
+                .demo__email__body__content
+                  span.demo__email__body__name Sarah Jessica Parker
+                  span.demo__email__body__from #{"<no-reply@howdyform.com>"}
+                  span.demo__email__body__to to hello
+                  ul.demo__email__body__list
+                    li.demo__email__body__list__item #[strong.demo__email__body__list__item__label name:] Sarah Jessica Parker
+                    li.demo__email__body__list__item #[strong.demo__email__body__list__item__label.demo__email__body__list__item__label--link email:] sazzie.parker@gmail.com
+                    li.demo__email__body__list__item #[strong.demo__email__body__list__item__label subject:] n/a
+                  p.demo__email__body__message This is a interactive demo of Howdy's ability to sensibly format your contact form messages for email. Try adjusting fields and see how the email reacts!
+              .demo__email__footer
+                img.demo__email__footer__thumb(src="/images/thumb.svg")
+                .demo__email__footer__textarea Click here to #[span.demo__email__footer__textarea__link Reply], #[span.demo__email__footer__textarea__link Reply to all], or #[span.demo__email__footer__textarea__link Forward]
 
     //- Pricing
     section.section.section--denim
       .section__inner
         .section__content
-          p Howdy costs just #[span $2 per month]
+          .benefits
+            p.benefits__cost Howdy costs just #[span.benefits__cost__highlight $2 per month]
 
-          ul
-            li Use Howdy across an #[strong unlimited] number of sites
-            li Use Howdy for an #[strong unlimited] number of forms
-            li Use Howdy with an #[strong unlimited] number of email addresses
+            ul.benefits__list
+              li.benefits__list__item Use Howdy across an #[strong.benefits__list__item__highlight unlimited] number of sites
+              li.benefits__list__item Use Howdy for an #[strong.benefits__list__item__highlight unlimited] number of forms
+              li.benefits__list__item Use Howdy with an #[strong.benefits__list__item__highlight unlimited] number of email addresses
 
 
 
@@ -129,8 +129,11 @@ block content
     section.section.section--denim
       .section__inner
 
-        p Enter an account email address to start your free 2 week trial
-        .input-group
-          label.sr-only(for="email") Email addresss
-          input(type="email", name="email", placeholder="you@email.com")
-          button.button Generate my snippet
+        .callout.callout--dark
+          .callout__inner
+            p.callout__intro Enter an account email address to start your #[strong free 2 week trial]
+            .callout__form
+              .input-group
+                label.sr-only(for="email") Email addresss
+                input.input-group__input(type="email", name="email", placeholder="you@email.com")
+                button.input-group__button.button Generate my snippet

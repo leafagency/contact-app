@@ -1,0 +1,29 @@
+.benefits {
+
+  &__cost {
+    color: $white;
+    font-size: 2.4rem;
+    max-width: 8em;
+
+    &__highlight {
+      background: url('/images/highlight-lg.svg') no-repeat;
+      background-size: 100% 100%;
+      left: -.4em;
+      padding: .2em .4em;
+      position: relative;
+      top: -.2em;
+    }
+  }
+
+  &__list {
+
+    &__item {
+      color: $lavender;
+      font-size: 1.2rem;
+
+      &__highlight {
+        color: $white;
+      }
+    }
+  }
+}

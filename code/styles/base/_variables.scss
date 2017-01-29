@@ -1,6 +1,7 @@
 // Colors
 $black: #494e53;
 $smoke: #818993;
+$snow-dark: #e1e3e5;
 $snow: #f3f4f8;
 $white: #fff;
 
@@ -13,6 +14,8 @@ $blue-lighter: #fafbff;
 $denim: #242445;
 $denim-dark: #1e1e3a;
 
+$lavender: #dadae7;
+
 // Animations
 $base-duration: 200ms;
 $base-timing: ease;
@@ -21,10 +24,11 @@ $base-timing: ease;
 $base-background-color: $white;
 
 // Border
-$base-border-color: $smoke;
+$base-border-color: $snow-dark;
 $base-border-style: solid;
-$base-border-width: .1em;
+$base-border-width: .05rem;
 $base-border: $base-border-style $base-border-width $base-border-color;
+$border-width-lg: 0.1rem;
 
 // Border radius
 $base-border-radius: 0.3rem;

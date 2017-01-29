@@ -1,7 +1,14 @@
 .footer {
+  background-color: $denim;
+  text-align: center;
 
   &__inner {
     @include container;
-    @include padding-horizontal($padding-horizontal-fluid);
+    padding: $padding-vertical $padding-horizontal-fluid;
+  }
+
+  &__text {
+    color: $lavender;
+    margin-bottom: 0;
   }
 }

@@ -1,15 +1,20 @@
 .callout {
 
   &__inner {
-
+    text-align: center;
   }
 
   &__intro {
     color: $black;
     font-size: 1rem;
+
+    .callout--dark & {
+      color: $white;
+    }
   }
 
   &__form {
+    @include margin-horizontal(auto);
 
     @include susy-breakpoint($bp-lg) {
       width: 37.5rem;
