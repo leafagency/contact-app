@@ -8,6 +8,13 @@
     flex: 0 0 8em;
   }
 
+  &__logo {
+
+    &__link {
+      display: block;
+    }
+  }
+
   &__navigation {
     flex: 1 0 auto;
   }
