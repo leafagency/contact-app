@@ -20,6 +20,8 @@ $lavender-dark: #747498;
 // Animations
 $base-duration: 200ms;
 $base-timing: ease;
+$duration-slow: 400ms;
+$elastic-timing: cubic-bezier(.25, -.5, 0, 1.75);
 
 // Background colors
 $base-background-color: $white;
