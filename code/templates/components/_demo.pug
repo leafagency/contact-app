@@ -1,0 +1,39 @@
+//- Demo
+//-
+//- A complex domenstration of form to inbox rendering
+
+
+.demo
+  form.demo__form
+    .form-group
+      label.demo__form__label(for="name") Name
+      input.demo__form__input(type="text", name="name", value="Sarah Jessica Parker")
+
+    .form-group
+      label.demo__form__label(for="email") Email addresss
+      input.demo__form__input(type="email", name="email", value="sazzie.parker@gmail.com")
+
+    .form-group
+      label.demo__form__label(for="subject") Subject
+      input.demo__form__input(type="text", name="subject")
+
+    .form-group
+      label.demo__form__label(for="message") Message
+      textarea.demo__form__input(name="message") This is a interactive demo of Howdy's ability to sensibly format your contact form messages for email. Try adjusting fields and see how the email reacts!
+
+  .demo__email
+    span.demo__email__header You have a new message
+    .demo__email__body
+      img.demo__email__body__thumb(src="/images/thumb.svg")
+      .demo__email__body__content
+        span.demo__email__body__name Sarah Jessica Parker
+        span.demo__email__body__from #{"<no-reply@howdyform.com>"}
+        span.demo__email__body__to to hello
+        ul.demo__email__body__list
+          li.demo__email__body__list__item #[strong.demo__email__body__list__item__label name:] Sarah Jessica Parker
+          li.demo__email__body__list__item #[strong.demo__email__body__list__item__label.demo__email__body__list__item__label--link email:] sazzie.parker@gmail.com
+          li.demo__email__body__list__item #[strong.demo__email__body__list__item__label subject:] n/a
+        p.demo__email__body__message This is a interactive demo of Howdy's ability to sensibly format your contact form messages for email. Try adjusting fields and see how the email reacts!
+    .demo__email__footer
+      img.demo__email__footer__thumb(src="/images/thumb.svg")
+      .demo__email__footer__textarea Click here to #[span.demo__email__footer__textarea__link Reply], #[span.demo__email__footer__textarea__link Reply to all], or #[span.demo__email__footer__textarea__link Forward]
