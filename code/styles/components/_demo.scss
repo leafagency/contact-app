@@ -1,16 +1,23 @@
 .demo {
-  display: flex;
+
+  @include susy-breakpoint($bp-lg) {
+    display: flex;
+  }
 
   &__form,
   &__email {
-    flex: 1;
-    padding: $padding-vertical-lg $padding-horizontal-lg;
+    padding: $padding-vertical $padding-horizontal;
+
+    @include susy-breakpoint($bp-lg) {
+      flex: 1;
+      padding: $padding-vertical-lg $padding-horizontal-lg;
+    }
   }
 
   &__form {
     background-color: $blue-dark;
     border-radius: $border-radius-lg;
-     margin-bottom: 0;
+    margin-bottom: 0;
 
     &__label {
       color: $white;
@@ -28,12 +35,17 @@
   }
 
   &__email {
-    @include margin-vertical($spacing-vertical-lg);
     background-color: $white;
-    border-radius: 0 $border-radius-lg $border-radius-lg 0;
+    border-radius: $border-radius-lg;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @include susy-breakpoint($bp-lg) {
+      @include margin-vertical($spacing-vertical-lg);
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
 
     &__header {
       border-bottom: $base-border;
@@ -51,6 +63,11 @@
 
       &__content {
         color: $black;
+
+        &__heading {
+          align-items: center;
+          display: flex;
+        }
       }
 
       &__thumb {
@@ -58,15 +75,20 @@
       }
 
       &__name {
-
+        color: $black;
+        font-weight: 700;
+        margin-right: $spacing-horizontal-xxs;
       }
 
-      &__from {
+      &__from,
+      &__to {
+        color: $base-font-color;
+        display: block;
         font-size: .75rem;
       }
 
       &__to {
-        font-size: .75rem;
+        margin-bottom: $spacing-vertical-xs;
       }
 
       &__list {
@@ -105,6 +127,15 @@
           text-decoration: underline;
         }
       }
+    }
+  }
+
+  &__toggle {
+    margin-bottom: $spacing-vertical-xs;
+    text-align: center;
+
+    @include susy-breakpoint($bp-lg) {
+      display: none !important;
     }
   }
 }
