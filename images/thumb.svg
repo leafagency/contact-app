@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Thumb</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-850.000000, -2418.000000)">
+            <g id="Group-16" transform="translate(790.000000, 2286.000000)">
+                <g id="Group-21" transform="translate(60.000000, 129.000000)">
+                    <g id="Thumb" transform="translate(0.000000, 3.000000)">
+                        <rect id="Background" fill="#F3F4F8" x="0" y="0" width="32" height="32" rx="3"></rect>
+                        <path d="M13,13 C13,11.3431458 14.3431458,10 16,10 C17.6568542,10 19,11.3431458 19,13 L19,15 C19,16.6568542 17.6568542,18 16,18 C14.3431458,18 13,16.6568542 13,15 L13,13 Z M9,22 C9.5,20.5 13,19 15,19 L17,19 C19,19 22.5,20.5 23,22 L23,23 L9,23 L9,22 Z" id="User" fill="#CDCED1" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
