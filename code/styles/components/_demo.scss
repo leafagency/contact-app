@@ -21,6 +21,10 @@
       color: $white;
       padding: 1.35em;
 
+      &.erroneous {
+        background-color: $error-red;
+      }
+
       &:hover {
         background-color: darken($blue-darker, 4%);
       }
@@ -66,24 +70,12 @@
       }
 
       &__to {
+        display: block;
         font-size: .75rem;
       }
 
-      &__list {
-
-        &__item {
-
-          &__label {
-
-            &--link {
-
-            }
-          }
-        }
-      }
-
       &__message {
-
+        margin: $spacing-vertical-sm 0;
       }
     }
 
