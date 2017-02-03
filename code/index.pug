@@ -10,15 +10,8 @@ block content
   +page-header({
     title: "Turn your static HTML contact forms in to the real thing <span>without writing a line of code</span>"
   })
-    .envelope
-      .callout
-        .callout__inner
-          p.callout__intro Enter an account email address to start your #[strong free 2 week trial]
-          .callout__form
-            .input-group
-              label.sr-only(for="email") Email addresss
-              input.input-group__input(type="email", name="email", placeholder="you@email.com")
-              button.input-group__button.button Generate my snippet
+    .envelope#snippet-generator-top
+      //- See the SnippetGenerator react component
 
   main
 
@@ -74,8 +67,8 @@ block content
     })
 
       //- Demo
-      include ./templates/components/_demo
-
+      .demo__container#live-demo
+        //- See the LiveDemo react component
 
     //- Benefits
     +section({
@@ -90,12 +83,5 @@ block content
     +section({
       style: "denim"
     })
-
-      .callout.callout--dark
-        .callout__inner
-          p.callout__intro Enter an account email address to start your #[strong free 2 week trial]
-          .callout__form
-            .callout__form__input-group.input-group
-              label.sr-only(for="email") Email addresss
-              input.callout__form__input-group__input.input-group__input(type="email", name="email", placeholder="you@email.com")
-              button.callout__form__input-group__button.input-group__button.button Generate my snippet
+      #snippet-generator-bottom
+        //- See the SnippetGenerator react component
