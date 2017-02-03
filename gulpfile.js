@@ -189,6 +189,7 @@ gulp.task('server', () => {
   ])
 
   connect.server({
+    port: 8081,
     root: 'dist',
     livereload: true,
     middleware: (connect, options) => {
@@ -198,7 +199,7 @@ gulp.task('server', () => {
 
   return gulp.src('./dist/index.html')
     .pipe(open('', {
-      url: 'http://localhost:8080',
+      url: 'http://localhost:8081',
       app: 'google chrome'
     }))
 })

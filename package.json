@@ -40,11 +40,12 @@
     "lodash.assign": "^4.0.6",
     "md5": "^2.2.1",
     "normalize-scss": "^4.0.3",
+    "qs": "^6.3.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "run-sequence": "^1.0.2",
     "sass": "^0.5.0",
-    "superagent": "^1.8.3",
+    "superagent": "^1.8.5",
     "susy": "^2.2.12",
     "webpack": "^1.12.14",
     "webpack-stream": "^3.1.0"

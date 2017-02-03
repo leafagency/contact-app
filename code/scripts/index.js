@@ -1,7 +1,28 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
 import LiveDemo from './components/liveDemo'
+import SnippetGenerator from './components/snippetGenerator'
+import SnippetDisplay from './components/snippetDisplay'
 
-window.onload = function() {
-  return ReactDOM.render(<LiveDemo />, document.getElementsByClassName('demo__container')[0])
-}
+document.addEventListener('DOMContentLoaded', function() {
+  const topSnippetGeneratorContainer = document.getElementById('snippet-generator-top')
+  const bottomSnippetGeneratorContainer = document.getElementById('snippet-generator-bottom')
+  const snippetDisplayContainer = document.getElementById('snippet-display')
+  const liveDemoContainer = document.getElementById('live-demo')
+
+  if (topSnippetGeneratorContainer) {
+    ReactDOM.render(<SnippetGenerator />, topSnippetGeneratorContainer)
+  }
+
+  if (bottomSnippetGeneratorContainer) {
+    ReactDOM.render(<SnippetGenerator className="callout--dark" />, bottomSnippetGeneratorContainer)
+  }
+
+  if (snippetDisplayContainer) {
+    ReactDOM.render(<SnippetDisplay />, snippetDisplayContainer)
+  }
+
+  if (liveDemoContainer) {
+    ReactDOM.render(<LiveDemo />, liveDemoContainer)
+  }
+})

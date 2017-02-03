@@ -1,0 +1,17 @@
+extends ./templates/base/_base
+
+block prepend vars
+  -var bodyClass = "home-page"
+  -var title = "Instant contact forms without writing a line of code - Howdy"
+
+block content
+
+  //- Page header
+  +page-header({
+    title: "Your snippet"
+  })
+
+  main
+    .snippet
+      #snippet-display
+        //- See the Snippet Display react component

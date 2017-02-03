@@ -1,4 +1,7 @@
 .callout {
+  &.error {
+    @extend .shake;
+  }
 
   &__inner {
     text-align: center;
