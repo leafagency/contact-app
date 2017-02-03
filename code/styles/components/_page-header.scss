@@ -19,6 +19,8 @@
     }
 
     span {
+      @include margin-horizontal(-$spacing-horizontal-xxs);
+      @include padding-horizontal($padding-horizontal-xxs);
       background: url('/images/highlight.svg') no-repeat;
       background-size: 100% 100%;
     }

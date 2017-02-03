@@ -1,15 +1,15 @@
 .demo {
-  position: relative;
   min-height: 40em;
+  position: relative;
+
   @include susy-breakpoint($bp-lg) {
-    min-height: auto;
     display: flex;
+    min-height: auto;
   }
 
   &__form,
   &__email {
     padding: $padding-vertical $padding-horizontal;
-
     left: 0;
     transition: all .7s ease;
     position: absolute;
@@ -20,7 +20,7 @@
       left: auto;
       transition: none;
       width: auto;
-      flex: 1;
+      flex: 1 0 auto;
       padding: $padding-vertical-lg $padding-horizontal-lg;
     }
   }
