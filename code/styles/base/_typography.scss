@@ -21,7 +21,7 @@ h6, %h6, {
   color: $heading-font-color;
   font-family: $heading-font-family;
   line-height: $heading-line-height;
-  margin: 0 0 $spacing-vertical-xxs;
+  margin: 0 0 $spacing-vertical-xs;
 }
 
 h1, %h1 {
@@ -32,7 +32,6 @@ h1, %h1 {
 h2, %h2 {
   font-size: $h2-font-size;
   font-weight: $heading-font-weight;
-  margin-bottom: $spacing-vertical-xs;
 }
 
 h3, %h3 {
@@ -62,6 +61,7 @@ p {
 
 a {
  background-color: transparent;
+ color: $action-color;
  text-decoration: none;
  -webkit-text-decoration-skip: objects;
 

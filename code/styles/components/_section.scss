@@ -53,4 +53,9 @@
     margin-bottom: 0;
     max-width: 25.5em;
   }
+
+  &__content--narrow {
+    margin: 0 auto;
+    max-width: 37.5rem;
+  }
 }

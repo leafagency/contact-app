@@ -16,5 +16,5 @@ mixin section(args)
           h2.section__title!= args.title
           if args.description
             p.section__description!= args.description
-      .section__content
+      .section__content(class=args.narrow ? "section__content--narrow" : null)
         block

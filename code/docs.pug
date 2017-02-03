@@ -1,0 +1,39 @@
+extends ./templates/base/_base
+
+block prepend vars
+  -var bodyClass = "docs-page inner-page"
+  -var currentPage = "Docs"
+  -var title = "Docs - Instant contact forms without writing a line of code - Howdy"
+
+block content
+
+  //- Page header
+  +page-header({
+    title: "Howdy's a doddle to get running if you know how. <span>Everything you'll need is here</span>"
+  })
+
+  main
+
+    //- Tierd
+    +section({
+      narrow: true
+    })
+
+      h3 Getting started
+      p To get started, you'll first need to #[a(href="#") generate your own code snippet]. Using only your email address, we'll create you your own, unique code block; just like if you were installing Google Analytics.
+      p When you've got your code snippet, you'll need to paste it into the same HTML file as your form; it doesn't matter where, as long as it's in the same form.
+      pre: code &lt;script src=“…“ data-howdy-recipient=“your@email.com“></script&gt;
+
+    //- Callout
+    +section({
+      style: "denim"
+    })
+
+      .callout.callout--dark
+        .callout__inner
+          p.callout__intro Enter an account email address to start your #[strong free 2 week trial]
+          .callout__form
+            .callout__form__input-group.input-group
+              label.sr-only(for="email") Email addresss
+              input.callout__form__input-group__input.input-group__input(type="email", name="email", placeholder="you@email.com")
+              button.callout__form__input-group__button.input-group__button.button Generate my snippet
