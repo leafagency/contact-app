@@ -10,11 +10,11 @@ html {
 }
 
 body {
-  font-size: 0.75em;
+  font-size: .75em;
   margin: 0;
 
   @include susy-breakpoint($bp-xs) {
-    font-size: 0.9em;
+    font-size: .9em;
   }
 
   @include susy-breakpoint($bp-md) {
