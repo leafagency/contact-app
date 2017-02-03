@@ -1,0 +1,21 @@
+//- Tiers item
+//-
+//- A group of related information about a single pricing tier. To be called by the tiers component
+
+
+//- Options
+//- -- heading
+//- -- text
+
+
+mixin tiers-item(args)
+  .tiers__item(class=args.highlight ? "tiers__item--highlight" : null)
+    .tiers__item__header
+      h2.tiers__item__title= args.title
+      p.tiers__item__price= args.price
+      p.tiers__item__description= args.description
+    .tiers__item__body
+      ul.tiers__item__benefits
+        each item in args.benefits
+          li.tiers__item__benefits__item= item
+      a.tiers__item__button(href="#")= args.action

@@ -6,10 +6,20 @@
 
   nav.masthead__navigation.navigation
     ul.navigation__list(role="navigation")
-      li.navigation__list__item: a.navigation__list__link(href="#") Pricing
-      li.navigation__list__item: a.navigation__list__link(href="#") Docs
-      li.navigation__list__item: a.navigation__list__link(href="#") FAQs
-      li.navigation__list__item: a.navigation__list__link(href="#") Support
+
+      -
+        var menu = {
+          "Pricing": "/pricing",
+          "Docs": "/docs",
+          "FAQ": "/faq"
+        }
+
+      each val, key in menu
+        li.navigation__list__item
+          if currentPage === key
+            a.navigation__list__link.navigation__list__link--active(href=val)= key
+          else
+            a.navigation__list__link(href=val)= key
 
   .masthead__cta
     button.masthead__cta__button.button Try it for free

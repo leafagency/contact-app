@@ -1,0 +1,30 @@
+.tiers {
+
+  @include susy-breakpoint($bp-md) {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    background-color: $snow;
+    display: inline-block;
+    padding: $padding-vertical $padding-horizontal;
+    text-align: center;
+    width: 100%;
+
+    @include susy-breakpoint($bp-md) {
+      flex: 1 0 auto;
+      max-width: 24em;
+    }
+
+    &--highlight {
+      background-color: $blue;
+      color: $white;
+
+      @include susy-breakpoint($bp-md) {
+        @include margin-vertical(-$spacing-vertical);
+        @include padding-vertical($padding-vertical-lg);
+      }
+    }
+  }
+}

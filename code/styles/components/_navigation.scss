@@ -11,5 +11,9 @@
   &__link {
     @include padding-horizontal($padding-horizontal);
     color: $base-font-color;
+
+    &--active {
+      color: $blue;
+    }
   }
 }

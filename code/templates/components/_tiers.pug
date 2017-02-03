@@ -1,0 +1,13 @@
+//- Tiers
+//-
+//- A wrapper tiers component, simply looping through each included tier item
+
+
+//- Options
+//- -- item
+
+
+mixin tiers(args)
+  .tiers
+    each item in args
+      +tiers-item(item)

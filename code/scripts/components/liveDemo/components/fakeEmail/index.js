@@ -37,8 +37,10 @@ class FakeEmail extends React.Component {
         <div className="demo__email__body">
           <img className="demo__email__body__thumb" src={this.calculateThumbnailUrl()} />
           <div className="demo__email__body__content">
-            <span className="demo__email__body__name">{fromText}&nbsp;</span>
-            <span className="demo__email__body__from">&lt;{replyTo}&gt;</span>
+            <div className="demo__email__body__content__heading">
+              <span className="demo__email__body__name">{fromText}&nbsp;</span>
+              <span className="demo__email__body__from">&lt;{replyTo}&gt;</span>
+            </div>
             <span className="demo__email__body__to">to hello</span>
             <div className="demo__email__body__message" dangerouslySetInnerHTML={{__html: message}}></div>
           </div>
