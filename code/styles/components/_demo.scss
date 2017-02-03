@@ -10,17 +10,15 @@
   &__form,
   &__email {
     padding: $padding-vertical $padding-horizontal;
-    left: 0;
-    transition: all .7s ease;
+    transition: transform $duration-snail $base-timing;
     position: absolute;
     width: 100%;
 
     @include susy-breakpoint($bp-lg) {
       position: static;
-      left: auto;
       transition: none;
       width: auto;
-      flex: 1 0 auto;
+      flex: 1 1 0;
       padding: $padding-vertical-lg $padding-horizontal-lg;
     }
   }
@@ -31,7 +29,11 @@
     margin-bottom: 0;
 
     &.hidden {
-      left: -100em;
+      transform: translateX(-100vw);
+
+      @include susy-breakpoint($bp-lg) {
+        transform: translateX(0);
+      }
     }
 
     &__label {
@@ -61,7 +63,11 @@
     justify-content: center;
 
     &.hidden {
-      left: 100em;
+      transform: translateX(100vw);
+
+      @include susy-breakpoint($bp-lg) {
+        transform: translateX(0);
+      }
     }
 
     @include susy-breakpoint($bp-lg) {
@@ -83,6 +89,7 @@
     &__body {
       align-items: flex-start;
       display: flex;
+      margin-bottom: $spacing-vertical;
 
       &__content {
         color: $black;

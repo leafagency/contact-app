@@ -9,8 +9,8 @@ class Demo extends React.Component {
     this.state = {
       showForm: true,
       formData: {
-        name: '',
-        email: '',
+        name: 'Sarah Jessica Parker',
+        email: 'sazzie.parker@gmail.com',
         subject: '',
         message: "This is a interactive demo of Howdy's ability to sensibly format your contact form messages for email. Try adjusting fields and see how the email reacts!",
       }
