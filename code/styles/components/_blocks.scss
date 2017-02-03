@@ -1,0 +1,14 @@
+.blocks {
+  column-count: 2;
+  column-gap: 3rem;
+  column-width: 24rem;
+  margin-bottom: -$spacing-vertical-lg;
+
+  &__item {
+    margin-bottom: $spacing-vertical-lg;
+
+    &__text {
+      margin-bottom: 0;
+    }
+  }
+}
