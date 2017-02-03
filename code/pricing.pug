@@ -1,0 +1,75 @@
+extends ./templates/base/_base
+
+block prepend vars
+  -var bodyClass = "pricing-page inner-page"
+  -var currentPage = "Pricing"
+  -var title = "Pricing - Instant contact forms without writing a line of code - Howdy"
+
+block content
+
+  //- Page header
+  +page-header({
+    title: "We like to keep things simple; one tier for large enterprises, and another <span>for everyone else</span>"
+  })
+
+  main
+
+    //- Tierd
+    +section({
+      style: "blue-lightest"
+    })
+
+      //- Tiers
+      +tiers([{
+        benefits: [
+          "2,000 emails",
+          "25 sites",
+          "25 forms",
+          "5 addresses"
+        ],
+        description: "Some description text",
+        highlight: true,
+        price: "$2/month",
+        title: "Pro"
+      },{
+        benefits: [
+          "Unlimited emails",
+          "Unlimited sites",
+          "Unlimited forms",
+          "Unlimited addresses"
+        ],
+        description: "Some description text",
+        highlight: true,
+        price: "From $20/month",
+        title: "Enterprise"
+      }])
+
+    //- Who's it for
+    +section({
+      description: "While Howdy's for anyone who wants a web-form, we created it with a few people in mind",
+      title: "Who's it for"
+    })
+
+
+    //- Benefits
+    +section({
+      style: "denim"
+    })
+
+      //- Benefits
+      include ./templates/components/_benefits
+
+
+    //- Callout
+    +section({
+      style: "denim"
+    })
+
+      .callout.callout--dark
+        .callout__inner
+          p.callout__intro Enter an account email address to start your #[strong free 2 week trial]
+          .callout__form
+            .callout__form__input-group.input-group
+              label.sr-only(for="email") Email addresss
+              input.callout__form__input-group__input.input-group__input(type="email", name="email", placeholder="you@email.com")
+              button.callout__form__input-group__button.input-group__button.button Generate my snippet
