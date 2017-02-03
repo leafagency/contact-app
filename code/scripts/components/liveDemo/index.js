@@ -7,6 +7,7 @@ class Demo extends React.Component {
     super()
 
     this.state = {
+      showForm: true,
       formData: {
         name: '',
         email: '',
@@ -16,6 +17,7 @@ class Demo extends React.Component {
     }
 
     this.handleValueChange = this.handleValueChange.bind(this)
+    this.handleToggleChange = this.handleToggleChange.bind(this)
   }
 
   handleValueChange(valueKey, newValue) {
@@ -24,19 +26,32 @@ class Demo extends React.Component {
     this.setState({ formData: nextFormData })
   }
 
+  handleToggleChange(e) {
+    const showForm = !e.currentTarget.checked
+    this.setState({ showForm })
+  }
+
   render() {
-    const { name, email, subject, message } = this.state.formData
+    const { showForm, formData } = this.state
+    const { name, email, subject, message } = formData
 
     return (
-      <div className="demo">
-        <FakeForm
-          name={name}
-          email={email}
-          subject={subject}
-          message={message}
-          onValueChange={this.handleValueChange}
-        />
-        <FakeEmail data={this.state.formData} />
+      <div>
+        <div className="demo__toggle toggle">
+          <input className="toggle__input" type="checkbox" id="demoSwitch" onChange={this.handleToggleChange}></input>
+          <label className="toggle__label" htmlFor="demoSwitch"></label>
+        </div>
+        <div className="demo">
+          <FakeForm
+            className={showForm ? '' : 'hidden'}
+            name={name}
+            email={email}
+            subject={subject}
+            message={message}
+            onValueChange={this.handleValueChange}
+          />
+          <FakeEmail className={showForm ? 'hidden' : ''} data={this.state.formData} />
+        </div>
       </div>
     )
   }

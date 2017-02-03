@@ -84,10 +84,10 @@ class FakeForm extends React.Component {
   }
 
   render() {
-    const { name, email, subject, message } = this.props
+    const { name, email, subject, message, className } = this.props
     const { errors } = this.state
     return (
-      <form className="demo__form" id="fake-form">
+      <form className={`demo__form ${className}`} id="fake-form">
         {this.renderTextInput('Name', 'name', true)}
         {this.renderTextInput('Email', 'email')}
         {this.renderTextInput('Subject', 'subject', true)}

@@ -9,7 +9,8 @@ class FakeEmail extends React.Component {
       const key = keys[i]
       if (this.props.data[key] !== nextProps.data[key]) return true
     }
-    return false
+
+    return this.props.className !== nextProps.className
   }
 
   calculateThumbnailUrl() {
@@ -24,14 +25,14 @@ class FakeEmail extends React.Component {
   }
 
   render() {
-    const { data } = this.props
+    const { data, className } = this.props
     const subject = messageHelper.buildSubject(data)
     const fromText = messageHelper.buildFromText(data)
     const message = messageHelper.buildMessage(data)
     const replyTo = data.email || 'no-reply@howdyform.com'
 
     return (
-      <div className='demo__email'>
+      <div className={`demo__email ${className}`}>
         <span className="demo__email__header">{subject}</span>
         <div className="demo__email__body">
           <img className="demo__email__body__thumb" src={this.calculateThumbnailUrl()} />
