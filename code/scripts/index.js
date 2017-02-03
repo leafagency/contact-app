@@ -1,9 +1,7 @@
-// import package from 'module'
+import ReactDOM from 'react-dom'
+import React from 'react'
+import LiveDemo from './components/liveDemo'
 
-window.app = {
-  initialize: () => {
-    console.log("Application initialized foo...")
-  }
+window.onload = function() {
+  return ReactDOM.render(<LiveDemo />, document.getElementsByClassName('demo__container')[0])
 }
-
-window.app.initialize()

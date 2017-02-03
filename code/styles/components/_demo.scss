@@ -1,6 +1,8 @@
 .demo {
-
+  position: relative;
+  min-height: 40em;
   @include susy-breakpoint($bp-lg) {
+    min-height: auto;
     display: flex;
   }
 
@@ -8,7 +10,16 @@
   &__email {
     padding: $padding-vertical $padding-horizontal;
 
+    left: 0;
+    transition: all .7s ease;
+    position: absolute;
+    width: 100%;
+
     @include susy-breakpoint($bp-lg) {
+      position: static;
+      left: auto;
+      transition: none;
+      width: auto;
       flex: 1;
       padding: $padding-vertical-lg $padding-horizontal-lg;
     }
@@ -19,6 +30,10 @@
     border-radius: $border-radius-lg;
     margin-bottom: 0;
 
+    &.hidden {
+      left: -100em;
+    }
+
     &__label {
       color: $white;
     }
@@ -27,6 +42,10 @@
       background-color: $blue-darker;
       color: $white;
       padding: 1.35em;
+
+      &.erroneous {
+        background-color: $error-red;
+      }
 
       &:hover {
         background-color: darken($blue-darker, 4%);
@@ -40,6 +59,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    &.hidden {
+      left: 100em;
+    }
 
     @include susy-breakpoint($bp-lg) {
       @include margin-vertical($spacing-vertical-lg);
@@ -88,24 +111,9 @@
       }
 
       &__to {
+        display: block;
+        font-size: .75rem;
         margin-bottom: $spacing-vertical-xs;
-      }
-
-      &__list {
-
-        &__item {
-
-          &__label {
-
-            &--link {
-
-            }
-          }
-        }
-      }
-
-      &__message {
-
       }
     }
 
