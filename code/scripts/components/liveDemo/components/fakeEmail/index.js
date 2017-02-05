@@ -15,13 +15,15 @@ class FakeEmail extends React.Component {
 
   calculateThumbnailUrl() {
     const { email } = this.props.data
+    const defaultSrc = `https://howdyform.com/images/thumb.png`
 
     if (!email) {
-      return '/images/thumb.svg'
+      return defaultSrc
     }
 
     const gravatarHash = md5(this.props.data.email.replace(/\s/g, '').toLowerCase())
-    return `https://www.gravatar.com/avatar/${gravatarHash}?s=32`
+    const fallbackImage = window.encodeURIComponent(defaultSrc)
+    return `https://www.gravatar.com/avatar/${gravatarHash}?s=32&d=${fallbackImage}`
   }
 
   render() {
