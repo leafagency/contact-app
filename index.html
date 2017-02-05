@@ -1,153 +1,176 @@
 <!DOCTYPE html>
-<!--if lt IE 7<html class="no-js lt-ie9 lt-ie8 lt-ie7">
+<!--if lt IE 7<html class='no-js lt-ie9 lt-ie8 lt-ie7'>
 -->
-<!--if IE 7<html class="no-js lt-ie9 lt-ie8">
+<!--if IE 7<html class='no-js lt-ie9 lt-ie8'>
 -->
-<!--if IE 8<html class="no-js lt-ie9">
+<!--if IE 8<html class='no-js lt-ie9'>
 -->
 <!-- [if gt IE 8] <!-->
-<html class="no-js" lang="en">
+<html lang="en" class="no-js">
   <!-- <![endif]-->
   <head>
     <meta charset="utf-8">
-    <title>Instant contact forms without writing a line of code - Howdy</title>
+    <title>Howdy - Instant, professional contact forms without programming</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
     <meta http-equiv="cleartype" content="on">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="#{title}">
+    <meta name="description" content="Instant, professional contact forms without programming">
     <link rel="stylesheet" href="/styles/main.css">
-    <script src="/scripts/index.js"></script>
-    <script src="https://use.typekit.net/iaa5wts.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#6848b8">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <script>
-      //- Ensure the content fades in properly even if a content blocker is blocking typekit:
-      document.addEventListener("DOMContentLoaded", function(event) {
-        setTimeout(function() {
-          var htmlClasses = document.documentElement.classList;
-          if (!htmlClasses.contains("wf-active") && !htmlClasses.contains("wf-loading")) {
-            document.documentElement.classList.add("wf-active-override");
-          }
-        }, 250);
-      })
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-62036216-2', 'auto');
+      ga('send', 'pageview');
       
     </script>
+    <script src="/scripts/app/main.app.js"></script>
   </head>
-  <body class="home-page" dir="ltr">
-    <div class="site-wrapper">
-      <div class="masthead">
-        <div class="masthead__logo"><a class="masthead__logo__link" href="/">
-            <div class="masthead__logo__link__inner">
-              <div class="logo"></div>
-            </div></a></div>
-        <nav class="masthead__navigation navigation">
-          <ul class="navigation__list" role="navigation">
-            <li class="navigation__list__item"><a class="navigation__list__link" href="/pricing">Pricing</a>
-            </li>
-            <li class="navigation__list__item"><a class="navigation__list__link" href="/docs">Docs</a>
-            </li>
-            <li class="navigation__list__item"><a class="navigation__list__link" href="/faq">FAQ</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="masthead__cta">
-          <button class="masthead__cta__button button">Try it for free</button>
+  <body dir="ltr" class="home-page">
+    <div id="jumbotron" class="jumbotron">
+      <div class="container">
+        <h1 class="jumbotron__title">Howdy</h1>
+        <p class="jumbotron__intro">Instant, professional contact forms without programming</p>
+        <div id="snippet-envelope" class="envelope animated">
+          <div id="snippet-generator" class="envelope__email-capture">
+            <p class="envelope__lead">Enter an account email address to get started with your 2 week unlimited trial</p>
+            <div id="snippet-generator-inputs" class="animated">
+              <input placeholder="your-email@example.com" id="snippet-generator-email" class="envelope__input">
+              <button id="snippet-generator-button" class="envelope__button">Generate my snippet</button>
+            </div>
+          </div>
+          <div id="snippet-display" class="snippet">
+            <p class="envelope__lead">Thanks! Now paste this into your contact page HTML, that's it!</p>
+            <pre>
+              <div class="code">
+                <div class="code__wrapper"><span class="code__text">&lt;</span><span class="code__element">script </span><span class="code__attribute">src</span><span class="code__text">="</span><span class="code__value"><span id="snippet-display-url"></span><span>?token=</span><span id="snippet-display-token">your-email@example.com</span></span><span class="code__text">" </span><span class="code__attribute">data-howdy-recipient</span><span class="code__text">="</span><span class="code__value"><span id="snippet-display-email"></span></span><span class="code__text">"&gt;&lt;/</span><span class="code__element">script</span><span class="code__text">&gt;</span></div>
+              </div></pre>
+            <div class="additional-info">
+              <h4>Boring Notes</h4>
+              <ul>
+                <li><strong>Your trial ends 2 weeks from today</strong>, we'll send you payment instructions then.</li>
+                <li><strong>We've sent you an email with a link to click</strong> to verify you own the email address you provided.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="page-header">
-        <div class="page-header__inner">
-          <h1 class="page-header__title">Turn your static HTML contact forms in to the real thing <span>without writing a line of code</span></h1>
-          <div class="envelope" id="snippet-generator-top"></div>
-        </div>
-      </div>
-      <main>
-        <section class="section section--blue-lightest">
-          <div class="section__inner">
-            <div class="section__intro">
-              <h2 class="section__title">How it works</h2>
-              <p class="section__description">What once seemed like an impossible job is now so straightforward, your Granny could do it</p>
-            </div>
-            <div class="section__content">
-              <div class="buckets">
-                <div class="buckets__item"><img class="buckets__item__image" src="/images/icon-generate.svg"/>
-                  <h3 class="buckets__item__heading">Generate a snippet</h3>
-                  <p class="buckets__item__text">Tell us which email address to send to, and we'll create your unique code.</p>
-                </div>
-                <div class="buckets__item"><img class="buckets__item__image" src="/images/icon-paste.svg"/>
-                  <h3 class="buckets__item__heading">Paste your snippet</h3>
-                  <p class="buckets__item__text">Copy and paste your snippet into the HTML of the page with the web form.</p>
-                </div>
-                <div class="buckets__item"><img class="buckets__item__image" src="/images/icon-done.svg"/>
-                  <h3 class="buckets__item__heading">Start receiving emails</h3>
-                  <p class="buckets__item__text">That's it buddy. Your web form is ready to start validating &amp; delivering emails.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="section">
-          <div class="section__inner">
-            <div class="section__intro">
-              <h2 class="section__title">Who's it for</h2>
-              <p class="section__description">While Howdy's for anyone who wants a web-form, we created it with a few people in mind</p>
-            </div>
-            <div class="section__content">
-              <div class="buckets">
-                <div class="buckets__item"><img class="buckets__item__image" src="/images/designers.svg"/>
-                  <h3 class="buckets__item__heading">Designers</h3>
-                  <p class="buckets__item__text">You know a little HTML, but PHP? <em>Ain't nobody got time for that</em></p>
-                </div>
-                <div class="buckets__item"><img class="buckets__item__image" src="/images/marketers.svg"/>
-                  <h3 class="buckets__item__heading">Marketers</h3>
-                  <p class="buckets__item__text">Get those landing pages live, <em>girlfriend</em>. You'll never have to wait for IT again.</p>
-                </div>
-                <div class="buckets__item"><img class="buckets__item__image" src="/images/developers.svg"/>
-                  <h3 class="buckets__item__heading">Developers</h3>
-                  <p class="buckets__item__text">We know you <em>can</em>, but why should you? Put your feet up. We've got this.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="section section--blue">
-          <div class="section__inner">
-            <div class="section__intro">
-              <h2 class="section__title">Try it out</h2>
-              <p class="section__description">Fill out the form to see what Howdy sends to your Inbox</p>
-            </div>
-            <div class="section__content">
-              <div class="demo__container" id="live-demo"></div>
-            </div>
-          </div>
-        </section>
-        <section class="section section--denim">
-          <div class="section__inner">
-            <div class="section__content">
-              <div class="benefits">
-                <div class="benefits__cost">
-                  <p class="benefits__cost__text">Howdy costs just <span class="benefits__cost__text__highlight">$2 per month</span></p>
-                </div>
-                <ul class="benefits__list">
-                  <li class="benefits__list__item">Use Howdy across an <strong class="benefits__list__item__highlight">unlimited</strong> number of sites</li>
-                  <li class="benefits__list__item">Use Howdy for an <strong class="benefits__list__item__highlight">unlimited</strong> number of forms</li>
-                  <li class="benefits__list__item">Use Howdy with an <strong class="benefits__list__item__highlight">unlimited</strong> number of email addresses</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="section section--denim">
-          <div class="section__inner">
-            <div class="section__content">
-              <div id="snippet-generator-bottom"></div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <footer class="footer">
-        <div class="footer__inner"><span class="footer__text">Made by</span><a class="footer__logo hide-text" href="http://weareleaf.com" target="_blank">Leaf</a></div>
-      </footer>
     </div>
+    <!-- Page content-->
+    <div class="content-wrapper">
+      <section class="benefits">
+        <div class="container">
+          <h2>How does it work?</h2>
+          <h3>Howdy connects your contact forms and delivers submissions to your email inbox</h3>
+          <div class="benefit"><img src="/images/professional.svg" class="benefit__image">
+            <h4 class="benefit__heading">Professional form handling</h4>
+            <p class="benefit__content">Howdy features <strong>automatic input validation</strong> and <strong>intelligently formats emails</strong>. This means your messages are always professionally presented.<br /><a href="#professional-form-handling">Learn more...</a></p>
+          </div>
+          <div class="benefit"><img src="/images/no-programming.svg" class="benefit__image">
+            <h4 class="benefit__heading">No programming</h4>
+            <p class="benefit__content">If you can copy and paste HTML, you can use Howdy. It makes no assumptions about your page design, and requires <strong>no programming</strong>.<br /><a href="#automagical-setup">Learn more...</a></p>
+          </div>
+          <div class="benefit"><img src="/images/value.svg" class="benefit__image">
+            <h4 class="benefit__heading">Unbelieveable value</h4>
+            <p class="benefit__content">Howdy lets you send <strong>unlimited messages</strong> to <strong>unlimited inboxes</strong> for just <strong>$2 per month</strong>. Never has doing this yourself been so <em>not</em> worth your time.<br /><a href="#unbelieveable-value">Learn more...</a></p>
+          </div>
+          <div style="clear: both;" class="clear"></div>
+        </div>
+      </section>
+      <section id="professional-form-handling" class="alt benefits">
+        <div class="container">
+          <h2>Professional form handling</h2>
+          <h3>Our delivered emails use all available data to correctly format your messages</h3>
+          <p>Howdy will automatically scan named inputs in your forms, choosing appropriate fields to form the <b>from</b>, <b>reply-to</b> and <b>subject</b> fields of the delivered email. If none of these are supplied, Howdy just falls back to sensible defaults, try it out below:</p>
+          <div id="try-it-out"></div>
+        </div>
+      </section>
+      <section id="automagical-setup" class="defaults">
+        <div class="container">
+          <h2>No programming</h2>
+          <h3>If you can copy and paste, you can use Howdy</h3>
+          <h4>Installation:</h4>
+          <p>Just paste your generated snippet onto the same page as your form HTML, we'll take care of the rest.</p>
+          <div class="code">
+            <div class="code__wrapper">
+              <ul class="code__list">
+                <li class="code__list__item"><span>&lt;</span><span class="code__element">script&nbsp;</span><span>src</span><span class="code__text">=“</span><span class="code__overflow">&hellip;</span><span class="code__text">“&nbsp;</span><span>data-howdy-recipient</span><span class="code__text">=“</span><span>your@email.com</span><span class="code__text">“</span><span>&gt;&lt;/</span><span class="code__element">script</span><span>&gt;</span></li>
+              </ul>
+            </div>
+          </div>
+          <h4>Re-use your snippet for multiple forms:</h4>
+          <p>You can even re-use the same snippet for different contact forms, just update the <code>data-howdy-recipient</code> attribute on the snippet to have it send to a different inbox.</p>
+          <div class="code">
+            <div class="code__wrapper">
+              <ul class="code__list">
+                <li class="code__list__item"><span>&lt;</span><span class="code__element">script&nbsp;</span><span>src</span><span class="code__text">=“</span><span class="code__overflow">&hellip;</span><span class="code__text">“&nbsp;</span><span>data-howdy-recipient</span><span class="code__text">=“</span><span>another@email.com</span><span class="code__text">“</span><span>&gt;&lt;/</span><span class="code__element">script</span><span>&gt;</span></li>
+              </ul>
+            </div>
+          </div>
+          <h4>Input validation:</h4>
+          <p>Howdy will choose an appropriate method of validation for your inputs. Alternatively, you can set your own.</p>
+          <div class="code">
+            <div class="code__wrapper">
+              <ul class="code__list"></ul>
+              <li class="code__list__item"><span class="code__comment">// Automatically validated:</span>
+                <li class="code__list__item"><span>&lt;</span><span class="code__element">input&nbsp;</span><span class="code__data-attribute">type</span><span class="code__text">=“</span><span>text</span><span class="code__text">”&nbsp;</span><span class="code__data-attribute">name</span><span class="code__text">=“</span><span>telephone</span><span class="code__text">”&nbsp;</span><span>/&gt;</span></li>
+                <li class="code__list__item"><span class="code__comment">// Set your own validation:</span></li>
+                <li class="code__list__item"><span>&lt;</span><span class="code__element">input&nbsp;</span><span class="code__data-attribute">type</span><span class="code__text">=“</span><span>text</span><span class="code__text">”&nbsp;</span><span class="code__data-attribute">name</span><span class="code__text">=“</span><span>login</span><span class="code__text">”&nbsp;</span><span class="code__data-attribute">data-howdy-validate</span><span class="code__text">=“</span><span>email</span><span class="code__text">”&nbsp;</span><span>/&gt;</span></li>
+              </li>
+            </div>
+          </div>
+          <p>Accepted validation types are <code>none</code>, <code>required</code>, <code>email</code>, <code>number</code>, <code>date</code>, <code>tel</code>.</p>
+          <p>Automatically validated input names are <code>email</code>, <code>name</code>, <code>first_name</code>, <code>last_name</code>, <code>firstName</code>, <code>lastName</code>, <code>subject</code>, <code>topic</code>, <code>about</code>, <code>body</code>, <code>message</code>, <code>address</code>, <code>postcode</code>, <code>post_code</code>, <code>postCode</code>, <code>zipcode</code>, <code>zip_code</code>, <code>zipCode</code>, <code>tel</code>, <code>telephone</code>, <code>mobile</code>, <code>mob</code>, <code>age</code>, <code>dob</code>, <code>date_of_birth</code> and <code>dateOfBirth</code> also work.</p>
+        </div>
+      </section>
+      <section id="unbelieveable-value" class="alt sellpoints">
+        <div class="container">
+          <h2>Unbelieveable value</h2>
+          <h3>Our pricing is simple, flat, and affordable at $2 per month</h3>
+          <div class="pricing-sellpoints">
+            <ul>
+              <li>Use Howdy across an <strong>unlimited</strong> number of sites</li>
+              <li>Use Howdy for an <strong>unlimited</strong> number of forms</li>
+              <li>Use Howdy to send messages to an <strong>unlimited</strong> number of inboxes</li>
+              <li><strong>24/7 support</strong> from friendly &amp; patient human beings</li>
+              <li><strong>Never waste time</strong> with form handling, validation, delivery <em>or</em> message formatting again</li>
+            </ul>
+          </div>
+          <p class="centered"><a href="#jumbotron" class="button">Generate my snippet</a></p>
+        </div>
+      </section>
+    </div>
+    <!-- Footer-->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__section"><a href="/pages/report-issue" class="footer__link">Report <span class='additional-content'>an</span> issue</a></div>
+        <div class="footer__section">
+          <p class="footer__text"><span class='additional-content'>Made with <span class='heart'>❤</span> by </span><a class='footer__link--leaf' href='http://weareleaf.com' target='_blank'>Leaf</a></p>
+        </div>
+        <div class="footer__section"><a href="https://twitter.com/share" data-url="https://www.howdyform.com/" data-text="Check out Howdy. Instant, professional contact forms without programming." data-via="we_are_leaf" class="footer__share-button twitter-share-button">Tweet</a>
+          <script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
