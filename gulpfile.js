@@ -24,7 +24,7 @@ const MISC_FILES = ['./code/CNAME', './code/**/*.mp4', './code/**/*.ogv', './cod
 const PUG_FILES = ['./code/**/*.pug', './code/**/*.jade']
 const SASS_FILES = ['./code/**/*.scss']
 const SASS_INCLUDE_PATHS = [
-  'node_modules/normalize-scss/sass',
+  'node_modules/prismjs/themes',
   'node_modules/susy/sass'
 ]
 const FAVICON_BASE = ['./code/favicons']
