@@ -1,0 +1,74 @@
+extends ./templates/base/_base
+
+block prepend vars
+  -var bodyClass = "home-page"
+  -var title = "Instant contact forms without writing a line of code - Howdy"
+
+block content
+
+  //- Page header
+  +page-header({
+    title: "Start your Howdy subscription for <span>just $2 per month</span>. That's less than a cup of coffee..."
+  })
+
+  main
+    +section({})
+      .container
+        form(id="payment-form")
+          .form-row
+            .form-group
+                label(for='name') Primary Email
+                input(type='email', name='email', placeholder="We'll send your invoices here")
+
+          .form-row
+            .form-column
+              .form-group
+                label(for='cardNumber') Card Number
+                input.payment-field__card-number(id='cardNumber', type="text", size="20", data-stripe="number" placeholder="The long number on the front")
+
+            .form-column
+              .form-group
+                .payment-logos
+                  img.payment-logos__logo(src="/images/cardLogos/visa.svg" alt="Visa")
+                  img.payment-logos__logo(src="/images/cardLogos/mastercard.svg" alt="Master Card")
+                  img.payment-logos__logo(src="/images/cardLogos/amex.svg" alt="American Express")
+                  img.payment-logos__logo(src="/images/cardLogos/diners.svg" alt="Diners Club")
+                  img.payment-logos__logo(src="/images/cardLogos/jcb.svg" alt="JCB")
+
+          .form-row
+            .form-column
+              .form-group
+                label(for='cardExpirationMonth') Expiration (MM/YY)
+                .input-group
+                  input.payment-field__card-expiry(id='cardExpirationMonth', type="text", size="2", data-stripe="exp_month" placeholder="MM")
+                  input.payment-field__card-expiry(type="text", size="2", data-stripe="exp_year" placeholder="YY")
+
+            .form-column
+              .form-group
+                label(for='cardCVC') CVC
+                input.payment-field__card-cvc(id='cardCVC' type="text" size="4" data-stripe="cvc", placeholder="3 digits on the back")
+
+          .form-row
+            .form-column
+              .form-group
+                label(for='billingZip') Billing Zip/Post Code
+                input.payment-field__card-zip(id='billingZip' type="text" size="6" data-stripe="address_zip", placeholder="1234")
+
+          .payment-errors
+
+          .form-row
+            .form-group
+              button.submit(type='submit') Start my Howdy subscription
+
+    +section({
+      style: "denim"
+    })
+      .container
+          p Have any concerns or questions? Just drop us a line at <a href='mailto:hello@weareleaf.com'>hello@weareleaf.com</a>, or tweet us at <a href='https://twitter.com/we_are_leaf'>@we_are_leaf</a>.
+
+    script(type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js")
+    script(type="text/javascript" src="https://js.stripe.com/v2/")
+    script(type="text/javascript").
+      $(function() {
+        window.howdy.handleStartSubscription()
+      });

@@ -50,10 +50,10 @@ class SnippetGenerator extends React.Component {
         <div className="callout__inner">
           <p className="callout__intro">Enter an account email address to start your <strong>free 2 week trial</strong></p>
           <div className="callout__form">
-            <div className="input-group">
+            <div className="callout__form__input-group input-group">
               <label className="sr-only" for="email">Email addresss</label>
-              <input className="input-group__input" type="email" name="email" placeholder="you@email.com" onChange={this.handleEmailChange} />
-              <button className="input-group__button button" onClick={this.handleButtonClick}>Generate my snippet</button>
+              <input className="callout__form__input-group__input input-group__input" type="email" name="email" placeholder="you@email.com" onChange={this.handleEmailChange} />
+              <button className="callout__form__input-group__button input-group__button button" onClick={this.handleButtonClick}>Generate my snippet</button>
             </div>
           </div>
         </div>

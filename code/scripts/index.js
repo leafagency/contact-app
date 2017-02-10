@@ -3,6 +3,8 @@ import React from 'react'
 import LiveDemo from './components/liveDemo'
 import SnippetGenerator from './components/snippetGenerator'
 import SnippetDisplay from './components/snippetDisplay'
+import { parse } from 'qs'
+import config from './config'
 
 document.addEventListener('DOMContentLoaded', function() {
   const topSnippetGeneratorContainer = document.getElementById('snippet-generator-top')
@@ -24,5 +26,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (liveDemoContainer) {
     ReactDOM.render(<LiveDemo />, liveDemoContainer)
+  }
+
+  window.howdy = {
+    handleStartSubscription() {
+      const queryString = parse(window.document.location.search.substr(1))
+      const { verificationToken } = queryString
+
+      if (window.$ && Stripe) {
+        const $ = window.$
+        const $form = $('#payment-form')
+        const qsData = verificationToken ? atob(verificationToken).split('|') : ['test', 'test@test.com']
+        const id = qsData[0]
+        const email = qsData[1]
+
+        $form.find('input[name="email"]').prop({ value: email, disabled: true })
+        $form.submit((event) => {
+          $form.find('.submit').prop('disabled', true)
+
+          Stripe.setPublishableKey(config.stripeKey)
+          Stripe.card.createToken($form, (status, response) => {
+            if (response.error) {
+              $form.find('.payment-errors').text(response.error.message)
+              return $form.find('.submit').prop('disabled', false)
+            }
+
+            return request.post(config.createSubscriptionUrl)
+              .send({
+                id: id,
+                stripePaymentToken: response.id
+              })
+              .end(function(err, response) {
+                if (err) {
+                  return alert(err)
+                }
+                return window.location.replace("https://howdyform.com/pages/subscription-started.html")
+              })
+          })
+
+          // Prevent the form from being submitted:
+          return false
+        })
+      }
+    }
   }
 })

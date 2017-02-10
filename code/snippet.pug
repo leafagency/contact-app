@@ -8,10 +8,17 @@ block content
 
   //- Page header
   +page-header({
-    title: "Your snippet"
+    title: "Phew, that was hard! <span>Here's your code snippet</span>. You're one step away from using Howdy"
   })
 
   main
-    .snippet
-      #snippet-display
-        //- See the Snippet Display react component
+    +section({})
+      .snippet
+        #snippet-display
+          //- See the Snippet Display react component
+
+    +section({
+      style: "denim"
+    })
+      #snippet-generator-bottom
+      //- See the SnippetGenerator react component

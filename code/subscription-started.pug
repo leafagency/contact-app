@@ -1,0 +1,38 @@
+extends ./templates/base/_base
+
+block prepend vars
+  -var bodyClass = "faq-page inner-page"
+  -var currentPage = "FAQ"
+  -var title = "FAQ - Instant contact forms without writing a line of code - Howdy"
+
+block content
+
+  //- Page header
+  +page-header({
+    title: "You've started a Howdy subscription! Thank you so much, <span>we hope you love it</span>"
+  })
+
+  main
+
+    //- Tierd
+    +section({})
+      //- Blocks
+      +blocks([{
+        heading: "What happens now?",
+        text: "It's simple, we'll take $2 from your payment card every month, and in return you get <strong>unlimited</strong> sites, emails and forms with Howdy <strong>up to 1000 email sends</strong> per month."
+      },{
+        heading: "What if I need to cancel?",
+        text: "If you want to cancel your subscription at any point, just drop us an email at <a href='mailto:support@weareleaf.com'>support@weareleaf.com</a> and we'll get it cancelled right away. Your paid account will remain active until the end of your current billing month."
+      },{
+        heading: "When is payment taken?",
+        text: "Payment will be taken every month on the day of the month you started your subscription. The payment should appear as 'HOWDYFORMCOM' on your bank statement."
+      },{
+        heading: "What if a payment fails?",
+        text: "Don't worry, we won't cut you off! If a payment fails you'll be notified via email along with a link to update your payment details. Failing that, we'll be in touch directly."
+      },{
+        heading: "What if I exceed my usage allowance?",
+        text: "Again, don't worry, we won't cut you off! We'll be in touch to congratulate you on making such good use of Howdy, and arrange a more payment suitable plan with you."
+      },{
+        heading: "I have another question...",
+        text: "No worries. Email us at <a href='mailto:support@weareleaf.com'>support@weareleaf.com</a> and we'll get right back to you to help in any way we can."
+      }])
