@@ -4,8 +4,12 @@
   background-color: $blue;
   text-align: center;
 
-  .home-page & {
+  .page--home & {
     padding-bottom: 0;
+  }
+
+  .page--start-subscription & {
+    padding-bottom: 13em;
   }
 
   &__title {
@@ -14,7 +18,8 @@
     margin: 0 auto;
     max-width: 32.5rem;
 
-    .home-page & {
+    .page--home &,
+    .page--start-subscription & {
       margin-bottom: $spacing-vertical-lg;
     }
 

@@ -1,7 +1,7 @@
 extends ./templates/base/_base
 
 block prepend vars
-  -var bodyClass = "home-page"
+  -var bodyClass = "page page--start-subscription page--inner"
   -var title = "Instant contact forms without writing a line of code - Howdy"
 
 block content
@@ -13,7 +13,7 @@ block content
 
   main
     +section({})
-      .container
+      .envelope
         form(id="payment-form")
           .form-row
             .form-group

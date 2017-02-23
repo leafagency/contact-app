@@ -1,7 +1,7 @@
 extends ./templates/base/_base
 
 block prepend vars
-  -var bodyClass = "docs-page inner-page"
+  -var bodyClass = "page page--docs page--inner"
   -var currentPage = "Docs"
   -var title = "Docs - Instant contact forms without writing a line of code - Howdy"
 
@@ -22,7 +22,7 @@ block content
       h3 Getting started
       p To get started, you'll first need to #[a(href="#") generate your own code snippet]. Using only your email address (we don't need more, so we don't ask for more), we'll create you your own, unique code block; just like if you were installing Google Analytics.
       p When you've got your code snippet, paste it into the same HTML file as your form; it doesn't matter where, as long as it's in the same file.
-      pre: code &lt;script src=“…“ data-howdy-recipient=“your@email.com“></script&gt;
+      //pre: code &lt;script src=“…“ data-howdy-recipient=“your@email.com“></script&gt;
 
     //- Callout
     +section({

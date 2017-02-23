@@ -1,5 +1,11 @@
 .envelope {
   background: $white url('/images/dashes.svg') repeat-x center top;
   display: inline-block;
+  max-width: 48em;
   padding: $padding-vertical-lg $padding-horizontal-lg;
+
+  .page--start-subscription & {
+    display: block;
+    margin: -19em auto 0;
+  }
 }
