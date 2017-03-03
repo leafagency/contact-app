@@ -57,6 +57,11 @@ h6, %h6 {
 p {
   display: inline-block;
   margin: 0 0 $spacing-vertical;
+
+  &.legal {
+    font-size: 0.8em;
+    text-align: center; 
+  }
 }
 
 a {

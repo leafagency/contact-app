@@ -122,13 +122,6 @@ progress {
 
 .input-group {
   display: flex;
-
-  &__input {
-
-  }
-
-  &__button {
-    flex: 1 0 auto;
-    margin-left: $spacing-horizontal-xs;
-  }
+  justify-content: space-between;
+  flex-wrap: wrap;
 }

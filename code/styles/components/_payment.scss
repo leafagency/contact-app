@@ -1,0 +1,27 @@
+.payment-field__card-expiry, .payment-field__card-number, .payment-logos {
+  flex: 0 1 100%;
+  @include susy-breakpoint($bp-md) {
+    flex: 0 1 49%;
+  }
+}
+
+.payment-field {
+  &__card-expiry {
+    &:last-child {
+      margin-top: $padding-vertical/2;
+      @include susy-breakpoint($bp-md) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.payment-logos {
+  padding-top: 1em;
+
+  &__logo {
+    display: inline-block;
+    width: 19%;
+    margin-right: 1%;
+  }
+}
