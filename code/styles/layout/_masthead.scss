@@ -1,4 +1,5 @@
 .masthead {
+  background-color: $white;
   align-items: center;
   display: flex;
   padding: $padding-vertical-xs $padding-horizontal-xs;
@@ -20,6 +21,10 @@
   }
 
   &__cta__button {
+    .page--start-subscription &,
+    .page--try-it & {
+      display: none;
+    }
     float: right;
     padding: $padding-vertical-xs $padding-horizontal-sm;
   }

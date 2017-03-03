@@ -1,4 +1,11 @@
 .buckets {
+  .page--try-it & {
+    &__item__heading {
+      color: white;
+    }
+    color: $white;
+  }
+
   @include clearfix;
   margin-bottom: $spacing-vertical;
   text-align: center;

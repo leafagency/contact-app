@@ -60,7 +60,11 @@ p {
 
   &.legal {
     font-size: 0.8em;
-    text-align: center; 
+    text-align: center;
+  }
+
+  &.centered {
+    text-align: center;
   }
 }
 

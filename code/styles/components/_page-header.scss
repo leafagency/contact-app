@@ -19,7 +19,8 @@
     max-width: 32.5rem;
 
     .page--home &,
-    .page--start-subscription & {
+    .page--start-subscription &,
+    .page--try-it & {
       margin-bottom: $spacing-vertical-lg;
     }
 

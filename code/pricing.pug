@@ -9,7 +9,7 @@ block content
 
   //- Page header
   +page-header({
-    title: "We like to keep things simple; one tier for large enterprises, and another <span>for everyone else</span>"
+    title: "We like to keep things simple; everyone starts on <span>one price package</span>"
   })
 
   main
@@ -22,34 +22,28 @@ block content
       //- Tiers
       +tiers([{
         benefits: [
-          "2,000 emails",
-          "25 sites",
+          "1,000 emails/month",
           "25 forms",
-          "5 addresses"
+          "Unlimited websites",
+          "Unlimited recipients",
+          "Free support"
         ],
-        description: "Our most popular package is aimed at designers, developers, marketers, and freelancers.",
+        description: "Everyone's starting package. We'll email you if you need enterprise.",
         highlight: true,
         price: "$2/month",
         title: "Pro"
       },{
         benefits: [
-          "Unlimited emails",
-          "Unlimited sites",
+          "10,000+ emails/month",
           "Unlimited forms",
-          "Unlimited addresses"
+          "Unlimited websites",
+          "Unlimited recipients",
+          "High priority support"
         ],
-        description: "Our most popular package is aimed at designers, developers, marketers, and freelancers.",
-        description: "Our Enterprise package is for aimed at businesses with an expectation of high volume usage.",
+        description: "As your usage increases, we'll contact you to go enterprise.",
         price: "From $20/month",
         title: "Enterprise"
       }])
-
-    //- Who's it for
-    +section({
-      description: "While Howdy's for anyone who wants a web-form, we created it with a few people in mind",
-      title: "Who's it for"
-    })
-
 
     //- Callout
     +section({
