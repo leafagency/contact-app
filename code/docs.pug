@@ -19,10 +19,62 @@ block content
       narrow: true
     })
 
-      h3 Getting started
-      p To get started, you'll first need to #[a(href="#") generate your own code snippet]. Using only your email address (we don't need more, so we don't ask for more), we'll create you your own, unique code block; just like if you were installing Google Analytics.
-      p When you've got your code snippet, paste it into the same HTML file as your form; it doesn't matter where, as long as it's in the same file.
-      //pre: code &lt;script src=“…“ data-howdy-recipient=“your@email.com“></script&gt;
+      h3 Installation
+      p To get Howdy onto your web form, you'll first need to #[a(href="/try-it") generate your own code snippet]. Using only your email address, we'll create you your own, unique code snippet; just like if you were installing Google Analytics.
+      p When you've got your code snippet, paste it into the same HTML file as your form; it doesn't matter where, as long as it's in the same file. With the snippet in place, when the page is loaded Howdy will fire up, detect any forms on the page and handle submissions from them <i>automatically</i>.
+      p The first time you submit your form with Howdy installed, we'll send you a confirmation email with a link to click. This is just to verify that you have access to the email inbox you're trying to make submissions to. After that you should see further submissions appear in your inbox.
+
+      p <stong>Please note:</strong> Your Howdy account is associated with the email address you originally used to generate your snippet with. This is where we'll contact you with any correspondence, including account changes or payment invoices.
+
+      h3 Using a new email address
+      p If you want to have your submissions go to a different email address from the one you generated your snippet with, there's <strong>no need to generate a new snippet</strong>. Instead, simply adjust the <code>data-howdy-recipient</code> attribute on your existing snippet code. The first time you attempt to submit a form using new email we'll send you a confirmation email with a link to click. This is just to verify that you have access to the email inbox you're trying to make submissions to.
+
+      h3 Automatic validations
+      p Howdy will automatically detect inputs with common names such as <code>name</code> and <code>email</code> and apply appropriate validations to them automatically. Below is a full list of automatically validated <code>name</code> inputs:
+
+      ul
+        li <code>email</code>
+        li <code>name</code>
+        li <code>first_name</code>
+        li <code>last_name</code>
+        li <code>firstName</code>
+        li <code>lastName</code>
+        li <code>subject</code>
+        li <code>topic</code>
+        li <code>about</code>
+        li <code>body</code>
+        li <code>message</code>
+        li <code>address</code>
+        li <code>postcode</code>
+        li <code>post_code</code>
+        li <code>postCode</code>
+        li <code>zipcode</code>
+        li <code>zip_code</code>
+        li <code>zipCode</code>
+        li <code>tel</code>
+        li <code>telephone</code>
+        li <code>mobile</code>
+        li <code>mob</code>
+        li <code>age</code>
+        li <code>dob</code>
+        li <code>date_of_birth</code>
+        li <code>dateOfBirth</code>
+
+      h3 Custom validations
+      p Howdy also supports adding your own custom validations to inputs. This can be done by adding a <code>data-howdy-validate</code> attribute to an input with one of the following possible validation values:
+
+      ul
+        li <code>none</code>
+        li <code>required</code>
+        li <code>email</code>
+        li <code>number</code>
+        li <code>date</code>
+        li <code>tel</code>
+
+      p For example, if you wanted to ensure an input was filled in, you could do this:
+
+      p
+        code &lt;input type="text" name="favouritePet" data-howdy-validate="required" /&gt;
 
     //- Callout
     +section({

@@ -9,7 +9,7 @@ html, body {
     background-color: $blue-lighter;
   }
 
-  &--try-it {
+  &--try-it, &--snippet {
     background-color: $blue;
   }
 }
