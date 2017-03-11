@@ -20,7 +20,7 @@ const webpack = require('webpack')
 const imagemin = require('gulp-imagemin')
 const imageminJpegRecompress = require('imagemin-jpeg-recompress')
 
-const MISC_FILES = ['./code/CNAME', './code/**/*.mp4', './code/**/*.ogv', './code/**/*.webm', './code/**/*.eot', './code/**/*.ttf', './code/**/*.woff', './code/**/*.woff2']
+const MISC_FILES = ['./code/CNAME', './code/**/*.mp4', './code/**/*.ogv', './code/**/*.webm', './code/**/*.eot', './code/**/*.ttf', './code/**/*.woff', './code/**/*.woff2', './code/scripts/prism/**/*']
 const PUG_FILES = ['./code/**/*.pug', './code/**/*.jade']
 const SASS_FILES = ['./code/**/*.scss']
 const SASS_INCLUDE_PATHS = [
@@ -31,6 +31,7 @@ const FAVICON_BASE = ['./code/favicons']
 const FAVICON_FILES = [(FAVICON_BASE + '/**/*')]
 const IMAGE_FILES = ['./code/**/*.png','./code/**/*.jpg','./code/**/*.gif','./code/**/*.jpeg', './code/**/*.svg', '!./code/images/favicons/**/*']
 const WEBPACKABLE_FILES = './code/scripts/index.js'
+const LIB_FILES = ['./code/lib/prism/**/*']
 const BUILD_SRC = './code/'
 const BUILD_DEST = './dist/'
 const BUILT_FILES = BUILD_DEST + '**/*'
@@ -116,6 +117,13 @@ gulp.task('misc', () => {
     .on('error', logError)
 })
 
+gulp.task('lib', () => {
+  return gulp.src(LIB_FILES, { base: './code' })
+    .pipe(changed(BUILD_DEST))
+    .pipe(gulp.dest(BUILD_DEST))
+    .on('error', logError)
+})
+
 gulp.task('templates', () => {
   return gulp.src(PUG_FILES)
     .pipe(pug({
@@ -170,6 +178,7 @@ gulp.task('watch', () => {
   watch(SASS_FILES, () => gulp.start('styles'))
   watch(IMAGE_FILES, () => gulp.start('images'))
   watch(PUG_FILES, () => gulp.start('templates'))
+  watch(LIB_FILES, () => gulp.start('lib'))
 
   webpackConfig.watch = true
   gulp.src(WEBPACKABLE_FILES)
@@ -220,8 +229,8 @@ gulp.task('deploy', () => {
 // --------- COMPOSITE TASKS --------
 // ----------------------------------
 gulp.task('build', (cb) => {
-  return runSequence('clean', ['misc', 'favicons', 'templates', 'styles', 'images', 'app_scripts'], cb)
+  return runSequence('clean', ['misc', 'lib', 'favicons', 'templates', 'styles', 'images', 'app_scripts'], cb)
 })
 gulp.task('start', (cb) => {
-  return runSequence('clean', ['misc', 'favicons', 'templates', 'styles', 'images'], 'watch', 'server', cb)
+  return runSequence('clean', ['misc', 'lib', 'favicons', 'templates', 'styles', 'images'], 'watch', 'server', cb)
 })

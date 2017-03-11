@@ -68,6 +68,12 @@ p {
   }
 }
 
+pre.language-html {
+  margin: 0 0 $spacing-vertical -25% !important;
+  padding: $spacing-vertical !important;
+  width: 150%;
+}
+
 a {
  background-color: transparent;
  color: $action-color;
