@@ -21,7 +21,9 @@ class SnippetDisplay extends React.Component {
     const email = this.getEmailFromToken(token) || 'test@test.com'
 
     return (
-      <div>&lt;script src="https://static.howdyform.com/howdyClient.js?token={token}" data-howdy-recipient="{email}"&gt;&lt;/script&gt;</div>
+      <pre>
+        <code className="language-html">&lt;script src="https://static.howdyform.com/howdyClient.js?token={token}" data-howdy-recipient="{email}"&gt;&lt;/script&gt;</code>
+      </pre>
     )
   }
 }
