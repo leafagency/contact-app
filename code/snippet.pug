@@ -13,11 +13,17 @@ block content
 
   //- Page header
   +page-header({
-    title: "Phew, that was hard! <span>Here's your code snippet</span>. You're one step away from using Howdy"
+    title: "<span>Here's your code snippet</span>! You're moments away from using Howdy"
   })
 
-  main
-    +section({})
-      .snippet
-        #snippet-display
-          //- See the Snippet Display react component
+  .snippet
+    #snippet-display
+      //- See the Snippet Display react component
+
+  +section({
+    style: 'blue',
+    narrow: true
+  })
+    p Copy &amp; paste this snippet into the HTML of the page with your web form on. When you next load the page, Howdy will find the form and automatically handle submissions from it, delivering the contents to your email inbox!
+
+    p For more advanced usage, including custom input validations, please see <a href='/docs'>our documentation</a>.

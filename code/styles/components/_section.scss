@@ -12,8 +12,14 @@
     background-color: $blue;
 
     .section__title,
-    .section__description {
+    .section__description,
+    p {
       color: $white;
+    }
+
+    a:link, a:visited {
+      color: darken($blue-lighter, 5%);
+      text-decoration: underline;
     }
   }
 

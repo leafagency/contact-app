@@ -22,7 +22,8 @@
 
   &__cta__button {
     .page--start-subscription &,
-    .page--try-it & {
+    .page--try-it &,
+    .page--snippet & {
       display: none;
     }
     float: right;

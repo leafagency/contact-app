@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const { verificationToken } = queryString
 
       if (window.$ && Stripe) {
+        console.log('here', window.$.post)
         const $ = window.$
         const $form = $('#payment-form')
         const qsData = verificationToken ? atob(verificationToken).split('|') : ['test', 'test@test.com']
@@ -51,17 +52,25 @@ document.addEventListener('DOMContentLoaded', function() {
               return $form.find('.submit').prop('disabled', false)
             }
 
-            return request.post(config.createSubscriptionUrl)
-              .send({
-                id: id,
-                stripePaymentToken: response.id
-              })
-              .end(function(err, response) {
-                if (err) {
+            const postData = JSON.stringify({
+              id: id,
+              stripePaymentToken: response.id
+            })
+
+            return $.ajax({
+                type: 'POST',
+                url: config.createSubscriptionUrl,
+                // The key needs to match your method's input parameter (case-sensitive).
+                data: postData,
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                success: function(data){
+                  return window.location.replace('https://howdyform.com/subscription-started.html')
+                },
+                failure: function(errMsg) {
                   return alert(err)
                 }
-                return window.location.replace("https://howdyform.com/pages/subscription-started.html")
-              })
+            })
           })
 
           // Prevent the form from being submitted:
