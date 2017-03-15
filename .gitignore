@@ -1,6 +1,7 @@
 node_modules
 bower_components
 code/lib
+!code/lib/prism
 dist/*
 !dist/CNAME
 .publish
