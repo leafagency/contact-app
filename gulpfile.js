@@ -218,11 +218,7 @@ gulp.task('server', () => {
 // ----------------------------------
 gulp.task('deploy', () => {
   return gulp.src(BUILT_FILES)
-    .pipe(ghPages({
-      remoteUrl: 'git@github.com:weareleaf/howdy.github.io.git',
-      force: true,
-      branch: 'master'
-    }))
+    .pipe(ghPages())
     .on('error', logError)
 })
 // ----------------------------------
