@@ -34,7 +34,7 @@ h2, %h2 {
   font-weight: $heading-font-weight;
 
   &:not(:first-of-type) {
-    margin-top: $spacing-vertical;
+    margin-top: $spacing-vertical-lg;
   }
 }
 

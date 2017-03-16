@@ -5,6 +5,7 @@
   pre.language-html {
     width: 100%;
     margin-left: 0;
+
     code {
       white-space: pre-wrap;
     }
@@ -42,7 +43,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-  margin-bottom: $spacing-vertical-lg;
+  margin-bottom: $spacing-vertical;
   padding: $padding-vertical-sm $padding-horizontal-sm calc(#{$padding-vertical-sm} - .2em);
 }
 
@@ -165,10 +166,23 @@ pre > code.highlight {
   background: linear-gradient(to right, rgba(224, 145, 66, 0.2) 70%, rgba(224, 145, 66, 0));
 }
 
+pre {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  word-break: normal;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  word-wrap: break-word;
+}
+
 code {
   padding: .2em .4em;
   font-size: .95em;
   color: #c33d68;
   background-color: #fff0f8;
   border-radius: 4px;
+  padding: 0;
+  white-space: pre-wrap;
 }
