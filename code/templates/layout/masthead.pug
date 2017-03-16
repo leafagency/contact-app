@@ -1,0 +1,26 @@
+.masthead
+  .masthead__logo
+    a.masthead__logo__link(href="/")
+      .masthead__logo__link__inner
+        .logo
+
+  nav.masthead__navigation.navigation
+    ul.navigation__list(role="navigation")
+
+      -
+        var menu = {
+          "Pricing": "/pricing",
+          "Docs": "/docs",
+          "FAQ": "/faq",
+          "Free trial": "/try-it"
+        }
+
+      each val, key in menu
+        li.navigation__list__item
+          if currentPage === key
+            a.navigation__list__link.navigation__list__link--active(href=val)= key
+          else
+            a.navigation__list__link(href=val)= key
+
+  .masthead__cta
+    a(href="/try-it").masthead__cta__button.button Try it for free

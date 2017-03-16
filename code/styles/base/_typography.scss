@@ -1,111 +1,111 @@
-@import url(https://fonts.googleapis.com/css?family=Asap:400,700|Roboto+Mono);
+html {
+  font-size: $base-font-size;
+}
 
 body {
-  @include font-feature-settings("kern", "liga", "pnum");
-  color: $base-font-colour;
-  font: {
-    family: $base-font-family;
-    size: $base-font-size;
-  }
-  line-height: $base-line-height;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: $base-heading-colour;
-  font: {
-    family: $heading-font-family;
-    size: $base-font-size;
-  }
-  line-height: $heading-line-height;
-  margin: 0 0 $small-spacing;
-  text-align: center;
-}
-
-h1 {
-  font-size: $base-h1-size;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $p-font-size;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: $base-line-height;
+
 }
 
-h2 {
-  color: $dark-purple;
-  font: {
-    size: $base-h2-size;
-    weight: 400;
-  }
-  margin-bottom: 0.15em;
+h1, %h1,
+h2, %h2,
+h3, %h3,
+h4, %h4,
+h5, %h5,
+h6, %h6, {
+  color: $heading-font-color;
+  font-family: $heading-font-family;
+  line-height: $heading-line-height;
+  margin: 0 0 $spacing-vertical-xs;
 }
 
-h3 {
-  color: $light-purple;
-  font: {
-    size: $base-h3-size;
-    weight: 400;
-  }
-  line-height: 1.6;
-  margin-bottom: 1em;
+h1, %h1 {
+  font-size: $h1-font-size;
+  font-weight: 400;
 }
 
-h4 {
-  font: {
-    size: $base-h4-size;
-    weight: 700;
+h2, %h2 {
+  font-size: $h2-font-size;
+  font-weight: $heading-font-weight;
+
+  &:not(:first-of-type) {
+    margin-top: $spacing-vertical-lg;
   }
-  margin-bottom: 0.25em;
-  text-transform: uppercase;
-  text-align: left;
+}
+
+h3, %h3 {
+  font-size: $h3-font-size;
+  font-weight: $heading-font-weight;
+  margin-top: $spacing-vertical;
+}
+
+h4, %h4 {
+  font-size: $h4-font-size;
+  font-weight: $heading-font-weight;
+}
+
+h5, %h5 {
+  font-size: $h4-font-size;
+  font-weight: $heading-font-weight;
+}
+
+h6, %h6 {
+  font-size: $h4-font-size;
+  font-weight: $heading-font-weight;
 }
 
 p {
-  margin: 0 0 $small-spacing/2;
+  display: inline-block;
+  margin: 0 0 $spacing-vertical;
 
-  &.small {
-    color: $dark-gray;
+  &.legal {
     font-size: 0.8em;
+    text-align: center;
+  }
+
+  &.centered {
+    text-align: center;
   }
 }
 
 a {
-  color: $brand-purple;
-  text-decoration: none;
-  transition: color 0.1s linear;
+ background-color: transparent;
+ color: $action-color;
+ text-decoration: none;
+ -webkit-text-decoration-skip: objects;
 
-  &:active,
-  &:focus {
-    outline: none;
-  }
+ &:active,
+ &:hover {
+  outline-width:0
+ }
+}
+
+strong {
+  font-weight: 600;
+}
+
+mark {
+  background-color: darken($blue-lighter, 4%);
+  color: $black;
+}
+
+abbr[title]{
+ border-bottom: none;
+ text-decoration: underline;
+ text-decoration: underline dotted;
+}
+
+img {
+ border-style: none;
 }
 
 hr {
-  border: {
-    bottom: $base-border;
-    left: none;
-    right: none;
-    top: none;
-  }
-  margin: $base-spacing 0;
-}
-
-img,
-picture {
-  margin: 0;
-  max-width: 100%;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-
-  &.centered {
-    list-style: none;
-    text-align: center;
-  }
-}
-
-.centered {
-  text-align:center;
+ box-sizing: content-box;
+ height: 0;
+ overflow: visible
 }

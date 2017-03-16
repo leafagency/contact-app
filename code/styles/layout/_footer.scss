@@ -1,56 +1,32 @@
 .footer {
-  background-color: $brand-purple;
-  padding: rem(30) 0;
+  height: $footer-height;
+  background-color: $denim;
 
-  &__section {
-    @include span(4);
-
-    &:nth-of-type(2n) {
-      text-align: center;
-    }
-
-    &:nth-of-type(3n) {
-      @include last;
-      text-align: right;
-    }
+  &__inner {
+    @include container;
+    display: flex;
+    justify-content: center;
+    padding: $padding-vertical $padding-horizontal-fluid;
   }
 
-  &__link,
+  &__text,
+  &__logo {
+    display: table-cell;
+  }
+
   &__text {
-    color: #e1d5ff;
-    margin: 0;
+    color: $lavender;
   }
 
-  &__link:hover {
-    color: lighten(#e1d5ff, 5%);
-  }
+  &__logo {
+    width: 2.5em;
+    background: url('/images/leaf.svg') no-repeat left center;
+    background-size: contain;
+    margin-left: $spacing-horizontal-xxs;
+    transition: opacity $base-duration $base-timing;
 
-  &__link--leaf {
-    @extend .footer__link;
-
-    &::before {
-      content: 'By ';
-
-      @include susy-breakpoint($small-screen) {
-        content: '';
-      }
+    &:hover {
+      opacity: .9;
     }
-  }
-
-  &__share-button {
-    position: relative !important;
-    top: rem(4);
-  }
-}
-
-.heart {
-  color: $medium-purple;
-}
-
-.additional-content {
-  display: none;
-
-  @include susy-breakpoint($small-screen) {
-    display: inline;
   }
 }

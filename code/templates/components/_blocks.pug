@@ -1,0 +1,13 @@
+//- Blocks
+//-
+//- A wrapper blocks component, simply looping through each included blocks item
+
+
+//- Options
+//- -- item
+
+
+mixin blocks(args)
+  .blocks
+    each item in args
+      +blocks-item(item)

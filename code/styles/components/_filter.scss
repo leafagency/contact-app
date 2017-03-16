@@ -1,0 +1,66 @@
+.filter {
+
+  // Hide the radios
+  &__input {
+    display: none;
+
+    // Highlight checked label
+    &[id="email"]:checked + label,
+    &[id="name"]:checked + label,
+    &[id="subject"]:checked + label,
+    &[id="message"]:checked + label,
+    &[id="address"]:checked + label,
+    &[id="telephone"]:checked + label,
+    &[id="age"]:checked + label,
+    &[id="all"]:checked + label {
+      background: #6666ff;
+      color: #fff;
+    }
+  }
+
+  // Style the filters
+  &__label {
+    background: #f2f2f2;
+    border-radius: 100px;
+    color: #222;
+    cursor: pointer;
+    display: inline-block;
+    font-size: .65rem;
+    margin: 0 .125em .5em;
+    padding: 1em 1.5em;
+    font-weight: 700;
+    letter-spacing: initial;
+    line-height: 1;
+  }
+
+  // Style attributes
+  &__attributes {
+    display: inline-block;
+    list-style: none;
+    margin-top: 2em;
+    width: 100%;
+
+    &__item {
+      background-color: #fff0f8;
+      border-radius: .1em;
+      color: #c33d68;
+      display: inline-block;
+      font-size: .95em;
+      margin-bottom: .25em;
+      padding: .2em .4em;
+    }
+  }
+}
+
+// Collect attribute types
+$attributes: "email", "name", "subject", "message", "address", "telephone", "age";
+
+// For each attribute, hide all others when checked
+@each $item in $attributes {
+  input.filter__input[type="radio"][id="#{$item}"]:checked ~ .filter__attributes {
+
+    .filter__attributes__item:not(.filter__attributes__item--#{$item}) {
+      display: none;
+    }
+  }
+}

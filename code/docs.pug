@@ -1,0 +1,242 @@
+extends ./templates/base/_base
+
+block prepend vars
+  -var bodyClass = "page page--docs page--inner"
+  -var currentPage = "Docs"
+  -var title = "Docs - Instant contact forms without writing a line of code - Howdy"
+
+block prepend includes
+  script(src="/lib/prism/prism.js")
+  //-link(rel="stylesheet", href="/lib/prism/prism.css")
+
+block content
+
+  //- Page header
+  +page-header({
+    title: "Howdy's a doddle to get running if you know how. <span class='page-header__title__highlight'>Everything you'll need is here</span>"
+  })
+
+  main
+
+    //- Tierd
+    +section({
+      narrow: true
+    })
+
+      h2 Installation
+
+      h3 Generate your snippet
+      p To get Howdy onto your web form, you'll first need to #[a(href="/try-it") generate your own code snippet]. Using only your email address, we'll create you your own, unique code snippet; just like if you were installing Google Analytics.
+
+      h3 Paste it in your HTML file
+      p When you've got your code snippet, paste it into the same HTML file as your form; it doesn't matter where, as long as it's in the same file. With the snippet in place, when the page is loaded Howdy will fire up, detect any forms on the page and mark handle submissions from them automatically.
+
+      p The first time you submit your form with Howdy installed, we'll send you a confirmation email with a link to click. This is just to verify that you have access to the email inbox you're trying to make submissions to. After that you should see further submissions appear in your inbox.
+
+      .alert.alert--info
+        include images/icon-star.svg
+        .alert__content
+          h4.alert__heading Top Tip
+          p.alert__text Your Howdy account is associated with the email address you originally used to generate your snippet with. This is where we'll contact you with any account changes or payment invoices.
+
+
+      h2 Using a new email address
+      p If you want to have your submissions go to a different email address from the one associated with your account, there's <strong>no need to generate a new snippet</strong>. Instead, simply adjust the <code>data-howdy-recipient</code> attribute on your existing snippet code. The first time you attempt to submit a form using new email we'll send you a confirmation email with a link to click. This is just to verify that you have access to the email inbox you're trying to make submissions to.
+
+      p Below is an example of what your snippet might look like with an adjusted <code>data-howdy-recipient</code> attribute:
+
+      pre
+        code.language-html &lt;script src="https://static.howdyform.com/howdyClient.js?token=y0urT0k3n" data-howdy-recipient="another-email@gmail.com"&gt;&lt;/script&gt;
+
+      p With a standard Howdy account, you can send submissions to an unlimited number of different email addresses so you can change this as often as you want. However, remember you're limited to <strong>25 forms</strong> before you'll be asked to move to an enterprise account.
+
+
+
+      h2 Validation
+
+      h3 Automatic validations
+      p Howdy will automatically detect inputs with common names such as <code>telephone</code> and <code>email</code> and apply appropriate validations to them. Below is a full list of automatically validated <code>name</code> inputs:
+
+      .filter
+        input.filter__input#all(type='radio', name='attribute', checked)
+        label.filter__label(for='all') Show all
+        input.filter__input#email(type='radio', name='attribute')
+        label.filter__label(for='email') Email
+        input.filter__input#name(type='radio', name='attribute')
+        label.filter__label(for='name') Name
+        input.filter__input#subject(type='radio', name='attribute')
+        label.filter__label(for='subject') Subject
+        input.filter__input#message(type='radio', name='attribute')
+        label.filter__label(for='message') Message
+        input.filter__input#address(type='radio', name='attribute')
+        label.filter__label(for='address') Address
+        input.filter__input#telephone(type='radio', name='attribute')
+        label.filter__label(for='telephone') Telephone
+        input.filter__input#age(type='radio', name='attribute')
+        label.filter__label(for='age') Age
+
+        ul.filter__attributes
+          li.filter__attributes__item.filter__attributes__item--email email
+          li.filter__attributes__item.filter__attributes__item--name name
+          li.filter__attributes__item.filter__attributes__item--name first_name
+          li.filter__attributes__item.filter__attributes__item--name last_name
+          li.filter__attributes__item.filter__attributes__item--name firstName
+          li.filter__attributes__item.filter__attributes__item--name lastName
+          li.filter__attributes__item.filter__attributes__item--subject subject
+          li.filter__attributes__item.filter__attributes__item--subject topic
+          li.filter__attributes__item.filter__attributes__item--message about
+          li.filter__attributes__item.filter__attributes__item--message body
+          li.filter__attributes__item.filter__attributes__item--message message
+          li.filter__attributes__item.filter__attributes__item--address address
+          li.filter__attributes__item.filter__attributes__item--address postcode
+          li.filter__attributes__item.filter__attributes__item--address post_code
+          li.filter__attributes__item.filter__attributes__item--address postCode
+          li.filter__attributes__item.filter__attributes__item--address zipcode
+          li.filter__attributes__item.filter__attributes__item--address zip_code
+          li.filter__attributes__item.filter__attributes__item--address zipCode
+          li.filter__attributes__item.filter__attributes__item--telephone tel
+          li.filter__attributes__item.filter__attributes__item--telephone telephone
+          li.filter__attributes__item.filter__attributes__item--telephone mobile
+          li.filter__attributes__item.filter__attributes__item--telephone mob
+          li.filter__attributes__item.filter__attributes__item--age age
+          li.filter__attributes__item.filter__attributes__item--age dob
+          li.filter__attributes__item.filter__attributes__item--age date_of_birth
+          li.filter__attributes__item.filter__attributes__item--age dateOfBirth
+
+      p For example, the following form input would be automatically validated as a phone number:
+
+      pre
+        code.language-html &lt;input type="text" name="telephone" /&gt;
+
+      p If you want to remove the default validation on an input, you can set a custom validation of type <code>none</code>. If you want to override the default validation on an input, you can set a custom validation of some other type. See the Custom validations section of this document for more information on using custom validations.
+
+      p Error messages on erroneous inputs are inserted directly after the input and given a HTML class of <code>.erroneous</code> for you to style appropriately. Error messages are cleared next time the input is focussed.
+
+      h3 Custom validations
+      p Howdy also supports adding your own custom validations to inputs. This can be done by adding a <code>data-howdy-validate</code> attribute to an input with one of the following possible validation values:
+
+      table
+        thead
+          tr
+            th Attribute value
+            th Description
+        tbody
+          tr
+            td: code none
+            td Stops Howdy validating on this field at all.
+          tr
+            td: code required
+            td Ensures that the form won't submit without a valid value.
+          tr
+            td: code email
+            td What this does
+          tr
+            td: code number
+            td What this does
+          tr
+            td: code date
+            td What this does
+          tr
+            td: code tel
+            td What this does
+
+      p For example, if you wanted to ensure an input was filled in, you could do this:
+
+      pre
+        code.language-html &lt;input type="text" name="favouritePet" data-howdy-validate="required" /&gt;
+
+      h3 Error messages
+      p Error messages on erroneous inputs are inserted directly after the input and given a HTML class of <code>.erroneous</code> for you to style appropriately. Error messages are cleared next time the input is focussed.
+
+      h2 Supported input types
+
+      p Howdy supports all HTML input types, with the exception of file uploads (though we're working on it). Any HTML input type that has a <code>name</code> property, Howdy should successfully be able to validate and retrieve a sensible value from for the submission messages delivered to your email inbox.
+
+      table
+        thead
+          tr
+            th Input type
+            th Supported
+        tbody
+          tr
+            td: code button
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code checkbox
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code color
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code date
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code datetime-local
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code email
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code file
+            td: img(src="images/no.svg" alt="No")
+          tr
+            td: code hidden
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code image
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code month
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code number
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code password
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code radio
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code range
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code reset
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code search
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code submit
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code tel
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code text
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code time
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code url
+            td: img(src="images/yes.svg" alt="Yes")
+          tr
+            td: code week
+            td: img(src="images/yes.svg" alt="Yes")
+
+      .alert.alert--info
+        include images/icon-help.svg
+        .alert__content
+          h4.alert__heading Still unsure?
+          p.alert__text If you're stuck, or notice something not behaving as expected, please don't hesitate to get in touch with us on <a href="mailto:support@weareleaf.com">support@weareleaf.com</a>.
+
+    //- Users image
+    include images/users.svg
+
+    //- Callout
+    +section({
+      style: "denim"
+    })
+      #snippet-generator-bottom
+        //- See the SnippetGenerator react component

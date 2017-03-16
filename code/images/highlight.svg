@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 403 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>highlight</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-659.000000, -237.000000)" fill="#6666FF">
+            <path d="M662.546714,242.990664 C662.786148,239.682111 665.660495,237.033585 668.989416,237.075299 L1055.99083,241.924701 C1059.3096,241.966287 1062,244.688856 1062,247.990099 L1062,282.009901 C1062,285.318141 1059.31998,288.026601 1055.99039,288.059649 L665.009606,291.940351 C661.690592,291.973294 659.193321,289.328649 659.433533,286.009336 L662.546714,242.990664 Z" id="highlight"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,34 @@
+.page-header {
+  @include clearfix;
+  padding: $padding-vertical-xl $padding-horizontal-fluid;
+  background-color: $blue;
+  text-align: center;
+
+  .page--home & {
+    padding-bottom: 0;
+  }
+
+  .page--start-subscription & {
+    padding-bottom: 13em;
+  }
+
+  &__title {
+    color: $white;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 32.5rem;
+
+    .page--home &,
+    .page--start-subscription &,
+    .page--try-it & {
+      margin-bottom: $spacing-vertical-lg;
+    }
+
+    &__highlight {
+      @include margin-horizontal(-$spacing-horizontal-xxs);
+      @include padding-horizontal($padding-horizontal-xxs);
+      background: url('/images/highlight.svg') no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+}

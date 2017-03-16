@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-paste</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-758.000000, -930.000000)">
+            <g id="Group-2" transform="translate(641.000000, 930.000000)">
+                <g id="icon-paste" transform="translate(117.000000, 0.000000)">
+                    <circle id="Background" fill="#EBEBFF" cx="32" cy="32" r="32"></circle>
+                    <rect id="Square-light" fill="#9999FF" x="26" y="16" width="22" height="22" rx="2"></rect>
+                    <rect id="Square-dark" fill="#7373FF" x="16" y="26" width="22" height="22" rx="2"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

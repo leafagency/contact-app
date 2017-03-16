@@ -1,0 +1,87 @@
+extends ./templates/base/_base
+
+block prepend vars
+  -var bodyClass = "page page--home"
+  -var title = "Instant contact forms without writing a line of code - Howdy"
+
+block content
+
+  //- Page header
+  +page-header({
+    title: "Turn your static HTML contact forms in to the real thing <span class='page-header__title__highlight'>without writing a line of code</span>"
+  })
+    .envelope#snippet-generator-top
+      //- See the SnippetGenerator react component
+
+  main
+
+    //- How it works
+    +section({
+      description: "What once seemed like an impossible job is now so straightforward, your Granny could do it",
+      style: "blue-lightest",
+      title: "How it works"
+    })
+
+      //- Buckets
+      +buckets([{
+        heading: "Generate a snippet",
+        image: "icon-generate.svg",
+        text: "Tell us which email address to send to, and we'll create your unique code."
+      },{
+        heading: "Paste your snippet",
+        image: "icon-paste.svg",
+        text: "Copy and paste your snippet into the HTML of the page with the web form."
+      },{
+        heading: "Start receiving emails",
+        image: "icon-done.svg",
+        text: "That's it buddy. Your web form is ready to start validating &amp; delivering emails."
+      }])
+
+    //- Who's it for
+    +section({
+      description: "While Howdy's for anyone who wants a web-form, we created it with a few people in mind",
+      title: "Who's it for"
+    })
+
+      //- Buckets
+      +buckets([{
+        heading: "Designers",
+        image: "designers.svg",
+        text: "You know a little HTML, but PHP? <em>Ain't nobody got time for that</em>"
+      },{
+        heading: "Marketers",
+        image: "marketers.svg",
+        text: "Get those landing pages live, <em>girlfriend</em>. You'll never have to wait for IT again."
+      },{
+        heading: "Developers",
+        image: "developers.svg",
+        text: "We know you <em>can</em>, but why should you? Put your feet up. We've got this."
+      }])
+
+
+    //- Try it out
+    +section({
+      description: "Fill out the form to see what Howdy sends to your Inbox",
+      style: "blue",
+      title: "Try it out"
+    })
+
+      //- Demo
+      .demo__container#live-demo
+        //- See the LiveDemo react component
+
+    //- Benefits
+    +section({
+      style: "denim"
+    })
+
+      //- Benefits
+      include ./templates/components/_benefits
+
+
+    //- Callout
+    +section({
+      style: "denim"
+    })
+      #snippet-generator-bottom
+        //- See the SnippetGenerator react component

@@ -1,73 +1,28 @@
-# Howdy • 0.0.1
+# Howdy Site • 2.0.0
 
-## Introduction
-
-The aim of this project is to create the simplest, most flexible contact forms possible for developers and designers to be able to drop into their site.
+The Howdy marketing site. Written in Pug and deployed to Github pages. Caching/performance is provided by Cloudflare.
 
 ## Installation
-
  1. Install [node.js](https://nodejs.org/). You can get this from the official site, **or** via [homebrew](http://brew.sh/) using nvm - node version manager (recommended).
- 2. Clone this project to your local machine with `git@github.com:leafagency/leaf-project-template.git`
- 3. Rename the cloned folder to create your new site
- 4. In your terminal `cd` into the project template
- 5. Type `npm install`
- 
+ 2. Clone this project to your local machine with `git clone git@github.com:weareleaf/leaf-site.git` from your terminal.
+ 4. In your terminal `cd` into the `leaf-site` project
+ 5. Type `npm install` to install the node packages required to run the project.
+
 ## Working with the project
-
-The following commands all need to be run from the root directory of your project, use `cd` to get there in your terminal of choice.
- 
-### Starting the project server
-
-Once started, a browser window will open to the homepage of your site. Any changes to the `./code/` directory while the server is running will be automatically detected and trigger a rebuild of the sass/jade/js and cause the browser to refresh.
-
 ```
-npm run start
+npm run start    // Start the development server with live rebuilding/reloading
+npm run test     // Run any JS tests
+npm run build    // Force a rebuild of all code
+npm run deploy   // Deploy the site to Github pages
 ```
 
-### Running the tests (not yet implemented)
-
-```
-npm run test
-```
-
-### Forcing a rebuild of the code
-
-```
-npm run build
-```
-
-### Publishing the project to github pages
-
-This assumes the project has a github origin. For more information on how these are deployed, see the [Github Pages](https://pages.github.com/) docs:
-
-```
-npm run deploy
-```
-
-## Under the hood
-
-This project makes use of the following technologies:
-
- - [Jade](http://jade-lang.com/) - For markup
- - [Sass](http://sass-lang.com/) - For styles
- - [Browserify](http://browserify.org/) - For bundling JavaScript
- - [npm](https://www.npmjs.com/) - For managing dependencies & running scripts
- - [Gulp](http://gulpjs.com/) - For automating the development workflow
+### Troubleshooting
+If for whatever reason things won't work on your machine, it's most likely an issue with your node version or missing dependencies. Check your node version matches the version specified in `.nvmrc` using `node -v` and then reinstall your packages with `rm -rf node_modules && npm cache clear && npm i`.
 
 ### Automated building
-
 Source code written in the `./code/` directory is converted and moved over to `./dist/` as part this template's build process. The following conversions are automated:
 
- - **Automatic compilation of Jade:** Any `.jade` files in `./code/` and its subdirectories will be converted.
+ - **Automatic compilation of Pug/Jade:** Any `.pug` or `.jade` files in `./code/` and its subdirectories will be converted.
  - **Automatic compilation of Sass:** Any `.scss` files in `./code/` and its subdirectories will be converted.
- - **Automatic compilation of JavaScript:** Any `.js` files in `./code/scripts/app/` and its subdirectories will be browserified into a single bundle at `./dist/code/scripts/app/main.js`. Any `.js` files in `./code/scripts/lib` and its subdirectories will be minified but maintain their current directory structure.
- - **Automatic optimisation of images:** Any `.png`,`.jpg`,`.gif` or `.jpeg`files in `./code/` and its subdirectories will be optimised.
-
-### Other features:
-
- - Automatic page refreshing.
- - Ability to build out either a regular HTML/CSS/JS site, or a single page app from the same template.
- - 1 command to deploy project to github pages
- - WIP: 1 command to generate screenshots of all pages.
- - WIP: 1 command to run automated tests for pages in supported browsers.
- - WIP: 1 command google page speed insights
+ - **Automatic compilation of JavaScript:** A JS module starting from `./code/scripts/index.js` will be webpacked and minified into a single bundle.
+ - **Automatic optimisation of images:** Any `.jpg` files in `./code/` and its subdirectories will be optimised.

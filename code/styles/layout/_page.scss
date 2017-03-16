@@ -1,0 +1,26 @@
+html, body {
+  height: 100%;
+}
+
+.page {
+  background-color: $base-background-color;
+
+  &--start-subscription {
+    background-color: $blue-lighter;
+  }
+
+  &--try-it, &--snippet {
+    background-color: $blue;
+  }
+}
+
+.site-wrapper {
+  min-height: 100%;
+  margin-bottom: -$footer-height;
+}
+
+.site-wrapper:after {
+  content: "";
+  display: block;
+  height: $footer-height;
+}

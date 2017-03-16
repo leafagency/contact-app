@@ -1,0 +1,29 @@
+extends ./templates/base/_base
+
+block prepend vars
+  -var bodyClass = "page page--snippet page--inner"
+  -var title = "Instant contact forms without writing a line of code - Howdy"
+
+block prepend includes
+  script(src="/lib/prism/prism.js")
+  link(rel="stylesheet", href="/lib/prism/prism.css")
+
+
+block content
+
+  //- Page header
+  +page-header({
+    title: "<span class='page-header__title__highlight'>Here's your code snippet</span>! You're moments away from using Howdy"
+  })
+
+  .snippet
+    #snippet-display
+      //- See the Snippet Display react component
+
+  +section({
+    style: 'blue',
+    narrow: true
+  })
+    p Copy &amp; paste this snippet into the HTML of the page with your web form on. When you next load the page, Howdy will find the form and automatically handle submissions from it, delivering the contents to your email inbox!
+
+    p For more advanced usage, including custom input validations, please see <a href='/docs'>our documentation</a>.

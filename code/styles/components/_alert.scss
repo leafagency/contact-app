@@ -1,0 +1,43 @@
+.alert {
+  align-items: center;
+  border: $base-border-style $border-width-lg;
+  padding: $padding-vertical-sm $padding-horizontal-sm;
+  border-radius: $base-border-radius;
+  margin-bottom: $spacing-vertical;
+  font-size: .85em;
+  text-align: center;
+
+  @include susy-breakpoint($bp-md) {
+    display: flex;
+    text-align: left;
+  }
+
+  &__icon {
+    margin-bottom: .25em;
+
+    @include susy-breakpoint($bp-md) {
+      flex: 1 0 auto;
+      margin-bottom: 0;
+      margin-right: $spacing-horizontal-sm;
+
+    }
+  }
+
+  &--info {
+    background-color: #E9F6FF;
+    border-color: #DEF2FF;
+  }
+
+  &__heading {
+    margin: 0 0 .2em;
+  }
+
+  &__text {
+    margin-bottom: 0;
+  }
+
+  &__heading,
+  &__text {
+    color: #56768c;
+  }
+}

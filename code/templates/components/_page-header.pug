@@ -1,0 +1,14 @@
+//- Page header
+//-
+//- A page header to introduce the purpose of the current page
+
+
+//- Options
+//- -- intro
+
+
+mixin page-header(args)
+  .page-header
+    .page-header__inner
+      h1.page-header__title!= args.title
+      block

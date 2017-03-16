@@ -1,59 +1,152 @@
-// Colours
-$dark-gray: #666;
-$dark-purple: #544f73;
-$light-purple: #9d98a8;
-$medium-purple: #6848b8;
-$medium-gray: #999;
-$brand-purple: #9b74fc;
-$light-gray: #f8f8ff;
+// Colors
+
+// Colors: grayscale
+$black: #494e53;
+$smoke: #818993;
+$snow-dark: #e1e3e5;
+$snow: #f3f4f8;
+$white: #fff;
+
+$blue: #5c5ce6;
+$blue-dark: #4747b3;
+$blue-darker: #3f3f9e;
+$blue-light: #6666ff;
+$blue-lighter: #fafbff;
+
+$denim: #242445;
+$denim-dark: #1e1e3a;
+
+$lavender: #dadae7;
+$lavender-dark: #747498;
+
+$red: #ff5555;
+
+// Animations
+$base-duration: 200ms;
+$base-timing: ease;
+$duration-slow: 400ms;
+$duration-snail: 800ms;
+$elastic-timing: cubic-bezier(.32,2,.55,.27);
+
+// Background colors
+$base-background-color: $white;
 
 // Border
-$base-border-colour: #e4ebeb;
-$base-border: 1px solid $base-border-colour;
+$base-border-color: $snow-dark;
+$base-border-style: solid;
+$base-border-width: .05rem;
+$base-border: $base-border-style $base-border-width $base-border-color;
+$border-width-lg: 0.1rem;
 
-// Background Colours
-$base-background-colour: #fff;
-$secondary-background-colour: lighten($base-border-colour, 10%);
+// Border radius
+$base-border-radius: 0.3rem;
+$border-radius-lg: 0.4rem;
+$border-radius-sm: 0.2rem;
 
-// Buttons
-$base-button-background-colour: $brand-purple;
+// Breakpoints
+$bp-xs : 24em;
+$bp-sm : 36em;
+$bp-md : 48em;
+$bp-lg : 54em;
+$bp-xl : 64em;
+$bp-xxl : 80em;
 
-// Font Colours
-$base-font-colour: #5a5469;
-$base-heading-colour: $brand-purple;
+// Font colors
+$base-font-color: $smoke;
+$heading-font-color: $black;
+$action-color: $blue-light;
 
-// Font Sizes
-$base-font-size: 1em;
-$base-h1-size: 2em;
-$base-h2-size: 1.6em;
-$base-h3-size: 1.250em;
-$base-h4-size: 1em;
-
-// Font Stacks
-$font-family-display: 'pacificoregular', Georgia, Times, 'Times New Roman', serif;
-$font-family-mono: 'Roboto Mono', 'Asap', Helvetica, Arial, sans-serif;
-$font-family-sans-serif: 'Asap', Helvetica, Arial, sans-serif;
-$font-family-serif: Georgia, Times, 'Times New Roman', serif;
+// Font sizes
+$base-font-size: 1.25rem;
+$h1-font-size: 1.6rem;
+$h2-font-size: 1.6rem;
+$h3-font-size: 1.2rem;
+$h4-font-size: .9rem;
+$p-font-size: .9rem;
 
 // Forms
-$input-background-colour: $light-gray;
-$input-border-colour: #c4c9df;
-$input-border-width: 2px;
-$form-box-shadow: 0;
-$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($light-gray, $lightness: -5%, $alpha: -0.3);
+$input-background-color: $snow;
+$input-placeholder-color: #a9b3c7;
 
-// Line Height
-$base-line-height: 1.7;
+// Line height
+$base-line-height: 1.6;
 $heading-line-height: 1.2;
 
-// Other Sizes
-$base-border-radius: 5px;
-$base-scew-angle: 6deg;
-$base-spacing: $base-line-height * 1em;
-$small-spacing: $base-spacing / 0.8;
-$smaller-spacing: $small-spacing / 2;
-$base-z-index: 0;
+// Padding (horizontal)
+$padding-horizontal: 1.5rem;
+$padding-horizontal-lg: $padding-horizontal * 2;
+$padding-horizontal-sm: $padding-horizontal / 1.5;
+$padding-horizontal-xl: $padding-horizontal * 2.667;
+$padding-horizontal-xs: $padding-horizontal / 2;
+$padding-horizontal-xxl: $padding-horizontal * 4;
+$padding-horizontal-xxs: $padding-horizontal / 6;
+
+// Padding (vertical)
+$padding-vertical: 1.5rem;
+$padding-vertical-lg: $padding-vertical * 2;
+$padding-vertical-sm: $padding-vertical / 1.5;
+$padding-vertical-xl: $padding-vertical * 2.667;
+$padding-vertical-xs: $padding-vertical / 2;
+$padding-vertical-xxl: $padding-vertical * 4;
+$padding-vertical-xxs: $padding-vertical / 6;
+
+// Padding (horizontal - fluid)
+$padding-horizontal-fluid: 5%;
+$padding-horizontal-fluid-lg: $padding-horizontal-fluid * 1.5;
+$padding-horizontal-fluid-sm: $padding-horizontal-fluid / 1.5;
+
+// Padding (vertical - fluid)
+$padding-vertical-fluid: 5%;
+$padding-vertical-fluid-lg: $padding-vertical-fluid * 1.5;
+$padding-vertical-fluid-sm: $padding-vertical-fluid / 1.5;
+
+// Padding (root)
+$padding-horizontal-root: calc(3vw + #{$padding-vertical-sm});
+$padding-vertical-root: calc(3vh + #{$padding-vertical-sm});
+
+// Padding (block)
+$padding-block-horizontal: $padding-horizontal * 1.5;
+$padding-block-vertical: $padding-vertical * 6;
+$padding-block: $padding-block-vertical $padding-block-horizontal;
+
+// Spacing (horizontal)
+$spacing-horizontal: 1.5rem;
+$spacing-horizontal-lg: $spacing-horizontal * 2;
+$spacing-horizontal-sm: $spacing-horizontal / 1.5;
+$spacing-horizontal-xl: $spacing-horizontal * 2.667;
+$spacing-horizontal-xs: $spacing-horizontal / 2;
+$spacing-horizontal-xxl: $spacing-horizontal * 4;
+$spacing-horizontal-xxs: $spacing-horizontal / 6;
+
+// Spacing (vertical)
+$spacing-vertical: 1.5rem;
+$spacing-vertical-lg: $spacing-vertical * 2;
+$spacing-vertical-sm: $spacing-vertical / 1.5;
+$spacing-vertical-xl: $spacing-vertical * 2.667;
+$spacing-vertical-xs: $spacing-vertical / 2;
+$spacing-vertical-xxl: $spacing-vertical * 4;
+$spacing-vertical-xxs: $spacing-vertical / 6;
+
+// Spacing (horizontal - fluid)
+$spacing-horizontal-fluid: 5%;
+$spacing-horizontal-fluid-lg: $spacing-horizontal-fluid * 1.5;
+$spacing-horizontal-fluid-sm: $spacing-horizontal-fluid / 1.5;
+
+// Spacing (vertical - fluid)
+$spacing-vertical-fluid: 5%;
+$spacing-vertical-fluid-lg: $spacing-vertical-fluid * 1.5;
+$spacing-vertical-fluid-sm: $spacing-vertical-fluid / 1.5;
+
+// Spacing (roo6
+$spacing-horizontal-root: calc(6vw + #{$spacing-horizontal});
+$spacing-vertical-root: calc(6vh + #{$spacing-vertical});
 
 // Typography
-$base-font-family: $font-family-sans-serif;
-$heading-font-family: $font-family-sans-serif;
+$font-sans-serif: 'din-2014', sans-serif;
+$font-serif: serif;
+$base-font-family: $font-sans-serif;
+$heading-font-family: $font-sans-serif;
+$heading-font-weight: 600;
+
+// Sticky Footer
+$footer-height: 88px;

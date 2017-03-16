@@ -1,0 +1,71 @@
+.section {
+  @include padding-vertical($padding-vertical-lg);
+
+  @include susy-breakpoint($bp-sm) {
+    @include padding-vertical($padding-vertical-xxl);
+  }
+
+  .page--try-it & {
+    @include padding-vertical($padding-vertical);
+  }
+
+  &--blue {
+    background-color: $blue;
+
+    .section__title,
+    .section__description,
+    p {
+      color: $white;
+    }
+
+    a:link, a:visited {
+      color: darken($blue-lighter, 5%);
+      text-decoration: underline;
+    }
+  }
+
+  &--blue-lightest {
+    background-color: $blue-lighter;
+  }
+
+  &--denim {
+    background-color: $denim;
+    border-bottom: $base-border-style $border-width-lg $denim-dark;
+    position: relative;
+
+    &::after {
+      background-color: lighten($denim, 5%);;
+      content: '';
+      height: $base-border-width;
+      position: absolute;
+      bottom: -.15rem;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+
+  &__inner {
+    @include container;
+    padding: 0 $padding-horizontal-fluid;
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__intro {
+    margin-bottom: $spacing-vertical-lg;
+    text-align: center;
+  }
+
+  &__description {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    max-width: 25.5em;
+  }
+
+  &__content--narrow {
+    margin: 0 auto;
+    max-width: 37.5rem;
+  }
+}

@@ -1,0 +1,54 @@
+.logo {
+  border-radius: $border-radius-sm;
+  height: 1.5em;
+  position: relative;
+  z-index: 1;
+  width: 2em;
+
+  &:hover {
+
+    &::before {
+      margin-right: .6em;
+      transform: rotateY(-30deg) skew(-5deg);
+    }
+
+    &::after {
+      margin-left: .6em;
+      transform: rotateY(30deg) skew(5deg);
+    }
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    transition:
+      margin $duration-slow $elastic-timing,
+      transform $duration-slow $elastic-timing;
+    z-index: -1;
+  }
+
+  &::before {
+    background-color: #9999ff;
+    border-radius: inherit;
+    bottom: 0;
+    height: 1em;
+    right: 0;
+    transform: rotateY(30deg) skew(5deg);
+    width: 1.4em;
+  }
+
+  &::after {
+    background-color: #7373FF;
+    border-radius: inherit;
+    height: 1em;
+    left: 0;
+    top: 0;
+    transform: rotateY(-30deg) skew(-5deg);
+    width: 1.4em;
+  }
+
+  &__inner {
+    perspective: 4em;
+  }
+}

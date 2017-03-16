@@ -1,0 +1,14 @@
+//- Blocks item
+//-
+//- A simple heading/text pair, used to present a small snippet. To be called by the blocks component
+
+
+//- Options
+//- -- heading
+//- -- text
+
+
+mixin blocks-item(args)
+  .blocks__item
+    h3.blocks__item__heading!= args.heading
+    p.blocks__item__text!= args.text

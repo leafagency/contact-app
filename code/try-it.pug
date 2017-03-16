@@ -1,0 +1,34 @@
+extends ./templates/base/_base
+
+block prepend vars
+  -var bodyClass = "page page--try-it"
+  -var title = "Instant contact forms without writing a line of code - Howdy"
+
+block content
+
+  //- Page header
+  +page-header({
+    title: "No registrations, no card details, <span class='page-header__title__highlight'>try Howdy free and unlimited</span> with just an email"
+  })
+    .envelope.envelope__full
+      #snippet-generator-top
+      //- See the SnippetGenerator react component
+
+    +section({
+      style: "blue",
+      title: "How it works"
+    })
+      //- Buckets
+      +buckets([{
+        heading: "Generate a snippet",
+        image: "icon-generate.svg",
+        text: "Tell us which email address to send to, and we'll create your unique code."
+      },{
+        heading: "Paste your snippet",
+        image: "icon-paste.svg",
+        text: "Copy and paste your snippet into the HTML of the page with the web form."
+      },{
+        heading: "Start receiving emails",
+        image: "icon-done.svg",
+        text: "That's it buddy. Your web form is ready to start validating &amp; delivering emails."
+      }])

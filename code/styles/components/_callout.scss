@@ -1,0 +1,55 @@
+.callout {
+  &.error {
+    @extend .shake;
+  }
+
+  &__inner {
+    text-align: center;
+  }
+
+  &__intro {
+    color: $black;
+    font-size: 1rem;
+
+    .callout--dark & {
+      color: $white;
+    }
+  }
+
+  &__form {
+    @include margin-horizontal(auto);
+
+    @include susy-breakpoint($bp-lg) {
+      width: 37.5rem;
+    }
+
+    .input-group__input {
+      flex: 0 1 100%;
+      @include susy-breakpoint($bp-md) {
+        flex: 0 1 69%;
+      }
+    }
+
+    .input-group__button {
+      margin-top: $spacing-vertical-xxs;
+      flex: 0 1 100%;
+      @include susy-breakpoint($bp-md) {
+        margin-top: 0;
+        flex: 0 1 30%;
+      }
+    }
+
+
+    &__input-group__input {
+
+      .callout--dark & {
+        background-color: $denim-dark;
+        color: $white;
+
+        &::placeholder {
+          color: $lavender-dark;
+        }
+      }
+    }
+  }
+}

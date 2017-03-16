@@ -1,0 +1,39 @@
+.navigation__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+
+  &__item {
+    display: inline-block;
+
+    &:last-child {
+
+      @include susy-breakpoint($bp-sm) {
+        display: none;
+      }
+
+      .navigation__list__link {
+        color: $blue;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__link {
+    @include padding-horizontal(.5rem);
+    color: $base-font-color;
+
+    @include susy-breakpoint($bp-xs) {
+      @include padding-horizontal($padding-horizontal-sm);
+    }
+
+    @include susy-breakpoint($bp-md) {
+      @include padding-horizontal($padding-horizontal);
+    }
+
+    &--active {
+      color: $action-color;
+    }
+  }
+}
