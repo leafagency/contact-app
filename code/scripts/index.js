@@ -68,13 +68,40 @@ document.addEventListener('DOMContentLoaded', function() {
                   return window.location.replace('https://howdyform.com/subscription-started.html')
                 },
                 failure: function(errMsg) {
-                  return alert(err)
+                  return alert(errMsg)
                 }
             })
           })
 
           // Prevent the form from being submitted:
           return false
+        })
+      }
+    },
+
+    handleVerifyRecipient() {
+      // Check whether any verification requests need to be made:
+      const queryString = parse(window.document.location.search.substr(1))
+      if (queryString.id && queryString.verificationToken) {
+
+        const postData = JSON.stringify({
+          id: queryString.id,
+          verificationToken: queryString.verificationToken
+        })
+
+        return $.ajax({
+            type: 'POST',
+            url: config.verifyRecipientUrl,
+            // The key needs to match your method's input parameter (case-sensitive).
+            data: postData,
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            success: function(data){
+              console.log('Success', data)
+            },
+            failure: function(errMsg) {
+              console.err('Error', errMsg);
+            }
         })
       }
     }
