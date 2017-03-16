@@ -129,16 +129,16 @@ block content
             td Ensures that the form won't submit without a valid value.
           tr
             td: code email
-            td What this does
+            td Validates against an email address
           tr
             td: code number
-            td What this does
+            td Validates against a numerical value
           tr
             td: code date
-            td What this does
+            td Validates against an date
           tr
             td: code tel
-            td What this does
+            td Validates against a telephone number
 
       p For example, if you wanted to ensure an input was filled in, you could do this:
 
@@ -232,7 +232,8 @@ block content
           p.alert__text If you're stuck, or notice something not behaving as expected, please don't hesitate to get in touch with us on <a href="mailto:support@weareleaf.com">support@weareleaf.com</a>.
 
     //- Users image
-    include images/users.svg
+    .users
+      include images/users.svg
 
     //- Callout
     +section({

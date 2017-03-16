@@ -1,6 +1,14 @@
 .users {
-  display: block;
-  margin: 0 auto;
-  max-width: 250%;
-  height: auto;
+  overflow: hidden;
+  
+  .page--pricing & {
+    background-color: $blue-lighter;
+  }
+
+  svg {
+    display: block;
+    margin: 0 auto;
+    max-width: 250%;
+    height: auto;
+  }
 }
