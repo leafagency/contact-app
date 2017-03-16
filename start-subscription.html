@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--if lt IE 7<html class="no-js lt-ie9 lt-ie8 lt-ie7">
+-->
+<!--if IE 7<html class="no-js lt-ie9 lt-ie8">
+-->
+<!--if IE 8<html class="no-js lt-ie9">
+-->
+<!-- [if gt IE 8] <!-->
+<html class="no-js" lang="en">
+  <!-- <![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>Instant contact forms without writing a line of code - Howdy</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="#{title}">
+    <link rel="stylesheet" href="/styles/main.css">
+    <script src="/scripts/index.js"></script>
+    <script src="https://use.typekit.net/iaa5wts.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>
+      //- Ensure the content fades in properly even if a content blocker is blocking typekit:
+      document.addEventListener("DOMContentLoaded", function(event) {
+        setTimeout(function() {
+          var htmlClasses = document.documentElement.classList;
+          if (!htmlClasses.contains("wf-active") && !htmlClasses.contains("wf-loading")) {
+            document.documentElement.classList.add("wf-active-override");
+          }
+        }, 250);
+      })
+      
+    </script>
+  </head>
+  <body class="page page--start-subscription page--inner" dir="ltr">
+    <div class="site-wrapper">
+      <div class="masthead">
+        <div class="masthead__logo"><a class="masthead__logo__link" href="/">
+            <div class="masthead__logo__link__inner">
+              <div class="logo"></div>
+            </div></a></div>
+        <nav class="masthead__navigation navigation">
+          <ul class="navigation__list" role="navigation">
+            <li class="navigation__list__item"><a class="navigation__list__link" href="/pricing">Pricing</a>
+            </li>
+            <li class="navigation__list__item"><a class="navigation__list__link" href="/docs">Docs</a>
+            </li>
+            <li class="navigation__list__item"><a class="navigation__list__link" href="/faq">FAQ</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="masthead__cta"><a class="button masthead__cta__button button" href="/try-it">Try it for free</a></div>
+      </div>
+      <div class="page-header">
+        <div class="page-header__inner">
+          <h1 class="page-header__title">Start your Howdy subscription for <span>just $2 per month</span>. That's less than a cup of coffee...</h1>
+        </div>
+      </div>
+      <main>
+        <section class="section">
+          <div class="section__inner">
+            <div class="section__content">
+              <div class="envelope">
+                <form id="payment-form">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="name">Primary Email</label>
+                      <input type="email" name="email" placeholder="We'll send your invoices here">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-column">
+                      <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <div class="input-group">
+                          <input class="payment-field__card-number" id="cardNumber" type="text" size="20" data-stripe="number" placeholder="The long number on the front">
+                          <div class="payment-logos"><img class="payment-logos__logo" src="/images/cardLogos/visa.svg" alt="Visa"><img class="payment-logos__logo" src="/images/cardLogos/mastercard.svg" alt="Master Card"><img class="payment-logos__logo" src="/images/cardLogos/amex.svg" alt="American Express"><img class="payment-logos__logo" src="/images/cardLogos/diners.svg" alt="Diners Club"><img class="payment-logos__logo" src="/images/cardLogos/jcb.svg" alt="JCB"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-column">
+                      <div class="form-group">
+                        <label for="cardExpirationMonth">Expiration (MM/YY)</label>
+                        <div class="input-group">
+                          <input class="payment-field__card-expiry" id="cardExpirationMonth" type="text" size="2" data-stripe="exp_month" placeholder="MM">
+                          <input class="payment-field__card-expiry" type="text" size="2" data-stripe="exp_year" placeholder="YY">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-column">
+                      <div class="form-group">
+                        <label for="cardCVC">CVC</label>
+                        <input class="payment-field__card-cvc" id="cardCVC" type="text" size="4" data-stripe="cvc" placeholder="3 digits on the back">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-column">
+                      <div class="form-group">
+                        <label for="billingZip">Billing Zip/Post Code</label>
+                        <input class="payment-field__card-zip" id="billingZip" type="text" size="6" data-stripe="address_zip" placeholder="1234">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="payment-errors"></div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <button class="button button--block submit" type="submit">Start Subscription</button>
+                    </div>
+                  </div>
+                </form>
+                <p class="legal">By clicking "Start Subscription" you agree to our <a href='/terms'>Terms of Service</a> and <a href='/privacy'>Privacy Policy</a>. Have any concerns or questions? Just drop us a line at <a href='mailto:hello@weareleaf.com'>hello@weareleaf.com</a>, or tweet us at <a href='https://twitter.com/we_are_leaf'>@we_are_leaf</a>.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+        <script type="text/javascript">
+          $(function() {
+            window.howdy.handleStartSubscription()
+          });
+        </script>
+      </main>
+    </div>
+    <footer class="footer">
+      <div class="footer__inner"><span class="footer__text">Made by</span><a class="footer__logo hide-text" href="http://weareleaf.com" target="_blank">Leaf</a></div>
+    </footer>
+  </body>
+</html>

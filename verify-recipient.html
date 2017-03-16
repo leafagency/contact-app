@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--if lt IE 7<html class="no-js lt-ie9 lt-ie8 lt-ie7">
+-->
+<!--if IE 7<html class="no-js lt-ie9 lt-ie8">
+-->
+<!--if IE 8<html class="no-js lt-ie9">
+-->
+<!-- [if gt IE 8] <!-->
+<html class="no-js" lang="en">
+  <!-- <![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>Recipient Verified - Instant contact forms without writing a line of code - Howdy</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="#{title}">
+    <link rel="stylesheet" href="/styles/main.css">
+    <script src="/scripts/index.js"></script>
+    <script src="https://use.typekit.net/iaa5wts.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>
+      //- Ensure the content fades in properly even if a content blocker is blocking typekit:
+      document.addEventListener("DOMContentLoaded", function(event) {
+        setTimeout(function() {
+          var htmlClasses = document.documentElement.classList;
+          if (!htmlClasses.contains("wf-active") && !htmlClasses.contains("wf-loading")) {
+            document.documentElement.classList.add("wf-active-override");
+          }
+        }, 250);
+      })
+      
+    </script>
+  </head>
+  <body class="page page--verify-recipient page--inner" dir="ltr">
+    <div class="site-wrapper">
+      <div class="masthead">
+        <div class="masthead__logo"><a class="masthead__logo__link" href="/">
+            <div class="masthead__logo__link__inner">
+              <div class="logo"></div>
+            </div></a></div>
+        <nav class="masthead__navigation navigation">
+          <ul class="navigation__list" role="navigation">
+            <li class="navigation__list__item"><a class="navigation__list__link" href="/pricing">Pricing</a>
+            </li>
+            <li class="navigation__list__item"><a class="navigation__list__link" href="/docs">Docs</a>
+            </li>
+            <li class="navigation__list__item"><a class="navigation__list__link" href="/faq">FAQ</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="masthead__cta"><a class="button masthead__cta__button button" href="/try-it">Try it for free</a></div>
+      </div>
+      <div class="page-header">
+        <div class="page-header__inner">
+          <h1 class="page-header__title">Success! You've <span>verified a new recipient!</span></h1>
+        </div>
+      </div>
+      <main>
+        <section class="section">
+          <div class="section__inner">
+            <div class="section__content">
+              <div class="blocks">
+                <div class="blocks__item">
+                  <h3 class="blocks__item__heading">What does this mean?</h3>
+                  <p class="blocks__item__text">You can send form submissions to this email address using Howdy. We won't ask you to verify anything else, we'll just deliver form submissions to your email inbox.</p>
+                </div>
+                <div class="blocks__item">
+                  <h3 class="blocks__item__heading">How many more email addresses can I use?</h3>
+                  <p class="blocks__item__text">There's no limit. Howdy accounts are priced based on the number of sites it's used on, not individual installs or email inboxes you're sending to.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript">
+          $(function() {
+            window.howdy.handleVerifyRecipient()
+          });
+        </script>
+      </main>
+    </div>
+    <footer class="footer">
+      <div class="footer__inner"><span class="footer__text">Made by</span><a class="footer__logo hide-text" href="http://weareleaf.com" target="_blank">Leaf</a></div>
+    </footer>
+  </body>
+</html>
