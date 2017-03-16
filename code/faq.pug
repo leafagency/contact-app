@@ -9,12 +9,12 @@ block content
 
   //- Page header
   +page-header({
-    title: "We're sure you're going to have a few questions about Howdy. <span>You're in the right place</span>"
+    title: "We're sure you're going to have a few questions about Howdy. <span class='page-header__title__highlight'>You're in the right place</span>"
   })
 
   main
 
-    //- Tierd
+    //- FAQs
     +section({})
 
       //- Blocks
@@ -38,6 +38,8 @@ block content
         text: "Yes, a single Howdy account can be installed on up to 25 different websites with submissions going to different email inboxes on each if you wish. After this, we'll contact you to arrange an Enterprise account for you, but won't cut off your service in the mean time. For more information, see our <a href='/pricing'>pricing</a> page."
       }])
 
+    //- Users image
+    include images/users.svg
 
     //- Callout
     +section({

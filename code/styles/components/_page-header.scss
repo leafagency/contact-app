@@ -1,6 +1,6 @@
 .page-header {
   @include clearfix;
-  @include padding-vertical($padding-vertical-xl);
+  padding: $padding-vertical-xl $padding-horizontal-fluid;
   background-color: $blue;
   text-align: center;
 
@@ -24,7 +24,7 @@
       margin-bottom: $spacing-vertical-lg;
     }
 
-    span {
+    &__highlight {
       @include margin-horizontal(-$spacing-horizontal-xxs);
       @include padding-horizontal($padding-horizontal-xxs);
       background: url('/images/highlight.svg') no-repeat;

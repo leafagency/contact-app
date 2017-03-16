@@ -1,15 +1,29 @@
 .masthead {
   background-color: $white;
-  align-items: center;
-  display: flex;
   padding: $padding-vertical-xs $padding-horizontal-xs;
+
+  @include susy-breakpoint($bp-sm) {
+    align-items: center;
+    display: flex;
+  }
 
   &__logo,
   &__cta {
-    flex: 0 0 8em;
+
+    @include susy-breakpoint($bp-sm) {
+      flex: 0 0 8em;
+    }
   }
 
   &__logo {
+    margin-bottom: $spacing-vertical-xs;
+    text-align: center;
+    width: 100%;
+
+    @include susy-breakpoint($bp-sm) {
+      margin-bottom: 0;
+      text-align: left;
+    }
 
     &__link {
       display: inline-block;
@@ -20,13 +34,19 @@
     flex: 1 0 auto;
   }
 
-  &__cta__button {
+  &__cta__button{
+    display: none;
+
+    @include susy-breakpoint($bp-sm) {
+      display: block;
+      float: right;
+      padding: $padding-vertical-xs $padding-horizontal-sm;
+    }
+
     .page--start-subscription &,
     .page--try-it &,
     .page--snippet & {
       display: none;
     }
-    float: right;
-    padding: $padding-vertical-xs $padding-horizontal-sm;
   }
 }

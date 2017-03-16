@@ -1,11 +1,12 @@
 .section {
   @include padding-vertical($padding-vertical-lg);
-  .page--try-it & {
-    @include padding-vertical($padding-vertical);
-  }
 
   @include susy-breakpoint($bp-sm) {
     @include padding-vertical($padding-vertical-xxl);
+  }
+
+  .page--try-it & {
+    @include padding-vertical($padding-vertical);
   }
 
   &--blue {

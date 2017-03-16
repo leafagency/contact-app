@@ -11,7 +11,8 @@
         var menu = {
           "Pricing": "/pricing",
           "Docs": "/docs",
-          "FAQ": "/faq"
+          "FAQ": "/faq",
+          "Free trial": "/try-it"
         }
 
       each val, key in menu
@@ -22,4 +23,4 @@
             a.navigation__list__link(href=val)= key
 
   .masthead__cta
-    a(href="/try-it").button.masthead__cta__button.button Try it for free
+    a(href="/try-it").masthead__cta__button.button Try it for free

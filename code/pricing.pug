@@ -9,19 +9,17 @@ block content
 
   //- Page header
   +page-header({
-    title: "We like to keep things simple; everyone starts on <span>one price package</span>"
+    title: "We like to keep things simple; everyone starts on <span class='page-header__title__highlight'>one price package</span>"
   })
 
   main
 
-    //- Tierd
-    +section({
-      style: "blue-lightest"
-    })
+    //- Tiers
+    +section({})
 
       //- Tiers
       +tiers([{
-        benefits: [
+      benefits: [
           "1,000 emails/month",
           "25 forms",
           "Unlimited websites",
@@ -44,6 +42,37 @@ block content
         price: "From $20/month",
         title: "Enterprise"
       }])
+
+    //- FAQs
+    +section({
+      description: "Here's a handful of the questions and answers that may just be exactly what you're looking for",
+      style: "blue-lightest",
+      title: "FAQs"
+    })
+
+      //- Blocks
+      +blocks([{
+        heading: "Do I need to code to use Howdy?",
+        text: "No, you just need to be able to copy and paste a code snippet into your web page. Some HTML knowledge is helpful, but if you can install Google Analytics, you can install Howdy."
+      },{
+        heading: "My form doesn't work",
+        text: "Check your browser console for error messages from Howdy. If everything looks like it should be working, check the <a href='/docs'>installation instructions</a> to see if there's anything you've missed there. If that all looks ok but things still aren't working, get in touch with us on <a href='mailto:support@weareleaf.com'>support@weareleaf.com</a>."
+      },{
+        heading: "Who makes Howdy?",
+        text: "Howdy is made by <a href='https://weareleaf.com'>Leaf</a>. A web design and development studio, specialising in digital products that make peoples lives easier. You can read more about us on our website, or follow us on Twitter on <a href='https://twitter.com/we_are_leaf'>@we_are_leaf</a>."
+      },{
+        heading: "Is Howdy free?",
+        text: "Howdy can be used free and unlimited for 2 weeks, at which point we'll send you an email asking for you to pay a very cheap $2/month subscription. That's less than a cup of coffee to never have to worry about form handling again!"
+      },{
+        heading: "Is there a contact or minimum term?",
+        text: "No and no. If you'd like to stop your Howdy subscription just contact us on <a href='mailto:support@weareleaf.com'>support@weareleaf.com</a> and we'll get everything cancelled for you."
+      },{
+        heading: "Can I reuse Howdy on different websites?",
+        text: "Yes, a single Howdy account can be installed on up to 25 different websites with submissions going to different email inboxes on each if you wish. After this, we'll contact you to arrange an Enterprise account for you, but won't cut off your service in the mean time. For more information, see our <a href='/pricing'>pricing</a> page."
+      }])
+
+    //- Users image
+    include images/users.svg
 
     //- Callout
     +section({

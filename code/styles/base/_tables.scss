@@ -1,0 +1,29 @@
+table {
+  border-collapse: collapse;
+  font-size: .9em;
+  margin-bottom: $spacing-vertical-lg;
+  width: 100%;
+}
+
+tr {
+  background: $blue-lighter;
+  border-bottom: $base-border-style $base-border-width darken($blue-lighter, 3%);
+
+  &:nth-child(even) {
+    background: darken($blue-lighter, 1%);
+  }
+}
+
+th, td {
+  padding: $padding-vertical-xs $padding-horizontal-sm;
+  text-align: left;
+}
+
+th {
+  background: $blue-light;
+  color: $white;
+}
+
+td {
+  color: $black;
+}

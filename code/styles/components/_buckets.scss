@@ -1,14 +1,15 @@
 .buckets {
+  @include clearfix;
+  margin-bottom: $spacing-vertical;
+  text-align: center;
+
   .page--try-it & {
+
     &__item__heading {
       color: white;
     }
     color: $white;
   }
-
-  @include clearfix;
-  margin-bottom: $spacing-vertical;
-  text-align: center;
 
   &__item {
     margin-bottom: $spacing-vertical-lg;
@@ -27,6 +28,10 @@
 
     &__image {
       margin-bottom: $spacing-vertical-sm;
+    }
+
+    &__heading {
+      margin-top: 0;
     }
 
     &__text {

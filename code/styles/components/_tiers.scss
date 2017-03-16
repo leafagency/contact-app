@@ -1,6 +1,6 @@
 .tiers {
 
-  @include susy-breakpoint($bp-md) {
+  @include susy-breakpoint($bp-lg) {
     display: flex;
     justify-content: center;
   }
@@ -10,7 +10,7 @@
     text-align: center;
     width: 100%;
 
-    @include susy-breakpoint($bp-md) {
+    @include susy-breakpoint($bp-lg) {
       flex: 1 0 auto;
       max-width: 24em;
     }
@@ -34,6 +34,7 @@
     }
 
     &__title {
+      margin-top: 0;
 
       .tiers__item--highlight & {
         color: $white;

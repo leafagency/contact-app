@@ -24,15 +24,3 @@ html, body {
   display: block;
   height: $footer-height;
 }
-
-.docs-section {
-  margin-bottom: $spacing-vertical-xl;
-
-  @include susy-breakpoint($bp-lg) {
-    pre.language-html {
-      margin: 0 0 $spacing-vertical -20% !important;
-      padding: $spacing-vertical !important;
-      width: 140%;
-    }
-  }
-}
