@@ -1,0 +1,12 @@
+.snippet {
+  margin: 0 auto;
+  width: 80%;
+
+  pre.language-html {
+    width: 100%;
+    margin-left: 0;
+    code {
+      white-space: pre-wrap;
+    }
+  }
+}

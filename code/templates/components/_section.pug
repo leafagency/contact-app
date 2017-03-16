@@ -1,0 +1,20 @@
+//- Section
+//-
+//- A section block to encapsulate groups of related content
+
+
+//- Options
+//- -- description (optional)
+//- -- title (optional)
+
+
+mixin section(args)
+  section.section(class=args.style ? "section--" + args.style : null)
+    .section__inner
+      if args.title
+        .section__intro
+          h2.section__title!= args.title
+          if args.description
+            p.section__description!= args.description
+      .section__content(class=args.narrow ? "section__content--narrow" : null)
+        block

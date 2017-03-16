@@ -1,0 +1,157 @@
+.demo {
+  min-height: 40em;
+  position: relative;
+
+  @include susy-breakpoint($bp-lg) {
+    display: flex;
+    min-height: auto;
+  }
+
+  &__form,
+  &__email {
+    padding: $padding-vertical $padding-horizontal;
+    transition: transform $duration-snail $base-timing;
+    position: absolute;
+    width: 100%;
+
+    @include susy-breakpoint($bp-lg) {
+      position: static;
+      transition: none;
+      width: auto;
+      flex: 1 1 0;
+      padding: $padding-vertical-lg $padding-horizontal-lg;
+    }
+  }
+
+  &__form {
+    background-color: $blue-dark;
+    border-radius: $border-radius-lg;
+    margin-bottom: 0;
+
+    &.hidden {
+      transform: translateX(-100vw);
+
+      @include susy-breakpoint($bp-lg) {
+        transform: translateX(0);
+      }
+    }
+
+    &__label {
+      color: $white;
+    }
+
+    &__input {
+      background-color: $blue-darker;
+      color: $white;
+      padding: 1.35em;
+
+      &.erroneous {
+        background-color: $red;
+      }
+
+      &:hover {
+        background-color: darken($blue-darker, 4%);
+      }
+    }
+  }
+
+  &__email {
+    background-color: $white;
+    border-radius: $border-radius-lg;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &.hidden {
+      transform: translateX(100vw);
+
+      @include susy-breakpoint($bp-lg) {
+        transform: translateX(0);
+      }
+    }
+
+    @include susy-breakpoint($bp-lg) {
+      @include margin-vertical($spacing-vertical-lg);
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &__header {
+      border-bottom: $base-border;
+      color: $black;
+      display: block;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: $spacing-vertical;
+      padding-bottom: $padding-vertical-xxs;
+    }
+
+    &__body {
+      align-items: flex-start;
+      display: flex;
+      margin-bottom: $spacing-vertical;
+
+      &__content {
+        color: $black;
+
+        &__heading {
+          align-items: center;
+          display: flex;
+        }
+      }
+
+      &__thumb {
+        margin-right: $spacing-horizontal-xs;
+        width: 32px;
+      }
+
+      &__name {
+        color: $black;
+        font-weight: 700;
+        margin-right: $spacing-horizontal-xxs;
+      }
+
+      &__from,
+      &__to {
+        color: $base-font-color;
+        display: block;
+        font-size: .75rem;
+      }
+
+      &__to {
+        display: block;
+        font-size: .75rem;
+        margin-bottom: $spacing-vertical-xs;
+      }
+    }
+
+    &__footer {
+      align-items: flex-start;
+      display: flex;
+
+      &__thumb {
+        margin-right: $spacing-horizontal-xs;
+      }
+
+      &__textarea {
+        border: $base-border;
+        flex: 1 0 auto;
+        min-height: 8em;
+        padding: $padding-vertical-xs $padding-horizontal-xs;
+
+        &__link {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__toggle {
+    margin-bottom: $spacing-vertical-xs;
+    text-align: center;
+
+    @include susy-breakpoint($bp-lg) {
+      display: none !important;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+html {
+  box-sizing: border-box;
+  text-size-adjust: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: .75em;
+  margin: 0;
+
+  @include susy-breakpoint($bp-xs) {
+    font-size: .9em;
+  }
+
+  @include susy-breakpoint($bp-md) {
+    font-size: 1em;
+  }
+}

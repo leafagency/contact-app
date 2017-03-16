@@ -1,0 +1,32 @@
+.masthead {
+  background-color: $white;
+  align-items: center;
+  display: flex;
+  padding: $padding-vertical-xs $padding-horizontal-xs;
+
+  &__logo,
+  &__cta {
+    flex: 0 0 8em;
+  }
+
+  &__logo {
+
+    &__link {
+      display: inline-block;
+    }
+  }
+
+  &__navigation {
+    flex: 1 0 auto;
+  }
+
+  &__cta__button {
+    .page--start-subscription &,
+    .page--try-it &,
+    .page--snippet & {
+      display: none;
+    }
+    float: right;
+    padding: $padding-vertical-xs $padding-horizontal-sm;
+  }
+}

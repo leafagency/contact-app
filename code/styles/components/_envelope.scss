@@ -1,0 +1,18 @@
+.envelope {
+  background: $white url('/images/dashes.svg') repeat-x -40px top;
+  border-radius: $base-border-radius $base-border-radius 0 0;
+  margin: 0 auto;
+  max-width: 48em;
+  padding: $padding-vertical-lg $padding-horizontal-lg;
+
+  &__full {
+    border-radius: $base-border-radius;
+    margin: $spacing-vertical-lg auto;
+  }
+
+  .page--start-subscription & {
+    display: block;
+    margin: -19em auto 0;
+    padding-bottom: $padding-horizontal;
+  }
+}

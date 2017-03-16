@@ -1,0 +1,15 @@
+//- Buckets item
+//-
+//- A simple heading/text pair, used to present a small snippet. To be called by the buckets component
+
+
+//- Options
+//- -- heading
+//- -- text
+
+
+mixin buckets-item(args)
+  .buckets__item
+    img.buckets__item__image(src="/images/" + args.image)
+    h3.buckets__item__heading!= args.heading
+    p.buckets__item__text!= args.text

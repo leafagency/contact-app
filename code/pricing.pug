@@ -1,0 +1,53 @@
+extends ./templates/base/_base
+
+block prepend vars
+  -var bodyClass = "page page--pricing page--inner"
+  -var currentPage = "Pricing"
+  -var title = "Pricing - Instant contact forms without writing a line of code - Howdy"
+
+block content
+
+  //- Page header
+  +page-header({
+    title: "We like to keep things simple; everyone starts on <span>one price package</span>"
+  })
+
+  main
+
+    //- Tierd
+    +section({
+      style: "blue-lightest"
+    })
+
+      //- Tiers
+      +tiers([{
+        benefits: [
+          "1,000 emails/month",
+          "25 forms",
+          "Unlimited websites",
+          "Unlimited recipients",
+          "Free support"
+        ],
+        description: "Everyone's starting package. We'll email you if you need enterprise.",
+        highlight: true,
+        price: "$2/month",
+        title: "Pro"
+      },{
+        benefits: [
+          "10,000+ emails/month",
+          "Unlimited forms",
+          "Unlimited websites",
+          "Unlimited recipients",
+          "High priority support"
+        ],
+        description: "As your usage increases, we'll contact you to go enterprise.",
+        price: "From $20/month",
+        title: "Enterprise"
+      }])
+
+    //- Callout
+    +section({
+      style: "denim"
+    })
+      #snippet-generator-bottom
+        //- See the SnippetGenerator react component
