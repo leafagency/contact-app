@@ -9,21 +9,34 @@ block content
 
   //- Page header
   +page-header({
-    title: "Success! You've <span>verified a new recipient!</span>"
+    title: "Success! You've <span class='page-header__title__highlight'>verified a new recipient!</span>"
   })
 
   main
 
     //- Tierd
-    +section({})
+    +section({
+      title: "FAQs",
+      description: "Here's a handful of the questions and answers that may just be exactly what you're looking for"
+    })
       //- Blocks
       +blocks([{
         heading: "What does this mean?",
-        text: "You can send form submissions to this email address using Howdy. We won't ask you to verify anything else, we'll just deliver form submissions to your email inbox."
+        text: "You can send form submissions to this email address using Howdy. We won't ask you to verify anything else, we'll just deliver form submissions to your email inbox. If you verified this email address erroneously, just drop us a message at <a href='mailto:support@weareleaf.com'>support@weareleaf.com</a> and we'll get it un-verified for you."
+      },{
+        heading: "How will I know if it's working?",
+        text: "When you next submit your form, an email should come straight through to your email inbox. The email should contain a neatly presented message representing the contents of the form you submitted. If you notice anything missing, please check the <a href='/docs'>documentation</a> for information on setting up your Howdy form."
+      },{
+        heading: "What if I get spam mail?",
+        text: "Howdy works hard to detect spam messages, but will pass most messages directly through to your inbox so we can be sure we're not accidentally filtering something critical to your business. If you ever think we're doing a poor job here, just let us know at <a href='mailto:support@weareleaf.com'>support@weareleaf.com</a> and we'll work with you on improving the situation."
       },{
         heading: "How many more email addresses can I use?",
-        text: "There's no limit. Howdy accounts are priced based on the number of installs (unique forms), not email inboxes you're sending to."
+        text: "There's no limit to how many unique emails you can use. Howdy accounts are priced based on the number of installs (unique forms), not email inboxes you're sending to. So, if you want to stop using an email address or change your Howdy form to use a different one, just follow the instructions in our <a href='/docs'>documentation</a>."
       }])
+
+    //- Users image
+    .users
+      include images/users.svg
 
     script(type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js")
     script(type="text/javascript").

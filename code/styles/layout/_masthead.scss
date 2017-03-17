@@ -45,7 +45,8 @@
 
     .page--start-subscription &,
     .page--try-it &,
-    .page--snippet & {
+    .page--snippet &,
+    .page--verify-recipient & {
       display: none;
     }
   }
