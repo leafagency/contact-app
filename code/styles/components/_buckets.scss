@@ -18,11 +18,7 @@
       margin-bottom: 0;
     }
 
-    @include susy-breakpoint($bp-lg) {
-      @include gallery(6 of 12);
-    }
-
-    @include susy-breakpoint($bp-xl) {
+    @include susy-breakpoint($bp-md) {
       @include gallery(4 of 12);
     }
 
