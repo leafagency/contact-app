@@ -13,7 +13,7 @@ block content
 
   //- Page header
   +page-header({
-    title: "<span class='page-header__title__highlight'>Here's your code snippet</span>! You're moments away from using Howdy"
+    title: "Success! Here's your account <span class='page-header__title__highlight'>code snippet</span>"
   })
 
   .snippet
@@ -21,9 +21,17 @@ block content
       //- See the Snippet Display react component
 
   +section({
+    title: "Next steps",
+    description: "You're just moments away from using Howdy!",
     style: 'blue',
     narrow: true
   })
-    p Copy &amp; paste this snippet into the HTML of the page with your web form on. When you next load the page, Howdy will find the form and automatically handle submissions from it, delivering the contents to your email inbox!
+    p This is <i>your</i> snippet, and the email address you've just entered will be associated with your Howdy account. If you want to send messages to other inboxes, there's no need to generate a new snippet. Just update the email address on your existing one.
+    
+    p To use your snippet, copy &amp; paste it into the HTML of the page with your web form on. When you next load the page, Howdy will find the form and automatically handle submissions from it, delivering the contents to your email inbox!
 
-    p For more advanced usage, including custom input validations, please see <a href='/docs'>our documentation</a>.
+    p For more advanced usage, including custom input validations and error messages, please see <a href='/docs'>our documentation</a>. If this is all a bit confusing, email us at <a href='mailto:support@weareleaf.com'>support@weareleaf.com</a> and we'll help you out.
+    
+  //- Users image
+  .users
+    include images/users.svg
