@@ -194,7 +194,49 @@
               </table>
               <p>For example, if you wanted to ensure an input was filled in, you could do this:</p>
               <pre><code class="language-html">&lt;input type="text" name="favouritePet" data-howdy-validate="required" /&gt;</code></pre>
-              <h3>Error messages</h3>
+              <h3>Custom error messages</h3>
+              <p>The default error messages Howdy uses can be overridden by defining a <code>data-howdy-error-message</code> attribute on an input. For example, with the following input:</p>
+              <pre><code class="language-html">&lt;input type="text" name="favouritePet" data-howdy-validate="required" data-howdy-error-message="Please enter a favourite pet!" /&gt;</code></pre>
+              <p>If the user puts nothing in this input and attempts to submit the form, they will see the custom "Please enter a favourite pet!" error message, rather than the default "Must be provided" message.</p>
+              <h3>Adding new validations</h3>
+              <div class="alert alert--info"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64" class="alert__icon">
+  <defs>
+    <path id="helpo-a" d="M0,22 C0,34.15 9.85,44 22,44 C34.15,44 44,34.15 44,22 C44,9.85 34.15,0 22,0 C9.85,0 0,9.85 0,22 Z M34,22 C34,28.627 28.627,34 22,34 C15.373,34 10,28.627 10,22 C10,15.373 15.373,10 22,10 C28.627,10 34,15.373 34,22 Z"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <circle cx="32" cy="32" r="32" fill="#CEEBFF" fill-rule="nonzero"/>
+    <g transform="translate(10 10)">
+      <mask id="helpo-b" fill="#fff">
+        <use xlink:href="#helpo-a"/>
+      </mask>
+      <use fill="#FF7575" fill-rule="nonzero" xlink:href="#helpo-a"/>
+      <path fill="#FFF" fill-rule="nonzero" d="M18.3118314,11.1785588 C19.1985726,12.0652999 19.232872,13.4675413 18.3885007,14.3119126 L14.3119126,18.3885007 C13.4675413,19.232872 12.0642911,19.1985726 11.1785588,18.3118314 L3.68816858,10.8214412 C2.80142744,9.93470006 2.76712801,8.53245866 3.61149927,7.6880874 L7.6880874,3.61149927 C8.53245866,2.76712801 9.93570886,2.80142744 10.8214412,3.68816858 L18.3118314,11.1785588 Z M40.3118314,33.1785588 C41.1985726,34.0652999 41.232872,35.4675413 40.3885007,36.3119126 L36.3119126,40.3885007 C35.4675413,41.232872 34.0642911,41.1985726 33.1785588,40.3118314 L25.6881686,32.8214412 C24.8014274,31.9347001 24.767128,30.5324587 25.6114993,29.6880874 L29.6880874,25.6114993 C30.5324587,24.767128 31.9357089,24.8014274 32.8214412,25.6881686 L40.3118314,33.1785588 Z M32.8214412,18.3118314 C31.9347001,19.1985726 30.5324587,19.232872 29.6880874,18.3885007 L25.6114993,14.3119126 C24.767128,13.4675413 24.8014274,12.0642911 25.6881686,11.1785588 L33.1785588,3.68816858 C34.0652999,2.80142744 35.4675413,2.76712801 36.3119126,3.61149927 L40.3885007,7.6880874 C41.232872,8.53245866 41.1985726,9.93570886 40.3118314,10.8214412 L32.8214412,18.3118314 Z M10.8214412,40.3118314 C9.93470006,41.1985726 8.53245866,41.232872 7.6880874,40.3885007 L3.61149927,36.3119126 C2.76712801,35.4675413 2.80142744,34.0642911 3.68816858,33.1785588 L11.1785588,25.6881686 C12.0652999,24.8014274 13.4675413,24.767128 14.3119126,25.6114993 L18.3885007,29.6880874 C19.232872,30.5324587 19.1985726,31.9357089 18.3118314,32.8214412 L10.8214412,40.3118314 Z" mask="url(#helpo-b)"/>
+    </g>
+  </g>
+</svg>
+
+                <div class="alert__content">
+                  <h4 class="alert__heading">JavaScript knowledge required!</h4>
+                  <p class="alert__text">Adding new validations on your page requires a bit of JavaScript knowledge. If you're struggling with this and need help, drop us an email on <a href="mailto:support@weareleaf.com">support@weareleaf.com</a>.</p>
+                </div>
+              </div>
+              <p>If your validation requirements are more complex, Howdy allows you to add completely new validation functions with just a little bit of JavaScript knowledge. You can do this using the <code>window.Howdy.customValidations</code> object. For example, to add a new validation that ensured a value was a palindrome, we might do something like this:</p>
+              <pre><code class="language-html">&lt;script&gt;
+ window.Howdy = {
+   customValidations: {
+     palindrome: function(input) {
+       if (input.value.split('').reverse().join('') !== input.value) {
+         return 'Value must be a palindrome';
+       }
+     }
+   }
+ }
+&lt;/script&gt;</code></pre>
+              <And>then on our input do:</And>
+              <pre><code class="language-html">&lt;input type="text" name="myFavouritePalindrome" data-howdy-validate="palindrome" /&gt;</code></pre>
+              <p>Now, when the page is loaded, Howdy will see that a <code>palindrome</code> custom validation has been added, and will validate any inputs with a <code>data-howdy-validate="palindrome"</code> attribute to ensure they are indeed palindromes. </p>
+              <p><strong>Note:</strong> All custom validation functions take a DOM element as an argument, and must return <code>undefined</code> if the input is valid, or a <code>string</code> error message if there's a problem with the input.</p>
+              <h3>Error message styling</h3>
               <p>Error messages on erroneous inputs are inserted directly after the input and given a HTML class of <code>.erroneous</code> for you to style appropriately. Error messages are cleared next time the input is focussed.</p>
               <h2>Supported input types</h2>
               <p>Howdy supports all HTML input types, with the exception of file uploads (though we're working on it). Any HTML input type that has a <code>name</code> property, Howdy should successfully be able to validate and retrieve a sensible value from for the submission messages delivered to your email inbox.</p>
