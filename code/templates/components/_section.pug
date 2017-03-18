@@ -9,7 +9,9 @@
 
 
 mixin section(args)
-  section.section(class=args.style ? "section--" + args.style : null)
+  - var attributesClass = attributes.class ? attributes.class : null
+  
+  section.section(class=args.style ? "section--" + args.style : null class=attributesClass)
     .section__inner
       if args.title
         .section__intro
