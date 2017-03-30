@@ -22,7 +22,7 @@ class SnippetDisplay extends React.Component {
 
     return (
       <pre>
-        <code className="language-html">&lt;script src="https://static.howdyform.com/howdyClient.js?token={token}" data-howdy-recipient="{email}"&gt;&lt;/script&gt;</code>
+        <code className="language-html">&lt;script async src="https://static.howdyform.com/howdyClient.js?token={token}" data-howdy-recipient="{email}"&gt;&lt;/script&gt;</code>
       </pre>
     )
   }
