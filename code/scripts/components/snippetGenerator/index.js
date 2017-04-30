@@ -21,6 +21,10 @@ class SnippetGenerator extends React.Component {
   handleEmailChange(e) {
     const email = e.currentTarget.value
     this.setState({ email })
+
+    if (window.mixpanel) {
+      mixpanel.track("Entered Email in Snippet Generator");
+    }
   }
 
   handleButtonClick(e) {
@@ -31,6 +35,10 @@ class SnippetGenerator extends React.Component {
       // Remove the error state after the animation has had time to complete:
       setTimeout(() => this.setState({ processingState: null }), ONE_SECOND)
       return;
+    }
+
+    if (window.mixpanel) {
+      mixpanel.track("Snippet Generated");
     }
 
     request.post(config.createAccountUrl)
