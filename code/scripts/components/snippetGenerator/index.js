@@ -26,15 +26,17 @@ class SnippetGenerator extends React.Component {
 
   handleEmailBlur(e) {
     const email = e.currentTarget.value
-    mixpanel.identify(email);
-    mixpanel.people.set({'$email': email});
-    mixpanel.track('Entered email in snippet generator')
+    if (window.mixpanel) {
+      mixpanel.identify(email);
+      mixpanel.people.set({'$email': email});
+      mixpanel.track('Entered email in snippet generator')
+    }
   }
 
   handleButtonClick(e) {
     const { email } = this.state
 
-    mixpanel.track('Clicked generate snippet button on snippet generator')
+    if (window.mixpanel) mixpanel.track('Clicked generate snippet button on snippet generator')
 
     if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(email)) {
       this.setState({ processingState: 'error' })

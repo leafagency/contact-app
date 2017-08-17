@@ -36,4 +36,4 @@ block content
   .users
     include images/users.svg
   script.
-    mixpanel.track('Generated snippet');
+    if (window.mixpanel) mixpanel.track('Generated snippet');
