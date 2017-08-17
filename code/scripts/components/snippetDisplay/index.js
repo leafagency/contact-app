@@ -9,7 +9,7 @@ class SnippetDisplay extends React.Component {
   }
 
   handleSnippetCopy() {
-    mixpanel.track('Snippet copied to clipboard')
+    if (window.mixpanel) mixpanel.track('Snippet copied to clipboard')
   }
 
   getEmailFromToken(token) {
