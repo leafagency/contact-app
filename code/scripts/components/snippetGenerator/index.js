@@ -16,29 +16,31 @@ class SnippetGenerator extends React.Component {
 
     this.handleEmailChange = this.handleEmailChange.bind(this)
     this.handleButtonClick = this.handleButtonClick.bind(this)
+    this.handleEmailBlur = this.handleEmailBlur.bind(this)
   }
 
   handleEmailChange(e) {
     const email = e.currentTarget.value
     this.setState({ email })
+  }
 
-    if (window.mixpanel) {
-      mixpanel.track("Entered Email in Snippet Generator");
-    }
+  handleEmailBlur(e) {
+    const email = e.currentTarget.value
+    mixpanel.identify(email);
+    mixpanel.people.set({'$email': email});
+    mixpanel.track('Entered email in snippet generator')
   }
 
   handleButtonClick(e) {
     const { email } = this.state
+
+    mixpanel.track('Clicked generate snippet button on snippet generator')
 
     if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(email)) {
       this.setState({ processingState: 'error' })
       // Remove the error state after the animation has had time to complete:
       setTimeout(() => this.setState({ processingState: null }), ONE_SECOND)
       return;
-    }
-
-    if (window.mixpanel) {
-      mixpanel.track("Snippet Generated");
     }
 
     request.post(config.createAccountUrl)
@@ -60,7 +62,7 @@ class SnippetGenerator extends React.Component {
           <div className="callout__form">
             <div className="callout__form__input-group input-group">
               <label className="sr-only" for="email">Email addresss</label>
-              <input className="callout__form__input-group__input input-group__input" type="email" name="email" placeholder="you@email.com" onChange={this.handleEmailChange} />
+              <input className="callout__form__input-group__input input-group__input" type="email" name="email" placeholder="you@email.com" onChange={this.handleEmailChange} onBlur={this.handleEmailBlur} />
               <button className="callout__form__input-group__button input-group__button button" onClick={this.handleButtonClick}>Generate my snippet</button>
             </div>
           </div>
