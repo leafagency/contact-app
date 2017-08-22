@@ -139,7 +139,6 @@ document.addEventListener('DOMContentLoaded', function() {
     trackDocsClick(name) {
         if (window.mixpanel) {
           mixpanel.track('Viewed Docs Topic', {'topic': name})
-          console.log("tracked")
         }
       }
   }
