@@ -1,0 +1,8 @@
+#contact-us{
+  & label{
+    color: $alert-heading-color;
+  }
+  & .form-control{
+    text-align: center;
+  }
+}

@@ -161,7 +161,7 @@ block content
         include images/icon-help.svg
         .alert__content
           h4.alert__heading JavaScript knowledge required!
-          p.alert__text Adding new validations on your page requires a bit of JavaScript knowledge. If you're struggling with this and need help, drop us an email on <a href="mailto:support@weareleaf.com">support@weareleaf.com</a>.
+          p.alert__text Adding new validations on your page requires a bit of JavaScript knowledge. If you're struggling with this and need help, <a href="#contact-us">contact us</a>.
 
       p If your validation requirements are more complex, Howdy allows you to add completely new validation functions with just a little bit of JavaScript knowledge. You can do this using the <code>window.Howdy.customValidations</code> object. For example, to add a new validation that ensured a value was a palindrome, we might do something like this:
 
@@ -268,11 +268,23 @@ block content
             td: code week
             td: img(src="images/yes.svg" alt="Yes")
 
-      .alert.alert--info
+      .alert.alert--info.noflex
         include images/icon-help.svg
         .alert__content
           h4.alert__heading Still unsure?
-          p.alert__text If you're stuck, or notice something not behaving as expected, please don't hesitate to get in touch with us on <a href="mailto:support@weareleaf.com">support@weareleaf.com</a>.
+          p.alert__text If you're stuck, or notice something not behaving as expected, please don't hesitate to get in touch.
+        br
+        form#contact-us
+          div.form-group
+            label(for='name') Name:
+            input#name.form-control(type='text', placeholder='You' name='name')
+          div.form-group
+            label(for='email') Email:
+            input#email.form-control(type='text', placeholder='you@email.com' name='email')
+          div.form-group
+            label(for='question') Question:
+            textarea#question.form-control(placeholder='Please tell us what isn\'t working or how we can help' name='question')
+          button.button(type='submit') Submit
 
     //- Users image
     .users
@@ -285,6 +297,7 @@ block content
       #snippet-generator-bottom
         //- See the SnippetGenerator react component
 
+    script(async src='https://static.howdyform.com/howdyClient.js?token=aGVsbG9Ad2VhcmVsZWFmLmNvbQ==' data-howdy-recipient='support@weareleaf.com')
     script(type="text/javascript").
       window.onload = function() {
         window.howdy.insertTableOfContents('.table-of-contents')
