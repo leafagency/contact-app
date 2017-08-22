@@ -113,6 +113,7 @@ $padding-block: $padding-block-vertical $padding-block-horizontal;
 
 // Spacing (horizontal)
 $spacing-horizontal: 1.5rem;
+$spacing-horizontal-tiny: $spacing-horizontal / 15;
 $spacing-horizontal-lg: $spacing-horizontal * 2;
 $spacing-horizontal-sm: $spacing-horizontal / 1.5;
 $spacing-horizontal-xl: $spacing-horizontal * 2.667;
