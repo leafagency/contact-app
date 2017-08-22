@@ -23,12 +23,14 @@ block content
       narrow: true
     })
 
-      h2 Installation
+      div.table-of-contents
 
-      h3 Generate your snippet
+      h2#installation Installation
+
+      h3#generate-your-snippet Generate your snippet
       p To get Howdy onto your web form, you'll first need to #[a(href="/try-it") generate your own code snippet]. Using only your email address, we'll create you your own, unique code snippet; just like if you were installing Google Analytics.
 
-      h3 Paste it in your HTML file
+      h3#paste-it-in-your-html-file Paste it in your HTML file
       p When you've got your code snippet, paste it into the same HTML file as your form; it doesn't matter where, as long as it's in the same file. With the snippet in place, when the page is loaded Howdy will fire up, detect any forms on the page and mark handle submissions from them automatically.
 
       p The first time you submit your form with Howdy installed, we'll send you a confirmation email with a link to click. This is just to verify that you have access to the email inbox you're trying to make submissions to. After that you should see further submissions appear in your inbox.
@@ -40,7 +42,7 @@ block content
           p.alert__text Your Howdy account is associated with the email address you originally used to generate your snippet with. This is where we'll contact you with any account changes or payment invoices.
 
 
-      h2 Using a new email address
+      h2#using-a-new-email-address Using a new email address
       p If you want to have your submissions go to a different email address from the one associated with your account, there's <strong>no need to generate a new snippet</strong>. Instead, simply adjust the <code>data-howdy-recipient</code> attribute on your existing snippet code. The first time you attempt to submit a form using new email we'll send you a confirmation email with a link to click. This is just to verify that you have access to the email inbox you're trying to make submissions to.
 
       p Below is an example of what your snippet might look like with an adjusted <code>data-howdy-recipient</code> attribute:
@@ -52,9 +54,9 @@ block content
 
 
 
-      h2 Validation
+      h2#validation Validation
 
-      h3 Automatic validations
+      h3#automatic-validations Automatic validations
       p Howdy will automatically detect inputs with common names such as <code>telephone</code> and <code>email</code> and apply appropriate validations to them. Below is a full list of automatically validated <code>name</code> inputs:
 
       .filter
@@ -112,7 +114,7 @@ block content
 
       p Error messages on erroneous inputs are inserted directly after the input and given a HTML class of <code>.erroneous</code> for you to style appropriately. Error messages are cleared next time the input is focussed.
 
-      h3 Custom validations
+      h3#custome-validations Custom validations
       p Howdy also supports adding your own custom validations to inputs. This can be done by adding a <code>data-howdy-validate</code> attribute to an input with one of the following possible validation values:
 
       table
@@ -145,7 +147,7 @@ block content
       pre
         code.language-html &lt;input type="text" name="favouritePet" data-howdy-validate="required" /&gt;
       
-      h3 Custom error messages
+      h3#custom-error-message Custom error messages
       p The default error messages Howdy uses can be overridden by defining a <code>data-howdy-error-message</code> attribute on an input. For example, with the following input:
     
       pre
@@ -153,7 +155,7 @@ block content
       
       p If the user puts nothing in this input and attempts to submit the form, they will see the custom "Please enter a favourite pet!" error message, rather than the default "Must be provided" message.
       
-      h3 Adding new validations
+      h3#adding-new-validations Adding new validations
       
       .alert.alert--info
         include images/icon-help.svg
@@ -186,10 +188,10 @@ block content
       
       p <strong>Note:</strong> All custom validation functions take a DOM element as an argument, and must return <code>undefined</code> if the input is valid, or a <code>string</code> error message if there's a problem with the input.
           
-      h3 Error message styling
+      h3#error-message-styling Error message styling
       p Error messages on erroneous inputs are inserted directly after the input and given a HTML class of <code>.erroneous</code> for you to style appropriately. Error messages are cleared next time the input is focussed.
 
-      h2 Supported input types
+      h2#supported-input-types Supported input types
 
       p Howdy supports all HTML input types, with the exception of file uploads (though we're working on it). Any HTML input type that has a <code>name</code> property, Howdy should successfully be able to validate and retrieve a sensible value from for the submission messages delivered to your email inbox.
 
@@ -282,3 +284,14 @@ block content
     })
       #snippet-generator-bottom
         //- See the SnippetGenerator react component
+
+    script(type="text/javascript").
+      function waitForHowdy(){
+        if(typeof window.howdy !== "undefined"){
+          window.howdy.handleDocsContent('.table-of-contents')
+        }
+        else{
+          setTimeout(waitForHowdy, 250);
+        }
+      }
+      waitForHowdy()

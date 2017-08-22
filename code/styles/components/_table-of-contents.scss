@@ -1,0 +1,14 @@
+.contents-table{
+  & >li{
+    font-size: $content-h2-font-size;
+    & ul{
+      margin-bottom: auto;
+      & li{
+        font-size: $content-h3-font-size;
+        & a{
+          padding-left: $padding-horizontal-sm;
+        }
+      }
+    }
+  }
+}
