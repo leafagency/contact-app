@@ -104,6 +104,50 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
       }
-    }
+    },
+
+    insertTableOfContents(selector) {
+      const getTableOfContents = () => {
+        const headers = document.querySelectorAll("h2, h3")
+        let html = '<ul class="contents-table"><li>'
+        let lastTag = null
+
+        for (let i = 0; i < headers.length ; i++) {
+          const header = headers[i]
+
+          if (!header.id) continue
+
+          const text = header.textContent
+          const link = header.id
+          const currentTag = header.tagName
+
+          if (currentTag === 'H2') {
+            if (lastTag === 'H3') html += ' </ul>'
+            if (lastTag === 'H2') html += ' </li>'
+            html += `<li><a onClick='window.howdy.trackDocsClick("${text}")' href=#${link}>${text}</a>`
+          }
+
+          if (currentTag === 'H3') {
+            if (lastTag === 'H2') html += '<ul>'
+            html += `<li><a onClick='window.howdy.trackDocsClick("${text}")' href=#${link}>${text}</a></li>`
+          }
+
+          lastTag = header.tagName
+        }
+
+        if (lastTag === 'H3') html += ' </ul>'
+
+        html += ' </li></ul>'
+
+        return html
+      }
+      document.querySelector(selector).innerHTML = getTableOfContents()
+    },
+
+    trackDocsClick(name) {
+        if (window.mixpanel) {
+          mixpanel.track('Viewed Docs Topic', { topic: name })
+        }
+      }
   }
 })
