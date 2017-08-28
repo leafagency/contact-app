@@ -6,4 +6,5 @@ dist/*
 !dist/CNAME
 .publish
 npm-debug.log
-.DS_Store
+*.DS_Store
+package-lock.json
