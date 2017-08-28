@@ -114,7 +114,7 @@ block content
 
       p Error messages on erroneous inputs are inserted directly after the input and given a HTML class of <code>.erroneous</code> for you to style appropriately. Error messages are cleared next time the input is focussed.
 
-      h3#custome-validations Custom validations
+      h3#custom-validations Custom validations
       p Howdy also supports adding your own custom validations to inputs. This can be done by adding a <code>data-howdy-validate</code> attribute to an input with one of the following possible validation values:
 
       table
@@ -146,25 +146,25 @@ block content
 
       pre
         code.language-html &lt;input type="text" name="favouritePet" data-howdy-validate="required" /&gt;
-      
+
       h3#custom-error-message Custom error messages
       p The default error messages Howdy uses can be overridden by defining a <code>data-howdy-error-message</code> attribute on an input. For example, with the following input:
-    
+
       pre
         code.language-html &lt;input type="text" name="favouritePet" data-howdy-validate="required" data-howdy-error-message="Please enter a favourite pet!" /&gt;
-      
+
       p If the user puts nothing in this input and attempts to submit the form, they will see the custom "Please enter a favourite pet!" error message, rather than the default "Must be provided" message.
-      
+
       h3#adding-new-validations Adding new validations
-      
+
       .alert.alert--info
         include images/icon-help.svg
         .alert__content
           h4.alert__heading JavaScript knowledge required!
           p.alert__text Adding new validations on your page requires a bit of JavaScript knowledge. If you're struggling with this and need help, drop us an email on <a href="mailto:support@weareleaf.com">support@weareleaf.com</a>.
-      
+
       p If your validation requirements are more complex, Howdy allows you to add completely new validation functions with just a little bit of JavaScript knowledge. You can do this using the <code>window.Howdy.customValidations</code> object. For example, to add a new validation that ensured a value was a palindrome, we might do something like this:
-      
+
       pre
         code.language-html
           |&lt;script&gt;
@@ -178,16 +178,16 @@ block content
           |    }
           |  }
           |&lt;/script&gt;
-          
+
       And then on our input do:
-      
+
       pre
         code.language-html &lt;input type="text" name="myFavouritePalindrome" data-howdy-validate="palindrome" /&gt;
-        
-      p Now, when the page is loaded, Howdy will see that a <code>palindrome</code> custom validation has been added, and will validate any inputs with a <code>data-howdy-validate="palindrome"</code> attribute to ensure they are indeed palindromes. 
-      
+
+      p Now, when the page is loaded, Howdy will see that a <code>palindrome</code> custom validation has been added, and will validate any inputs with a <code>data-howdy-validate="palindrome"</code> attribute to ensure they are indeed palindromes.
+
       p <strong>Note:</strong> All custom validation functions take a DOM element as an argument, and must return <code>undefined</code> if the input is valid, or a <code>string</code> error message if there's a problem with the input.
-          
+
       h3#error-message-styling Error message styling
       p Error messages on erroneous inputs are inserted directly after the input and given a HTML class of <code>.erroneous</code> for you to style appropriately. Error messages are cleared next time the input is focussed.
 
@@ -286,12 +286,6 @@ block content
         //- See the SnippetGenerator react component
 
     script(type="text/javascript").
-      function waitForHowdy(){
-        if(typeof window.howdy !== "undefined"){
-          window.howdy.handleDocsContent('.table-of-contents')
-        }
-        else{
-          setTimeout(waitForHowdy, 250);
-        }
+      window.onload = function() {
+        window.howdy.insertTableOfContents('.table-of-contents')
       }
-      waitForHowdy()

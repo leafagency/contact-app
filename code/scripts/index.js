@@ -106,31 +106,39 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     },
 
-    handleDocsContent(selector) {
+    insertTableOfContents(selector) {
       const getTableOfContents = () => {
+        const headers = document.querySelectorAll("h2, h3")
         let html = '<ul class="contents-table"><li>'
-        let this_tag, last_tag, header, text, link
-        const headers = document.querySelectorAll("h2, h3");
-        for (let i = 0; i < headers.length ; i++)
-        {
-          header = headers[i]
-          text = header.textContent
-          link = header.id
-          if (link == '') continue
-          this_tag = header.tagName
-          if (this_tag == 'H2') {
-            if (last_tag == 'H3') html += ' </ul>'
-            if (last_tag == 'H2') html += ' </li>'
-              html += `<li><a onClick='window.howdy.trackDocsClick("${text}")' href=#${link}>${text}</a>`
+        let lastTag = null
+
+        for (let i = 0; i < headers.length ; i++) {
+          const header = headers[i]
+
+          if (!header.id) continue
+
+          const text = header.textContent
+          const link = header.id
+          const currentTag = header.tagName
+
+          if (currentTag === 'H2') {
+            if (lastTag === 'H3') html += ' </ul>'
+            if (lastTag === 'H2') html += ' </li>'
+            html += `<li><a onClick='window.howdy.trackDocsClick("${text}")' href=#${link}>${text}</a>`
           }
-          if (this_tag == 'H3') {
-            if (last_tag == 'H2') html += '<ul>'
+
+          if (currentTag === 'H3') {
+            if (lastTag === 'H2') html += '<ul>'
             html += `<li><a onClick='window.howdy.trackDocsClick("${text}")' href=#${link}>${text}</a></li>`
           }
-          last_tag = header.tagName
+
+          lastTag = header.tagName
         }
-        if (last_tag == 'H3') html += ' </ul>'
+
+        if (lastTag === 'H3') html += ' </ul>'
+
         html += ' </li></ul>'
+
         return html
       }
       document.querySelector(selector).innerHTML = getTableOfContents()
@@ -138,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     trackDocsClick(name) {
         if (window.mixpanel) {
-          mixpanel.track('Viewed Docs Topic', {'topic': name})
+          mixpanel.track('Viewed Docs Topic', { topic: name })
         }
       }
   }
