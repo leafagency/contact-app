@@ -49,7 +49,10 @@
       
     </script>
     <script type="text/javascript">
-      (function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments, 0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" "); for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]); mixpanel.init("9e846f0c35f0f95ae8ea5306cb77e47e");
+      (function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+      0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var  a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+      for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+      mixpanel.init("c0e04831a3dffeee6c7e837279e2bcd4");
       
     </script>
     <script src="/lib/prism/prism.js"></script>
@@ -84,10 +87,11 @@
         <section class="section">
           <div class="section__inner">
             <div class="section__content section__content--narrow">
-              <h2>Installation</h2>
-              <h3>Generate your snippet</h3>
+              <div class="table-of-contents"></div>
+              <h2 id="installation">Installation</h2>
+              <h3 id="generate-your-snippet">Generate your snippet</h3>
               <p>To get Howdy onto your web form, you'll first need to <a href="/try-it">generate your own code snippet</a>. Using only your email address, we'll create you your own, unique code snippet; just like if you were installing Google Analytics.</p>
-              <h3>Paste it in your HTML file</h3>
+              <h3 id="paste-it-in-your-html-file">Paste it in your HTML file</h3>
               <p>When you've got your code snippet, paste it into the same HTML file as your form; it doesn't matter where, as long as it's in the same file. With the snippet in place, when the page is loaded Howdy will fire up, detect any forms on the page and mark handle submissions from them automatically.</p>
               <p>The first time you submit your form with Howdy installed, we'll send you a confirmation email with a link to click. This is just to verify that you have access to the email inbox you're trying to make submissions to. After that you should see further submissions appear in your inbox.</p>
               <div class="alert alert--info"><svg width="64" height="64" viewBox="0 0 64 64" class="alert__icon">
@@ -102,13 +106,13 @@
                   <p class="alert__text">Your Howdy account is associated with the email address you originally used to generate your snippet with. This is where we'll contact you with any account changes or payment invoices.</p>
                 </div>
               </div>
-              <h2>Using a new email address</h2>
+              <h2 id="using-a-new-email-address">Using a new email address</h2>
               <p>If you want to have your submissions go to a different email address from the one associated with your account, there's <strong>no need to generate a new snippet</strong>. Instead, simply adjust the <code>data-howdy-recipient</code> attribute on your existing snippet code. The first time you attempt to submit a form using new email we'll send you a confirmation email with a link to click. This is just to verify that you have access to the email inbox you're trying to make submissions to.</p>
               <p>Below is an example of what your snippet might look like with an adjusted <code>data-howdy-recipient</code> attribute:</p>
               <pre><code class="language-html">&lt;script async src="https://static.howdyform.com/howdyClient.js?token=y0urT0k3n" data-howdy-recipient="another-email@gmail.com"&gt;&lt;/script&gt;</code></pre>
               <p>With a standard Howdy account, you can send submissions to an unlimited number of different email addresses so you can change this as often as you want. However, remember you're limited to <strong>25 forms</strong> before you'll be asked to move to an enterprise account.</p>
-              <h2>Validation</h2>
-              <h3>Automatic validations</h3>
+              <h2 id="validation">Validation</h2>
+              <h3 id="automatic-validations">Automatic validations</h3>
               <p>Howdy will automatically detect inputs with common names such as <code>telephone</code> and <code>email</code> and apply appropriate validations to them. Below is a full list of automatically validated <code>name</code> inputs:</p>
               <div class="filter">
                 <input class="filter__input" id="all" type="radio" name="attribute" checked>
@@ -160,7 +164,7 @@
               <pre><code class="language-html">&lt;input type="text" name="telephone" /&gt;</code></pre>
               <p>If you want to remove the default validation on an input, you can set a custom validation of type <code>none</code>. If you want to override the default validation on an input, you can set a custom validation of some other type. See the Custom validations section of this document for more information on using custom validations.</p>
               <p>Error messages on erroneous inputs are inserted directly after the input and given a HTML class of <code>.erroneous</code> for you to style appropriately. Error messages are cleared next time the input is focussed.</p>
-              <h3>Custom validations</h3>
+              <h3 id="custom-validations">Custom validations</h3>
               <p>Howdy also supports adding your own custom validations to inputs. This can be done by adding a <code>data-howdy-validate</code> attribute to an input with one of the following possible validation values:</p>
               <table>
                 <thead>
@@ -198,11 +202,11 @@
               </table>
               <p>For example, if you wanted to ensure an input was filled in, you could do this:</p>
               <pre><code class="language-html">&lt;input type="text" name="favouritePet" data-howdy-validate="required" /&gt;</code></pre>
-              <h3>Custom error messages</h3>
+              <h3 id="custom-error-message">Custom error messages</h3>
               <p>The default error messages Howdy uses can be overridden by defining a <code>data-howdy-error-message</code> attribute on an input. For example, with the following input:</p>
               <pre><code class="language-html">&lt;input type="text" name="favouritePet" data-howdy-validate="required" data-howdy-error-message="Please enter a favourite pet!" /&gt;</code></pre>
               <p>If the user puts nothing in this input and attempts to submit the form, they will see the custom "Please enter a favourite pet!" error message, rather than the default "Must be provided" message.</p>
-              <h3>Adding new validations</h3>
+              <h3 id="adding-new-validations">Adding new validations</h3>
               <div class="alert alert--info"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64" class="alert__icon">
   <defs>
     <path id="helpo-a" d="M0,22 C0,34.15 9.85,44 22,44 C34.15,44 44,34.15 44,22 C44,9.85 34.15,0 22,0 C9.85,0 0,9.85 0,22 Z M34,22 C34,28.627 28.627,34 22,34 C15.373,34 10,28.627 10,22 C10,15.373 15.373,10 22,10 C28.627,10 34,15.373 34,22 Z"/>
@@ -238,11 +242,11 @@
 &lt;/script&gt;</code></pre>
               <And>then on our input do:</And>
               <pre><code class="language-html">&lt;input type="text" name="myFavouritePalindrome" data-howdy-validate="palindrome" /&gt;</code></pre>
-              <p>Now, when the page is loaded, Howdy will see that a <code>palindrome</code> custom validation has been added, and will validate any inputs with a <code>data-howdy-validate="palindrome"</code> attribute to ensure they are indeed palindromes. </p>
+              <p>Now, when the page is loaded, Howdy will see that a <code>palindrome</code> custom validation has been added, and will validate any inputs with a <code>data-howdy-validate="palindrome"</code> attribute to ensure they are indeed palindromes.</p>
               <p><strong>Note:</strong> All custom validation functions take a DOM element as an argument, and must return <code>undefined</code> if the input is valid, or a <code>string</code> error message if there's a problem with the input.</p>
-              <h3>Error message styling</h3>
+              <h3 id="error-message-styling">Error message styling</h3>
               <p>Error messages on erroneous inputs are inserted directly after the input and given a HTML class of <code>.erroneous</code> for you to style appropriately. Error messages are cleared next time the input is focussed.</p>
-              <h2>Supported input types</h2>
+              <h2 id="supported-input-types">Supported input types</h2>
               <p>Howdy supports all HTML input types, with the exception of file uploads (though we're working on it). Any HTML input type that has a <code>name</code> property, Howdy should successfully be able to validate and retrieve a sensible value from for the submission messages delivered to your email inbox.</p>
               <table>
                 <thead>
@@ -709,6 +713,11 @@
             </div>
           </div>
         </section>
+        <script type="text/javascript">
+          window.onload = function() {
+            window.howdy.insertTableOfContents('.table-of-contents')
+          }
+        </script>
       </main>
     </div>
     <footer class="footer">
