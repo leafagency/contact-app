@@ -13,15 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const liveDemoContainer = document.getElementById('live-demo')
 
   if (topSnippetGeneratorContainer) {
-    ReactDOM.render(<SnippetGenerator />, topSnippetGeneratorContainer)
+    ReactDOM.render(<SnippetGenerator inStaging={config.inStaging} />, topSnippetGeneratorContainer)
   }
 
   if (bottomSnippetGeneratorContainer) {
-    ReactDOM.render(<SnippetGenerator className="callout--dark" />, bottomSnippetGeneratorContainer)
+    ReactDOM.render(<SnippetGenerator className="callout--dark" inStaging={config.inStaging} />, bottomSnippetGeneratorContainer)
   }
 
   if (snippetDisplayContainer) {
-    ReactDOM.render(<SnippetDisplay />, snippetDisplayContainer)
+    ReactDOM.render(<SnippetDisplay fileName={config.assetFileName} />, snippetDisplayContainer)
   }
 
   if (liveDemoContainer) {
