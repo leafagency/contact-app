@@ -1,8 +1,16 @@
-#contact-us{
-  & label{
+#contact-us {
+  margin: 0;
+  text-align: left;
+  & label {
     color: $alert-heading-color;
   }
-  & .form-control{
-    text-align: center;
+  & input, textarea {
+  	background-color: $blue-background;
+  	padding: $padding-vertical-xs;
   }
+}
+
+#still-unsure {
+  display: flex;
+  text-align: left;
 }

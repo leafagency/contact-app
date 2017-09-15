@@ -269,10 +269,11 @@ block content
             td: img(src="images/yes.svg" alt="Yes")
 
       .alert.alert--info.noflex
-        include images/icon-help.svg
-        .alert__content
-          h4.alert__heading Still unsure?
-          p.alert__text If you're stuck, or notice something not behaving as expected, please don't hesitate to get in touch.
+        div#still-unsure
+          include images/icon-help.svg
+          .alert__content
+            h4.alert__heading Still unsure?
+            p.alert__text If you're stuck, or notice something not behaving as expected, please don't hesitate to get in touch.
         br
         form#contact-us
           div.form-group

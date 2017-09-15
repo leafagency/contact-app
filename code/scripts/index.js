@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     insertTableOfContents(selector) {
       const getTableOfContents = () => {
         const headers = document.querySelectorAll("h2, h3")
-        let html = '<ul class="contents-table"><li>'
+        let html = '<h2>Table of Contents</h2><ul class="contents-table"><li>'
         let lastTag = null
 
         for (let i = 0; i < headers.length ; i++) {
