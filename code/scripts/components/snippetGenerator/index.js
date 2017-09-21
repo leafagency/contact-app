@@ -35,8 +35,10 @@ class SnippetGenerator extends React.Component {
 
   handleButtonClick(e) {
     const { email } = this.state
+    const { inStaging } = this.props
 
     if (window.mixpanel) mixpanel.track('Clicked generate snippet button on snippet generator')
+      console.log('here1', this.props)
 
     if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(email)) {
       this.setState({ processingState: 'error' })
@@ -45,11 +47,12 @@ class SnippetGenerator extends React.Component {
       return;
     }
 
+
     request.post(config.createAccountUrl)
       .send({ email })
       .end(function(err, response) {
         if (err) return
-        window.location.href = `/snippet.html?token=${window.btoa(email)}`
+        window.location.href = `/snippet.html?token=${window.btoa(email)}${ inStaging ? '&staging=t' : ''}`
       })
   }
 

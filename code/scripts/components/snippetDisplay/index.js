@@ -24,10 +24,11 @@ class SnippetDisplay extends React.Component {
     let { token } = parse(window.document.location.search.substr(1))
     token = token || 'not~a~real~token'
     const email = this.getEmailFromToken(token) || 'test@test.com'
+    const { fileName } = this.props
 
     return (
       <pre>
-        <code className="language-html" onCopy={this.handleSnippetCopy}>&lt;script async src="https://static.howdyform.com/howdyClient.js?token={token}" data-howdy-recipient="{email}"&gt;&lt;/script&gt;</code>
+        <code className="language-html" onCopy={this.handleSnippetCopy}>&lt;script async src="https://static.howdyform.com/{fileName}?token={token}" data-howdy-recipient="{email}"&gt;&lt;/script&gt;</code>
       </pre>
     )
   }

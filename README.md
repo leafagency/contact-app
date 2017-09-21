@@ -16,6 +16,9 @@ npm run build    // Force a rebuild of all code
 npm run deploy   // Deploy the site to Github pages
 ```
 
+### Testing against the staging environment
+So that you don't need to run the API locally to develop, if you include a `?staging=t` query string parameter in your URL when viewing the site locally, the snippet generator and all associated pages should use the staging API and show URLs to the staging clientside JS.
+
 ### Troubleshooting
 If for whatever reason things won't work on your machine, it's most likely an issue with your node version or missing dependencies. Check your node version matches the version specified in `.nvmrc` using `node -v` and then reinstall your packages with `rm -rf node_modules && npm cache clear && npm i`.
 
