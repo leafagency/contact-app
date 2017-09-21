@@ -38,7 +38,6 @@ class SnippetGenerator extends React.Component {
     const { inStaging } = this.props
 
     if (window.mixpanel) mixpanel.track('Clicked generate snippet button on snippet generator')
-      console.log('here1', this.props)
 
     if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(email)) {
       this.setState({ processingState: 'error' })

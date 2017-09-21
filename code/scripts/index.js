@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
       const { verificationToken } = queryString
 
       if (window.$ && Stripe) {
-        console.log('here', window.$.post)
         const $ = window.$
         const $form = $('#payment-form')
         const qsData = verificationToken ? atob(verificationToken).split('|') : ['test', 'test@test.com']
@@ -65,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: function(data){
+                  if (window.mixpanel) mixpanel.track('Started subscription', { topic: name })
                   return window.location.replace('https://howdyform.com/subscription-started.html')
                 },
                 failure: function(errMsg) {
@@ -145,10 +145,8 @@ document.addEventListener('DOMContentLoaded', function() {
     },
 
     trackDocsClick(name) {
-        if (window.mixpanel) {
-          mixpanel.track('Viewed Docs Topic', { topic: name })
-        }
-      }
+      if (window.mixpanel) mixpanel.track('Viewed Docs Topic', { topic: name })
+    }
   }
 })
 
