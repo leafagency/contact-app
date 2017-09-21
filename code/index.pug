@@ -85,3 +85,8 @@ block content
     })
       #snippet-generator-bottom
         //- See the SnippetGenerator react component
+
+    script(type="text/javascript").
+      window.onload = function() {
+        if (window.mixpanel) mixpanel.track('Viewed Home Page')
+      }

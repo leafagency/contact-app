@@ -64,6 +64,9 @@ block content
     script(type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js")
     script(type="text/javascript" src="https://js.stripe.com/v2/")
     script(type="text/javascript").
+      window.onload = function() {
+        if (window.mixpanel) mixpanel.track('Viewed Payment Form')
+      }
       $(function() {
         window.howdy.handleStartSubscription()
       });

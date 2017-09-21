@@ -301,5 +301,6 @@ block content
     script(async src='https://static.howdyform.com/howdyClient.js?token=aGVsbG9Ad2VhcmVsZWFmLmNvbQ==' data-howdy-recipient='support@weareleaf.com')
     script(type="text/javascript").
       window.onload = function() {
+        if (window.mixpanel) mixpanel.track('Viewed Docs Page')
         window.howdy.insertTableOfContents('.table-of-contents')
       }
