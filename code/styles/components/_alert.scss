@@ -7,9 +7,11 @@
   font-size: .85em;
   text-align: center;
 
-  @include susy-breakpoint($bp-md) {
-    display: flex;
-    text-align: left;
+  &:not(.noflex){
+    @include susy-breakpoint($bp-md) {
+      display: flex;
+      text-align: left;
+    }
   }
 
   &__icon {
@@ -38,6 +40,6 @@
 
   &__heading,
   &__text {
-    color: #56768c;
+    color: $alert-heading-color;
   }
 }

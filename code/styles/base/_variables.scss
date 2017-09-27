@@ -12,12 +12,15 @@ $blue-dark: #4747b3;
 $blue-darker: #3f3f9e;
 $blue-light: #6666ff;
 $blue-lighter: #fafbff;
+$blue-background: #ceebff;
 
 $denim: #242445;
 $denim-dark: #1e1e3a;
 
 $lavender: #dadae7;
 $lavender-dark: #747498;
+
+$alert-heading-color: #56768c;
 
 $red: #ff5555;
 
@@ -113,6 +116,7 @@ $padding-block: $padding-block-vertical $padding-block-horizontal;
 
 // Spacing (horizontal)
 $spacing-horizontal: 1.5rem;
+$spacing-horizontal-tiny: $spacing-horizontal / 15;
 $spacing-horizontal-lg: $spacing-horizontal * 2;
 $spacing-horizontal-sm: $spacing-horizontal / 1.5;
 $spacing-horizontal-xl: $spacing-horizontal * 2.667;

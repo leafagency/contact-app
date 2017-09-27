@@ -1,0 +1,16 @@
+#contact-us {
+  margin: 0;
+  text-align: left;
+  & label {
+    color: $alert-heading-color;
+  }
+  & input, textarea {
+  	background-color: $blue-background;
+  	padding: $padding-vertical-xs;
+  }
+}
+
+#still-unsure {
+  display: flex;
+  text-align: left;
+}

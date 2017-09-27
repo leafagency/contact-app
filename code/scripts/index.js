@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
       const { verificationToken } = queryString
 
       if (window.$ && Stripe) {
-        console.log('here', window.$.post)
         const $ = window.$
         const $form = $('#payment-form')
         const qsData = verificationToken ? atob(verificationToken).split('|') : ['test', 'test@test.com']
@@ -65,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
                 success: function(data){
+                  if (window.mixpanel) mixpanel.track('Started subscription', { topic: name })
                   return window.location.replace('https://howdyform.com/subscription-started.html')
                 },
                 failure: function(errMsg) {
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     insertTableOfContents(selector) {
       const getTableOfContents = () => {
         const headers = document.querySelectorAll("h2, h3")
-        let html = '<ul class="contents-table"><li>'
+        let html = '<h2>Table of Contents</h2><ul class="contents-table"><li>'
         let lastTag = null
 
         for (let i = 0; i < headers.length ; i++) {
@@ -145,10 +145,8 @@ document.addEventListener('DOMContentLoaded', function() {
     },
 
     trackDocsClick(name) {
-        if (window.mixpanel) {
-          mixpanel.track('Viewed Docs Topic', { topic: name })
-        }
-      }
+      if (window.mixpanel) mixpanel.track('Viewed Docs Topic', { topic: name })
+    }
   }
 })
 
