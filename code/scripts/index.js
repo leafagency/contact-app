@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
   window.howdy = {
     handleStartSubscription() {
       const queryString = parse(window.document.location.search.substr(1))
-      const { verificationToken } = queryString
+      const { verificationToken, edit } = queryString
 
       if (window.$ && Stripe) {
         const $ = window.$
@@ -56,20 +56,29 @@ document.addEventListener('DOMContentLoaded', function() {
               stripePaymentToken: response.id
             })
 
+            let url = config.createSubscriptionUrl
+            let successFunction = (data) => {
+              if (window.mixpanel) mixpanel.track('Started subscription', { topic: name })
+              return window.location.replace('https://howdyform.com/subscription-started.html')
+            }
+            if (edit) {
+              url = config.updateSubscriptionUrl
+              successFunction = (data) => {
+                return window.location.replace('https://howdyform.com/card-updated.html')
+              }
+            }
+
             return $.ajax({
-                type: 'POST',
-                url: config.createSubscriptionUrl,
-                // The key needs to match your method's input parameter (case-sensitive).
-                data: postData,
-                contentType: 'application/json; charset=utf-8',
-                dataType: 'json',
-                success: function(data){
-                  if (window.mixpanel) mixpanel.track('Started subscription', { topic: name })
-                  return window.location.replace('https://howdyform.com/subscription-started.html')
-                },
-                failure: function(errMsg) {
-                  return alert(errMsg)
-                }
+              type: 'POST',
+              url: url,
+              // The key needs to match your method's input parameter (case-sensitive).
+              data: postData,
+              contentType: 'application/json; charset=utf-8',
+              dataType: 'json',
+              success: successFunction,
+              failure: function(errMsg) {
+                return alert(errMsg)
+              }
             })
           })
 
