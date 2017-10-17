@@ -13,7 +13,7 @@
     <title>Docs - Instant contact forms without writing a line of code - Howdy</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="cleartype" content="on">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="Docs - Instant contact forms without writing a line of code - Howdy">
@@ -225,7 +225,7 @@
 
                 <div class="alert__content">
                   <h4 class="alert__heading">JavaScript knowledge required!</h4>
-                  <p class="alert__text">Adding new validations on your page requires a bit of JavaScript knowledge. If you're struggling with this and need help, drop us an email on <a href="mailto:support@weareleaf.com">support@weareleaf.com</a>.</p>
+                  <p class="alert__text">Adding new validations on your page requires a bit of JavaScript knowledge. If you're struggling with this and need help, <a href="#contact-us">contact us</a>.</p>
                 </div>
               </div>
               <p>If your validation requirements are more complex, Howdy allows you to add completely new validation functions with just a little bit of JavaScript knowledge. You can do this using the <code>window.Howdy.customValidations</code> object. For example, to add a new validation that ensured a value was a palindrome, we might do something like this:</p>
@@ -346,7 +346,8 @@
                   </tr>
                 </tbody>
               </table>
-              <div class="alert alert--info"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64" class="alert__icon">
+              <div class="alert alert--info noflex">
+                <div id="still-unsure"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64" class="alert__icon">
   <defs>
     <path id="helpo-a" d="M0,22 C0,34.15 9.85,44 22,44 C34.15,44 44,34.15 44,22 C44,9.85 34.15,0 22,0 C9.85,0 0,9.85 0,22 Z M34,22 C34,28.627 28.627,34 22,34 C15.373,34 10,28.627 10,22 C10,15.373 15.373,10 22,10 C28.627,10 34,15.373 34,22 Z"/>
   </defs>
@@ -362,10 +363,26 @@
   </g>
 </svg>
 
-                <div class="alert__content">
-                  <h4 class="alert__heading">Still unsure?</h4>
-                  <p class="alert__text">If you're stuck, or notice something not behaving as expected, please don't hesitate to get in touch with us on <a href="mailto:support@weareleaf.com">support@weareleaf.com</a>.</p>
-                </div>
+                  <div class="alert__content">
+                    <h4 class="alert__heading">Still unsure?</h4>
+                    <p class="alert__text">If you're stuck, or notice something not behaving as expected, please don't hesitate to get in touch.</p>
+                  </div>
+                </div><br>
+                <form id="contact-us">
+                  <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input class="form-control" id="name" type="text" placeholder="You" name="name">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input class="form-control" id="email" type="text" placeholder="you@email.com" name="email">
+                  </div>
+                  <div class="form-group">
+                    <label for="question">Question:</label>
+                    <textarea class="form-control" id="question" placeholder="Please tell us what isn't working or how we can help" name="question"></textarea>
+                  </div>
+                  <button class="button" type="submit">Submit</button>
+                </form>
               </div>
             </div>
           </div>
@@ -713,8 +730,10 @@
             </div>
           </div>
         </section>
+        <script async src="https://static.howdyform.com/howdyClient.js?token=aGVsbG9Ad2VhcmVsZWFmLmNvbQ==" data-howdy-recipient="support@weareleaf.com"></script>
         <script type="text/javascript">
           window.onload = function() {
+            if (window.mixpanel) mixpanel.track('Viewed Docs Page')
             window.howdy.insertTableOfContents('.table-of-contents')
           }
         </script>
