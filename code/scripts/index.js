@@ -59,13 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
             let url = config.createSubscriptionUrl
             let successFunction = (data) => {
               if (window.mixpanel) mixpanel.track('Started subscription', { topic: name })
-              return window.location.replace('https://howdyform.com/subscription-started.html')
+              return window.location.replace(`https://howdyform.com/subscription-started.html${ inStaging ? '?staging=t' : ''}`)
             }
             if (edit) {
               url = config.updateSubscriptionUrl
               successFunction = (data) => {
                 if (window.mixpanel) mixpanel.track('Updated payment card')
-                return window.location.replace('https://howdyform.com/card-updated.html')
+                return window.location.replace(`https://howdyform.com/card-updated.html${ inStaging ? '?staging=t' : ''}`)
               }
             }
 
