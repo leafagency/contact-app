@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (edit) {
               url = config.updateSubscriptionUrl
               successFunction = (data) => {
+                if (window.mixpanel) mixpanel.track('Updated payment card')
                 return window.location.replace('https://howdyform.com/card-updated.html')
               }
             }
