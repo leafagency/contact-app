@@ -20,5 +20,5 @@ config.stripeKey = (config.inDevelopment || config.inStaging) ? 'pk_test_6MCiAEX
 config.verifyRecipientUrl = buildApiUrl('/api/recipients/verify')
 config.createAccountUrl = buildApiUrl('/api/accounts')
 config.libraryUrl = buildAssetUrl('/howdyClient.js')
-config.createSubscriptionUrl = config.inStaging ? buildApiUrl('/api/subscriptions/create') : buildApiUrl('/api/subscriptions')
+config.createSubscriptionUrl = buildApiUrl('/api/subscriptions/create')
 config.updateSubscriptionUrl = buildApiUrl('/api/subscriptions/update')
