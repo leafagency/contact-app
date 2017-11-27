@@ -19,6 +19,7 @@ config.assetFileName = config.inStaging ? 'howdyClientStaging.js' : 'howdyClient
 config.stripeKey = (config.inDevelopment || config.inStaging) ? 'pk_test_6MCiAEXja5maiISN7W3cXjhP' : 'pk_live_COqrme9FBvt1ssbwvxEomd2I';
 config.verifyRecipientUrl = buildApiUrl('/api/recipients/verify')
 config.createAccountUrl = buildApiUrl('/api/accounts')
+config.getAccountUrl = buildApiUrl('/api/account')
 config.libraryUrl = buildAssetUrl('/howdyClient.js')
 config.createSubscriptionUrl = buildApiUrl('/api/subscriptions')
 config.updateSubscriptionUrl = buildApiUrl('/api/subscriptions/update')
