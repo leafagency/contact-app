@@ -3,6 +3,7 @@ import React from 'react'
 import LiveDemo from './components/liveDemo'
 import SnippetGenerator from './components/snippetGenerator'
 import SnippetDisplay from './components/snippetDisplay'
+import StartSubscription from './components/startSubscription'
 import { parse } from 'qs'
 import config from './config'
 
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const bottomSnippetGeneratorContainer = document.getElementById('snippet-generator-bottom')
   const snippetDisplayContainer = document.getElementById('snippet-display')
   const liveDemoContainer = document.getElementById('live-demo')
+  const startSubscriptionPopupContainer = document.getElementById('get-start-subscription')
 
   if (topSnippetGeneratorContainer) {
     ReactDOM.render(<SnippetGenerator inStaging={config.inStaging} />, topSnippetGeneratorContainer)
@@ -26,6 +28,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (liveDemoContainer) {
     ReactDOM.render(<LiveDemo />, liveDemoContainer)
+  }
+
+  if (startSubscriptionPopupContainer) {
+    ReactDOM.render(<StartSubscription />, startSubscriptionPopupContainer)
   }
 
   window.howdy = {
@@ -156,6 +162,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     trackDocsClick(name) {
       if (window.mixpanel) mixpanel.track('Viewed Docs Topic', { topic: name })
+    },
+
+    hideStartSubscriptionPopup() {
+      if (startSubscriptionPopupContainer) {
+        ReactDOM.unmountComponentAtNode(startSubscriptionPopupContainer)
+      }
     }
   }
 })

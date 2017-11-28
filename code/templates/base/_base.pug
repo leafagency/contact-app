@@ -76,9 +76,8 @@ html(class="no-js", lang="en")
   body(dir="ltr", class=bodyClass)
 
     .site-wrapper
-
-      include ../layout/masthead
-
+      block head
+      
       block content
 
     include ../layout/footer

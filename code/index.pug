@@ -1,4 +1,4 @@
-extends ./templates/base/_base
+extends ./templates/base/_masthead_base
 
 block prepend vars
   -var bodyClass = "page page--home"
@@ -90,3 +90,7 @@ block content
       window.onload = function() {
         if (window.mixpanel) mixpanel.track('Viewed Home Page')
       }
+
+    //- Start subscription popup
+    #start-subscription-popup.popup
+        //- See the StartSubscription react component

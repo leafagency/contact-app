@@ -7,9 +7,9 @@
   &__item {
     display: inline-block;
 
-    &:last-child {
+    &--side-button {
 
-      @include susy-breakpoint($bp-sm) {
+      @include susy-breakpoint($bp-masthead) {
         display: none;
       }
 

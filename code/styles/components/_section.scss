@@ -44,6 +44,17 @@
     }
   }
 
+  &--popup {
+    background-color: $denim;
+    width: 80%;
+    height: 80%;
+    display: block;
+
+    margin: 70px auto;
+    padding: 20px;
+    position: relative;
+  }
+
   &__inner {
     @include container;
     padding: 0 $padding-horizontal-fluid;

@@ -47,4 +47,12 @@ button:-moz-focusring,
     display: block;
     width: 100%;
   }
+
+  &--secondary {
+    background-color: $snow;
+    color: $blue;
+    &:hover {
+      background-color: $snow-dark;
+    }
+  }
 }

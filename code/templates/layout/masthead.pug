@@ -8,19 +8,28 @@
     ul.navigation__list(role="navigation")
 
       -
-        var menu = {
+        var menu_links = {
           "Pricing": "/pricing",
           "Docs": "/docs",
-          "FAQ": "/faq",
+          "FAQ": "/faq"
+        }
+        var menu_buttons = {
+          "Start a subscription": "/get-start-subscription",
           "Free trial": "/try-it"
         }
 
-      each val, key in menu
+      each val, key in menu_links
         li.navigation__list__item
           if currentPage === key
             a.navigation__list__link.navigation__list__link--active(href=val)= key
           else
             a.navigation__list__link(href=val)= key
+      br
+      each val, key in menu_buttons
+        li.navigation__list__item.navigation__list__item--side-button
+          a.navigation__list__link(href=val)= key
 
+  .masthead__cta--large
+    a(href="/get-start-subscription").masthead__cta__button.button.button--secondary Start a subscription
   .masthead__cta
     a(href="/try-it").masthead__cta__button.button Try it for free

@@ -52,3 +52,19 @@
     perspective: 4em;
   }
 }
+
+.logohead {
+  padding: 4em;
+  display: flex;
+
+  &__inner {
+    margin: 0 auto;
+    background-color: $denim-dark;
+    border-radius: 4em;
+    width: 4em;
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
