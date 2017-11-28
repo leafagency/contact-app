@@ -15,4 +15,15 @@
     margin: -19em auto 0;
     padding-bottom: $padding-horizontal;
   }
+  &--errors {
+    color: $red;
+    padding: $spacing-vertical 0 0 0;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1em;
+  }
+}
+
+.envolope-container {
+  padding: 0 1em;
 }

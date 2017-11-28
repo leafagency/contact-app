@@ -36,26 +36,29 @@ class StartSubscription extends React.Component {
     request.get(config.getAccountUrl)
       .query({ email })
       .end(function(err, response) {
-        if (err) return
+        if (err) {
+          document.querySelector('.envelope--errors').innerHTML = JSON.parse(response.text).error.message
+          return
+        }
         window.location.href = JSON.parse(response.text).startSubscriptionUrl
       })
   }
 
   render() {
-    const { className } = this.props
     const { processingState } = this.state
 
     return (
-      <div className={`callout ${className || ''} ${processingState || ''}`}>
+      <div className={`callout ${processingState || ''}`}>
         <div className="callout__inner">
           <p className="callout__intro">Enter an account email address to start your subscription</p>
           <div className="callout__form">
             <div className="callout__form__input-group input-group">
               <label className="sr-only" for="email">Email addresss</label>
               <input className="callout__form__input-group__input input-group__input" type="email" name="email" placeholder="you@email.com" onChange={this.handleEmailChange} />
-              <button className="callout__form__input-group__button input-group__button button" onClick={this.handleButtonClick}>Generate my snippet</button>
+              <button className="callout__form__input-group__button input-group__button button" onClick={this.handleButtonClick}>Start subscription</button>
             </div>
           </div>
+          <div className="envelope--errors"></div>
         </div>
       </div>
     )

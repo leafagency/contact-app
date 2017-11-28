@@ -2,15 +2,16 @@
   background-color: $white;
   padding: $padding-vertical-xs $padding-horizontal-xs;
 
-  @include susy-breakpoint($bp-sm) {
+  @include susy-breakpoint($bp-masthead) {
     align-items: center;
     display: flex;
   }
 
   &__logo,
   &__cta {
+    white-space: nowrap;
 
-    @include susy-breakpoint($bp-sm) {
+    @include susy-breakpoint($bp-masthead) {
       flex: 0 0 8em;
     }
   }
@@ -20,7 +21,7 @@
     text-align: center;
     width: 100%;
 
-    @include susy-breakpoint($bp-sm) {
+    @include susy-breakpoint($bp-masthead) {
       margin-bottom: 0;
       text-align: left;
     }
@@ -37,7 +38,7 @@
   &__cta__button{
     display: none;
 
-    @include susy-breakpoint($bp-sm) {
+    @include susy-breakpoint($bp-masthead) {
       display: block;
       float: right;
       padding: $padding-vertical-xs $padding-horizontal-sm;
